@@ -1,0 +1,11 @@
+.themes {
+  border-radius: 0.5rem;
+  border: 1px solid var(--grey-light);
+}
+
+.themes legend {
+  padding-inline: 0.5rem;
+  background-color: var(--bg-color);
+  font-weight: bold;
+  font-size: var(--font-14);
+}

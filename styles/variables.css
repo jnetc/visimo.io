@@ -1,0 +1,46 @@
+:root {
+  --primary: hsl(230, 98%, 60%);
+  --primary-dark: hsl(227, 71%, 39%);
+  --secondary: hsl(37, 100%, 60%);
+  --secondary-dark: hsl(34, 85%, 45%);
+  --success: hsl(119, 71%, 60%);
+  --success-dark: hsl(119, 71%, 39%);
+  --error: hsl(0, 71%, 60%);
+
+  --white: hsl(0, 0%, 100%);
+  --white-grey: hsl(0, 0%, 96%);
+  --grey-light: hsl(0, 0%, 87%);
+  --grey: hsl(0, 0%, 71%);
+  --grey-dark: hsl(0, 0%, 32%);
+  --black: hsl(0, 0%, 0%);
+
+  /* Transition duration */
+  --transition-01: 0.1s; /* when you click the button */
+  --transition-03: 0.3s; /* Global transition duration*/
+  --transition-05: 0.5s; /* Especial */
+
+  --border-corner: 0.75rem;
+
+  /* GAPS */
+  --gap-12: 0.75rem;
+  --gap-14: 0.875rem;
+  --gap-16: 1rem;
+  --gap-24: 1.5rem;
+  --gap-32: 2rem;
+  --gap-36: 2.25rem;
+  --gap-48: 3rem;
+  --gap-64: 4rem;
+
+  /* FONT SIZE */
+  --font-12: 0.75rem;
+  --font-14: 0.875rem;
+  --font-16: 1rem;
+  --font-18: 1.125rem;
+  --font-24: 1.5rem;
+  --font-32: 2rem;
+  --font-36: 2.25rem;
+  --font-48: 3rem;
+  --font-64: 4rem;
+
+  --bg-color: var(--white);
+}
