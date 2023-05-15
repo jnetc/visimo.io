@@ -1,4 +1,5 @@
 export type LanguagesType = 'ru' | 'fi' | 'en';
+export type ThemeType = { theme: string; auto: boolean };
 
 export type IDType = { id: string };
 export type NameType = { name: string };

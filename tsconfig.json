@@ -30,6 +30,9 @@
       "@Hooks/*": [
         "./hooks/*"
       ],
+      "@Helpers/*": [
+        "./helpers/*"
+      ],
       "@Models/*": [
         "lib/*"
       ],

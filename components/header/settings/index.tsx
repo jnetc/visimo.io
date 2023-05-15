@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-
+// Components
 import SettingsMenu from './SettingsMenu';
 import OutsideClickHandler from './OutsideClickHandler';
 
@@ -8,7 +8,6 @@ export default function Header() {
   const refButton = useRef<HTMLButtonElement>(null);
 
   const toggleMenu = () => setIsOpen(!isOpen);
-
   const closeMenu = () => setIsOpen(false);
 
   return (
