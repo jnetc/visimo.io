@@ -14,10 +14,12 @@ export const setInitialTheme = `
         localStorage.setItem('theme', JSON.stringify({ theme: 'light', auto: true }));
         document.documentElement.dataset.theme = 'light';
       }
+    } else {
+
+      // Init theme onload
+      localStorage.setItem('theme', JSON.stringify({ theme: lS.theme, auto: lS.auto }));
+      document.documentElement.dataset.theme = lS.theme;
     }
-    // Init theme onload
-    localStorage.setItem('theme', JSON.stringify({ theme: lS.theme, auto: lS.auto }));
-    document.documentElement.dataset.theme = lS.theme;
   }
   getUserPreference();
 `;

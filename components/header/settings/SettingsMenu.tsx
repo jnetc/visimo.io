@@ -18,13 +18,13 @@ export default function SettingsMenu({ show, isOpenHandler }: Props) {
 
   const lS = JSON.parse(localStorage.getItem('theme')!);
   localStorageValue.current = lS;
+
   return (
     <>
       {show ? (
         <div className={show ? 'header__settings-menu show' : 'header__settings-menu'}>
           <h3 className="header__settings-title">{data?.navigation.title}</h3>
-          {localStorageValue.current ? <Theme themeProps={localStorageValue.current} /> : null}
-
+          {localStorageValue.current ? <Theme initTheme={localStorageValue.current} /> : null}
           <Langs />
           <button onPointerUp={() => isOpenHandler(false)}>close</button>
         </div>

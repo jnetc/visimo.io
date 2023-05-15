@@ -43,8 +43,8 @@
 }
 
 .header__settings-item {
-  display: grid;
-  grid-template-columns: 2rem auto 3rem auto;
+  min-width: 200px;
+  display: flex;
   align-items: center;
   column-gap: var(--gap-12);
   cursor: pointer;
@@ -104,6 +104,7 @@
 }
 
 .header__settings-name {
+  flex-grow: 1;
   font-size: var(--font-18);
   font-weight: 400;
   color: var(--grey-dark);
@@ -162,15 +163,6 @@ input[type='radio']:checked ~ .header__settings-radio-button .dot::before {
 }
 input[type='radio']:checked ~ .header__settings-name {
   color: var(--primary);
-}
-
-@keyframes drop-dot {
-  65% {
-    transform: translateY(3px);
-  }
-  100% {
-    transform: translateY(0);
-  }
 }
 
 @import url(./theme.css);

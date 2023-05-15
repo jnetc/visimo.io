@@ -16,19 +16,19 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --bg-color: var(--black);
   }
-}
+} */
 html[data-theme='dark'] {
   --bg-color: var(--black);
 }
-@media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: light) {
   :root {
     --bg-color: var(-white);
   }
-}
+} */
 html[data-theme='light'] {
   --bg-color: var(--white);
 }

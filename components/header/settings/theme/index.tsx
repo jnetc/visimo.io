@@ -1,102 +1,67 @@
-import { useEffect, useState, ChangeEvent } from 'react';
+import { useState, ChangeEvent } from 'react';
 // Component for liquid effect
 import { FluidSVGFilter } from '@Components/header/FluidSVGFilter';
+import RadioThemeButton from './RadioThemeButton';
+// Helper function
+import setTheme from '@Helpers/setTheme';
 
 const DARK_THEME = 'dark';
 const LIGHT_THEME = 'light';
 const AUTO_THEME = 'auto';
 
+import type { ThemeType, ThemeColorType } from '@Types';
+
 interface Props {
-  themeProps: { theme: string; auto: boolean };
+  initTheme: ThemeType;
 }
 
-export default function Theme({ themeProps }: Props) {
-  // const { switchTheme } = useStore();
-  const [themeState, setThemeState] = useState(themeProps);
+const themeArray = [
+  { name: 'light', auto: false },
+  { name: 'dark', auto: false },
+  { name: 'auto', auto: true },
+] as const;
+
+export type item = (typeof themeArray)[number];
+
+export default function Theme({ initTheme }: Props) {
+  const [themeState, setThemeState] = useState(initTheme);
 
   const selectTheme = (event: ChangeEvent<HTMLInputElement>) => {
-    const theme = event.target.value;
+    const theme = event.target.value as ThemeColorType | typeof AUTO_THEME;
+
+    console.log('select theme', theme);
 
     if (theme === AUTO_THEME) {
       const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)');
       if (darkModeQuery.matches) {
         // Код для использования темной темы цветов
-        localStorage.setItem('theme', JSON.stringify({ theme: 'dark', auto: true }));
-        document.documentElement.dataset.theme = 'dark';
+        setTheme('dark', true);
         setThemeState({ theme: 'dark', auto: true });
       } else {
         // Код для использования светлой темы цветов
-        localStorage.setItem('theme', JSON.stringify({ theme: 'light', auto: true }));
-        document.documentElement.dataset.theme = 'light';
+        setTheme('light', true);
         setThemeState({ theme: 'light', auto: true });
       }
       return;
     }
-    document.documentElement.dataset.theme = event.target.value;
-    localStorage.setItem('theme', JSON.stringify({ theme, auto: false }));
-    setThemeState({ theme, auto: false });
-    // console.log(x);
+    if (theme === DARK_THEME) {
+      setTheme(theme);
+      setThemeState({ theme, auto: false });
+    }
+    if (theme === LIGHT_THEME) {
+      setTheme(theme);
+      setThemeState({ theme, auto: false });
+    }
   };
 
-  useEffect(() => {
-    const lS = JSON.parse(localStorage.getItem('theme')!) as { theme: string; auto: boolean };
-    if (lS.auto) {
-      setThemeState({ theme: lS.theme, auto: lS.auto });
-      return;
-    }
-
-    setThemeState({ theme: lS.theme, auto: lS.auto });
-    document.documentElement.dataset.theme = lS.theme;
-  }, []);
+  const radioButtons = themeArray.map((theme: item) => {
+    return <RadioThemeButton key={theme.name} theme={theme} state={themeState} handler={selectTheme} />;
+  });
 
   return (
     <form className="header__settings-group theme" role="radiogroup" aria-label="Выбирите цветовую схему">
       <strong className="header__settings-group-title">Select theme</strong>
-      <label role="radio" htmlFor="light" className="header__settings-item" tabIndex={0}>
-        <input
-          type="radio"
-          name="theme"
-          value="light"
-          id="light"
-          onChange={selectTheme}
-          checked={themeState?.theme === LIGHT_THEME && !themeState.auto}
-        />
-        <span className="header__settings-radio-button" aria-hidden>
-          <span className="dot"></span>
-        </span>
-        <p className="header__settings-name">light</p>
-        <span className="header__settings-icon light" aria-hidden>
-          <span />
-        </span>
-      </label>
-      <label role="radio" htmlFor="dark" className="header__settings-item" tabIndex={0}>
-        <input
-          type="radio"
-          name="theme"
-          value="dark"
-          id="dark"
-          onChange={selectTheme}
-          checked={themeState?.theme === DARK_THEME && !themeState.auto}
-        />
-        <span className="header__settings-radio-button" aria-hidden>
-          <span className="dot"></span>
-        </span>
-        <p className="header__settings-name">dark</p>
-        <span className="header__settings-icon dark" aria-hidden>
-          <span />
-        </span>
-      </label>
-
-      <label role="radio" htmlFor="auto" className="header__settings-item" tabIndex={0}>
-        <input type="radio" name="theme" value="auto" id="auto" onChange={selectTheme} checked={themeState.auto} />
-        <span className="header__settings-radio-button" aria-hidden>
-          <span className="dot"></span>
-        </span>
-        <p className="header__settings-name">auto</p>
-        <span className="header__settings-icon auto" aria-hidden>
-          <span />
-        </span>
-      </label>
+      {radioButtons}
       <FluidSVGFilter />
     </form>
   );
