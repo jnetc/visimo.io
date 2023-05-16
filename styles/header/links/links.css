@@ -1,9 +1,0 @@
-.header__links {
-  display: flex;
-  gap: var(--gap-32);
-}
-.header__links a {
-  color: var(--grey-dark);
-  font-size: var(--font-18);
-  font-weight: 400;
-}

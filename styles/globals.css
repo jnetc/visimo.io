@@ -39,9 +39,9 @@ html[data-theme='light'] {
   box-sizing: border-box;
 }
 * {
-  /* margin: 0; */
-  /* padding: 0; */
-  /* font: inherit; */
+  margin: 0;
+  padding: 0;
+  font: inherit;
   text-size-adjust: none;
 }
 html {
@@ -56,6 +56,10 @@ body,
   min-height: 100vh;
 }
 #__next {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  /* grid-template-rows: min-content; */
+  column-gap: var(--gap-36);
   position: relative;
 }
 body {
@@ -100,6 +104,12 @@ button {
   border: none;
   background-color: transparent;
   cursor: pointer;
+}
+.main-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  /* grid-template-rows: min-content; */
+  column-gap: var(--gap-36);
 }
 
 h1,
@@ -158,6 +168,19 @@ svg.liquid-filter {
     margin-block-start: 5rem;
     row-gap: 10rem;
   }
+}
+
+/* SVG MAIN STYLE */
+.svg-grid {
+  stroke: var(--grey-light);
+}
+.svg-objects {
+  position: absolute;
+  z-index: -100;
+}
+.fill-svg {
+  height: 100%;
+  width: 100%;
 }
 
 /* apply back the draggable feature - exist only in Chromium and Safari */

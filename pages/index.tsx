@@ -1,5 +1,4 @@
 import type { NextPage, GetStaticProps, InferGetStaticPropsType } from 'next';
-import { useState } from 'react';
 // import Script from 'next/script';
 import dynamic from 'next/dynamic';
 
@@ -13,17 +12,15 @@ import { Store } from '@Hooks/useStore';
 // Types
 import type { IData } from '@Types';
 
-const Header = dynamic(() => import('@Components/header'), { ssr: false });
-// const HeroSection = dynamic(() => import('@Components/hero-section'), { ssr: false });
-// const HowWeWork = dynamic(() => import('@Components/how-we-work'), { ssr: false });
+const Navigation = dynamic(() => import('@Components/navigation'), { ssr: false });
+const HeroSection = dynamic(() => import('@Components/hero-section'), { ssr: false });
+const Features = dynamic(() => import('@Components/features-section'), { ssr: false });
 // const WhatWeOffer = dynamic(() => import('@Components/what-we-offer'), { ssr: false });
 // const OurLittleStory = dynamic(() => import('@Components/our-little-story'), { ssr: false });
 // const GetInTouch = dynamic(() => import('@Components/get-in-touch'), { ssr: false });
 // const Footer = dynamic(() => import('@Components/footer'), { ssr: false });
 
 const Home: NextPage = ({ data, language, languages }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  const [darkTheme, switchTheme] = useState(false);
-
   // const googleTokken = process.env.NEXT_PUBLIC_NEXT_GOOGLE_ANALYTICS_TOKEN as string;
 
   if (!data) {
@@ -36,7 +33,7 @@ const Home: NextPage = ({ data, language, languages }: InferGetStaticPropsType<t
   // const schema = createSchema(assignType);
 
   return (
-    <Store.Provider value={{ language, languages, data: assignType, darkTheme, switchTheme }}>
+    <Store.Provider value={{ language, languages, data: assignType }}>
       <Head>
         {/* <title>{assignType._site.globalSeo.fallbackSeo.title}</title> */}
         {/* <meta name="description" content={assignType._site.globalSeo.fallbackSeo.description} /> */}
@@ -84,7 +81,9 @@ const Home: NextPage = ({ data, language, languages }: InferGetStaticPropsType<t
           `,
         }}
       /> */}
-      <Header />
+      <Navigation />
+      <HeroSection />
+      <Features />
       <main>
         COntent
         {/* <HeroSection />

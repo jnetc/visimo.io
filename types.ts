@@ -18,15 +18,12 @@ export interface IArticleType extends TitleType {
   description: string;
 }
 
-export interface INavigationLink extends TitleType {
+export interface INavigationLink {
   links: Array<IDType & NameType & AnchorType>;
-  languages: Array<IDType & NameType>;
-  themes: Array<IDType & NameType>;
 }
 
-export interface IHeroSection extends Image {
-  greatings: string;
-  hideContent: boolean;
+export interface IHeroSection extends IArticleType {
+  button: string;
 }
 
 export interface IData {

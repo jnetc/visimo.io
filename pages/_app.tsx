@@ -4,7 +4,9 @@ import Head from 'next/head';
 import '@Styles/fonts.css';
 import '@Styles/variables.css';
 import '@Styles/globals.css';
-import '@Styles/header/header.css';
+import '@Styles/navigation/navigation.css';
+import '@Styles/hero-section/hero.css';
+import '@Styles/features-section/features.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

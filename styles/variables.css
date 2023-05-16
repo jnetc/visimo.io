@@ -42,4 +42,9 @@
   --font-36: 2.25rem;
   --font-48: 3rem;
   --font-64: 4rem;
+  --font-96: 7rem;
+
+  --corner-12: 0.75rem;
+
+  --button-settings: 3rem;
 }

@@ -1,0 +1,15 @@
+.navigation {
+  grid-column: 1 / -1;
+  height: max-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--gap-32);
+  padding-block: var(--gap-36);
+  position: relative;
+}
+
+@import url(./logo/logo.css);
+@import url(./links/links.css);
+@import url(./settings/settings-button.css);
+@import url(./settings/settings-menu.css);

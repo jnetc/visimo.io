@@ -19,33 +19,26 @@ export async function request({ query, variables }: { query: string; variables: 
 }
 
 export const query = gql`
-  query MyQuery($locale: SiteLocale) {
+  query ($locale: SiteLocale) {
     navigation(locale: $locale) {
       ...NavigationRecordFragment
     }
-    hero(locale: $locale) {
-      greatings
-      hideContent
-      image {
-        url
-      }
+    heroSection(locale: $locale) {
+      ...HeroSectionRecordFragment
     }
   }
 
   fragment NavigationRecordFragment on NavigationRecord {
-    title
     links {
       id
       name
       anchor
     }
-    languages {
-      id
-      name
-    }
-    themes {
-      id
-      name
-    }
+  }
+
+  fragment HeroSectionRecordFragment on HeroSectionRecord {
+    title
+    description
+    button
   }
 `;
