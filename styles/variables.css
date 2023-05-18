@@ -41,16 +41,17 @@
   --gap-64: 4rem;
 
   /* FONT SIZE */
-  --font-12: 0.75rem;
-  --font-14: 0.875rem;
-  --font-16: 1rem;
-  --font-18: 1.125rem;
-  --font-24: 1.5rem;
-  --font-32: 2rem;
-  --font-36: 2.25rem;
-  --font-48: 3rem;
-  --font-64: 4rem;
-  --font-96: 7rem;
+  --font-12: 0.75em;
+  --font-14: 0.875em;
+  --font-16: 1em;
+  --font-18: 1.125em;
+  --font-24: 1.5em;
+  --font-32: 2em;
+  --font-36: 2.25em;
+  --font-48: 3em;
+  --font-56: 3.5em;
+  --font-64: 4em;
+  --font-96: 7em;
 
   --corner-12: 0.75rem;
 

@@ -6,6 +6,7 @@
   align-items: center;
   gap: var(--gap-32);
   padding-block: var(--gap-36);
+  /* padding-inline: var(--gap-16); */
   position: relative;
 }
 

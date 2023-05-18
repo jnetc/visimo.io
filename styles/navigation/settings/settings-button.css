@@ -1,3 +1,6 @@
+.navigation__settings {
+  position: relative;
+}
 .navigation__settings-button {
   display: grid;
   place-content: center;

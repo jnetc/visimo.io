@@ -7,3 +7,9 @@
   font-size: var(--font-18);
   font-weight: 400;
 }
+
+@media screen and (max-width: 960px) {
+  .navigation__links {
+    display: none;
+  }
+}

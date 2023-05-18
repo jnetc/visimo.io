@@ -1,0 +1,210 @@
+.hero-section__header {
+  grid-column: 1 / 7;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  column-gap: var(--gap-36);
+  row-gap: var(--gap-48);
+  justify-items: start;
+  position: relative;
+}
+.hero-section__title {
+  grid-column: 3 / 7;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  color: var(--grey-dark);
+  position: relative;
+  font-weight: bold;
+  font-size: clamp(var(--font-48), 8vw, var(--font-96));
+  line-height: 1;
+  text-transform: uppercase;
+}
+.hero-section__title .title-color {
+  color: var(--primary);
+}
+
+.hero-section__desc {
+  grid-column: 3 / 7;
+  position: relative;
+  color: var(--grey-dark);
+  font-weight: 400;
+  font-size: clamp(var(--font-18), 5vw, var(--font-24));
+  padding-block-end: var(--gap-16);
+  line-height: 160%;
+}
+.hero-section__action {
+  grid-column: 3 / 7;
+  position: relative;
+}
+
+/* SVG ELEMENTS */
+
+.hero-section__action-arrow,
+.hero-section__title-arrow {
+  stroke: var(--black);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  position: absolute;
+  z-index: -1;
+}
+.hero-section__title-arrow {
+  height: 75%;
+  width: 6rem;
+  top: 50%;
+  left: calc(clamp(4.5rem, 8vw, 6rem) * -1);
+  transform: translateY(-50%);
+}
+
+.hero-section__action-arrow {
+  width: 7rem;
+  top: -3.5rem;
+  right: -10rem;
+}
+
+.hero-section__grid-above-title {
+  top: -4.5rem;
+  left: -7.5rem;
+}
+.hero-section__grid-under-title {
+  bottom: -3rem;
+  right: -12rem;
+}
+
+.hero-section__action-rect {
+  bottom: -8rem;
+  inset-inline: 50%;
+}
+.hero-section__desc-cross {
+  top: -2rem;
+  right: 0rem;
+}
+
+.hero-section__title-left-triangle {
+  top: 50%;
+  left: -20rem;
+}
+.hero-section__title-top-cross {
+  top: -4rem;
+  left: -4rem;
+}
+.hero-section__title-letter {
+  width: 6rem;
+  top: -30%;
+  left: -15rem;
+  transform: rotateZ(-20deg);
+}
+.hero-section__title-top-circle {
+  top: 1rem;
+  right: -11rem;
+}
+.hero-section__title-top-circle-lines {
+  top: -1rem;
+  right: -12rem;
+  z-index: -200;
+}
+
+@media screen and (max-width: 960px) {
+  .hero-section__header {
+    grid-column: 1 / -1;
+  }
+  .hero-section__title {
+    grid-column: 2 / 7;
+    font-size: clamp(var(--font-56), 12vw, var(--font-96));
+  }
+  .hero-section__desc {
+    grid-column: 2 / 7;
+    /* max-width: 40ch; */
+  }
+
+  .hero-section__action {
+    grid-column: 2 / 7;
+    position: relative;
+  }
+
+  /* SVG ELEMENTS */
+  .hero-section__title-arrow {
+    left: calc(clamp(4.5rem, 12vw, 6rem) * -1);
+  }
+  .hero-section__title-top-circle {
+    right: 1rem;
+    display: none;
+  }
+  .hero-section__title-top-circle-lines {
+    right: 1rem;
+    display: none;
+  }
+  .hero-section__title-left-triangle {
+    display: none;
+  }
+  .hero-section__title-letter {
+    width: 5rem;
+    top: -35%;
+    left: -9rem;
+    transform: rotateZ(-20deg);
+  }
+}
+@media screen and (max-width: 559px) {
+  .hero-section__title {
+    grid-column: 2 / 7;
+    line-height: 1.2;
+  }
+  .hero-section__desc {
+    grid-column: 1 / 7;
+  }
+
+  .hero-section__action {
+    grid-column: 1 / 7;
+  }
+  .hero-section__action-arrow {
+    width: 5.5rem;
+    top: -2.5rem;
+    right: -6rem;
+  }
+  /* SVG ELEMENTS */
+
+  .hero-section__grid-above-title {
+    top: 0rem;
+    left: -3.5rem;
+    transform: scale(1.3);
+  }
+  .hero-section__grid-under-title {
+    display: none;
+  }
+  .hero-section__title-top-cross {
+    top: -4rem;
+    left: -4rem;
+    transform: scale(0.7);
+  }
+  .hero-section__title-letter {
+    display: none;
+  }
+  .hero-section__title-top-cross path:last-child {
+    stroke-width: 1.5px;
+  }
+
+  .hero-section__title-top-circle {
+    top: -5.5rem;
+    display: none;
+  }
+  .hero-section__title-top-circle-lines {
+    top: -8rem;
+    display: none;
+  }
+}
+
+@media screen and (max-width: 374px) {
+  .hero-section__action-arrow {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .hero-section__title {
+    grid-column: 2 / 7;
+    font-size: var(--font-36);
+  }
+  .hero-section__illustration-mob {
+    display: none;
+  }
+}

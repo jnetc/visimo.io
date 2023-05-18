@@ -2,9 +2,7 @@ import { SVGGrid7Col } from '@Components/background-objects/SVGGrid7Col';
 import { SVGCross } from '@Components/background-objects/SVGCross';
 import { SVGRectangle } from '@Components/background-objects/SVGRectangle';
 import { SVGTriangle } from '@Components/background-objects/SVGTriangle';
-import { SVGCircle } from '@Components/background-objects/SVGCircle';
 import { SVGTrinagleLines } from '@Components/background-objects/SVGTriangleLines';
-import { SVGCircleLines } from '@Components/background-objects/SVGCircleLines';
 
 export default function HeroIllustration() {
   return (
@@ -39,19 +37,8 @@ export default function HeroIllustration() {
         size="bg-geometric-size-96"
         position="hero-section__illus-bottom-triangle-lines"
       />
-      <SVGCircle
-        fill="bg-geometric-fill-primary"
-        size="bg-geometric-size-48"
-        stroke="bg-geometric-stroke-48"
-        position="hero-section__illus-top-circle"
-      />
-      <SVGCircleLines
-        stroke="bg-lines-stroke-main"
-        size="bg-geometric-size-96"
-        position="hero-section__illus-top-circle-lines"
-      />
 
-      <svg width="668" height="673" viewBox="0 0 668 673" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg width="668" height="673" viewBox="0 0 668 673" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
         <path
           d="M644.692 463.98L576.905 656.509C575.356 660.907 570.538 663.216 566.139 661.668L373.602 593.878C369.204 592.33 366.895 587.511 368.443 583.113L388.238 526.89C389.226 524.113 387.771 521.091 384.999 520.115C384.131 519.809 383.228 519.738 382.381 519.885L382.315 519.804C377.349 519.76 372.3 518.769 367.407 516.743C348.969 509.106 338.937 488.566 344.277 469.337C350.523 446.839 374.33 434.681 395.975 442.302C400.508 443.898 404.573 446.229 408.082 449.121L408.09 449.124C408.556 449.497 409.093 449.799 409.691 450.01C412.455 450.983 415.496 449.525 416.469 446.762L436.247 390.59C437.79 386.18 442.609 383.871 447.007 385.42L503.474 405.301C505.504 406.016 506.231 408.525 504.875 410.198C501.326 414.573 498.592 419.757 496.991 425.623C491.555 445.527 501.759 466.762 520.687 474.971C543.234 484.737 568.917 473.249 576.933 450.483C578.57 445.832 579.331 441.091 579.316 436.426C579.31 434.265 581.434 432.75 583.473 433.467L639.536 453.206C643.934 454.755 646.251 459.576 644.7 463.983L644.692 463.98Z"
           fill="#FFB133"
