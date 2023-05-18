@@ -1,12 +1,14 @@
 :root {
   color-scheme: dark light;
   --primary: hsl(230, 98%, 60%);
+
   --primary-dark: hsl(227, 71%, 39%);
   --secondary: hsl(37, 100%, 60%);
   --secondary-dark: hsl(34, 85%, 45%);
   --success: hsl(119, 71%, 60%);
   --success-dark: hsl(119, 71%, 39%);
   --error: hsl(0, 71%, 60%);
+  --error-dark: hsl(0, 71%, 39%);
 
   --white: hsl(0, 0%, 100%);
   --white-grey: hsl(0, 0%, 96%);
@@ -14,6 +16,12 @@
   --grey: hsl(0, 0%, 71%);
   --grey-dark: hsl(0, 0%, 32%);
   --black: hsl(0, 0%, 0%);
+
+  /* For Alfa colors */
+  --alfa-primary: 230 98% 60%;
+  --alfa-secondary: 37 100% 60%;
+  --alfa-success: 119 71% 60%;
+  --alfa-error: 0 71% 60%;
 
   /* Transition duration */
   --transition-01: 0.1s; /* when you click the button */

@@ -170,18 +170,7 @@ svg.liquid-filter {
   }
 }
 
-/* SVG MAIN STYLE */
-.svg-grid {
-  stroke: var(--grey-light);
-}
-.svg-objects {
-  position: absolute;
-  z-index: -100;
-}
-.fill-svg {
-  height: 100%;
-  width: 100%;
-}
+@import url(./background-objects/svg.css);
 
 /* apply back the draggable feature - exist only in Chromium and Safari */
 /* :where([draggable='true']) {

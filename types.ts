@@ -31,3 +31,31 @@ export interface IData {
   navigation: INavigationLink;
   heroSection: IHeroSection;
 }
+
+export type TypeSVGObjSize =
+  | 'bg-geometric-size-32'
+  | 'bg-geometric-size-48'
+  | 'bg-geometric-size-56'
+  | 'bg-geometric-size-64'
+  | 'bg-geometric-size-80'
+  | 'bg-geometric-size-96'
+  | 'bg-geometric-size-192';
+export type TypeSVGObjStroke = 'bg-geometric-stroke-32' | 'bg-geometric-stroke-48';
+export type TypeSVGObjFill = 'bg-geometric-fill-primary' | 'bg-geometric-fill-secondary';
+type TypeSVGLinesStroke = 'bg-lines-stroke-main' | 'bg-lines-stroke-alt';
+
+export interface ISVGGeometricObjects {
+  fill: TypeSVGObjFill;
+  size: TypeSVGObjSize;
+  stroke: TypeSVGObjStroke;
+  position: string;
+}
+export interface ISVGLetterObjects {
+  size: string;
+  position: string;
+}
+export interface ISVGLinesObjects {
+  size: TypeSVGObjSize;
+  stroke: TypeSVGLinesStroke;
+  position: string;
+}
