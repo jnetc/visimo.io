@@ -12,7 +12,7 @@ export default function HeroActionButton() {
       <ActionButtonArrow />
       <SVGRectangle
         position="hero-section__action-rect"
-        fill="bg-geometric-fill-secondary"
+        fill="bg-geometric-fill-primary"
         size="bg-geometric-size-32"
         stroke="bg-geometric-stroke-32"
       />

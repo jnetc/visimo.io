@@ -1,8 +1,7 @@
 .hero-section {
   width: 100%;
-  height: calc(100vh - (var(--gap-36) * 2 + var(--button-settings)));
+  padding-block: 8rem;
   justify-items: center;
-  align-items: center;
   position: relative;
 }
 
@@ -10,32 +9,50 @@
 .hero-section__span-circle {
   width: 140px;
   aspect-ratio: 1;
-  position: absolute;
-  bottom: -22rem;
-  left: -12rem;
-  background-color: var(--primary);
+  position: relative;
+  margin-block-start: 7rem;
+  bottom: 0rem;
+  left: 4rem;
+  background-color: var(--secondary);
   border-radius: 50%;
   z-index: -200;
 }
 .hero-section__span-circle-lines {
-  bottom: -20rem;
-  left: -16rem;
-  transform: rotateZ(110deg);
+  top: -2rem;
+  left: -2rem;
   stroke-width: 0.5px;
+  transform: scale(1.2) rotateZ(110deg);
 }
-.hero-section__illus-right-cross {
-  top: 30vh;
+.hero-section__puzzle-right-cross {
+  top: 25rem;
   right: 1rem;
 }
-@media screen and (max-width: 1200px) {
-  .hero-section__illus-right-cross {
+.hero-section__puzzle-yellow {
+  display: none;
+}
+
+@media screen and (max-width: 1800px) {
+  .hero-section__puzzle-right-cross {
     display: none;
   }
 }
 @media screen and (max-width: 960px) {
   .hero-section {
-    height: 100vh;
     contain: paint;
+  }
+  .hero-section__span-circle,
+  .hero-section__span-circle-lines {
+    display: none;
+  }
+
+  .hero-section__puzzle-yellow {
+    display: block;
+    width: clamp(7rem, 38vw, 15rem);
+    aspect-ratio: 1;
+    position: relative;
+    margin-block-start: 7rem;
+    bottom: 0rem;
+    left: 2rem;
   }
 }
 

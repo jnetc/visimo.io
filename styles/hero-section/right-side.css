@@ -1,59 +1,62 @@
-.hero-section__illustration {
-  grid-column: 7 / 13;
-  width: clamp(25rem, 30vw, 35rem);
+.hero-section__puzzle {
+  grid-column: 8 / 13;
+  height: fit-content;
   position: relative;
+  justify-self: start;
 }
-.hero-section__illustration-mob {
+.hero-section__puzzle-blue {
   display: none;
 }
 
 /* SVG ELEMENTS */
-.hero-section__grid-illustration {
+.hero-section__grid-puzzle {
   top: 11rem;
   left: 11rem;
   transform: translate(-30px, 30px);
 }
-.hero-section__illus-bottom-cross {
+.hero-section__puzzle-bottom-cross {
   bottom: -5rem;
   left: 8rem;
 }
-.hero-section__illus-top-rect {
+.hero-section__puzzle-top-rect {
   top: -7rem;
   right: 8rem;
 }
-.hero-section__illus-bottom-triangle {
+.hero-section__puzzle-bottom-triangle {
   bottom: -10rem;
   right: 1.5rem;
 }
-.hero-section__illus-bottom-triangle-lines {
+.hero-section__puzzle-bottom-triangle-lines {
   bottom: -11rem;
   right: 1.4rem;
   z-index: -200;
 }
 
 @media screen and (max-width: 960px) {
-  .hero-section__illustration {
+  .hero-section__puzzle {
     display: none;
   }
-  .hero-section__illustration-mob {
-    width: clamp(8rem, 25vw, 15rem);
+  .hero-section__puzzle-blue {
+    width: clamp(7rem, 38vw, 15rem);
     aspect-ratio: 1;
     display: block;
     grid-column: 1 / -1;
     position: absolute;
-    top: 15vh;
+    top: 0;
     right: -5rem;
   }
-  .hero-section__illus-bottom-cross,
-  .hero-section__illus-top-rect,
-  .hero-section__illus-bottom-triangle,
-  .hero-section__illus-bottom-triangle-lines {
+  .hero-section__puzzle-bottom-cross,
+  .hero-section__puzzle-top-rect,
+  .hero-section__puzzle-bottom-triangle,
+  .hero-section__puzzle-bottom-triangle-lines {
     display: none;
   }
 }
+@media screen and (max-width: 410px) {
+}
 
 @media screen and (max-width: 300px) {
-  .hero-section__illustration-mob {
-    display: none;
+  .hero-section__puzzle-blue {
+    right: -2rem;
   }
 }

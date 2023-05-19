@@ -1,12 +1,14 @@
 .button {
   --alfa: 0.5;
+
+  width: 100%;
   position: relative;
-  padding-inline: var(--gap-36);
-  padding-block: var(--gap-16);
+  padding: var(--gap-16) var(--gap-36);
   border-radius: var(--corner-12);
   border: 2px solid transparent;
   font-size: clamp(var(--font-24), 2vw, var(--font-32));
   font-weight: bold;
+  text-align: center;
   text-transform: uppercase;
   transition: transform var(--transition-01) ease-in-out, box-shadow var(--transition-01) ease-in-out;
   user-select: none;
