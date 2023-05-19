@@ -4,6 +4,7 @@ import Head from 'next/head';
 import '@Styles/fonts.css';
 import '@Styles/variables.css';
 import '@Styles/globals.css';
+import '@Styles/buttons.css';
 import '@Styles/navigation/navigation.css';
 import '@Styles/hero-section/hero.css';
 import '@Styles/features-section/features.css';

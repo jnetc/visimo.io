@@ -5,6 +5,7 @@ import HeroIllustration from './HeroIllustration';
 import { SVGCircleLines } from '@Components/background-objects/SVGCircleLines';
 import { SVGCircle } from '@Components/background-objects/SVGCircle';
 import HeroIllustrationMob from './HeroIllustrationMob';
+import { SVGCross } from '@Components/background-objects/SVGCross';
 
 export default function HeroSection() {
   return (
@@ -33,6 +34,12 @@ export default function HeroSection() {
       </header>
       <HeroIllustration />
       <HeroIllustrationMob />
+      <SVGCross
+        fill="bg-geometric-fill-secondary"
+        size="bg-geometric-size-32"
+        stroke="bg-geometric-stroke-32"
+        position="hero-section__illus-right-cross"
+      />
     </section>
   );
 }

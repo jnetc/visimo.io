@@ -8,7 +8,7 @@ export default function HeroActionButton() {
 
   return (
     <div className="hero-section__action">
-      <button className="button">{data!.heroSection.button}</button>
+      <button className="button primary-button">{data!.heroSection.button}</button>
       <ActionButtonArrow />
       <SVGRectangle
         position="hero-section__action-rect"

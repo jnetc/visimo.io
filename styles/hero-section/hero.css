@@ -4,32 +4,9 @@
   justify-items: center;
   align-items: center;
   position: relative;
-  contain: layout;
-}
-
-.button {
-  --alfa: 0.5;
-  position: relative;
-  padding-inline: var(--gap-36);
-  padding-block: var(--gap-16);
-  background-color: var(--primary-dark);
-  border-radius: var(--corner-12);
-  color: var(--white);
-  font-size: clamp(var(--font-24), 2vw, var(--font-32));
-  font-weight: bold;
-  text-transform: uppercase;
-  box-shadow: 0 2.5rem 2rem -28px hsl(var(--alfa-primary) / 0.4);
-  transition: transform var(--transition-01) ease-in-out, box-shadow var(--transition-01) ease-in-out;
-  user-select: none;
-}
-
-.button:active {
-  transform: translateY(0.275rem) scale(0.97);
-  box-shadow: 0 1rem 1rem -15px hsl(var(--alfa-primary) / 0.8);
 }
 
 /* SVG ELEMENTS */
-
 .hero-section__span-circle {
   width: 140px;
   aspect-ratio: 1;
@@ -46,8 +23,20 @@
   transform: rotateZ(110deg);
   stroke-width: 0.5px;
 }
-
+.hero-section__illus-right-cross {
+  top: 30vh;
+  right: 1rem;
+}
+@media screen and (max-width: 1200px) {
+  .hero-section__illus-right-cross {
+    display: none;
+  }
+}
 @media screen and (max-width: 960px) {
+  .hero-section {
+    height: 100vh;
+    contain: paint;
+  }
 }
 
 @import url(./left-side.css);

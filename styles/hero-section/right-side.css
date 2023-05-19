@@ -6,12 +6,6 @@
 .hero-section__illustration-mob {
   display: none;
 }
-/* .hero-section__illustration-mob {
-  grid-column: 1 / -1;
-  position: absolute;
-  top: 0;
-  left: 0;
-} */
 
 /* SVG ELEMENTS */
 .hero-section__grid-illustration {
@@ -23,13 +17,9 @@
   bottom: -5rem;
   left: 8rem;
 }
-.hero-section__illus-right-cross {
-  top: 15rem;
-  right: -1.5rem;
-}
 .hero-section__illus-top-rect {
   top: -7rem;
-  right: 8vw;
+  right: 8rem;
 }
 .hero-section__illus-bottom-triangle {
   bottom: -10rem;
@@ -54,18 +44,9 @@
     top: 15vh;
     right: -5rem;
   }
-  .hero-section__illus-bottom-cross {
-    display: none;
-  }
-  .hero-section__illus-right-cross {
-    display: none;
-  }
-  .hero-section__illus-top-rect {
-    display: none;
-  }
-  .hero-section__illus-bottom-triangle {
-    display: none;
-  }
+  .hero-section__illus-bottom-cross,
+  .hero-section__illus-top-rect,
+  .hero-section__illus-bottom-triangle,
   .hero-section__illus-bottom-triangle-lines {
     display: none;
   }

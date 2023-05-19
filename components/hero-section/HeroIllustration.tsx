@@ -14,12 +14,6 @@ export default function HeroIllustration() {
         stroke="bg-geometric-stroke-32"
         position="hero-section__illus-bottom-cross"
       />
-      <SVGCross
-        fill="bg-geometric-fill-secondary"
-        size="bg-geometric-size-32"
-        stroke="bg-geometric-stroke-32"
-        position="hero-section__illus-right-cross"
-      />
       <SVGRectangle
         fill="bg-geometric-fill-secondary"
         size="bg-geometric-size-32"
