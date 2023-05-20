@@ -26,10 +26,19 @@ export interface IHeroSection extends IArticleType {
   button: string;
 }
 
+export interface IFeature extends IArticleType {
+  iconid: string;
+}
+export interface IFeatureSection extends IArticleType {
+  label: string;
+  features: Array<IFeature>;
+}
+
 export interface IData {
   // _site: SEO;
   navigation: INavigationLink;
   heroSection: IHeroSection;
+  featureSection: IFeatureSection;
 }
 
 export type TypeSVGObjSize =

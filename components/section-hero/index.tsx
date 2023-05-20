@@ -10,23 +10,22 @@ import { SVGCross } from '@Components/background-objects/SVGCross';
 
 export default function HeroSection() {
   return (
-    <section className="hero-section main-grid">
-      <header className="hero-section__header">
-        <HeroTitle />
-        <HeroDesc />
-        <HeroActionButton />
-        <SVGCircle
-          fill="bg-geometric-fill-primary"
-          size="bg-geometric-size-48"
-          stroke="bg-geometric-stroke-48"
-          position="hero-section__title-top-circle"
-        />
-        <SVGCircleLines
-          stroke="bg-lines-stroke-main"
-          size="bg-geometric-size-96"
-          position="hero-section__title-top-circle-lines"
-        />
-      </header>
+    <header className="hero-section main-grid">
+      <HeroTitle />
+      <HeroDesc />
+      <HeroActionButton />
+      <SVGCircle
+        fill="bg-geometric-fill-primary"
+        size="bg-geometric-size-48"
+        stroke="bg-geometric-stroke-48"
+        position="hero-section__title-top-circle"
+      />
+      <SVGCircleLines
+        stroke="bg-lines-stroke-main"
+        size="bg-geometric-size-96"
+        position="hero-section__title-top-circle-lines"
+      />
+      {/* <header className="hero-section__header"></header> */}
       <HeroPuzzle />
       <HeroPuzzleBlue />
       <SVGCross
@@ -43,6 +42,6 @@ export default function HeroSection() {
           position="hero-section__span-circle-lines"
         />
       </span>
-    </section>
+    </header>
   );
 }

@@ -1,18 +1,23 @@
 .hero-section {
   width: 100%;
-  padding-block: 8rem;
+  padding-block: var(--gap-128);
   justify-items: center;
   position: relative;
 }
 
 /* SVG ELEMENTS */
+.hero-section__span-circle,
+.hero-section__puzzle-yellow {
+  grid-column: 1 / -1;
+  grid-row: 4;
+  justify-self: start;
+  position: relative;
+  margin-block-start: 7rem;
+}
+
 .hero-section__span-circle {
   width: 140px;
   aspect-ratio: 1;
-  position: relative;
-  margin-block-start: 7rem;
-  bottom: 0rem;
-  left: 4rem;
   background-color: var(--secondary);
   border-radius: 50%;
   z-index: -200;
@@ -23,6 +28,7 @@
   stroke-width: 0.5px;
   transform: scale(1.2) rotateZ(110deg);
 }
+
 .hero-section__puzzle-right-cross {
   top: 25rem;
   right: 1rem;
@@ -48,11 +54,8 @@
   .hero-section__puzzle-yellow {
     display: block;
     width: clamp(7rem, 38vw, 15rem);
-    aspect-ratio: 1;
-    position: relative;
-    margin-block-start: 7rem;
     bottom: 0rem;
-    left: 2rem;
+    left: -3rem;
   }
 }
 

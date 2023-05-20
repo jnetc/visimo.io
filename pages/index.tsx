@@ -13,12 +13,11 @@ import { Store } from '@Hooks/useStore';
 import type { IData } from '@Types';
 
 const Navigation = dynamic(() => import('@Components/navigation'), { ssr: false });
-const HeroSection = dynamic(() => import('@Components/hero-section'), { ssr: false });
-const Features = dynamic(() => import('@Components/features-section'), { ssr: false });
-// const WhatWeOffer = dynamic(() => import('@Components/what-we-offer'), { ssr: false });
-// const OurLittleStory = dynamic(() => import('@Components/our-little-story'), { ssr: false });
-// const GetInTouch = dynamic(() => import('@Components/get-in-touch'), { ssr: false });
-// const Footer = dynamic(() => import('@Components/footer'), { ssr: false });
+const HeroSection = dynamic(() => import('@Components/section-hero'), { ssr: false });
+const Features = dynamic(() => import('@Components/section-features'), { ssr: false });
+const FAQ = dynamic(() => import('@Components/section-faq'), { ssr: false });
+const Testimonials = dynamic(() => import('@Components/section-testimonials'), { ssr: false });
+const Footer = dynamic(() => import('@Components/footer'), { ssr: false });
 
 const Home: NextPage = ({ data, language, languages }: InferGetStaticPropsType<typeof getStaticProps>) => {
   // const googleTokken = process.env.NEXT_PUBLIC_NEXT_GOOGLE_ANALYTICS_TOKEN as string;
@@ -82,17 +81,13 @@ const Home: NextPage = ({ data, language, languages }: InferGetStaticPropsType<t
         }}
       /> */}
       <Navigation />
-      <HeroSection />
-      <Features />
       <main>
-        COntent
-        {/* <HeroSection />
-        <HowWeWork />
-        <WhatWeOffer />
-        <OurLittleStory />
-        <GetInTouch /> */}
+        <HeroSection />
+        <Features />
+        <FAQ />
+        <Testimonials />
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </Store.Provider>
   );
 };

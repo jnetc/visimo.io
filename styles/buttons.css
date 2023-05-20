@@ -4,12 +4,9 @@
   position: relative;
   padding: var(--gap-16) var(--gap-36);
   border-radius: var(--corner-12);
-  border: 2px solid transparent;
   font-size: clamp(var(--font-24), 2vw, var(--font-32));
-  font-weight: bold;
   text-align: center;
   transition: transform var(--transition-01) ease-in-out, box-shadow var(--transition-01) ease-in-out;
-  user-select: none;
 }
 
 .button:active {

@@ -26,6 +26,9 @@ export const query = gql`
     heroSection(locale: $locale) {
       ...HeroSectionRecordFragment
     }
+    featureSection(locale: $locale) {
+      ...FeatureSectionRecordFragment
+    }
   }
 
   fragment NavigationRecordFragment on NavigationRecord {
@@ -40,5 +43,16 @@ export const query = gql`
     title
     description
     button
+  }
+
+  fragment FeatureSectionRecordFragment on FeatureSectionRecord {
+    label
+    title
+    description
+    features {
+      title
+      description
+      iconid
+    }
   }
 `;
