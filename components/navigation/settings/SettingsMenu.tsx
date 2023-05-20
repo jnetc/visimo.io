@@ -23,10 +23,12 @@ export default function SettingsMenu({ show, isOpenHandler }: Props) {
     <>
       {show ? (
         <div className={show ? 'navigation__settings-menu show' : 'navigation__settings-menu'}>
-          <h3 className="navigation__settings-title">{locale[language]}</h3>
+          <h3 className="navigation__settings-title">{locale.title[language]}</h3>
           {localStorageValue.current ? <Theme initTheme={localStorageValue.current} /> : null}
           <Langs />
-          {/* <button onPointerUp={() => isOpenHandler(false)}>close</button> */}
+          <button className="button button-menu" onPointerUp={() => isOpenHandler(false)}>
+            {locale.button[language]}
+          </button>
         </div>
       ) : null}
     </>
@@ -34,7 +36,14 @@ export default function SettingsMenu({ show, isOpenHandler }: Props) {
 }
 
 const locale = {
-  en: 'Page settings',
-  ru: 'Настройки страницы',
-  fi: 'Sivun asetukset',
+  title: {
+    en: 'Page settings',
+    ru: 'Настройки страницы',
+    fi: 'Sivun asetukset',
+  },
+  button: {
+    en: 'Close',
+    ru: 'Закрыть',
+    fi: 'Sulje',
+  },
 };

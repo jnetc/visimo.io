@@ -1,6 +1,5 @@
 .button {
   --alfa: 0.5;
-
   width: 100%;
   position: relative;
   padding: var(--gap-16) var(--gap-36);
@@ -9,7 +8,6 @@
   font-size: clamp(var(--font-24), 2vw, var(--font-32));
   font-weight: bold;
   text-align: center;
-  text-transform: uppercase;
   transition: transform var(--transition-01) ease-in-out, box-shadow var(--transition-01) ease-in-out;
   user-select: none;
 }
@@ -18,18 +16,19 @@
   transform: translateY(0.275rem) scale(0.97);
 }
 
-.button.primary-button {
+.button.button-primary {
   background-color: var(--primary-dark);
   color: var(--white);
+  text-transform: uppercase;
   box-shadow: 0 2.5rem 2rem -28px hsl(var(--alfa-primary) / 0.4);
 }
-.button.primary-button:active,
-.button.second-button:active {
+.button.button-primary:active {
   box-shadow: 0 1rem 1rem -15px hsl(var(--alfa-primary) / 0.8);
 }
-.button.second-button {
+.button.button-menu {
   background-color: var(--white);
   color: var(--primary);
   border-color: var(--primary);
-  box-shadow: 0 2.5rem 2rem -28px hsl(var(--alfa-primary) / 0.4);
+  padding: var(--gap-12) var(--gap-36);
+  font-size: clamp(var(--font-16), 2vw, var(--font-18));
 }
