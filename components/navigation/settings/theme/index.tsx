@@ -33,8 +33,6 @@ export default function Theme({ initTheme }: Props) {
   const selectTheme = (event: ChangeEvent<HTMLInputElement>) => {
     const theme = event.target.id as ThemeColorType | typeof AUTO_THEME;
 
-    console.log('select theme', theme);
-
     if (theme === AUTO_THEME) {
       const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)');
       if (darkModeQuery.matches) {

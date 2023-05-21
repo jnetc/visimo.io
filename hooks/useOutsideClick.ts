@@ -4,7 +4,6 @@ export const useOutsideClick = (ref: RefObject<HTMLDivElement | null>, callback:
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
       const el = e.target as Element;
-      console.log(el);
 
       if (ref.current && !ref.current.contains(el)) {
         callback();

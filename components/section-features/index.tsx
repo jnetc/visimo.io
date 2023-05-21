@@ -1,6 +1,7 @@
 import { useStore } from '@Hooks/useStore';
 // Components
 import Feature from './Feature';
+import { SVGGrid7Col } from '@Components/background-objects/SVGGrid7Col';
 
 export default function FeaturesSection() {
   const { data } = useStore();
@@ -31,7 +32,10 @@ export default function FeaturesSection() {
   return (
     <section id="features" className="features-section main-grid">
       <span className="section-label">{data?.featureSection.label}</span>
-      <h2 className="section-title">{splittingTitle}</h2>
+      <h2 className="section-title">
+        {splittingTitle}
+        <SVGGrid7Col position="features-section__grid-features" />
+      </h2>
       <p className="section-description">{data?.featureSection.description}</p>
       {features}
     </section>

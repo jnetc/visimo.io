@@ -25,7 +25,6 @@ export default function HeroSection() {
         size="bg-geometric-size-96"
         position="hero-section__title-top-circle-lines"
       />
-      {/* <header className="hero-section__header"></header> */}
       <HeroPuzzle />
       <HeroPuzzleBlue />
       <SVGCross

@@ -49,6 +49,8 @@
 .theme input {
   position: absolute;
   visibility: hidden;
+  width: 0;
+  height: 0;
 }
 
 .navigation__settings-icon {
@@ -127,12 +129,10 @@
   isolation: isolate;
 }
 .dot {
-  display: flex;
   width: var(--dot-width);
   aspect-ratio: 1;
   position: absolute;
-  top: -2px;
-  left: -2px;
+  inset: -2px;
   border-radius: 50%;
   border: inherit;
   filter: url('#goo');

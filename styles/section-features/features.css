@@ -57,10 +57,17 @@
 }
 .features-section__title {
   color: var(--primary-dark);
-  font-size: var(--font-32);
+  font-size: clamp(var(--font-24), 4vw, var(--font-32));
   padding-block-end: var(--gap-32);
 }
 .features-section__desc {
+  font-size: clamp(var(--font-16), 2vw, var(--font-18));
+}
+
+.features-section__grid-features {
+  width: 260px;
+  top: -50%;
+  left: 2rem;
 }
 
 @media screen and (max-width: 960px) {

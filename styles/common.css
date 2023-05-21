@@ -23,7 +23,7 @@ svg.liquid-filter {
 }
 .section-label,
 .section-description {
-  font-size: var(--font-24);
+  font-size: clamp(var(--font-18), 2vw, var(--font-24));
 }
 .section-label {
   color: var(--grey);
@@ -32,8 +32,9 @@ svg.liquid-filter {
 }
 .section-title {
   max-width: 750px;
-  font-size: var(--font-64);
+  font-size: clamp(var(--font-36), 6vw, var(--font-64));
   line-height: 1.1;
+  position: relative;
 }
 .title-blue-color {
   color: var(--primary);
