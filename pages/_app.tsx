@@ -21,22 +21,22 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="MobileOptimized" content="width" />
 
         {/* Robots rules */}
-        <meta name="robots" content="index,follow" />
-        <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        {/* <meta name="robots" content="index,follow" />
+        <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1" /> */}
 
         {/* App PWA */}
         <meta name="application-name" content="visimo.io" />
         <meta name="mobile-web-app-capable" content="yes" />
-        <link rel="manifest" href="/manifest.webmanifest" />
+        {/* <link rel="manifest" href="/manifest.webmanifest" /> */}
 
         {/* Theme */}
         <meta name="theme-color" media="(prefers-color-scheme: light)" content="hsl(32, 100%, 95%)" />
         <meta name="theme-color" media="(prefers-color-scheme: dark)" content="hsl(0, 0%, 22%)" />
 
         {/* Links */}
-        <link rel="alternate" href="https://www.visimo.io/" hrefLang="fi" />
+        {/* <link rel="alternate" href="https://www.visimo.io/" hrefLang="fi" />
         <link rel="alternate" href="https://www.visimo.io/ru/" hrefLang="ru" />
-        <link rel="alternate" href="https://www.visimo.io/en/" hrefLang="en" />
+        <link rel="alternate" href="https://www.visimo.io/en/" hrefLang="en" /> */}
         <link rel="icon" href="/icons/favicon.svg" type="image/svg+xml" />
 
         {/* Apple */}
