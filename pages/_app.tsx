@@ -37,7 +37,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         {/* <link rel="alternate" href="https://www.visimo.io/" hrefLang="fi" />
         <link rel="alternate" href="https://www.visimo.io/ru/" hrefLang="ru" />
         <link rel="alternate" href="https://www.visimo.io/en/" hrefLang="en" /> */}
-        <link rel="icon" href="/icons/favicon.svg" type="image/svg+xml" />
+        {/* <link rel="icon" href="/icons/favicon.svg" type="image/svg+xml" /> */}
 
         {/* Apple */}
         <meta name="apple-mobile-web-app-capable" content="yes" />
