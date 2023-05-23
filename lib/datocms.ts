@@ -29,6 +29,9 @@ export const query = gql`
     featureSection(locale: $locale) {
       ...FeatureSectionRecordFragment
     }
+    faqSection(locale: $locale) {
+      ...FaqSectionRecordFragment
+    }
   }
 
   fragment NavigationRecordFragment on NavigationRecord {
@@ -54,5 +57,21 @@ export const query = gql`
       description
       iconid
     }
+  }
+
+  fragment FaqSectionRecordFragment on FaqSectionRecord {
+    label
+    title
+    description
+    faqs {
+      id
+      question
+      answer
+    }
+    avatars {
+      url
+      alt
+    }
+    extraInfo
   }
 `;

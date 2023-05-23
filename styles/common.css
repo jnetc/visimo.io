@@ -29,12 +29,16 @@ svg.liquid-filter {
   color: var(--grey);
   font-weight: bold;
   text-transform: capitalize;
+  position: relative;
+}
+.section-label > span {
+  width: 261px;
+  height: 192px;
 }
 .section-title {
-  max-width: 750px;
+  max-width: 860px;
   font-size: clamp(var(--font-36), 6vw, var(--font-64));
   line-height: 1.1;
-  position: relative;
 }
 .title-blue-color {
   color: var(--primary);
@@ -46,6 +50,13 @@ svg.liquid-filter {
   max-width: 960px;
   padding-block-start: var(--gap-36);
   line-height: 1.6;
+}
+
+.features-section,
+.faqs-section,
+.testimonials-section {
+  padding-block: var(--gap-128);
+  padding-inline: var(--gap-16);
 }
 
 @media (max-width: 960px) {

@@ -11,7 +11,7 @@ export type UrlType = { url: string };
 export type HandlerType = { handler: () => void };
 
 export interface Image {
-  image: { url: string };
+  image: { url: string; alt: string };
 }
 
 export interface IArticleType extends TitleType {
@@ -34,11 +34,23 @@ export interface IFeatureSection extends IArticleType {
   features: Array<IFeature>;
 }
 
+export interface IFaq extends IDType {
+  question: string;
+  answer: string;
+}
+export interface IFaqSection extends IArticleType {
+  label: string;
+  faqs: Array<IFaq>;
+  avatars: Array<Image>;
+  extraInfo: string;
+}
+
 export interface IData {
   // _site: SEO;
   navigation: INavigationLink;
   heroSection: IHeroSection;
   featureSection: IFeatureSection;
+  faqSection: IFaqSection;
 }
 
 export type TypeSVGObjSize =

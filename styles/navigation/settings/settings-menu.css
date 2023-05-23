@@ -3,7 +3,7 @@
   row-gap: var(--gap-24);
   position: absolute;
   right: 0;
-  top: calc(var(--gap-36) * 1.2 + var(--button-settings));
+  top: calc(var(--gap-36) * 1.2 + var(--size-48));
   padding: var(--gap-24);
   background-color: var(--bg-color);
   border-radius: var(--border-corner);

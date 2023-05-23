@@ -4,7 +4,7 @@
 .navigation__settings-button {
   display: grid;
   place-content: center;
-  width: var(--button-settings);
+  width: var(--size-48);
   aspect-ratio: 1;
   border-radius: 50%;
   background-color: var(--bg-color);
