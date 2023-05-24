@@ -41,7 +41,7 @@ export interface IFaq extends IDType {
 export interface IFaqSection extends IArticleType {
   label: string;
   faqs: Array<IFaq>;
-  avatars: Array<Image>;
+  avatars: Array<{ url: string; alt: string }>;
   extraInfo: string;
 }
 
@@ -55,6 +55,7 @@ export interface IData {
 
 export type TypeSVGObjSize =
   | 'bg-geometric-size-32'
+  | 'bg-geometric-size-40'
   | 'bg-geometric-size-48'
   | 'bg-geometric-size-56'
   | 'bg-geometric-size-64'

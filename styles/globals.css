@@ -41,7 +41,6 @@ html[data-theme='light'] {
 * {
   margin: 0;
   padding: 0;
-  font: inherit;
   text-size-adjust: none;
 
   /* border: 1px solid red; */
@@ -110,7 +109,6 @@ h6 {
 
 p {
   color: var(--grey-dark);
-  font-size: var(--font-18);
   font-weight: 400;
 }
 
