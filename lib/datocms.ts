@@ -32,6 +32,9 @@ export const query = gql`
     faqSection(locale: $locale) {
       ...FaqSectionRecordFragment
     }
+    testimonialSection(locale: $locale) {
+      ...TestimonialSectionRecordFragment
+    }
   }
 
   fragment NavigationRecordFragment on NavigationRecord {
@@ -73,5 +76,21 @@ export const query = gql`
       alt
     }
     extraInfo
+  }
+
+  fragment TestimonialSectionRecordFragment on TestimonialSectionRecord {
+    label
+    title
+    description
+    testimonials {
+      id
+      name
+      post
+      description
+      avatar {
+        url
+        alt
+      }
+    }
   }
 `;

@@ -6,17 +6,18 @@ export type ThemeType = { theme: ThemeColorType; auto: boolean };
 export type IDType = { id: string };
 export type NameType = { name: string };
 export type TitleType = { title: string };
+export type DescType = { description: string };
+export type LabelType = { label: string };
 export type AnchorType = { anchor: string };
 export type UrlType = { url: string };
 export type HandlerType = { handler: () => void };
 
 export interface Image {
-  image: { url: string; alt: string };
+  url: string;
+  alt: string;
 }
 
-export interface IArticleType extends TitleType {
-  description: string;
-}
+export interface IArticleType extends TitleType, DescType {}
 
 export interface INavigationLink {
   links: Array<IDType & NameType & AnchorType>;
@@ -29,8 +30,7 @@ export interface IHeroSection extends IArticleType {
 export interface IFeature extends IArticleType {
   iconid: string;
 }
-export interface IFeatureSection extends IArticleType {
-  label: string;
+export interface IFeatureSection extends IArticleType, LabelType {
   features: Array<IFeature>;
 }
 
@@ -38,11 +38,19 @@ export interface IFaq extends IDType {
   question: string;
   answer: string;
 }
-export interface IFaqSection extends IArticleType {
-  label: string;
+export interface IFaqSection extends IArticleType, LabelType {
   faqs: Array<IFaq>;
-  avatars: Array<{ url: string; alt: string }>;
+  avatars: Array<Image>;
   extraInfo: string;
+}
+
+export interface ITestimonial extends IDType, NameType, DescType {
+  post: string;
+  avatar: Image;
+}
+
+export interface IFaqSection extends IArticleType, LabelType {
+  testimonials: Array<ITestimonial>;
 }
 
 export interface IData {
@@ -51,8 +59,10 @@ export interface IData {
   heroSection: IHeroSection;
   featureSection: IFeatureSection;
   faqSection: IFaqSection;
+  testimonialSection: IFaqSection;
 }
 
+// SVG TYPES
 export type TypeSVGObjSize =
   | 'bg-geometric-size-32'
   | 'bg-geometric-size-40'

@@ -17,7 +17,7 @@ svg.liquid-filter {
 .section-label,
 .section-title,
 .section-description {
-  grid-column: 1 / -1;
+  grid-column: 2 / -2;
   justify-self: center;
   text-align: center;
 }
@@ -37,8 +37,8 @@ svg.liquid-filter {
 }
 .section-title {
   max-width: 860px;
-  font-size: clamp(var(--font-36), 6vw, var(--font-64));
-  line-height: 1.1;
+  font-size: clamp(var(--font-32), 6vw, var(--font-64));
+  /* line-height: 1.1; */
 }
 .title-blue-color {
   color: var(--primary);
@@ -50,13 +50,14 @@ svg.liquid-filter {
   max-width: 960px;
   padding-block-start: var(--gap-36);
   line-height: 1.6;
+  padding-block-end: var(--gap-176);
 }
 
 .features-section,
 .faqs-section,
 .testimonials-section {
   padding-block: var(--gap-128);
-  padding-inline: var(--gap-16);
+  /* padding-inline: var(--gap-16); */
 }
 
 /* MARKDOWN STYLES */
@@ -97,8 +98,12 @@ svg.liquid-filter {
 
 @media (max-width: 960px) {
   .main-grid {
-    display: grid;
     grid-template-columns: var(--gap-16) repeat(6, minmax(0, 1fr)) var(--gap-16);
     column-gap: var(--gap-16);
+  }
+}
+@media (max-width: 559px) {
+  .main-grid {
+    column-gap: 0;
   }
 }

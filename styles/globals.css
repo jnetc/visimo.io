@@ -58,17 +58,11 @@ body,
   min-height: 100vh;
 }
 #__next {
-  /* display: grid; */
-  /* grid-template-columns: repeat(12, minmax(0, 1fr)); */
-  /* grid-template-rows: min-content; */
-  /* column-gap: var(--gap-36); */
   position: relative;
 }
 body {
   max-width: 1920px;
   margin-inline: auto;
-  /* padding-inline: var(--gap-16); */
-  /* contain: paint; */
 }
 
 img,
@@ -105,6 +99,7 @@ h5,
 h6 {
   color: var(--grey-dark);
   font-weight: bold;
+  line-height: 1;
 }
 
 p {

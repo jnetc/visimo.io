@@ -27,9 +27,6 @@
   z-index: -1;
 }
 
-.features-section__block:nth-of-type(-n + 2) {
-  margin-block-start: var(--gap-176);
-}
 .features-section__block:nth-of-type(n + 3) {
   margin-block-start: var(--gap-176);
 }
@@ -74,6 +71,9 @@
   .block-order4 {
     grid-column: 4 / 8;
   }
+  .features-section__block:nth-of-type(n + 2) {
+    margin-block-start: var(--gap-176);
+  }
 }
 
 @media screen and (max-width: 559px) {
@@ -81,6 +81,6 @@
   .block-order2,
   .block-order3,
   .block-order4 {
-    grid-column: 1 / -1;
+    grid-column: 2 / -2;
   }
 }
