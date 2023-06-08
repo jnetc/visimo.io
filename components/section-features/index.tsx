@@ -7,21 +7,23 @@ import splitTitle from '@Helpers/splitTitles';
 
 export default function FeaturesSection() {
   const { data } = useStore();
+  const { title, primary, secondary, description, label, features } = data!.featureSection;
+  const splittingTitle = splitTitle(title, primary, secondary);
 
-  const features = data?.featureSection.features.map((feature, idx) => {
+  const featuresArr = features.map((feature, idx) => {
     const order = (idx % 4) + 1;
     return <Feature key={feature.iconid} data={feature} order={order} />;
   });
 
   return (
     <section id="features" className="features-section main-grid">
-      <span className="section-label">
-        {data?.featureSection.label}
-        <SVGGrid7Col position="features-section__grid-features" />
-      </span>
-      <h2 className="section-title">{splitTitle(data!.featureSection.title)}</h2>
-      <p className="section-description">{data?.featureSection.description}</p>
-      {features}
+      <SVGGrid7Col position="features-section__grid-features" />
+      <span className="section-label">{label}</span>
+      <h2 className="section-title" data-title={title}>
+        {splittingTitle}
+      </h2>
+      <p className="section-description">{description}</p>
+      {featuresArr}
     </section>
   );
 }

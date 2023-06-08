@@ -1,6 +1,6 @@
 .faqs-section__grid-faqs {
-  top: -5rem;
-  right: -2rem;
+  top: 1rem;
+  left: 40%;
 }
 
 .faq-section__list,
@@ -13,18 +13,15 @@
 .faq-section__list {
   max-width: 1200px;
   display: grid;
+  row-gap: var(--gap-32);
 }
 
 .faq-section__item {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: min-content 0fr;
-  row-gap: var(--gap-24);
   padding-inline: var(--gap-32);
-  padding-block-start: var(--gap-32);
-  background-color: var(--bg-color);
-  border-bottom: 2px solid var(--primary-dark);
-  transition: grid-template-rows var(--transition-03) ease-in-out, background-color var(--transition-03) ease-in-out;
+  transition: all var(--transition-03) ease-in-out;
   contain: paint;
 }
 
@@ -32,8 +29,9 @@
   display: grid;
   grid-template-columns: 1fr var(--size-48);
   column-gap: var(--gap-48);
+  padding-block: var(--gap-32) var(--gap-32);
   font-size: clamp(var(--font-18), 5vw, var(--font-32));
-  color: var(--primary-dark);
+  color: var(--grey-dark);
   transition: color var(--transition-03) ease-in-out;
   cursor: pointer;
   user-select: none;
@@ -46,9 +44,10 @@
   transition: padding-block-end var(--transition-03) ease-in-out;
 }
 
-.faq-section__item.selected {
+.faq-section__item.retro-box.selected {
   grid-template-rows: min-content 1fr;
-  background-color: hsl(var(--alfa-primary) / 0.03);
+  background-color: var(--bg-color-alt);
+  box-shadow: 0px 0px 0 var(--black);
 }
 .faq-section__item.selected .faq-section__item-desc {
   padding-block-end: var(--gap-32);
@@ -58,8 +57,9 @@
   width: var(--size-48);
   aspect-ratio: 1;
   position: relative;
-  border: 2px solid var(--grey-light);
+  background-color: var(--primary-dark);
   border-radius: 50%;
+  transition: all var(--transition-03) ease-in-out;
 }
 .faq-section__item-icon::after,
 .faq-section__item-icon::before {
@@ -70,11 +70,14 @@
   inset: 0rem;
   margin: auto;
   border-radius: 5px;
-  background-color: var(--primary-dark);
-  transition: all var(--transition-03) ease-in-out;
+  background-color: var(--bg-color);
+  transition: inherit;
 }
 .faq-section__item-icon::before {
   transform: rotateZ(0.25turn);
+}
+.faq-section__item.selected .faq-section__item-icon {
+  background-color: var(--error-dark);
 }
 .faq-section__item.selected .faq-section__item-icon::after {
   transform: rotateZ(-0.25turn) scale(0);
@@ -112,13 +115,9 @@
   right: 2rem;
 }
 
-.faqs-section__left-cross {
+.faqs-section__svg-heart {
+  bottom: -1rem;
   left: calc(clamp(2rem, 5vw, 5rem) * -1);
-}
-
-.faqs-section__right-triangle {
-  top: 7rem;
-  right: calc(clamp(2rem, 5vw, 5rem) * -1);
 }
 
 .faqs-section__extra-info {

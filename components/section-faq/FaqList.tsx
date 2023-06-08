@@ -24,11 +24,11 @@ export default function FaqList() {
 
   const list = data?.faqSection.faqs.map(list => {
     return (
-      <li key={list.id} className="faq-section__item" data-key={list.id}>
-        <h5 className="faq-section__item-title" tabIndex={0} onPointerUp={selectItem} onKeyDown={selectItem}>
+      <li key={list.id} className="faq-section__item retro-box" data-key={list.id}>
+        <h3 className="faq-section__item-title" tabIndex={0} onPointerUp={selectItem} onKeyDown={selectItem}>
           {list.question}
           <span className="faq-section__item-icon" />
-        </h5>
+        </h3>
         <ReactMarkdown className="faq-section__item-desc markdown" children={list.answer} />
       </li>
     );

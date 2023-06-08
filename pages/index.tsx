@@ -83,7 +83,7 @@ const Home: NextPage = ({ data, language, languages }: InferGetStaticPropsType<t
       <Navigation />
       <main>
         <HeroSection />
-        <Features />
+        {/* <Features /> */}
         <FAQ />
         <Testimonials />
       </main>

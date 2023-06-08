@@ -16,12 +16,6 @@ export default function RadioLangButton({ handler, lang, checked }: Props) {
           <span className="dot"></span>
         </span>
         <p className="navigation__settings-name">{locale[lang]}</p>
-        <img
-          src={`./images/settings-icons/flag_${lang}.svg`}
-          alt="show finnish flag icon"
-          className={`navigation__settings-icon lang`}
-          aria-hidden
-        />
       </label>
     </>
   );

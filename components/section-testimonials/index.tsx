@@ -7,20 +7,22 @@ import splitTitle from '@Helpers/splitTitles';
 
 export default function TestimonialsSection() {
   const { data } = useStore();
+  const { title, primary, secondary, description, testimonials, label } = data!.testimonialSection;
+  const splittingTitle = splitTitle(title, primary, secondary);
 
-  const testimonials = data?.testimonialSection.testimonials.map(data => {
+  const testimonialsArr = testimonials.map(data => {
     return <Testiomonial key={data.id} data={data} />;
   });
 
   return (
     <section id="testimonials" className="testimonials-section main-grid">
-      <span className="section-label">
-        {data?.testimonialSection.label}
-        <SVGGrid7Col position="testimonials-section__grid-testimonials" />
-      </span>
-      <h2 className="section-title">{splitTitle(data!.testimonialSection.title)}</h2>
-      <p className="section-description testimonials-descriptions">{data?.testimonialSection.description}</p>
-      {testimonials}
+      <SVGGrid7Col position="testimonials-section__grid-testimonials" />
+      <span className="section-label">{label}</span>
+      <h2 className="section-title" data-title={title}>
+        {splittingTitle}
+      </h2>
+      <p className="section-description testimonials-descriptions">{description}</p>
+      {testimonialsArr}
     </section>
   );
 }

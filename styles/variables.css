@@ -1,14 +1,13 @@
 :root {
   color-scheme: dark light;
-  --primary: hsl(230, 98%, 60%);
-
-  --primary-dark: hsl(227, 71%, 39%);
-  --secondary: hsl(37, 100%, 60%);
-  --secondary-dark: hsl(34, 85%, 45%);
-  --success: hsl(119, 71%, 60%);
-  --success-dark: hsl(119, 71%, 39%);
-  --error: hsl(0, 71%, 60%);
-  --error-dark: hsl(0, 71%, 39%);
+  --primary: #83b4b0;
+  --primary-dark: #165f6c;
+  --secondary: #eba91f;
+  --secondary-dark: #bd7331;
+  --success: #79b6a8;
+  --success-dark: #4c7a70;
+  --error: #efbda0;
+  --error-dark: #dc5c1d;
 
   --white: hsl(0, 0%, 100%);
   --white-grey: hsl(0, 0%, 96%);
@@ -28,7 +27,11 @@
   --transition-03: 0.3s; /* Global transition duration*/
   --transition-05: 0.5s; /* Especial */
 
-  --border-corner: 0.75rem;
+  /* CORNERS */
+  --border-corner-4: 0.25rem;
+  --border-corner-6: 0.375rem;
+  --border-corner-8: 0.5rem;
+  --border-corner-12: 0.75rem;
 
   /* GAPS */
   --gap-8: 0.5rem;
@@ -50,6 +53,7 @@
   --font-14: 0.875em;
   --font-16: 1em;
   --font-18: 1.125em;
+  --font-20: 1.25em;
   --font-24: 1.5em;
   --font-32: 2em;
   --font-36: 2.25em;
@@ -58,7 +62,7 @@
   --font-64: 4em;
   --font-96: 7em;
 
-  --corner-12: 0.75rem;
+  /* --corner-4: 0.25rem; */
 
   --size-64: 4rem;
   --size-56: 3.5rem;

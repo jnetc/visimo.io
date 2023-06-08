@@ -25,9 +25,6 @@ export default function RadioThemeButton({ theme, handler, state }: Props) {
         <span className="dot"></span>
       </span>
       <p className="navigation__settings-name">{locale[theme.name][language]}</p>
-      <span className={`navigation__settings-icon theme ${theme.name}`} aria-hidden>
-        <span />
-      </span>
     </label>
   );
 }

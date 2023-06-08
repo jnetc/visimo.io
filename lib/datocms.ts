@@ -46,14 +46,20 @@ export const query = gql`
   }
 
   fragment HeroSectionRecordFragment on HeroSectionRecord {
+    notification
     title
+    primary
+    secondary
     description
+    surveyNotice
     button
   }
 
   fragment FeatureSectionRecordFragment on FeatureSectionRecord {
     label
     title
+    primary
+    secondary
     description
     features {
       title
@@ -65,6 +71,8 @@ export const query = gql`
   fragment FaqSectionRecordFragment on FaqSectionRecord {
     label
     title
+    primary
+    secondary
     description
     faqs {
       id
@@ -72,6 +80,7 @@ export const query = gql`
       answer
     }
     avatars {
+      id
       url
       alt
     }
@@ -81,6 +90,8 @@ export const query = gql`
   fragment TestimonialSectionRecordFragment on TestimonialSectionRecord {
     label
     title
+    primary
+    secondary
     description
     testimonials {
       id

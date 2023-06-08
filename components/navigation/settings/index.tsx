@@ -26,7 +26,7 @@ export default function navigation() {
           <use xlinkHref="/images/sprite-icons.svg#gear"></use>
         </svg>
       </button>
-      <SettingsMenu show={isOpen} isOpenHandler={closeMenu} />
+      <SettingsMenu show={isOpen} />
     </OutsideClickHandler>
   );
 }

@@ -1,26 +1,25 @@
 .button {
-  --alfa: 0.5;
   width: 100%;
   position: relative;
   padding: var(--gap-16) var(--gap-36);
-  border-radius: var(--corner-12);
+  border-radius: var(--border-corner-6);
   font-size: clamp(var(--font-24), 2vw, var(--font-32));
-  text-align: center;
-  transition: transform var(--transition-01) ease-in-out, box-shadow var(--transition-01) ease-in-out;
+  text-transform: uppercase;
+  border: 2px solid var(--bg-color);
+  transition: all var(--transition-01) ease-in-out;
+  box-shadow: 14px 14px 0 0 var(--black);
 }
-
 .button:active {
-  transform: translateY(0.275rem) scale(0.97);
+  transform: translate(0.5rem, 0.275rem) scale(0.98);
+  box-shadow: 6px 6px 0 0 var(--black);
+}
+.button:active::after {
+  box-shadow: 5px 5px 0 var(--black);
 }
 
 .button.button-primary {
   background-color: var(--primary-dark);
   color: var(--white);
-  text-transform: uppercase;
-  box-shadow: 0 2.5rem 2rem -28px hsl(var(--alfa-primary) / 0.4);
-}
-.button.button-primary:active {
-  box-shadow: 0 1rem 1rem -15px hsl(var(--alfa-primary) / 0.8);
 }
 .button.button-menu {
   background-color: var(--white);

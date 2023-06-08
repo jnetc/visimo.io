@@ -3,9 +3,8 @@
   contain: paint;
 }
 .testimonials-section__grid-testimonials {
-  top: -3rem;
-  left: clamp(-10rem, 5vw, 4rem);
-  /* left: 4rem; */
+  top: 5rem;
+  left: 45%;
 }
 .testimonial:nth-of-type(3n + 1) {
   grid-column: 2 / 4 span;

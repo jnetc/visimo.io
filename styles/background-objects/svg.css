@@ -61,7 +61,7 @@
 }
 /* GRID OBJECTS */
 .bg-grid-stroke {
-  stroke: var(--grey-light);
+  stroke: var(--white);
 }
 
 /*LINES OBJECTS*/
