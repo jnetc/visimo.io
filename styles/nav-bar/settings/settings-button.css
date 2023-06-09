@@ -1,7 +1,7 @@
-.navigation__settings {
+.nav-bar__settings {
   position: relative;
 }
-.navigation__settings-button {
+.nav-bar__settings-button {
   display: grid;
   place-content: center;
   width: var(--size-48);
@@ -13,23 +13,23 @@
   transition: transform var(--transition-01) ease-in-out, box-shadow var(--transition-01) ease-in-out,
     border var(--transition-03) ease-in-out;
 }
-.navigation__settings-button:hover {
+.nav-bar__settings-button:hover {
   border: 2px solid var(--grey);
 }
-.navigation__settings-button:active {
+.nav-bar__settings-button:active {
   transform: translate(3px, 3px);
   box-shadow: 0px 0px 0 -2px var(--bg-color), 0px 0px 0 0px var(--grey-light);
 }
-.navigation__settings-button.active {
+.nav-bar__settings-button.active {
   border: 2px solid var(--grey);
   transform: translate(1px, 1px);
   box-shadow: 3px 3px 0 -2px var(--bg-color), 3px 3px 0 0px var(--grey-light);
 }
-.navigation__settings-button.active .button__icon-gear {
+.nav-bar__settings-button.active .button__icon-gear {
   transform: rotateZ(0.25turn);
 }
 
-.navigation__settings-button .button__icon-gear {
+.nav-bar__settings-button .button__icon-gear {
   width: 1.5rem;
   aspect-ratio: 1;
   transition: transform var(--transition-03) ease-in-out;

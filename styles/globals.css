@@ -31,7 +31,7 @@ html[data-theme='dark'] {
 } */
 html[data-theme='light'] {
   --bg-color: #fcf4f0;
-  --bg-color-alt: #f3e3d2;
+  --bg-color-alt: #fcf2e8;
 }
 
 *,
@@ -152,7 +152,7 @@ p {
 @import url('./buttons.css');
 @import url('./stars.css');
 @import url('./modals.css');
-@import url('./navigation/navigation.css');
+@import url('./nav-bar/nav-bar.css');
 @import url('./hero-section/hero-section.css');
 @import url('./how-we-work/how-we-work.css');
 @import url('./what-we-offer/what-we-offer.css');

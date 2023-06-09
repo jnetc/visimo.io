@@ -13,7 +13,7 @@ interface Props {
 export default function RadioThemeButton({ theme, handler, state }: Props) {
   const { language } = useStore();
   return (
-    <label role="radio" htmlFor={theme.name} className="navigation__settings-item" tabIndex={0}>
+    <label role="radio" htmlFor={theme.name} className="nav-bar__settings-item" tabIndex={0}>
       <input
         type="radio"
         name="theme"
@@ -21,10 +21,10 @@ export default function RadioThemeButton({ theme, handler, state }: Props) {
         onChange={handler}
         checked={(state.theme === theme.name && !state.auto) || ('auto' === theme.name && state.auto)}
       />
-      <span className="navigation__settings-radio-button" aria-hidden>
+      <span className="nav-bar__settings-radio-button" aria-hidden>
         <span className="dot"></span>
       </span>
-      <p className="navigation__settings-name">{locale[theme.name][language]}</p>
+      <p className="nav-bar__settings-name">{locale[theme.name][language]}</p>
     </label>
   );
 }

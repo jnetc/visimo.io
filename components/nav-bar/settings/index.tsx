@@ -16,7 +16,7 @@ export default function navigation() {
   return (
     <OutsideClickHandler onOutsideClick={closeMenu}>
       <button
-        className={isOpen ? 'navigation__settings-button active' : 'navigation__settings-button'}
+        className={isOpen ? 'nav-bar__settings-button active' : 'nav-bar__settings-button'}
         onPointerUp={toggleMenu}
         ref={refButton}
         aria-label={locale[language]}

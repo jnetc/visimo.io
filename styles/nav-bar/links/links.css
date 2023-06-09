@@ -1,15 +1,15 @@
-.navigation__links {
+.nav-bar__links {
   display: flex;
   gap: var(--gap-32);
 }
-.navigation__links a {
+.nav-bar__links a {
   color: var(--grey-dark);
   font-size: var(--font-18);
   font-weight: 400;
 }
 
 @media screen and (max-width: 960px) {
-  .navigation__links {
+  .nav-bar__links {
     display: none;
   }
 }

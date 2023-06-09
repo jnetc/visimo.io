@@ -1,4 +1,4 @@
-.navigation {
+.nav-bar {
   grid-column: 1 / -1;
   height: max-content;
   display: flex;
@@ -8,6 +8,11 @@
   padding-block: var(--gap-36);
   padding-inline: var(--gap-16);
   position: relative;
+}
+@media screen and (max-width: 559px) {
+  .nav-bar {
+    padding-block: var(--gap-16);
+  }
 }
 
 @import url(./logo/logo.css);

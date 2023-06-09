@@ -5,7 +5,7 @@ import '@Styles/fonts.css';
 import '@Styles/variables.css';
 import '@Styles/globals.css';
 import '@Styles/buttons.css';
-import '@Styles/navigation/navigation.css';
+import '@Styles/nav-bar/nav-bar.css';
 import '@Styles/section-hero/hero.css';
 import '@Styles/section-features/features.css';
 import '@Styles/section-faqs/faqs.css';

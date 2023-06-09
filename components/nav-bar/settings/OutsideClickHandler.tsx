@@ -22,7 +22,7 @@ export default function OutsideClickHandler({ children, onOutsideClick }: Outsid
   }, [ref, onOutsideClick]);
 
   return (
-    <div className="navigation__settings" ref={ref}>
+    <div className="nav-bar__settings" ref={ref}>
       {children}
     </div>
   );

@@ -2,9 +2,9 @@ import Logo from './logo';
 import Links from './links/index';
 import Settings from './settings';
 
-export default function Navigation() {
+export default function NavBar() {
   return (
-    <nav className="navigation">
+    <nav className="nav-bar">
       <Logo />
       <Links />
       <Settings />

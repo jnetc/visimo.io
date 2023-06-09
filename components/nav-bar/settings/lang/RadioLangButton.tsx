@@ -10,12 +10,12 @@ interface Props {
 export default function RadioLangButton({ handler, lang, checked }: Props) {
   return (
     <>
-      <label role="radio" htmlFor={lang} className="navigation__settings-item" tabIndex={0}>
+      <label role="radio" htmlFor={lang} className="nav-bar__settings-item" tabIndex={0}>
         <input type="radio" name="theme" id={lang} onChange={handler} checked={lang === checked} />
-        <span className="navigation__settings-radio-button" aria-hidden>
+        <span className="nav-bar__settings-radio-button" aria-hidden>
           <span className="dot"></span>
         </span>
-        <p className="navigation__settings-name">{locale[lang]}</p>
+        <p className="nav-bar__settings-name">{locale[lang]}</p>
       </label>
     </>
   );

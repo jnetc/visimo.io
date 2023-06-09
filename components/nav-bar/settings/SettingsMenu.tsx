@@ -14,7 +14,7 @@ export default function SettingsMenu({ show }: { show: boolean }) {
   return (
     <>
       {show ? (
-        <div className={show ? 'navigation__settings-menu retro-box show' : 'navigation__settings-menu retro-box'}>
+        <div className={show ? 'nav-bar__settings-menu retro-box show' : 'nav-bar__settings-menu retro-box'}>
           {localStorageValue.current ? <Theme initTheme={localStorageValue.current} /> : null}
           <Langs />
         </div>

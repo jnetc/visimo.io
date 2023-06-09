@@ -1,9 +1,11 @@
+/* .faq-section {
+  grid-column: 2 / -2;
+} */
 .faqs-section__grid-faqs {
   top: 1rem;
   left: 40%;
 }
 
-.faq-section__list,
 .faqs-section__employee,
 .faqs-section__extra-info {
   grid-column: 2 / -2;
@@ -11,9 +13,9 @@
 }
 
 .faq-section__list {
-  max-width: 1200px;
   display: grid;
   row-gap: var(--gap-32);
+  grid-column: 3 / -3;
 }
 
 .faq-section__item {
@@ -27,9 +29,10 @@
 
 .faq-section__item-title {
   display: grid;
+  align-items: center;
   grid-template-columns: 1fr var(--size-48);
   column-gap: var(--gap-48);
-  padding-block: var(--gap-32) var(--gap-32);
+  padding-block: var(--gap-24) var(--gap-24);
   font-size: clamp(var(--font-18), 5vw, var(--font-32));
   color: var(--grey-dark);
   transition: color var(--transition-03) ease-in-out;
@@ -127,6 +130,11 @@
   padding-block-start: var(--gap-48);
 }
 
+@media screen and (max-width: 960px) {
+  .faq-section__list {
+    grid-column: 2 / -2;
+  }
+}
 @media screen and (max-width: 559px) {
   .faq-section__item {
     padding-inline: var(--gap-16);

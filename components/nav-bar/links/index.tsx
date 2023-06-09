@@ -14,5 +14,5 @@ export default function Links() {
     );
   });
 
-  return <div className="navigation__links">{links}</div>;
+  return <div className="nav-bar__links">{links}</div>;
 }

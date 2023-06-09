@@ -62,8 +62,8 @@ export default function Theme({ initTheme }: Props) {
 
   return (
     <form aria-label="Выбирите цветовую схему">
-      <fieldset className="navigation__settings-group theme">
-        <legend className="navigation__settings-group-title">{locale[language]}</legend>
+      <fieldset className="nav-bar__settings-group theme">
+        <legend className="nav-bar__settings-group-title">{locale[language]}</legend>
         {radioButtons}
       </fieldset>
       <FluidSVGFilter />

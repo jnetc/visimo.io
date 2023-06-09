@@ -1,4 +1,4 @@
-.navigation__settings-menu {
+.nav-bar__settings-menu {
   display: none;
   flex-direction: column;
   row-gap: var(--gap-24);
@@ -10,11 +10,11 @@
   z-index: 100;
 }
 
-.navigation__settings-menu.show {
+.nav-bar__settings-menu.show {
   display: flex;
 }
 
-.navigation__settings-group {
+.nav-bar__settings-group {
   display: flex;
   flex-direction: column;
   row-gap: var(--gap-24);
@@ -24,7 +24,7 @@
   border-radius: var(--border-corner-4);
 }
 
-.navigation__settings-group-title {
+.nav-bar__settings-group-title {
   padding-inline: 0.5rem;
   background-color: var(--bg-color);
   color: var(--grey-dark);
@@ -32,7 +32,7 @@
   font-size: var(--font-14);
 }
 
-.navigation__settings-item {
+.nav-bar__settings-item {
   min-width: 175px;
   display: flex;
   align-items: center;
@@ -47,15 +47,15 @@
   height: 0;
 }
 
-.navigation__settings-icon {
+.nav-bar__settings-icon {
   grid-column: 4;
 }
-.navigation__settings-icon.lang {
+.nav-bar__settings-icon.lang {
   width: 4rem;
   aspect-ratio: 4 / 3;
 }
 
-.navigation__settings-icon.theme {
+.nav-bar__settings-icon.theme {
   width: 4rem;
   height: 3rem;
   aspect-ratio: 4 / 3;
@@ -63,7 +63,7 @@
   border-radius: 0.75rem;
   border: 2px solid var(--grey-light);
 }
-.navigation__settings-icon span {
+.nav-bar__settings-icon span {
   width: 24px;
   height: 6px;
   position: absolute;
@@ -72,38 +72,38 @@
   background-color: var(--grey);
   border-radius: 50px;
 }
-.navigation__settings-icon span::after,
-.navigation__settings-icon span::before {
+.nav-bar__settings-icon span::after,
+.nav-bar__settings-icon span::before {
   content: '';
   height: 3px;
   position: absolute;
   background-color: inherit;
   border-radius: inherit;
 }
-.navigation__settings-icon span::after {
+.nav-bar__settings-icon span::after {
   width: 40px;
   top: 0.65rem;
 }
-.navigation__settings-icon span::before {
+.nav-bar__settings-icon span::before {
   width: 24px;
   top: 1.115rem;
 }
-.navigation__settings-icon.light {
+.nav-bar__settings-icon.light {
   background-color: var(--bg-color);
 }
-.navigation__settings-icon.dark {
+.nav-bar__settings-icon.dark {
   background-color: var(--black);
 }
-.navigation__settings-icon.auto {
+.nav-bar__settings-icon.auto {
   background: linear-gradient(-115deg, white 50%, black 50%);
 }
-.navigation__settings-icon.auto span,
-.navigation__settings-icon.auto span::after,
-.navigation__settings-icon.auto span::before {
+.nav-bar__settings-icon.auto span,
+.nav-bar__settings-icon.auto span::after,
+.nav-bar__settings-icon.auto span::before {
   mix-blend-mode: difference;
 }
 
-.navigation__settings-name {
+.nav-bar__settings-name {
   flex-grow: 1;
   font-size: var(--font-18);
   font-weight: 400;
@@ -111,7 +111,7 @@
   text-transform: capitalize;
 }
 
-.navigation__settings-radio-button {
+.nav-bar__settings-radio-button {
   --dot-width: 2rem;
   width: var(--dot-width);
   aspect-ratio: 1;
@@ -152,13 +152,13 @@
   transition: transform var(--transition-03) cubic-bezier(0.61, 0.17, 0.35, 0.95);
 }
 
-input[type='radio']:checked ~ .navigation__settings-radio-button .dot::after {
+input[type='radio']:checked ~ .nav-bar__settings-radio-button .dot::after {
   transform: translateY(0) scale(1);
 }
-input[type='radio']:checked ~ .navigation__settings-radio-button .dot::before {
+input[type='radio']:checked ~ .nav-bar__settings-radio-button .dot::before {
   transition-delay: 0.1s;
   transform: translateY(0) scale(1.1);
 }
-input[type='radio']:checked ~ .navigation__settings-name {
+input[type='radio']:checked ~ .nav-bar__settings-name {
   color: var(--primary-dark);
 }
