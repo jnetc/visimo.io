@@ -82,7 +82,7 @@ type TypeSVGLinesStroke = 'bg-lines-stroke-main' | 'bg-lines-stroke-alt';
 export interface ISVGGeometricObjects {
   fill: TypeSVGObjFill;
   size: TypeSVGObjSize;
-  // stroke: TypeSVGObjStroke;
+  stroke: TypeSVGObjStroke;
   position: string;
 }
 export interface ISVGLetterObjects {

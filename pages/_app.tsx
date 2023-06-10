@@ -7,6 +7,7 @@ import '@Styles/globals.css';
 import '@Styles/buttons.css';
 import '@Styles/nav-bar/nav-bar.css';
 import '@Styles/section-hero/hero.css';
+import '@Styles/smartphone/smartphone.css';
 import '@Styles/section-features/features.css';
 import '@Styles/section-faqs/faqs.css';
 import '@Styles/section-testimonials/testimonials.css';

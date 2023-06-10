@@ -1,7 +1,8 @@
 import HeroTitle from './HeroTitle';
 import HeroDesc from './HeroDesc';
 import HeroActionButton from './HeroActionButton';
-import HeroPuzzle from './HeroPuzzle';
+import Smartphone from '@Components/smartphone';
+// import HeroPuzzle from './HeroPuzzle';
 import { useStore } from '@Hooks/useStore';
 // import { SVGCircleLines } from '@Components/background-objects/SVGCircle';
 // import { SVGCircle } from '@Components/background-objects/SVGHeart';
@@ -19,6 +20,9 @@ export default function HeroSection() {
         <p className="hero-section__survey">{data!.heroSection.surveyNotice}</p>
       ) : null}
       <HeroActionButton />
+      <Smartphone>
+        <img src="./images/smartphone-template.png" alt="template" />
+      </Smartphone>
       {/* <SVGCircle
         fill="bg-geometric-fill-primary"
         size="bg-geometric-size-48"

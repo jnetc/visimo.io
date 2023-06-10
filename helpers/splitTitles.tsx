@@ -1,7 +1,6 @@
 export default function splitTitle(title: string, primary: string, secondary?: string) {
   if (secondary === '' && primary === '') return null;
 
-  console.log('helper', title);
   // Making array without primary value
   const checkPrimary = title.split(primary);
 
@@ -9,9 +8,9 @@ export default function splitTitle(title: string, primary: string, secondary?: s
   const checkSecondary = secondary ? checkPrimary[1].toString().replace(', ', '').split(secondary) : checkPrimary[1];
 
   // 1) Words without styles
-  // 2) Words with style inside the tag
+  // 2) Words with style inside the <span> tag
   // 3) Words without styles
-  // 4) If we have secondary value, styling words inside the tag
+  // 4) If we have secondary value, styling words inside the <span> tag
   // 5) If we have words after econdary value, without styles
 
   const constructTitle = [

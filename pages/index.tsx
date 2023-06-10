@@ -14,7 +14,7 @@ import type { IData } from '@Types';
 
 const NavBar = dynamic(() => import('@Components/nav-bar'), { ssr: false });
 const HeroSection = dynamic(() => import('@Components/section-hero'), { ssr: false });
-const Features = dynamic(() => import('@Components/section-features'), { ssr: false });
+// const Features = dynamic(() => import('@Components/section-features'), { ssr: false });
 const FAQ = dynamic(() => import('@Components/section-faq'), { ssr: false });
 const Testimonials = dynamic(() => import('@Components/section-testimonials'), { ssr: false });
 const Footer = dynamic(() => import('@Components/footer'), { ssr: false });
