@@ -30,6 +30,20 @@ export interface IHeroSection extends ISectionType {
   button: string;
 }
 
+export interface IQuestion extends IDType, TitleType, DescType {
+  illustrationId: string;
+}
+export interface ISurveyContext extends Omit<IQuestion, 'illustrationId'> {
+  answer: string;
+  hasCustomerAnswer: boolean;
+  customerAnswer: string;
+}
+
+export interface ISurveySection extends ISectionType, LabelType {
+  questions: Array<IQuestion>;
+  surveyCompleted: string;
+}
+
 export interface IFeature extends Pick<ISectionType, 'title' | 'description'> {
   iconid: string;
 }
@@ -60,6 +74,7 @@ export interface IData {
   // _site: SEO;
   navigation: INavigationLink;
   heroSection: IHeroSection;
+  surveySection: ISurveySection;
   featureSection: IFeatureSection;
   faqSection: IFaqSection;
   testimonialSection: ITestimonialSection;

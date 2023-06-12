@@ -6,7 +6,7 @@ export default function HeroActionButton() {
   const { data } = useStore();
 
   return (
-    <div className="hero-section__action">
+    <div className="hero__action">
       <button className="button button-primary">{data!.heroSection.button}</button>
       <ActionButtonArrow />
     </div>

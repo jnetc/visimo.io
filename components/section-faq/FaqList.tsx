@@ -9,7 +9,7 @@ export default function FaqList() {
   function selectItem(event: PointerEvent<HTMLElement> | KeyboardEvent<HTMLElement>) {
     const list = event.target as HTMLElement;
     const liElement = list.closest('li')!;
-    const items = list.closest('ul')?.querySelectorAll('.faq-section__item');
+    const items = list.closest('ul')?.querySelectorAll('.faq__item');
 
     if (!liElement ?? !items) return; // prevent error if click on padding side
 
@@ -24,15 +24,15 @@ export default function FaqList() {
 
   const list = data?.faqSection.faqs.map(list => {
     return (
-      <li key={list.id} className="faq-section__item retro-box" data-key={list.id}>
-        <h3 className="faq-section__item-title" tabIndex={0} onPointerUp={selectItem} onKeyDown={selectItem}>
+      <li key={list.id} className="faq__item retro-box" data-key={list.id}>
+        <h3 className="faq__item-title" tabIndex={0} onPointerUp={selectItem} onKeyDown={selectItem}>
           {list.question}
-          <span className="faq-section__item-icon" />
+          <span className="faq__item-icon" />
         </h3>
-        <ReactMarkdown className="faq-section__item-desc markdown" children={list.answer} />
+        <ReactMarkdown className="faq__item-desc markdown" children={list.answer} />
       </li>
     );
   });
 
-  return <ul className="faq-section__list">{list}</ul>;
+  return <ul className="faq__list">{list}</ul>;
 }

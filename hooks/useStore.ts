@@ -1,5 +1,5 @@
 import { useContext, createContext } from 'react';
-import { LanguagesType, IData } from '@Types';
+import type { LanguagesType, IData } from '@Types';
 
 type State = {
   readonly language: LanguagesType;

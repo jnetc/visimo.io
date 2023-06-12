@@ -6,30 +6,30 @@ import { SVGTrinagleLines } from '@Components/background-objects/SVGTriangleLine
 
 export default function HeroPuzzle() {
   return (
-    <div className="hero-section__puzzle">
-      <SVGGrid7Col position="hero-section__grid-puzzle" />
+    <div className="hero__puzzle">
+      <SVGGrid7Col position="hero__grid-puzzle" />
       <SVGCross
         fill="bg-geometric-fill-secondary"
         size="bg-geometric-size-32"
         stroke="bg-geometric-stroke-32"
-        position="hero-section__puzzle-bottom-cross"
+        position="hero__puzzle-bottom-cross"
       />
       <SVGRectangle
         fill="bg-geometric-fill-secondary"
         size="bg-geometric-size-32"
         stroke="bg-geometric-stroke-32"
-        position="hero-section__puzzle-top-rect"
+        position="hero__puzzle-top-rect"
       />
       <SVGTriangle
         fill="bg-geometric-fill-primary"
         size="bg-geometric-size-56"
         stroke="bg-geometric-stroke-48"
-        position="hero-section__puzzle-bottom-triangle"
+        position="hero__puzzle-bottom-triangle"
       />
       <SVGTrinagleLines
         stroke="bg-lines-stroke-main"
         size="bg-geometric-size-96"
-        position="hero-section__puzzle-bottom-triangle-lines"
+        position="hero__puzzle-bottom-triangle-lines"
       />
 
       <svg width="668" height="673" viewBox="0 0 668 673" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>

@@ -1,24 +1,24 @@
-/* .faq-section {
+/* .faq {
   grid-column: 2 / -2;
 } */
-.faqs-section__grid-faqs {
+.faqs__grid-faqs {
   top: 1rem;
   left: 40%;
 }
 
-.faqs-section__employee,
-.faqs-section__extra-info {
+.faqs__employee,
+.faqs__extra-info {
   grid-column: 2 / -2;
   justify-self: center;
 }
 
-.faq-section__list {
+.faq__list {
   display: grid;
   row-gap: var(--gap-32);
   grid-column: 3 / -3;
 }
 
-.faq-section__item {
+.faq__item {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: min-content 0fr;
@@ -27,7 +27,7 @@
   contain: paint;
 }
 
-.faq-section__item-title {
+.faq__item-title {
   display: grid;
   align-items: center;
   grid-template-columns: 1fr var(--size-48);
@@ -40,23 +40,23 @@
   user-select: none;
 }
 
-.faq-section__item-desc {
+.faq__item-desc {
   overflow: hidden;
   padding-block-end: 0;
   font-size: clamp(var(--font-16), 3vw, var(--font-18));
   transition: padding-block-end var(--transition-03) ease-in-out;
 }
 
-.faq-section__item.retro-box.selected {
+.faq__item.retro-box.selected {
   grid-template-rows: min-content 1fr;
   background-color: var(--bg-color-alt);
   box-shadow: 0px 0px 0 var(--black);
 }
-.faq-section__item.selected .faq-section__item-desc {
+.faq__item.selected .faq__item-desc {
   padding-block-end: var(--gap-32);
 }
 
-.faq-section__item-icon {
+.faq__item-icon {
   width: var(--size-48);
   aspect-ratio: 1;
   position: relative;
@@ -64,8 +64,8 @@
   border-radius: 50%;
   transition: all var(--transition-03) ease-in-out;
 }
-.faq-section__item-icon::after,
-.faq-section__item-icon::before {
+.faq__item-icon::after,
+.faq__item-icon::before {
   content: '';
   width: 1.5rem;
   height: 4px;
@@ -76,54 +76,54 @@
   background-color: var(--bg-color);
   transition: inherit;
 }
-.faq-section__item-icon::before {
+.faq__item-icon::before {
   transform: rotateZ(0.25turn);
 }
-.faq-section__item.selected .faq-section__item-icon {
+.faq__item.selected .faq__item-icon {
   background-color: var(--error-dark);
 }
-.faq-section__item.selected .faq-section__item-icon::after {
+.faq__item.selected .faq__item-icon::after {
   transform: rotateZ(-0.25turn) scale(0);
   opacity: 0;
 }
-.faq-section__item.selected .faq-section__item-icon::before {
+.faq__item.selected .faq__item-icon::before {
   transform: rotateZ(0);
 }
 
-.faqs-section__employee {
+.faqs__employee {
   display: flex;
   align-items: flex-end;
   padding-block-start: var(--gap-152);
   position: relative;
 }
-.faqs-section__employee img {
+.faqs__employee img {
   aspect-ratio: 1;
   object-fit: contain;
   border-radius: 50%;
   border: 5px solid var(--bg-color);
   position: relative;
 }
-.faqs-section__employee img:nth-of-type(2) {
+.faqs__employee img:nth-of-type(2) {
   width: 100px;
   z-index: 5;
 }
-.faqs-section__employee img:nth-of-type(1),
-.faqs-section__employee img:nth-of-type(3) {
+.faqs__employee img:nth-of-type(1),
+.faqs__employee img:nth-of-type(3) {
   width: 80px;
 }
-.faqs-section__employee img:nth-of-type(1) {
+.faqs__employee img:nth-of-type(1) {
   left: 2rem;
 }
-.faqs-section__employee img:nth-of-type(3) {
+.faqs__employee img:nth-of-type(3) {
   right: 2rem;
 }
 
-.faqs-section__svg-heart {
+.faqs__svg-heart {
   bottom: -1rem;
   left: calc(clamp(2rem, 5vw, 5rem) * -1);
 }
 
-.faqs-section__extra-info {
+.faqs__extra-info {
   max-width: 60rem;
   text-align: center;
   font-size: clamp(var(--font-18), 2vw, var(--font-24));
@@ -131,24 +131,24 @@
 }
 
 @media screen and (max-width: 960px) {
-  .faq-section__list {
+  .faq__list {
     grid-column: 2 / -2;
   }
 }
 @media screen and (max-width: 559px) {
-  .faq-section__item {
+  .faq__item {
     padding-inline: var(--gap-16);
   }
-  .faq-section__item-title {
+  .faq__item-title {
     grid-template-columns: 1fr var(--size-32);
     column-gap: var(--gap-32);
   }
-  .faq-section__item-icon {
+  .faq__item-icon {
     width: var(--size-32);
     margin-inline-start: auto;
   }
-  .faq-section__item-icon::after,
-  .faq-section__item-icon::before {
+  .faq__item-icon::after,
+  .faq__item-icon::before {
     width: 1rem;
     height: 3px;
   }

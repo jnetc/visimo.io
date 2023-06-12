@@ -28,7 +28,6 @@ svg.liquid-filter {
 
 .section-label {
   color: var(--grey);
-  font-weight: bold;
   text-transform: capitalize;
   position: relative;
 }
@@ -55,10 +54,7 @@ svg.liquid-filter {
   line-height: 1.6;
   padding-block-end: var(--gap-176);
 }
-
-.features-section,
-.faqs-section,
-.testimonials-section {
+.section {
   padding-block: var(--gap-128);
   position: relative;
   contain: paint;
@@ -69,42 +65,6 @@ svg.liquid-filter {
   border: 2px solid var(--black);
   border-radius: var(--border-corner-4);
   box-shadow: 10px 10px 0 var(--black);
-}
-
-/* MARKDOWN STYLES */
-.markdown {
-  line-height: 1.6;
-}
-.markdown a {
-  color: var(--primary-dark);
-  font-weight: bold;
-  text-underline-offset: 2px;
-  text-decoration-line: underline;
-  text-decoration-thickness: 2px;
-  transition: all var(--transition-03) ease-in-out;
-}
-.markdown a:hover {
-  text-underline-offset: 6px;
-  text-decoration-color: transparent;
-}
-
-.markdown p:nth-of-type(n + 2) {
-  padding-block-start: var(--gap-16);
-}
-.markdown blockquote {
-  position: relative;
-}
-.markdown blockquote p::before,
-.markdown blockquote p::after {
-  line-height: 0;
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-.markdown blockquote p::before {
-  content: '\201C';
-}
-.markdown blockquote p::after {
-  content: '\201D';
 }
 
 @media (max-width: 960px) {

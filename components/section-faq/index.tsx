@@ -14,8 +14,8 @@ export default function FAQSection() {
   const splittingTitle = splitTitle(title, primary, secondary);
 
   return (
-    <section id="faqs" className="faqs-section main-grid">
-      <SVGGrid7Col position="faqs-section__grid-faqs" />
+    <section id="faqs" className="section faqs main-grid">
+      <SVGGrid7Col position="faqs__grid-faqs" />
       <span className="section-label">{label}</span>
       <h2 className="section-title" data-title={title}>
         {splittingTitle}
@@ -23,7 +23,7 @@ export default function FAQSection() {
       <p className="section-description">{description}</p>
       <FaqList />
       <FaqFeedback />
-      <ReactMarkdown className="faqs-section__extra-info markdown" children={extraInfo} />
+      <ReactMarkdown className="faqs__extra-info markdown" children={extraInfo} />
     </section>
   );
 }

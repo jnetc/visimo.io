@@ -1,8 +1,7 @@
-.testimonials-section {
+.testimonials {
   align-items: start;
-  contain: paint;
 }
-.testimonials-section__grid-testimonials {
+.testimonials__grid-testimonials {
   top: 5rem;
   left: 45%;
 }

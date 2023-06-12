@@ -50,7 +50,6 @@ html[data-theme='light'] {
 html {
   background-color: var(--bg-color);
   scrollbar-gutter: stable;
-  font-family: 'Verdana';
   /* color-scheme: dark light; */
 }
 html,
@@ -89,7 +88,6 @@ button {
   cursor: pointer;
   user-select: none;
   background-color: transparent;
-  border: 2px solid transparent;
   font-weight: bold;
 }
 
@@ -123,9 +121,25 @@ h6 {
   line-height: 1;
 }
 
-p {
+p,
+input,
+textarea {
   color: var(--grey-dark);
   font-weight: 400;
+}
+
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span:not(.title-primary-color, .title-secondary-color),
+button,
+label,
+input,
+textarea {
+  font-family: Verdana;
 }
 
 @media (max-width: 960px) {
@@ -143,6 +157,7 @@ p {
 }
 
 @import url('./common.css');
+@import url('./markdown.css');
 @import url(./background-objects/svg.css);
 
 /* apply back the draggable feature - exist only in Chromium and Safari */

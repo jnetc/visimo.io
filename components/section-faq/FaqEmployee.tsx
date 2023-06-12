@@ -10,9 +10,9 @@ export default function FaqEmployee() {
   });
 
   return (
-    <div className="faqs-section__employee">
+    <div className="faqs__employee">
       {avatars}
-      <SVGHeart position="faqs-section__svg-heart" />
+      <SVGHeart position="faqs__svg-heart" />
     </div>
   );
 }

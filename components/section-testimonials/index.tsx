@@ -15,8 +15,8 @@ export default function TestimonialsSection() {
   });
 
   return (
-    <section id="testimonials" className="testimonials-section main-grid">
-      <SVGGrid7Col position="testimonials-section__grid-testimonials" />
+    <section id="testimonials" className="section testimonials main-grid">
+      <SVGGrid7Col position="testimonials__grid-testimonials" />
       <span className="section-label">{label}</span>
       <h2 className="section-title" data-title={title}>
         {splittingTitle}

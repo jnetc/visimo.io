@@ -13,12 +13,10 @@ import { useStore } from '@Hooks/useStore';
 export default function HeroSection() {
   const { data } = useStore();
   return (
-    <header className="hero-section main-grid">
+    <header className="section hero main-grid">
       <HeroTitle />
       <HeroDesc />
-      {data?.heroSection.surveyNotice !== '' ? (
-        <p className="hero-section__survey">{data!.heroSection.surveyNotice}</p>
-      ) : null}
+      {data?.heroSection.surveyNotice !== '' ? <p className="hero__survey">{data!.heroSection.surveyNotice}</p> : null}
       <HeroActionButton />
       <Smartphone>
         <img src="./images/smartphone-template.png" alt="template" />
@@ -27,12 +25,12 @@ export default function HeroSection() {
         fill="bg-geometric-fill-primary"
         size="bg-geometric-size-48"
         stroke="bg-geometric-stroke-48"
-        position="hero-section__title-top-circle"
+        position="hero__title-top-circle"
       />
       <SVGCircleLines
         stroke="bg-lines-stroke-main"
         size="bg-geometric-size-96"
-        position="hero-section__title-top-circle-lines"
+        position="hero__title-top-circle-lines"
       /> */}
       {/* <HeroPuzzle /> */}
       {/* <HeroPuzzleBlue /> */}
@@ -40,14 +38,14 @@ export default function HeroSection() {
         fill="bg-geometric-fill-secondary"
         size="bg-geometric-size-32"
         stroke="bg-geometric-stroke-32"
-        position="hero-section__puzzle-right-cross"
+        position="hero__puzzle-right-cross"
       /> */}
       {/* <HeroPuzzleYellow /> */}
-      {/* <span className="hero-section__span-circle" aria-hidden>
+      {/* <span className="hero__span-circle" aria-hidden>
         <SVGCircleLines
           stroke="bg-lines-stroke-alt"
           size="bg-geometric-size-192"
-          position="hero-section__span-circle-lines"
+          position="hero__span-circle-lines"
         />
       </span> */}
     </header>

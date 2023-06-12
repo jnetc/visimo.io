@@ -13,11 +13,11 @@ export default function HeroTitle() {
 
   const splittingTitle = splitTitle(title, primary, secondary);
   return (
-    <h1 className="hero-section__title" data-title={title}>
-      <SVGHeart position="hero-section__svg-heart" />
+    <h1 className="hero__title" data-title={title}>
+      <SVGHeart position="hero__svg-heart" />
       {splittingTitle}
       <TitleArrow />
-      <SVGGrid7Col position="hero-section__svg-grid" />
+      <SVGGrid7Col position="hero__svg-grid" />
     </h1>
   );
 }

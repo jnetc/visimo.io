@@ -6,7 +6,7 @@ interface Props {
 
 export default function Smartphone({ children }: Props) {
   return (
-    <div className="phone phone-hero-section">
+    <div className="phone phone-hero">
       <span className="phone__mono-eyebrow" aria-hidden>
         <span className="mono-eyebrow__camera" />
         <span className="mono-eyebrow__speaker" />

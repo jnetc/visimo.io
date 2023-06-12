@@ -1,6 +1,6 @@
 export const TitleArrow = () => (
   <svg
-    className={`hero-section__title-arrow svg-objects`}
+    className={`hero__title-arrow svg-objects`}
     viewBox="0 0 54 171"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"

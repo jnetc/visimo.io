@@ -1,18 +1,26 @@
 .button {
-  width: 100%;
   position: relative;
   padding: var(--gap-16) var(--gap-36);
   border-radius: var(--border-corner-6);
   font-size: clamp(var(--font-24), 2vw, var(--font-32));
   text-transform: uppercase;
-  border: 2px solid var(--bg-color);
+  border-width: 2px;
+  border-style: solid;
   transition: all var(--transition-01) ease-in-out;
   box-shadow: 14px 14px 0 0 var(--black);
+  cursor: pointer;
+  user-select: none;
 }
 .button:active {
   transform: translate(0.5rem, 0.275rem) scale(0.98);
   box-shadow: 6px 6px 0 0 var(--black);
 }
+
+input[name*='answer-selected']:checked + .button {
+  transform: translate(0.5rem, 0.275rem) scale(0.98);
+  box-shadow: 6px 6px 0 0 var(--black);
+}
+
 .button:active::after {
   box-shadow: 5px 5px 0 var(--black);
 }
@@ -20,6 +28,7 @@
 .button.button-primary {
   background-color: var(--primary-dark);
   color: var(--white);
+  border-color: var(--bg-color);
 }
 .button.button-menu {
   background-color: var(--white);
@@ -27,4 +36,16 @@
   border-color: var(--primary);
   padding: var(--gap-12) var(--gap-36);
   font-size: clamp(var(--font-16), 2vw, var(--font-18));
+}
+
+.button.button-green,
+.button.button-red {
+  border-color: var(--black);
+  color: var(--black);
+}
+.button.button-green {
+  background-color: var(--success);
+}
+.button.button-red {
+  background-color: var(--error);
 }
