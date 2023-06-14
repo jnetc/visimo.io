@@ -8,9 +8,7 @@
   flex-direction: column;
   row-gap: var(--gap-176);
 }
-/* .question {
-  row-gap: var(--gap-36);
-} */
+
 .survey-form__title,
 .survey-form__txt,
 .survey-form__radio-buttons,
@@ -38,25 +36,33 @@
   display: flex;
   column-gap: var(--gap-36);
   position: relative;
-  /* padding-block: var(--gap-32) var(--gap-48); */
+}
+
+.q-button {
+  position: relative;
+  display: flex;
 }
 
 .survey-form__btn-no,
 .survey-form__btn-yes {
   font-weight: bold;
-  /* grid-column: 3 / 8; */
-  /* grid-row: 3; */
 }
-.survey-form__btn-no {
-  /* grid-column: 3 / 2 span; */
-  /* float: right; */
-  /* margin: 0; */
+
+input[name*='answer-selected'] {
+  appearance: none;
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  z-index: 50;
 }
-.survey-form__btn-yes {
-  /* grid-column: 5 / 2 span; */
-  /* margin-inline-start: auto; */
-  /* float: left; */
-  /* margin-inline-start: 10rem; */
+input[name*='answer-selected']:checked + .button {
+  transform: translate(0.5rem, 0.275rem) scale(0.98);
+  box-shadow: 6px 6px 0 0 var(--black);
+}
+
+input[name*='answer-selected']:not(:checked) + .survey-form__btn-no,
+input[name*='answer-selected']:not(:checked) + .survey-form__btn-yes {
+  background-color: var(--bg-color);
 }
 
 .survey-form__answer-label {
@@ -77,9 +83,4 @@
 .survey__send-button {
   inline-size: max-content;
   grid-column: 2 / -2;
-}
-
-input[name*='answer-selected'] {
-  position: absolute;
-  visibility: hidden;
 }

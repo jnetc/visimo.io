@@ -2,14 +2,12 @@ import { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 // Hook
 import { useSurveyForm } from '@Hooks/useServeyForm';
-// import { useStore } from '@Hooks/useStore';
 // Components
 import SurveyRadioButtons from './SurveyRadioButtons';
 import SurveyTextField from './SurveyTextField';
 // Helper
 import debounce from '@Helpers/debounce';
 // Types
-import type { KeyboardEvent } from 'react';
 import type { IQuestion } from '@Types';
 
 export default function Question({ question }: { question: IQuestion }) {
@@ -17,10 +15,7 @@ export default function Question({ question }: { question: IQuestion }) {
   const { allQuestions, setAllQuestions } = useSurveyForm();
   const [customAnswer, setCustomAnswer] = useState(false);
 
-  function selectAnswer(value: string, hasCustomerAnswer: boolean, keyEvent?: KeyboardEvent<HTMLButtonElement>) {
-    console.log(keyEvent);
-
-    if (!keyEvent || keyEvent.code !== 'Space') return;
+  function selectAnswer(value: string, hasCustomerAnswer: boolean) {
     // If question is an array
     const isInArray = allQuestions.find(q => q.id === id);
     // Adding new question in the array

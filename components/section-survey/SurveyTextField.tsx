@@ -1,4 +1,3 @@
-// Hook
 import { useStore } from '@Hooks/useStore';
 
 interface Props {
@@ -37,11 +36,6 @@ const locale = {
     ru: 'да',
     fi: 'kyllä',
   },
-  // buttonUnder: {
-  //   en: 'If you want to change answer just press another button.',
-  //   ru: 'Если вы хотите изменить ответ, просто нажмите другую кнопку.',
-  //   fi: 'Jos haluat muuttaa vastausta, paina toista painiketta.',
-  // },
   textFieldAbove: {
     en: 'In a nutshell, why not?',
     ru: 'В двух словах, почему нет?',

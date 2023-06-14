@@ -16,11 +16,6 @@
   box-shadow: 6px 6px 0 0 var(--black);
 }
 
-input[name*='answer-selected']:checked + .button {
-  transform: translate(0.5rem, 0.275rem) scale(0.98);
-  box-shadow: 6px 6px 0 0 var(--black);
-}
-
 .button:active::after {
   box-shadow: 5px 5px 0 var(--black);
 }
