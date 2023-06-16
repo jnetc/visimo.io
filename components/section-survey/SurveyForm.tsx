@@ -8,7 +8,7 @@ import Question from './Question';
 import type { ISurveyContext } from '@Types';
 
 export default function SurveyForm() {
-  const { data } = useStore();
+  const { data, language } = useStore();
 
   const [allQuestions, setAllQuestions] = useState<ISurveyContext[]>([]);
   const [formComplete, setFormComplete] = useState(false);
@@ -22,12 +22,20 @@ export default function SurveyForm() {
 
   return (
     <ServeyContext.Provider value={{ allQuestions, formComplete, setAllQuestions, setFormComplete }}>
-      <form className="survey__form">
+      <form className="main-grid survey__form">
         {questionsArr}
         <button type="submit" className="button button-primary survey__send-button">
-          send to us
+          {locale.sendButton[language]}
         </button>
       </form>
     </ServeyContext.Provider>
   );
 }
+
+const locale = {
+  sendButton: {
+    en: 'send to us',
+    ru: 'отправить нам',
+    fi: 'lähetä meille',
+  },
+};
