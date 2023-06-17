@@ -33,6 +33,14 @@
   font-size: clamp(var(--font-16), 2vw, var(--font-18));
 }
 
+.button.disabled {
+  background-color: var(--bg-color);
+  border-color: var(--grey-light);
+  color: var(--grey);
+  box-shadow: 0px 0px 0 var(--grey-light);
+  pointer-events: none;
+}
+
 .button.button-green,
 .button.button-red {
   border-color: var(--black);

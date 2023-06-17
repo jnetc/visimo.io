@@ -10,7 +10,7 @@ import debounce from '@Helpers/debounce';
 // Types
 import type { IQuestion } from '@Types';
 
-export default function Question({ question }: { question: IQuestion }) {
+export default function Question({ question, order }: { question: IQuestion; order: number }) {
   const { id, title, description } = question;
   const { allQuestions, setAllQuestions } = useSurveyForm();
   const [customAnswer, setCustomAnswer] = useState(false);
@@ -21,6 +21,7 @@ export default function Question({ question }: { question: IQuestion }) {
     // Adding new question in the array
     if (!isInArray) {
       const question = {
+        order,
         id,
         title,
         description,

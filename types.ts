@@ -1,4 +1,9 @@
 export type LanguagesType = 'ru' | 'fi' | 'en';
+export type LanguagesMessageType = {
+  ru: string;
+  fi: string;
+  en: string;
+};
 export type ThemeColorType = 'light' | 'dark';
 export type AutoColorType = ThemeColorType | 'auto';
 export type ThemeType = { theme: ThemeColorType; auto: boolean };
@@ -32,6 +37,7 @@ export interface IHeroSection extends ISectionType {
 
 export interface IQuestion extends IDType, TitleType, DescType {
   illustrationId: string;
+  order: number;
 }
 export interface ISurveyContext extends Omit<IQuestion, 'illustrationId'> {
   answer: string;
@@ -108,4 +114,10 @@ export interface ISVGLinesObjects {
   size: TypeSVGObjSize;
   stroke: TypeSVGLinesStroke;
   position: string;
+}
+
+// NODEMAILER
+export interface ResponseSurveyType {
+  status: string;
+  message: LanguagesMessageType;
 }
