@@ -1,3 +1,7 @@
 export default function Logo() {
-  return <div className="nav-bar__logo">visimo.io</div>;
+  return (
+    <svg className="nav-bar__logo">
+      <use xlinkHref="/images/icons.svg#logo"></use>
+    </svg>
+  );
 }

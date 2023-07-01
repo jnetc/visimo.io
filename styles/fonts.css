@@ -4,9 +4,17 @@ because of this, has a strange visual effect
 when iterating elements for the first time.
 */
 @font-face {
-  font-family: 'Merriweather';
-  src: url('/fonts/Merriweather-Black.woff2') format('woff2');
-  font-weight: bolder;
+  font-family: 'Quicksand', sans-serif;
+  src: url('/fonts/Quicksand-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+  size-adjust: none;
+}
+@font-face {
+  font-family: 'Quicksand', sans-serif;
+  src: url('/fonts/Quicksand-Regular.woff2') format('woff2');
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
   size-adjust: none;

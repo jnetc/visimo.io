@@ -1,5 +1,4 @@
 import { useState, FormEvent } from 'react';
-import ReactMarkdown from 'react-markdown';
 // Hooks
 import { useStore } from '@Hooks/useStore';
 import { ServeyContext } from '@Hooks/useServeyForm';

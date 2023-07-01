@@ -1,54 +1,62 @@
 .button {
   position: relative;
   padding: var(--gap-16) var(--gap-36);
-  border-radius: var(--border-corner-6);
-  font-size: clamp(var(--font-24), 2vw, var(--font-32));
-  text-transform: uppercase;
+  border-radius: var(--border-corner-16);
   border-width: 2px;
   border-style: solid;
+  text-transform: uppercase;
   transition: all var(--transition-01) ease-in-out;
-  box-shadow: 14px 14px 0 0 var(--black);
+  filter: drop-shadow(10px 10px 0px var(--btn-shadow));
   cursor: pointer;
   user-select: none;
 }
 .button:active {
-  transform: translate(0.5rem, 0.275rem) scale(0.98);
-  box-shadow: 6px 6px 0 0 var(--black);
+  transform: translate(0px, 3px);
+  filter: drop-shadow(4px 4px 0px var(--btn-shadow));
 }
-
-.button:active::after {
-  box-shadow: 5px 5px 0 var(--black);
+.button.active {
+  transform: translate(0px, 3px);
+  filter: drop-shadow(4px 4px 0px var(--btn-shadow));
 }
 
 .button.button-primary {
-  background-color: var(--primary-dark);
-  color: var(--white);
-  border-color: var(--bg-color);
-}
-.button.button-menu {
-  background-color: var(--white);
-  color: var(--primary);
-  border-color: var(--primary);
-  padding: var(--gap-12) var(--gap-36);
-  font-size: clamp(var(--font-16), 2vw, var(--font-18));
+  font-size: clamp(var(--font-24), 2vw, var(--font-32));
+  background-color: var(--btn-primary);
+  color: var(--btn-txt);
+  border-color: var(--btn-border);
 }
 
 .button.disabled {
-  background-color: var(--bg-color);
-  border-color: var(--grey-light);
-  color: var(--grey);
+  background-color: var(--btn-default);
+  border-color: var(--btn-disable-border);
+  color: var(--btn-txt-disable);
+  font-size: clamp(var(--font-24), 2vw, var(--font-32));
   box-shadow: 0px 0px 0 var(--grey-light);
   pointer-events: none;
 }
 
 .button.button-green,
 .button.button-red {
-  border-color: var(--black);
-  color: var(--black);
+  border-color: var(--btn-border-alt);
+  color: var(--btn-txt-alt);
+  font-size: clamp(var(--font-24), 2vw, var(--font-32));
 }
 .button.button-green {
   background-color: var(--success);
 }
 .button.button-red {
   background-color: var(--error);
+}
+.button.button-langs {
+  display: grid;
+  grid-template-columns: 1fr 18px;
+  column-gap: 2rem;
+  align-items: center;
+  padding: 0.625rem;
+  background-color: var(--btn-lang);
+  border-radius: var(--border-corner-8);
+  border-color: var(--btn-border);
+  color: var(--btn-txt-alt);
+  font-size: var(--font-16);
+  text-transform: capitalize;
 }

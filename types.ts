@@ -5,8 +5,7 @@ export type LanguagesMessageType = {
   en: string;
 };
 export type ThemeColorType = 'light' | 'dark';
-export type AutoColorType = ThemeColorType | 'auto';
-export type ThemeType = { theme: ThemeColorType; auto: boolean };
+// export type AutoColorType = ThemeColorType | 'auto';
 
 export type IDType = { id: string };
 export type NameType = { name: string };

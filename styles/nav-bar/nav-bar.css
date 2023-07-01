@@ -1,8 +1,8 @@
 .nav-bar {
   grid-column: 1 / -1;
-  height: max-content;
-  display: flex;
-  justify-content: space-between;
+  height: min-content;
+  display: grid;
+  grid-template-columns: max-content 1fr min-content min-content;
   align-items: center;
   gap: var(--gap-32);
   padding-block: var(--gap-36);
@@ -17,5 +17,5 @@
 
 @import url(./logo/logo.css);
 @import url(./links/links.css);
-@import url(./settings/settings-button.css);
-@import url(./settings/settings-menu.css);
+@import url(./langs/langs.css);
+@import url(./themes/theme-button.css);

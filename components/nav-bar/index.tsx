@@ -1,13 +1,15 @@
 import Logo from './logo';
-import Links from './links/index';
-import Settings from './settings';
+import Links from './links';
+import Langs from './langs';
+import Themes from './themes';
 
 export default function NavBar() {
   return (
     <nav className="nav-bar">
       <Logo />
       <Links />
-      <Settings />
+      <Langs />
+      <Themes />
     </nav>
   );
 }

@@ -1,24 +1,24 @@
 // Insert extra css, to check LocalStorage before DOM is loaded
 export const setInitialTheme = `
   function getUserPreference() {
-    const lS = JSON.parse(localStorage.getItem('theme'));
+    const lS = localStorage.getItem('theme');
     if (!lS || lS.auto) {
       // Check, if the user is using a dark theme
       const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)');
       if (darkModeQuery.matches) {
         // Assign a dark theme
-        localStorage.setItem('theme', JSON.stringify({ theme: 'dark', auto: true }));
+        localStorage.setItem('theme', 'dark');
         document.documentElement.dataset.theme = 'dark';
       } else {
         // Assign a light theme
-        localStorage.setItem('theme', JSON.stringify({ theme: 'light', auto: true }));
+        localStorage.setItem('theme', 'light');
         document.documentElement.dataset.theme = 'light';
       }
     } else {
 
       // Init theme onload
-      localStorage.setItem('theme', JSON.stringify({ theme: lS.theme, auto: lS.auto }));
-      document.documentElement.dataset.theme = lS.theme;
+      localStorage.setItem('theme', lS);
+      document.documentElement.dataset.theme = lS;
     }
   }
   getUserPreference();

@@ -1,19 +1,23 @@
 :root {
   color-scheme: dark light;
-  --primary: #83b4b0;
-  --primary-dark: #165f6c;
-  --secondary: #eba91f;
-  --secondary-dark: #bd7331;
-  --success: #79b6a8;
-  --success-dark: #4c7a70;
-  --error: #efbda0;
-  --error-dark: #dc5c1d;
+  --primary: #83b4b0; /* cambridge-blue */
+  --primary-dark: #165f6c; /* midnight-green */
+  --secondary: #eba91f; /* harvest-gold */
+  --secondary-dark: #bd7331; /* cooper */
+  --success: #79b6a8; /* cambridge-blue */
+  --success-dark: #4c7a70; /* hooker-green */
+  --error: #efbda0; /* apricot */
+  --error-dark: #dc5c1d; /* flame */
+  --non-photo-blue: #b3e1eb;
+  --almond: hsl(31, 58%, 89%);
+  --seashell: hsl(20, 67%, 96%);
+  --snow: hsl(31, 100%, 95%);
 
   --white: hsl(0, 0%, 100%);
   --white-grey: hsl(0, 0%, 96%);
   --grey-light: hsl(0, 0%, 87%);
   --grey: hsl(0, 0%, 71%);
-  --grey-dark: hsl(0, 0%, 32%);
+  --grey-dark: #474747;
   --black: hsl(0, 0%, 0%);
 
   /* For Alfa colors */
@@ -32,6 +36,7 @@
   --border-corner-6: 0.375rem;
   --border-corner-8: 0.5rem;
   --border-corner-12: 0.75rem;
+  --border-corner-16: 1rem;
   --border-corner-24: 1.5rem;
   --border-corner-36: 2.25rem;
 

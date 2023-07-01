@@ -1,7 +1,5 @@
-import type { NextPage, GetStaticProps, InferGetStaticPropsType } from 'next';
-// import Script from 'next/script';
+import { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
-
 import Head from 'next/head';
 
 // import { createSchema } from '@Helpers/transformToSchema';
@@ -10,7 +8,8 @@ import { request, query } from 'lib/datocms';
 // Hooks
 import { Store } from '@Hooks/useStore';
 // Types
-import type { IData } from '@Types';
+import type { IData, ThemeColorType } from '@Types';
+import type { NextPage, GetStaticProps, InferGetStaticPropsType } from 'next';
 
 const NavBar = dynamic(() => import('@Components/nav-bar'), { ssr: false });
 const HeroSection = dynamic(() => import('@Components/section-hero'), { ssr: false });
@@ -22,10 +21,17 @@ const Footer = dynamic(() => import('@Components/footer'), { ssr: false });
 
 const Home: NextPage = ({ data, language, languages }: InferGetStaticPropsType<typeof getStaticProps>) => {
   // const googleTokken = process.env.NEXT_PUBLIC_NEXT_GOOGLE_ANALYTICS_TOKEN as string;
+  const [isDarkTheme, setIsDarkTheme] = useState<ThemeColorType>('light');
+  console.log('app');
 
   if (!data) {
     return <main>Sorry! This page not found.</main>;
   }
+
+  useEffect(() => {
+    const lS = localStorage.getItem('theme')! as ThemeColorType;
+    setIsDarkTheme(lS);
+  }, []);
 
   const assignType = data as IData;
 
@@ -33,7 +39,7 @@ const Home: NextPage = ({ data, language, languages }: InferGetStaticPropsType<t
   // const schema = createSchema(assignType);
 
   return (
-    <Store.Provider value={{ language, languages, data: assignType }}>
+    <Store.Provider value={{ language, languages, data: assignType, isDarkTheme, switchTheme: setIsDarkTheme }}>
       <Head>
         {/* <title>{assignType._site.globalSeo.fallbackSeo.title}</title> */}
         {/* <meta name="description" content={assignType._site.globalSeo.fallbackSeo.description} /> */}

@@ -30,8 +30,28 @@ html[data-theme='dark'] {
   }
 } */
 html[data-theme='light'] {
-  --bg-color: #fcf4f0;
-  --bg-color-alt: #fcf2e8;
+  --bg-color: var(--almond);
+  /* --bg-color-alt: #fcf2e8; */
+  --txt-color: var(--black);
+  --txt-color-alt: var(--grey-dark);
+  --txt-color-mix1: var(--error-dark);
+  --txt-color-mix2: var(--secondary);
+  --btn-primary: var(--secondary);
+  --btn-accept: var(--success);
+  --btn-cancel: var(--error);
+  --btn-default: var(--seashell);
+  --btn-disable: var(--show);
+  --btn-disable-border: var(--grey-light);
+  --btn-accordion-plus: var(--success-dark);
+  --btn-accordion-minus: var(--error-dark);
+  --btn-lang: var(--success);
+  --btn-border: var(--seashell);
+  --btn-border-alt: var(--black);
+  --btn-txt: var(--seashell);
+  --btn-txt-alt: var(--black);
+  --btn-txt-disable: var(--grey);
+  --btn-shadow: var(--black);
+
   color: var(--grey-dark);
 }
 
@@ -94,7 +114,6 @@ button {
 h1,
 h2 {
   position: relative;
-  font-family: 'Merriweather';
   line-height: 1.3;
   letter-spacing: 1.5px;
   color: var(--bg-color);
@@ -127,7 +146,8 @@ textarea {
   color: var(--grey-dark);
   font-weight: 400;
 }
-
+h1,
+h2,
 h3,
 h4,
 h5,
@@ -139,7 +159,7 @@ button,
 label,
 input,
 textarea {
-  font-family: Verdana;
+  font-family: 'Quicksand', sans-serif;
 }
 
 @media (max-width: 960px) {

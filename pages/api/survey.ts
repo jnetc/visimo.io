@@ -20,7 +20,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
   };
 
   try {
-    // await transporter.sendMail(mailOptions);
+    await transporter.sendMail(mailOptions);
 
     res.send({
       status: 'success',
