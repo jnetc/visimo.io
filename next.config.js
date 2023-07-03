@@ -5,7 +5,6 @@ const nextConfig = {
     defaultLocale: 'fi',
     localeDetection: false,
   },
-  // trailingSlash: true,
   images: {
     formats: ['image/webp', 'image/avif'],
     domains: ['www.datocms-assets.com'],

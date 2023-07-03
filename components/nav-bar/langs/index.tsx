@@ -22,7 +22,7 @@ export default function Langs() {
         aria-label={locale[language]}
         title={locale[language]}
       >
-        {languageValues[language]}
+        {language}
         <svg
           className="button-langs-arrow"
           width="18"

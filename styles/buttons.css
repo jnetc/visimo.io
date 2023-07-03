@@ -47,16 +47,3 @@
 .button.button-red {
   background-color: var(--error);
 }
-.button.button-langs {
-  display: grid;
-  grid-template-columns: 1fr 18px;
-  column-gap: 2rem;
-  align-items: center;
-  padding: 0.625rem;
-  background-color: var(--btn-lang);
-  border-radius: var(--border-corner-8);
-  border-color: var(--btn-border);
-  color: var(--btn-txt);
-  font-size: var(--font-16);
-  text-transform: capitalize;
-}

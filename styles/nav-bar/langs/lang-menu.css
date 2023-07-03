@@ -30,7 +30,10 @@
   color: var(--txt-color);
 }
 
-/* .button-langs-arrow {
-  width: 18px;
-  height: 11px;
-} */
+@media screen and (max-width: 559px) {
+  .nav-bar__settings-menu {
+    top: calc(var(--gap-24) + var(--size-48));
+    right: calc(var(--size-48) + var(--gap-24));
+    font-size: var(--font-14);
+  }
+}

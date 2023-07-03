@@ -1,4 +1,4 @@
 .nav-bar__logo {
-  width: 104px;
-  height: 25px;
+  width: clamp(4rem, 15vw, 7rem);
+  margin-inline-end: auto;
 }

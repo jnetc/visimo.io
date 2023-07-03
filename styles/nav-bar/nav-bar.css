@@ -1,9 +1,9 @@
 .nav-bar {
   grid-column: 1 / -1;
   height: min-content;
-  display: grid;
-  grid-template-columns: max-content 1fr min-content min-content;
+  display: flex;
   align-items: center;
+  justify-content: center;
   gap: var(--gap-32);
   padding-block: var(--gap-36);
   padding-inline: var(--gap-16);
@@ -12,6 +12,7 @@
 @media screen and (max-width: 559px) {
   .nav-bar {
     padding-block: var(--gap-16);
+    gap: var(--gap-16);
   }
 }
 

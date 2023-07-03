@@ -19,7 +19,7 @@ export default function Themes() {
       aria-label={locale[language]}
       title={locale[language]}
     >
-      <svg className="button__icon-light">
+      <svg className="theme-button__icon-light">
         <use xlinkHref="/images/icons.svg#light"></use>
       </svg>
     </button>
