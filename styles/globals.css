@@ -40,15 +40,14 @@ html[data-theme='light'] {
   --btn-accept: var(--success);
   --btn-cancel: var(--error);
   --btn-default: var(--seashell);
-  --btn-disable: var(--show);
+  --btn-disable: var(--snow);
   --btn-disable-border: var(--grey-light);
   --btn-accordion-plus: var(--success-dark);
   --btn-accordion-minus: var(--error-dark);
   --btn-lang: var(--success);
   --btn-border: var(--seashell);
   --btn-border-alt: var(--black);
-  --btn-txt: var(--seashell);
-  --btn-txt-alt: var(--black);
+  --btn-txt: var(--black);
   --btn-txt-disable: var(--grey);
   --btn-shadow: var(--black);
 

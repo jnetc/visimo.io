@@ -40,6 +40,7 @@ export default function SurveyForm() {
     hour: 'numeric',
     minute: 'numeric',
   }).format(date);
+
   console.log(intl);
 
   async function sendSurvey(event: FormEvent<HTMLFormElement>) {
@@ -59,7 +60,6 @@ export default function SurveyForm() {
       })
       .toString()
       .replaceAll(',', '');
-    console.log(sorted);
 
     try {
       const response = await fetch(`/api/survey`, {

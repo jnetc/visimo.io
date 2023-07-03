@@ -22,7 +22,7 @@ export default function Langs() {
         aria-label={locale[language]}
         title={locale[language]}
       >
-        English
+        {languageValues[language]}
         <svg
           className="button-langs-arrow"
           width="18"
@@ -35,7 +35,7 @@ export default function Langs() {
           <path d="M2 1.5L9 9.5L16 1.5" stroke="black" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </button>
-      <SettingsMenu show={isOpen} />
+      <SettingsMenu show={isOpen} closeMenuHandler={closeMenu} />
     </OutsideClickHandler>
   );
 }
@@ -44,4 +44,10 @@ const locale = {
   en: 'Select language',
   ru: 'Выберите язык',
   fi: 'Valitse kieli',
+};
+
+export const languageValues = {
+  en: 'English',
+  ru: 'Русский',
+  fi: 'Suomi',
 };

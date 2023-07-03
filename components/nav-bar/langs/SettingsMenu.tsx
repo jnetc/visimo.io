@@ -9,7 +9,7 @@ import LangButton from './LangButton';
 import type { PointerEvent } from 'react';
 import type { LanguagesType } from '@Types';
 
-export default function SettingsMenu({ show }: { show: boolean }) {
+export default function SettingsMenu({ show, closeMenuHandler }: { show: boolean; closeMenuHandler: () => void }) {
   const { asPath, push } = useRouter();
   const { languages, language } = useStore();
   const [selectedLang, setSelectedLang] = useState(language);
@@ -20,6 +20,8 @@ export default function SettingsMenu({ show }: { show: boolean }) {
     push(`${asPath}`, `${asPath}`, { locale: lang });
     // Using state variable as a boolean in LangButton component
     setSelectedLang(lang);
+    // Close window after selecting language
+    closeMenuHandler();
   }
 
   const langButtons = languages.map(order => {

@@ -3,8 +3,9 @@ const nextConfig = {
   i18n: {
     locales: ['ru', 'fi', 'en'],
     defaultLocale: 'fi',
-    localeDetection: true,
+    localeDetection: false,
   },
+  // trailingSlash: true,
   images: {
     formats: ['image/webp', 'image/avif'],
     domains: ['www.datocms-assets.com'],

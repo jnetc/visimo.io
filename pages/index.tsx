@@ -22,7 +22,6 @@ const Footer = dynamic(() => import('@Components/footer'), { ssr: false });
 const Home: NextPage = ({ data, language, languages }: InferGetStaticPropsType<typeof getStaticProps>) => {
   // const googleTokken = process.env.NEXT_PUBLIC_NEXT_GOOGLE_ANALYTICS_TOKEN as string;
   const [isDarkTheme, setIsDarkTheme] = useState<ThemeColorType>('light');
-  console.log('app');
 
   if (!data) {
     return <main>Sorry! This page not found.</main>;
