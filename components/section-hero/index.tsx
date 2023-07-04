@@ -1,7 +1,7 @@
 import HeroTitle from './HeroTitle';
 import HeroDesc from './HeroDesc';
 import HeroActionButton from './HeroActionButton';
-import Smartphone from '@Components/smartphone';
+// import Smartphone from '@Components/smartphone';
 // import HeroPuzzle from './HeroPuzzle';
 import { useStore } from '@Hooks/useStore';
 // import { SVGCircleLines } from '@Components/background-objects/SVGCircle';
