@@ -42,9 +42,11 @@ svg.liquid-filter {
 }
 
 .title-primary-color {
-  color: var(--primary);
+  color: var(--txt-color-mix1);
+  text-transform: uppercase;
 }
 .title-secondary-color {
+  text-transform: uppercase;
   color: var(--secondary);
 }
 

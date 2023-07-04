@@ -18,9 +18,9 @@ export default function HeroSection() {
       <HeroDesc />
       {data?.heroSection.surveyNotice !== '' ? <p className="hero__survey">{data!.heroSection.surveyNotice}</p> : null}
       <HeroActionButton />
-      <Smartphone>
+      {/* <Smartphone>
         <img src="./images/smartphone-template.png" alt="template" />
-      </Smartphone>
+      </Smartphone> */}
       {/* <SVGCircle
         fill="bg-geometric-fill-primary"
         size="bg-geometric-size-48"

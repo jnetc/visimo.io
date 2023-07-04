@@ -31,11 +31,14 @@ html[data-theme='dark'] {
 } */
 html[data-theme='light'] {
   --bg-color: var(--almond);
-  /* --bg-color-alt: #fcf2e8; */
+  --bg-after: var(--error);
+  --bg-before: var(--non-photo-blue);
+
   --txt-color: var(--black);
   --txt-color-alt: var(--grey-dark);
   --txt-color-mix1: var(--error-dark);
   --txt-color-mix2: var(--secondary);
+
   --btn-primary: var(--secondary);
   --btn-accept: var(--success);
   --btn-cancel: var(--error);
@@ -50,8 +53,6 @@ html[data-theme='light'] {
   --btn-txt: var(--black);
   --btn-txt-disable: var(--grey);
   --btn-shadow: var(--black);
-
-  color: var(--grey-dark);
 }
 
 *,
@@ -111,30 +112,12 @@ button {
 }
 
 h1,
-h2 {
-  position: relative;
-  line-height: 1.3;
-  letter-spacing: 1.5px;
-  color: var(--bg-color);
-  text-shadow: -1px -1px 0 var(--black), 1px -1px 0 var(--black), -1px 1px 0 var(--black), 1px 1px 0 var(--black);
-  -webkit-text-stroke: 1px var(--black);
-}
-h1::after,
-h2::after {
-  content: attr(data-title);
-  position: absolute;
-  inset: 0;
-  color: var(--black);
-  transform: translate(4px, 4px);
-  -webkit-text-stroke: 4px var(--black);
-  z-index: -1;
-}
-
+h2,
 h3,
 h4,
 h5,
 h6 {
-  color: var(--grey-dark);
+  color: var(--txt-color-alt);
   font-weight: bold;
   line-height: 1;
 }
@@ -142,7 +125,7 @@ h6 {
 p,
 input,
 textarea {
-  color: var(--grey-dark);
+  color: var(--txt-color-alt);
   font-weight: 400;
 }
 h1,
@@ -153,8 +136,9 @@ h5,
 h6,
 p,
 a,
-span:not(.title-primary-color, .title-secondary-color),
 button,
+strong,
+span,
 label,
 input,
 textarea {
