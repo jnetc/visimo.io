@@ -29,11 +29,11 @@
 }
 .title__strong::after {
   color: var(--bg-after);
-  transform: translate(8px, -8px);
+  transform: translate(4px, -4px);
 }
 .title__strong::before {
   color: var(--bg-before);
-  transform: translate(-8px, 8px);
+  transform: translate(-4px, 4px);
 }
 .title__span {
   font-size: clamp(var(--font-24), 3.5vw, var(--font-48));
@@ -42,7 +42,7 @@
 .hero__desc {
   height: fit-content;
   padding-block: var(--gap-48) var(--gap-64);
-  font-size: clamp(var(--font-24), 5vw, var(--font-32));
+  font-size: clamp(var(--font-24), 2.2vw, var(--font-32));
   line-height: 1.6;
 }
 
