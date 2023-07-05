@@ -59,7 +59,6 @@ svg.liquid-filter {
 .section {
   padding-block: var(--gap-128);
   position: relative;
-  contain: paint;
 }
 
 .retro-box {
@@ -69,6 +68,11 @@ svg.liquid-filter {
   box-shadow: 10px 10px 0 var(--black);
 }
 
+@media (max-width: 1920px) {
+  .section {
+    contain: paint;
+  }
+}
 @media (max-width: 960px) {
   .main-grid {
     grid-template-columns: var(--gap-16) repeat(6, minmax(0, 1fr)) var(--gap-16);

@@ -1,9 +1,45 @@
-/* SVG ELEMENTS */
-@media screen and (max-width: 960px) {
-  .hero {
-    contain: paint;
+.hero__cloud-left,
+.hero__cloud-right {
+  inset-block-end: 0;
+  position: absolute;
+  opacity: 0.9;
+}
+.hero__cloud-left {
+  grid-column: 1 / span 5;
+  animation: cloud-left 5s cubic-bezier(0, 1, 0.65, 1) forwards, cloud-left-fly 120s ease-in-out 5s infinite;
+}
+.hero__cloud-right {
+  grid-column: 9 / span 6;
+  animation: cloud-right 5s cubic-bezier(0, 1, 0.65, 1) forwards, cloud-right-fly 120s ease-in-out 10s infinite;
+}
+
+@keyframes cloud-left {
+  from {
+    transform: translateX(25vw) scale(0.5);
+  }
+  to {
+    transform: translateX(-200px) scale(1);
   }
 }
+@keyframes cloud-right {
+  from {
+    transform: translateX(-25vw) scale(0.5);
+  }
+  to {
+    transform: translateX(200px) scale(1);
+  }
+}
+@keyframes cloud-left-fly {
+  50% {
+    transform: translateX(-50px);
+  }
+}
+@keyframes cloud-right-fly {
+  50% {
+    transform: translateX(50px);
+  }
+}
+
 @media screen and (max-width: 559px) {
   .hero {
     padding-block: var(--gap-80) var(--gap-128);
@@ -11,4 +47,3 @@
 }
 
 @import url(./left-side.css);
-@import url(./right-side.css);

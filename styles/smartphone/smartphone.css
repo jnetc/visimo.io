@@ -11,26 +11,26 @@
   border-radius: var(--border-corner-36);
 }
 
-.phone::after,
-.phone::before {
+.phone-backdrop::after,
+.phone-backdrop::before {
   content: '';
   position: absolute;
   inset: -0.5rem;
   border-radius: inherit;
 }
-.phone::before {
+.phone-backdrop::before {
   background-color: var(--bg-before);
   transform-origin: right bottom;
-  animation: phone-before 2s cubic-bezier(0, 1.1, 0.5, 1) forwards;
+  animation: phone-backdrop-before 2s cubic-bezier(0, 1.1, 0.5, 1) forwards;
   z-index: -1;
 }
-.phone::after {
+.phone-backdrop::after {
   transform-origin: left bottom;
-  animation: phone-after 2s cubic-bezier(0, 1.1, 0.5, 1) forwards;
+  animation: phone-backdrop-after 2s cubic-bezier(0, 1.1, 0.5, 1) forwards;
   background-color: var(--bg-after);
   z-index: -2;
 }
-@keyframes phone-before {
+@keyframes phone-backdrop-before {
   0% {
     transform: translateY(0) rotate(0);
   }
@@ -38,7 +38,7 @@
     transform: translateY(-1rem) rotate(5deg);
   }
 }
-@keyframes phone-after {
+@keyframes phone-backdrop-after {
   0% {
     transform: translateY(0) rotate(0);
   }

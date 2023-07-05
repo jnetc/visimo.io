@@ -2,13 +2,14 @@ import { ReactNode } from 'react';
 
 interface Props {
   children: ReactNode;
+  isHero: boolean;
 }
 
-export default function Smartphone({ children }: Props) {
+export default function Smartphone({ children, isHero }: Props) {
   const date = new Date();
   return (
-    <div className="phone phone-hero">
-      <img className="phone__visik-on-cloud" src="./images/visik_na_oblake.svg" alt="template" />
+    <div className={`phone phone-hero ${isHero && 'phone-backdrop'}`}>
+      {isHero ? <img className="phone__visik-on-cloud" src="./images/svg/visik_na_oblake.svg" alt="template" /> : null}
       <span className="phone__control-btns" aria-hidden />
       <span className="phone__mono-eyebrow" aria-hidden />
       <div className="phone__top-screen" aria-hidden>
