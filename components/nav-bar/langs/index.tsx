@@ -16,7 +16,7 @@ export default function Langs() {
   return (
     <OutsideClickHandler onOutsideClick={closeMenu}>
       <button
-        className={isOpen ? 'button button-langs active' : 'button button-langs'}
+        className={isOpen ? 'nav-button button-langs active' : 'nav-button button-langs'}
         onPointerUp={toggleMenu}
         ref={refButton}
         aria-label={locale[language]}

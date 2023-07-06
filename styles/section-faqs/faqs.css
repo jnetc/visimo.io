@@ -24,7 +24,7 @@
   grid-template-rows: min-content 0fr;
   padding-inline: var(--gap-32);
   transition: all var(--transition-03) ease-in-out;
-  contain: paint;
+  contain: paint; /* check for Safari */
 }
 
 .faq__item-title {

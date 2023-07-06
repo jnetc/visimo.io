@@ -6,17 +6,15 @@
   border-style: solid;
   text-transform: uppercase;
   transition: all var(--transition-01) ease-in-out;
-  filter: drop-shadow(10px 10px 0px var(--btn-shadow));
-  cursor: pointer;
-  user-select: none;
+  box-shadow: 10px 10px 0px var(--btn-shadow);
 }
 .button:active {
   transform: translate(0px, 3px);
-  filter: drop-shadow(4px 4px 0px var(--btn-shadow));
+  box-shadow: 4px 4px 0px var(--btn-shadow);
 }
 .button.active {
   transform: translate(0px, 3px);
-  filter: drop-shadow(4px 4px 0px var(--btn-shadow));
+  box-shadow: 4px 4px 0px var(--btn-shadow);
 }
 
 .button.button-primary {

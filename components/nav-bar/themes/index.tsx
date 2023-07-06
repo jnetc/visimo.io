@@ -14,12 +14,16 @@ export default function Themes() {
 
   return (
     <button
-      className={isDarkTheme === DARK_THEME ? 'nav-bar__theme-button active' : 'nav-bar__theme-button'}
+      className={
+        isDarkTheme === DARK_THEME
+          ? 'nav-button nav-button-48 nav-bar__theme-button active'
+          : 'nav-button nav-button-48 nav-bar__theme-button'
+      }
       onPointerUp={toggleMenu}
       aria-label={locale[language]}
       title={locale[language]}
     >
-      <svg className="theme-button__icon-light">
+      <svg className="nav-bar__icon">
         <use xlinkHref="/images/icons.svg#light"></use>
       </svg>
     </button>

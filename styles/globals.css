@@ -47,7 +47,8 @@ html[data-theme='light'] {
   --btn-disable-border: var(--grey-light);
   --btn-accordion-plus: var(--success-dark);
   --btn-accordion-minus: var(--error-dark);
-  --btn-lang: var(--success);
+  --btn-nav-lang: var(--success);
+  --btn-nav-menu: var(--non-photo-blue);
   --btn-border: var(--seashell);
   --btn-border-alt: var(--black);
   --btn-txt: var(--black);
@@ -75,14 +76,12 @@ html {
 html,
 body,
 #__next {
-  position: relative;
   min-height: 100vh;
 }
 #__next {
   position: relative;
 }
 body {
-  max-width: 1920px;
   margin-inline: auto;
 }
 

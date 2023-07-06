@@ -7,7 +7,7 @@
   right: calc(var(--size-48) * 2);
   padding: var(--gap-24);
   border-radius: var(--border-corner-8);
-  z-index: 100;
+  z-index: 101;
 }
 
 .nav-bar__settings-menu.show {
@@ -19,7 +19,7 @@
   display: flex;
   align-items: center;
   column-gap: var(--gap-12);
-  padding-block: var(--gap-8);
+  padding-block: var(--gap-4);
   border: none;
   color: var(--txt-color-alt);
   font-size: var(--font-16);

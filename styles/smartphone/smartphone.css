@@ -1,7 +1,7 @@
 .phone {
   --phone-width: 360px;
   justify-self: center;
-  inline-size: var(--phone-width);
+  inline-size: clamp(260px, 20vw, var(--phone-width));
   aspect-ratio: 1 / 2;
   display: flex;
   justify-content: center;
@@ -17,16 +17,17 @@
   position: absolute;
   inset: -0.5rem;
   border-radius: inherit;
+  opacity: 0;
 }
 .phone-backdrop::before {
   background-color: var(--bg-before);
   transform-origin: right bottom;
-  animation: phone-backdrop-before 2s cubic-bezier(0, 1.1, 0.5, 1) forwards;
+  animation: phone-backdrop-before 2s cubic-bezier(0, 1.1, 0.5, 1) 1s forwards;
   z-index: -1;
 }
 .phone-backdrop::after {
   transform-origin: left bottom;
-  animation: phone-backdrop-after 2s cubic-bezier(0, 1.1, 0.5, 1) forwards;
+  animation: phone-backdrop-after 2s cubic-bezier(0, 1.1, 0.5, 1) 1s forwards;
   background-color: var(--bg-after);
   z-index: -2;
 }
@@ -34,16 +35,26 @@
   0% {
     transform: translateY(0) rotate(0);
   }
+  1% {
+    transform: translateY(0) rotate(0);
+    opacity: 1;
+  }
   100% {
     transform: translateY(-1rem) rotate(5deg);
+    opacity: 1;
   }
 }
 @keyframes phone-backdrop-after {
   0% {
     transform: translateY(0) rotate(0);
   }
+  1% {
+    transform: translateY(0) rotate(0);
+    opacity: 1;
+  }
   100% {
     transform: translateY(-3rem) rotate(-5deg);
+    opacity: 1;
   }
 }
 
@@ -68,7 +79,7 @@
 
 .phone__mono-eyebrow {
   block-size: 28px;
-  inline-size: var(--size-96);
+  inline-size: clamp(var(--size-56), 5vw, var(--size-96));
   position: absolute;
   inset-block-start: var(--gap-8);
   background-color: var(--black);
@@ -90,7 +101,7 @@
   margin-inline-start: var(--gap-16);
 }
 .phone__right-icons {
-  width: 67px;
+  width: clamp(47px, 5vw, 67px);
   height: 11px;
   margin-inline-end: var(--gap-16);
 }
@@ -117,24 +128,38 @@
 }
 
 .phone__visik-on-cloud {
-  inline-size: 230px;
+  inline-size: clamp(150px, 12vw, 230px);
   position: absolute;
   inset-block-start: -10%;
   inset-inline-end: -45%;
-  animation: visit-from-mob 2s cubic-bezier(0, 1.1, 0.5, 1) forwards, visit-fly 8s ease-in-out infinite;
+  animation: visik-fly 8s ease-in-out infinite, visik-from 2s ease-in-out forwards;
   z-index: 100;
+  user-select: none;
+  pointer-events: none;
 }
 
-@keyframes visit-fly {
+@keyframes visik-fly {
   50% {
     transform: translateY(1rem);
   }
 }
-@keyframes visit-from-mob {
+@keyframes visik-from {
   0% {
     transform: translate(-80%, 100%) scale(0);
   }
   100% {
     transform: translate(0) scale(1);
+  }
+}
+
+@media (max-width: 960px) {
+  .phone-hero {
+    grid-column: 1 / -1;
+    grid-row: 6;
+    inline-size: clamp(260px, 40vw, var(--phone-width));
+    margin-block-start: 40vh;
+  }
+  .phone__visik-on-cloud {
+    inline-size: clamp(150px, 25vw, 230px);
   }
 }

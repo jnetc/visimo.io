@@ -14,5 +14,9 @@ export default function Links() {
     );
   });
 
-  return <div className="nav-bar__links">{links}</div>;
+  return (
+    <nav aria-label="desktop-navigation" className="nav-bar__links">
+      {links}
+    </nav>
+  );
 }

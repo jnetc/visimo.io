@@ -1,6 +1,7 @@
 .main-grid {
   display: grid;
-  grid-template-columns: var(--gap-16) repeat(12, minmax(0, 1fr)) var(--gap-16);
+  grid-template-columns: 1fr repeat(12, minmax(0, 121px)) 1fr;
+  /* grid-template-columns: var(--gap-16) repeat(12, minmax(0, 1fr)) var(--gap-16); */
   column-gap: var(--gap-36);
 }
 svg.liquid-filter {
@@ -38,6 +39,7 @@ svg.liquid-filter {
 
 .section-title {
   max-width: 860px;
+  line-height: 1.2;
   font-size: clamp(var(--font-32), 6vw, var(--font-48));
 }
 
@@ -59,6 +61,7 @@ svg.liquid-filter {
 .section {
   padding-block: var(--gap-128);
   position: relative;
+  overflow-x: hidden;
 }
 
 .retro-box {
@@ -69,9 +72,6 @@ svg.liquid-filter {
 }
 
 @media (max-width: 1920px) {
-  .section {
-    contain: paint;
-  }
 }
 @media (max-width: 960px) {
   .main-grid {

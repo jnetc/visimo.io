@@ -1,18 +1,55 @@
 .nav-bar {
-  grid-column: 1 / -1;
+  max-inline-size: 1920px;
+  margin-inline: auto;
   height: min-content;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: var(--gap-32);
   padding-block: var(--gap-36);
-  padding-inline: var(--gap-16);
+  padding-inline: var(--gap-36);
   position: relative;
 }
+
+.nav-button {
+  display: grid;
+  border: 2px solid var(--btn-border);
+  box-shadow: 6px 6px 0 var(--btn-shadow);
+  transition: all var(--transition-01) ease-in-out;
+}
+
+.nav-button-48 {
+  place-content: center;
+  width: var(--size-48);
+  aspect-ratio: 1;
+}
+
+.nav-button:active {
+  transform: translate(0px, 3px);
+  box-shadow: 3px 3px 0 var(--btn-shadow);
+}
+.nav-button.active {
+  transform: translate(0px, 3px);
+  box-shadow: 3px 3px 0 var(--btn-shadow);
+}
+
+.nav-bar__icon {
+  width: var(--size-32);
+  aspect-ratio: 1;
+  transition: transform var(--transition-03) ease-in-out;
+}
+
 @media screen and (max-width: 559px) {
   .nav-bar {
     padding-block: var(--gap-16);
     gap: var(--gap-16);
+    padding-inline: var(--gap-16);
+  }
+  .nav-button-48 {
+    width: var(--size-40);
+  }
+  .nav-bar__icon {
+    width: var(--size-24);
   }
 }
 
@@ -20,3 +57,4 @@
 @import url(./links/links.css);
 @import url(./langs/langs.css);
 @import url(./themes/theme-button.css);
+@import url(./links-mob/links.css);

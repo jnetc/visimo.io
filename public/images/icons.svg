@@ -32,6 +32,15 @@
   <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="dark">
     <path d="M24.0391 5.96088C14.0764 5.96088 6 14.0373 6 24C6 33.9627 14.0764 42.0391 24.0391 42.0391C33.4144 42.0391 41.1182 34.8878 41.9951 25.7418C42.0359 25.3161 41.8173 24.9076 41.4404 24.7054C41.0636 24.5033 40.6023 24.5471 40.2702 24.8166C38.4458 26.297 36.1225 27.1834 33.5892 27.1834C27.7288 27.1834 22.978 22.4325 22.978 16.5721C22.978 13.0914 24.6528 10.0021 27.245 8.06544C27.5877 7.80937 27.7431 7.37252 27.6392 6.95751C27.5352 6.5425 27.1922 6.23052 26.7692 6.16628C25.8783 6.03096 24.9665 5.96088 24.0391 5.96088Z" fill="black"></path>
   </symbol>
+  <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menu">
+	<path d="M8 24L40 24" stroke="black" stroke-width="4.5" stroke-linecap="round"/>
+	<path d="M8 35L40 35" stroke="black" stroke-width="4.5" stroke-linecap="round"/>
+	<path d="M8 13L40 13" stroke="black" stroke-width="4.5" stroke-linecap="round"/>
+  </symbol>
+  <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="close">
+	<path d="M12.6836 12.6863L35.311 35.3137" stroke="black" stroke-width="4.5" stroke-linecap="round"/>
+	<path d="M35.3125 12.6863L12.6851 35.3137" stroke="black" stroke-width="4.5" stroke-linecap="round"/>
+  </symbol>
   <symbol id="smartphone-right-side" width="68" height="12" viewBox="0 0 68 12" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path opacity="0.35" d="M43.293 2.98673C43.293 1.79012 44.263 0.820068 45.4596 0.820068H62.3484C63.545 0.820068 64.515 1.79012 64.515 2.98673V8.98674C64.515 10.1834 63.545 11.1534 62.3484 11.1534H45.4596C44.263 11.1534 43.293 10.1834 43.293 8.98673V2.98673Z" stroke="black"/>
     <path opacity="0.4" d="M66.0234 3.98669V7.98669C66.8363 7.64792 67.3649 6.85983 67.3649 5.98669C67.3649 5.11356 66.8363 4.32547 66.0234 3.98669Z" fill="black"/>
