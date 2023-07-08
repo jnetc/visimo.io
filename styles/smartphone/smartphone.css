@@ -130,25 +130,23 @@
 .phone__visik-on-cloud {
   inline-size: clamp(150px, 12vw, 230px);
   position: absolute;
-  inset-block-start: -10%;
-  inset-inline-end: -45%;
-  animation: visik-fly 8s ease-in-out infinite, visik-from 2s ease-in-out forwards;
+  top: -10%;
+  right: -45%;
+  animation: visik-from 2s ease-in-out forwards, visik-fly 8s ease-in-out 3s infinite;
   z-index: 100;
-  user-select: none;
-  pointer-events: none;
 }
 
-@keyframes visik-fly {
-  50% {
-    transform: translateY(1rem);
-  }
-}
 @keyframes visik-from {
   0% {
     transform: translate(-80%, 100%) scale(0);
   }
   100% {
     transform: translate(0) scale(1);
+  }
+}
+@keyframes visik-fly {
+  50% {
+    transform: translate(0, 1rem);
   }
 }
 

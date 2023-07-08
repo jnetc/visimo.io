@@ -4,12 +4,16 @@
   position: absolute;
 }
 .hero__cloud-left {
+  --anim-name: cloud-left;
+  --anim-name2: cloud-left-fly;
   grid-column: 2 / span 5;
-  animation: cloud-left 5s cubic-bezier(0, 1, 0.65, 1) forwards, cloud-left-fly 60s linear 3s infinite;
+  animation: var(--anim-name) 5s cubic-bezier(0, 1, 0.65, 1) forwards, var(--anim-name2) 80s linear 3s infinite;
 }
 .hero__cloud-right {
+  --anim-name: cloud-right;
+  --anim-name2: cloud-right-fly;
   grid-column: 9 / span 5;
-  animation: cloud-right 5s cubic-bezier(0, 1, 0.65, 1) forwards, cloud-right-fly 70s linear 10s infinite;
+  animation: var(--anim-name) 5s cubic-bezier(0, 1, 0.65, 1) forwards, var(--anim-name2) 70s linear 6s infinite;
 }
 
 @keyframes cloud-left {
@@ -69,14 +73,14 @@
     position: relative;
   }
   .hero__cloud-left {
+    --anim-name: cloud-left-mob;
     grid-row: 5;
     margin-block-start: var(--gap-32);
-    animation: cloud-left-fly 60s ease-in-out 3s infinite, cloud-left-mob 5s cubic-bezier(0, 1, 0.65, 1) forwards;
   }
   .hero__cloud-right {
+    --anim-name: cloud-right-mob;
     grid-row: 7;
     margin-block-start: calc(-1 * var(--gap-64));
-    animation: cloud-right-fly 70s ease-in-out 10s infinite, cloud-right-mob 5s cubic-bezier(0, 1, 0.65, 1) forwards;
   }
 }
 

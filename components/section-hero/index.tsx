@@ -8,7 +8,7 @@ import { useStore } from '@Hooks/useStore';
 export default function HeroSection() {
   const { data } = useStore();
   return (
-    <header className="section hero main-grid">
+    <header className="section main-grid hero">
       <HeroTitle />
       <HeroDesc />
       {data?.heroSection.surveyNotice !== '' ? <p className="hero__survey">{data!.heroSection.surveyNotice}</p> : null}

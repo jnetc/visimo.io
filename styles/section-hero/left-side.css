@@ -86,6 +86,7 @@
 
   .hero__desc {
     font-size: clamp(var(--font-18), 3vw, var(--font-24));
+    text-align: center;
   }
 }
 

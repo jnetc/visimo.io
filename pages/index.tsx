@@ -13,6 +13,8 @@ import type { NextPage, GetStaticProps, InferGetStaticPropsType } from 'next';
 
 const NavBar = dynamic(() => import('@Components/nav-bar'), { ssr: false });
 const HeroSection = dynamic(() => import('@Components/section-hero'), { ssr: false });
+const AppSection = dynamic(() => import('@Components/section-app'), { ssr: false });
+const StepsSection = dynamic(() => import('@Components/section-steps'), { ssr: false });
 const SurveySection = dynamic(() => import('@Components/section-survey'), { ssr: false });
 // const Features = dynamic(() => import('@Components/section-features'), { ssr: false });
 const FAQ = dynamic(() => import('@Components/section-faq'), { ssr: false });
@@ -89,6 +91,8 @@ const Home: NextPage = ({ data, language, languages }: InferGetStaticPropsType<t
       <NavBar />
       <main>
         <HeroSection />
+        <AppSection />
+        <StepsSection />
         <SurveySection />
         {/* <Features /> */}
         <FAQ />

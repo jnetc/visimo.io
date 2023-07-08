@@ -8,6 +8,8 @@ import '@Styles/buttons.css';
 import '@Styles/nav-bar/nav-bar.css';
 import '@Styles/section-hero/hero.css';
 import '@Styles/smartphone/smartphone.css';
+import '@Styles/section-app/app.css';
+import '@Styles/section-steps/steps.css';
 import '@Styles/section-survey/survey.css';
 import '@Styles/section-features/features.css';
 import '@Styles/section-faqs/faqs.css';
