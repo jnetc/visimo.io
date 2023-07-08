@@ -13,7 +13,7 @@ export default function HeroSection() {
       <HeroDesc />
       {data?.heroSection.surveyNotice !== '' ? <p className="hero__survey">{data!.heroSection.surveyNotice}</p> : null}
       <HeroActionButton />
-      <Smartphone isHero>
+      <Smartphone customClass="phone-hero" isHero>
         <img src="./images/screenshot.png" alt="template" />
       </Smartphone>
       <img className="hero__cloud-left" src="/images/svg/hero-cloud-left.svg" alt="cloud" aria-hidden />

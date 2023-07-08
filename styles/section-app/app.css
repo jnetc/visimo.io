@@ -1,11 +1,9 @@
 .app__container {
-  inline-size: clamp(520px, 50vw, 1200px);
-  aspect-ratio: 1 / 0.92917;
-  position: relative;
-}
-.app__container {
   grid-column: 2 / -2;
   justify-self: center;
+  inline-size: clamp(600px, 60vw, 1200px);
+  aspect-ratio: 1 / 0.92917;
+  position: relative;
 }
 
 .app__front-layer,
@@ -18,8 +16,10 @@
   z-index: 10;
 }
 
+/* Проверить width и height в самих svg файлах
+их там не должно быть, иначе в safari будут странности */
 .bonfire {
-  inline-size: clamp(55px, 5vw, 115px);
+  inline-size: clamp(60px, 6vw, 115px);
   aspect-ratio: 1 / 1.3044;
   position: absolute;
   inset-block-end: 15%;
@@ -27,10 +27,18 @@
 }
 .bonfire::after {
   content: '';
-  background-position: 0;
   background-size: contain;
-  animation: bonfire 0.6s steps(5) infinite;
+  animation: bonfire 0.6s linear infinite;
   z-index: 5;
+}
+
+.phone.phone-app {
+  inline-size: clamp(260px, 18vw, var(--phone-width));
+  position: absolute;
+  inset-inline-start: 48%;
+  inset-block-end: 25%;
+  transform: translateX(-50%);
+  z-index: 3;
 }
 
 .app__back-layer {
@@ -41,22 +49,29 @@
   0% {
     background-image: url(/images/svg/bonfire-1.svg);
   }
-  25% {
+  20% {
     background-image: url(/images/svg/bonfire-2.svg);
   }
-  50% {
+  40% {
     background-image: url(/images/svg/bonfire-3.svg);
   }
-  75% {
+  60% {
     background-image: url(/images/svg/bonfire-4.svg);
   }
-  100% {
+  80% {
     background-image: url(/images/svg/bonfire-5.svg);
+  }
+  100% {
+    background-image: url(/images/svg/bonfire-1.svg);
   }
 }
 
-/* @media screen and (min-width: 559px) {
-  .nav-bar__menu-button-close {
-
+@media screen and (max-width: 960px) {
+  .app__container {
+    grid-column: 1 / -1;
+    inline-size: clamp(600px, 90vw, 1200px);
   }
-} */
+  .bonfire {
+    inline-size: clamp(60px, 9vw, 115px);
+  }
+}

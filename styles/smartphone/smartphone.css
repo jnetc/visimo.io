@@ -1,5 +1,4 @@
 .phone {
-  --phone-width: 360px;
   justify-self: center;
   inline-size: clamp(260px, 20vw, var(--phone-width));
   aspect-ratio: 1 / 2;
@@ -71,17 +70,11 @@
   object-fit: cover;
 }
 
-.phone-hero {
-  grid-column: 8 / -2;
-  grid-row: 1 / span 5;
-  align-self: center;
-}
-
 .phone__mono-eyebrow {
-  block-size: 28px;
-  inline-size: clamp(var(--size-56), 5vw, var(--size-96));
+  block-size: var(--size-24);
+  inline-size: clamp(var(--size-24), 4vw, var(--size-96));
   position: absolute;
-  inset-block-start: var(--gap-8);
+  inset-block-start: var(--gap-12);
   background-color: var(--black);
   border-radius: var(--border-corner-36);
   z-index: 10;
@@ -102,6 +95,7 @@
 }
 .phone__right-icons {
   width: clamp(47px, 5vw, 67px);
+  width: 67px;
   height: 11px;
   margin-inline-end: var(--gap-16);
 }
@@ -151,12 +145,6 @@
 }
 
 @media (max-width: 960px) {
-  .phone-hero {
-    grid-column: 1 / -1;
-    grid-row: 6;
-    inline-size: clamp(260px, 40vw, var(--phone-width));
-    margin-block-start: 40vh;
-  }
   .phone__visik-on-cloud {
     inline-size: clamp(150px, 25vw, 230px);
   }
