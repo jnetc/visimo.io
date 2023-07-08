@@ -27,6 +27,8 @@
 }
 .bonfire::after {
   content: '';
+  inline-size: inherit;
+  aspect-ratio: 1 / 1.3044;
   background-size: contain;
   animation: bonfire 0.6s linear infinite;
   z-index: 5;

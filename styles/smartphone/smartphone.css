@@ -2,12 +2,9 @@
   justify-self: center;
   inline-size: clamp(260px, 20vw, var(--phone-width));
   aspect-ratio: 1 / 2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: relative;
-  border: 10px solid var(--black);
-  border-radius: var(--border-corner-36);
+  border: 10px solid transparent;
+  border-radius: clamp(var(--border-corner-24), 3vw, var(--border-corner-36));
 }
 
 .phone-backdrop::after,
@@ -58,16 +55,14 @@
 }
 
 .phone__content {
+  display: grid;
+  place-content: center;
   overflow: hidden;
-  border-radius: var(--border-corner-36);
   position: absolute;
-  inset: -4px -4px;
+  inset: -10px;
+  border: 10px solid var(--black);
+  border-radius: clamp(var(--border-corner-24), 3vw, var(--border-corner-36));
   z-index: -1;
-}
-.phone__content img {
-  inline-size: var(--phone-width);
-  aspect-ratio: 1 / 2.1;
-  object-fit: cover;
 }
 
 .phone__mono-eyebrow {
@@ -75,8 +70,10 @@
   inline-size: clamp(var(--size-24), 4vw, var(--size-96));
   position: absolute;
   inset-block-start: var(--gap-12);
+  inset-inline-start: 50%;
   background-color: var(--black);
   border-radius: var(--border-corner-36);
+  transform: translateX(-50%);
   z-index: 10;
 }
 
