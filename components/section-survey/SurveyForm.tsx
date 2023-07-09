@@ -100,5 +100,6 @@ const locale = {
     en: 'send to us',
     ru: 'отправить нам',
     fi: 'lähetä meille',
+    sv: 'skicka till oss',
   },
 };

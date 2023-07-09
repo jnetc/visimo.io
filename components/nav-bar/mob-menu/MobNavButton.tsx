@@ -21,4 +21,5 @@ const locale = {
   en: 'Navigation button',
   ru: 'Кнопка навигации',
   fi: 'Navigointipainike',
+  sv: 'Navigeringsknapp',
 };

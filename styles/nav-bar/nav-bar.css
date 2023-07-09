@@ -2,7 +2,8 @@
   max-inline-size: 1920px;
   margin-inline: auto;
   height: min-content;
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(min-content, 150px) 1fr auto auto;
   align-items: center;
   justify-content: center;
   gap: var(--gap-32);

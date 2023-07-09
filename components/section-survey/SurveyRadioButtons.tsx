@@ -45,10 +45,12 @@ const locale = {
     en: 'no',
     ru: 'нет',
     fi: 'ei',
+    sv: 'nej',
   },
   buttonYes: {
     en: 'yes',
     ru: 'да',
     fi: 'kyllä',
+    sv: 'ja',
   },
 };

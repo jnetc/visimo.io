@@ -30,20 +30,24 @@ const locale = {
     en: 'no',
     ru: 'нет',
     fi: 'ei',
+    sv: 'nej',
   },
   buttonYes: {
     en: 'yes',
     ru: 'да',
     fi: 'kyllä',
+    sv: 'ja',
   },
   textFieldAbove: {
     en: 'In a nutshell, why not?',
     ru: 'В двух словах, почему нет?',
     fi: 'Lyhyesti sanottuna, miksi ei?',
+    sv: 'Kort sagt, varför inte?',
   },
   placeholder: {
     en: 'Type your vision',
     ru: 'Свое видение',
     fi: 'Kirjoita visiosi',
+    sv: 'Skriv din vision',
   },
 };

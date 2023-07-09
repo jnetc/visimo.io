@@ -44,10 +44,12 @@ const locale = {
   en: 'Select language',
   ru: 'Выберите язык',
   fi: 'Valitse kieli',
+  sv: 'Välj språk',
 };
 
 export const languageValues = {
   en: 'English',
   ru: 'Русский',
   fi: 'Suomi',
+  sv: 'Svenska',
 };

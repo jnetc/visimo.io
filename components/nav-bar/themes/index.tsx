@@ -31,7 +31,8 @@ export default function Themes() {
 }
 
 const locale = {
-  en: 'Page settings',
-  ru: 'Настройки страницы',
-  fi: 'Sivun asetukset',
+  en: 'Switch theme',
+  ru: 'Изменить тему страницы',
+  fi: 'Vaihda teemaa',
+  sv: 'Byt tema',
 };

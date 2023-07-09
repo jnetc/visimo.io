@@ -1,6 +1,5 @@
 .nav-bar__links {
-  margin-inline-start: auto;
-  margin-inline-end: var(--gap-32);
+  justify-self: center;
   display: flex;
   gap: var(--gap-32);
 }

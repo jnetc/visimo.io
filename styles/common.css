@@ -58,10 +58,15 @@ svg.liquid-filter {
   line-height: 1.6;
   padding-block-end: var(--gap-176);
 }
-.section {
-  padding-block: var(--gap-128);
+section {
   position: relative;
   overflow-x: hidden;
+}
+.section:not(.app) {
+  padding-block: var(--gap-128);
+}
+.section.app {
+  padding-block: calc(var(--gap-128) * 2);
 }
 
 .retro-box {

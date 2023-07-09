@@ -1,8 +1,9 @@
-export type LanguagesType = 'ru' | 'fi' | 'en';
+export type LanguagesType = 'ru' | 'fi' | 'en' | 'sv';
 export type LanguagesMessageType = {
   ru: string;
   fi: string;
   en: string;
+  sv: string;
 };
 export type ThemeColorType = 'light' | 'dark';
 // export type AutoColorType = ThemeColorType | 'auto';
