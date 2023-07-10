@@ -74,19 +74,19 @@
   .hero__action {
     grid-column: 2 / 8;
     margin-inline: auto;
+    text-align: center;
   }
+
   .title__strong {
     font-size: clamp(var(--font-64), 12vw, var(--font-96));
   }
 
   .title__span {
     font-size: clamp(var(--font-32), 5vw, var(--font-48));
-    text-align: center;
   }
 
   .hero__desc {
     font-size: clamp(var(--font-18), 3vw, var(--font-24));
-    text-align: center;
   }
 }
 

@@ -76,7 +76,7 @@
     grid-column: 1 / -1;
     grid-row: 6;
     inline-size: clamp(260px, 40vw, var(--phone-width));
-    margin-block-start: 30vh;
+    margin-block-start: 30svh;
   }
 
   .hero__cloud-left,

@@ -28,6 +28,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
         ru: 'Ваше сообщение успешно отправленно!',
         en: 'Your message was successful sended!',
         fi: 'Viestisi lähetys onnistui!',
+        sv: 'Ditt meddelande har skickats!',
       },
     });
   } catch (error) {
@@ -37,6 +38,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
         en: 'Something went wrong!',
         ru: 'Что-то пошло не так!',
         fi: 'Jotain meni pieleen!',
+        sv: 'Något gick fel!',
       },
     });
   }
