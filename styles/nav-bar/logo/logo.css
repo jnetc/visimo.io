@@ -1,4 +1,5 @@
 .nav-bar__logo {
+  fill: var(--switch-black-and-light-alt);
   width: clamp(4rem, 15vw, 7rem);
   margin-inline-end: auto;
 }

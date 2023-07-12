@@ -1,4 +1,6 @@
 import { ReactNode } from 'react';
+//Hook
+import { useStore } from '@Hooks/useStore';
 
 interface Props {
   children: ReactNode;
@@ -8,9 +10,12 @@ interface Props {
 
 export default function Smartphone({ children, customClass, isHero = false }: Props) {
   const date = new Date();
+  const { isDarkTheme } = useStore();
   return (
     <div className={`phone ${customClass} ${isHero ? 'phone-backdrop' : ''}`}>
-      {isHero ? <img className="phone__visik-on-cloud" src="./images/svg/visik_na_oblake.svg" alt="template" /> : null}
+      {isHero ? (
+        <img className="phone__visik-on-cloud" src={`./images/svg/${isDarkTheme}/visik_na_oblake.svg`} alt="template" />
+      ) : null}
       <span className="phone__control-btns" aria-hidden />
       <span className="phone__mono-eyebrow" aria-hidden />
       <div className="phone__top-screen" aria-hidden>

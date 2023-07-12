@@ -27,7 +27,7 @@
   cursor: pointer;
 }
 .nav-bar__settings-item[aria-checked='true'] {
-  color: var(--txt-color);
+  color: var(--switch-black-and-light);
 }
 
 @media screen and (max-width: 559px) {

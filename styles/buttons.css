@@ -21,12 +21,12 @@
   font-size: clamp(var(--font-24), 2vw, var(--font-32));
   background-color: var(--btn-primary);
   color: var(--btn-txt);
-  border-color: var(--btn-border);
+  border-color: var(--switch-black-and-light-alt);
 }
 
 .button.disabled {
   background-color: var(--btn-default);
-  border-color: var(--btn-disable-border);
+  border-color: var(--switch-black-and-light-border);
   color: var(--btn-txt-disable);
   font-size: clamp(var(--font-24), 2vw, var(--font-32));
   box-shadow: 0px 0px 0 var(--grey-light);
@@ -35,13 +35,13 @@
 
 .button.button-green,
 .button.button-red {
-  border-color: var(--btn-border-alt);
+  border-color: var(--switch-black-and-light);
   color: var(--btn-txt);
   font-size: clamp(var(--font-24), 2vw, var(--font-32));
 }
 .button.button-green {
-  background-color: var(--success);
+  background-color: var(--light-green);
 }
 .button.button-red {
-  background-color: var(--error);
+  background-color: var(--light-red);
 }

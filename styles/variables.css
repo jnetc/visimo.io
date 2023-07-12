@@ -2,16 +2,32 @@
   color-scheme: dark light;
   --primary: #83b4b0; /* cambridge-blue */
   --primary-dark: #165f6c; /* midnight-green */
-  --secondary: #eba91f; /* harvest-gold */
-  --secondary-dark: #bd7331; /* cooper */
-  --success: #79b6a8; /* cambridge-blue */
-  --success-dark: #4c7a70; /* hooker-green */
-  --error: #efbda0; /* apricot */
-  --error-dark: #dc5c1d; /* flame */
-  --non-photo-blue: #b3e1eb;
-  --almond: hsl(31, 58%, 89%);
-  --seashell: hsl(20, 67%, 96%);
-  --snow: hsl(31, 100%, 95%);
+
+  /*LIGHT THEME*/
+  --light-yellow: #eba91f; /* harvest-gold */
+  --light-yellow-alt: #bd7331;
+  --light-green: #79b6a8; /* cambridge-blue */
+  --light-green-alt: #4c7a70; /* hooker-green */
+  --light-red: #efbda0; /* apricot */
+  --light-red-alt: #dc5c1d; /* flame */
+  --light-blue: #b3e1eb;
+  --light-blue-alt: #324c76;
+  --light-bg: #f3e3d3;
+  --light-bg-alt: #fcf3ee;
+  --snow: #fff3e5;
+
+  /*DARK THEME*/
+  --dark-yellow: #fdd887;
+  --dark-yellow-alt: #bd7331;
+  --dark-green: #005267;
+  --dark-green-alt: #013451;
+  --dark-red: #f76148;
+  --dark-red-alt: #ab706a;
+  --dark-blue: #3f87b8;
+  --dark-blue-alt: #012949;
+  --dark-blue-cloud: #175e84;
+  --dark-bg: #002039;
+  --dark-bg-alt: #0f3d61;
 
   --white: hsl(0, 0%, 100%);
   --white-grey: hsl(0, 0%, 96%);

@@ -4,8 +4,8 @@
   gap: var(--gap-32);
 }
 .nav-bar__links a {
-  color: var(--grey-dark);
-  font-size: var(--font-18);
+  color: var(--switch-black-and-light);
+  font-size: var(--font-16);
   font-weight: 400;
 }
 

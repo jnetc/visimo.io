@@ -1,6 +1,10 @@
 .nav-bar__theme-button {
-  background-color: var(--btn-primary);
+  background-color: var(--bg-color);
   border-radius: 50%;
+}
+
+.theme-icon {
+  fill: var(--btn-theme);
 }
 
 .nav-bar__theme-button.active .theme-button__icon-light {

@@ -8,6 +8,7 @@
 .hero__cloud-right {
   inset-block-end: 0;
   position: absolute;
+  pointer-events: none;
 }
 .hero__cloud-left {
   --anim-name: cloud-left;

@@ -23,9 +23,15 @@ export default function Themes() {
       aria-label={locale[language]}
       title={locale[language]}
     >
-      <svg className="nav-bar__icon">
-        <use xlinkHref="/images/icons.svg#light"></use>
-      </svg>
+      {isDarkTheme === DARK_THEME ? (
+        <svg className="nav-bar__icon theme-icon">
+          <use xlinkHref="/images/icons.svg#dark"></use>
+        </svg>
+      ) : (
+        <svg className="nav-bar__icon theme-icon">
+          <use xlinkHref="/images/icons.svg#light"></use>
+        </svg>
+      )}
     </button>
   );
 }

@@ -37,7 +37,7 @@
   fill: var(--primary);
 }
 .bg-geometric-fill-secondary {
-  fill: var(--secondary);
+  fill: var(--light-yellow);
 }
 
 .bg-geometric-stroke-32,

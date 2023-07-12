@@ -6,7 +6,7 @@ import Smartphone from '@Components/smartphone';
 import { useStore } from '@Hooks/useStore';
 
 export default function HeroSection() {
-  const { data } = useStore();
+  const { data, isDarkTheme } = useStore();
   return (
     <section className="section main-grid hero">
       <HeroTitle />
@@ -16,8 +16,13 @@ export default function HeroSection() {
       <Smartphone customClass="phone-hero" isHero>
         <img src="./images/screenshot.png" alt="template" />
       </Smartphone>
-      <img className="hero__cloud-left" src="/images/svg/hero-cloud-left.svg" alt="cloud" aria-hidden />
-      <img className="hero__cloud-right" src="/images/svg/hero-cloud-right.svg" alt="cloud" aria-hidden />
+      <img className="hero__cloud-left" src={`/images/svg/${isDarkTheme}/big-cloud-left.svg`} alt="cloud" aria-hidden />
+      <img
+        className="hero__cloud-right"
+        src={`/images/svg/${isDarkTheme}/big-cloud-right.svg`}
+        alt="cloud"
+        aria-hidden
+      />
     </section>
   );
 }

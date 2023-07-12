@@ -7,12 +7,13 @@
   margin-inline-start: auto;
   background-color: var(--btn-nav-lang);
   border-radius: var(--border-corner-8);
-  color: var(--btn-txt);
+  color: var(--switch-black-and-light);
   font-size: var(--font-16);
   text-transform: capitalize;
 }
 
 .button-langs-arrow {
+  stroke: var(--switch-black-and-light);
   transform: scale(0.8);
   transition: transform var(--transition-03) ease-in-out;
 }

@@ -32,7 +32,7 @@ export default function Langs() {
           xmlns="http://www.w3.org/2000/svg"
           aria-hidden
         >
-          <path d="M2 1.5L9 9.5L16 1.5" stroke="black" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M2 1.5L9 9.5L16 1.5" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </button>
       <SettingsMenu show={isOpen} closeMenuHandler={closeMenu} />

@@ -50,7 +50,7 @@
   padding: 10px;
   background-color: var(--bg-after);
   border-radius: var(--border-corner-6);
-  color: var(--txt-color);
+  color: var(--black);
   font-weight: bold;
   font-size: var(--font-18);
 }

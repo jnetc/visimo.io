@@ -18,7 +18,7 @@
   font-size: var(--font-32);
 }
 .links-mob__list a {
-  color: var(--txt-color);
+  color: var(--switch-black-and-light);
 }
 
 .nav-bar__menu-button {

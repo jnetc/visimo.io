@@ -86,7 +86,7 @@
   inset-block-start: var(--gap-12);
 }
 .phone__left-clock {
-  color: var(--txt-color);
+  color: var(--black);
   font-weight: bold;
   margin-inline-start: var(--gap-16);
 }

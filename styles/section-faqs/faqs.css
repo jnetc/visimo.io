@@ -34,7 +34,7 @@
   column-gap: var(--gap-48);
   padding-block: var(--gap-24) var(--gap-24);
   font-size: clamp(var(--font-18), 5vw, var(--font-32));
-  color: var(--grey-dark);
+  color: var(--switch-black-and-light);
   transition: color var(--transition-03) ease-in-out;
   cursor: pointer;
   user-select: none;
@@ -60,7 +60,7 @@
   width: var(--size-48);
   aspect-ratio: 1;
   position: relative;
-  background-color: var(--primary-dark);
+  background-color: var(--btn-accordion-plus);
   border-radius: 50%;
   transition: all var(--transition-03) ease-in-out;
 }
@@ -80,7 +80,7 @@
   transform: rotateZ(0.25turn);
 }
 .faq__item.selected .faq__item-icon {
-  background-color: var(--error-dark);
+  background-color: var(--btn-accordion-minus);
 }
 .faq__item.selected .faq__item-icon::after {
   transform: rotateZ(-0.25turn) scale(0);
