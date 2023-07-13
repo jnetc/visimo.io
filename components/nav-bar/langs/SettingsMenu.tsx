@@ -1,7 +1,5 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useRouter } from 'next/router';
-// Hooks
-import { useStore } from '@Hooks/useStore';
 // Components
 import LangButton from './LangButton';
 // Types
@@ -9,9 +7,10 @@ import type { PointerEvent } from 'react';
 import type { LanguagesType } from '@Types';
 
 export default function SettingsMenu({ show, closeMenuHandler }: { show: boolean; closeMenuHandler: () => void }) {
-  const { asPath, push } = useRouter();
-  const { languages, language } = useStore();
-  const [selectedLang, setSelectedLang] = useState(language);
+  const { asPath, push, locale, locales } = useRouter();
+  // const { languages, language } = useStore();
+  const [selectedLang, setSelectedLang] = useState(locale! as LanguagesType);
+  const languages = useRef(locales as Array<LanguagesType>);
 
   function changeLanguage(event: PointerEvent<HTMLButtonElement>) {
     const lang = (event.target as HTMLButtonElement).getAttribute('data-lang') as LanguagesType;
@@ -23,7 +22,7 @@ export default function SettingsMenu({ show, closeMenuHandler }: { show: boolean
     closeMenuHandler();
   }
 
-  const langButtons = languages.map(order => {
+  const langButtons = languages.current?.map(order => {
     return <LangButton key={order} lang={order} checked={selectedLang} handler={changeLanguage} />;
   });
 

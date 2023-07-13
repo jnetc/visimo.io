@@ -76,6 +76,17 @@ section {
   box-shadow: 10px 10px 0 var(--black);
 }
 
+/* GLOBAL CLOUD STYLE */
+.cloud-body {
+  fill: var(--cloud-body);
+}
+.cloud-shadow {
+  fill: var(--cloud-shadow);
+}
+.cloud-border {
+  fill: var(--cloud-border);
+}
+
 @media (max-width: 1920px) {
 }
 @media (max-width: 960px) {

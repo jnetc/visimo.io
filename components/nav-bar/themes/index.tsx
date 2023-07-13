@@ -1,10 +1,10 @@
-import { useStore } from '@Hooks/useStore';
+import { useTheme } from '@Hooks/useTheme';
 
 const DARK_THEME = 'dark';
 const LIGHT_THEME = 'light';
 
 export default function Themes() {
-  const { language, isDarkTheme, switchTheme } = useStore();
+  const { isDarkTheme, switchTheme } = useTheme();
 
   const toggleMenu = () => {
     switchTheme(isDarkTheme === DARK_THEME ? LIGHT_THEME : DARK_THEME);
@@ -20,8 +20,8 @@ export default function Themes() {
           : 'nav-button nav-button-48 nav-bar__theme-button'
       }
       onPointerUp={toggleMenu}
-      aria-label={locale[language]}
-      title={locale[language]}
+      aria-label="Switch theme"
+      title="Switch theme"
     >
       {isDarkTheme === DARK_THEME ? (
         <svg className="nav-bar__icon theme-icon">
@@ -35,10 +35,3 @@ export default function Themes() {
     </button>
   );
 }
-
-const locale = {
-  en: 'Switch theme',
-  ru: 'Изменить тему страницы',
-  fi: 'Vaihda teemaa',
-  sv: 'Byt tema',
-};

@@ -1,35 +1,38 @@
 import Smartphone from '@Components/smartphone';
-// Hook
-import { useStore } from '@Hooks/useStore';
+import SmallCloudLeft from '@Components/SVG/SmallCloudLeft';
+import SmallCloudRight from '@Components/SVG/SmallCloudRight';
+// Components
+import BackLayer from './SVG/BackLayer';
+import Star from './SVG/Star';
+// Hooks
+import { useTheme } from '@Hooks/useTheme';
 
 export default function AppSection() {
-  const { isDarkTheme } = useStore();
+  const { isDarkTheme } = useTheme();
   return (
-    <section className="section main-grid app">
+    <section className="section main-grid app illustration">
       <div className="app__container">
-        <img
-          className="app__cloud-left"
-          src={`/images/svg/${isDarkTheme}/small-cloud-left.svg`}
-          alt="cloud"
-          aria-hidden
-        />
-        <img
-          className="app__cloud-right"
-          src={`/images/svg/${isDarkTheme}/small-cloud-right.svg`}
-          alt="cloud"
-          aria-hidden
-        />
+        <SmallCloudLeft extraClass="app__cloud-left" />
+        <SmallCloudRight extraClass="app__cloud-right" />
         <img className="app__front-layer" src="/images/svg/app-front-layer.svg" alt="illustration visiki" />
         <div className="bonfire" aria-hidden></div>
-        <Smartphone customClass="phone-app">
+        <Smartphone isApp customClass="phone-app">
           <img src="/images/screenshot.png" alt="app image" />
         </Smartphone>
-        <img
+        {/* <span className="app__sun" /> */}
+        <BackLayer extraClass="app__back-layer" />
+        {isDarkTheme === 'dark' ? <Star extraClass="app_star1" /> : null}
+        {isDarkTheme === 'dark' ? <Star extraClass="app_star2" /> : null}
+        {isDarkTheme === 'dark' ? <Star extraClass="app_star3" /> : null}
+        {isDarkTheme === 'dark' ? <Star extraClass="app_star4" /> : null}
+        {isDarkTheme === 'dark' ? <Star extraClass="app_star5" /> : null}
+        {isDarkTheme === 'dark' ? <Star extraClass="app_star6" /> : null}
+        {/* <img
           className="app__back-layer"
           src={`/images/svg/${isDarkTheme}/app-back-layer.svg`}
           alt="illustration wood"
           aria-hidden
-        />
+        /> */}
       </div>
     </section>
   );

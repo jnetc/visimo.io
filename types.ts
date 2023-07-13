@@ -1,4 +1,4 @@
-export type LanguagesType = 'ru' | 'fi' | 'en' | 'sv';
+export type LanguagesType = 'fi' | 'en' | 'sv';
 export type LanguagesMessageType = {
   ru: string;
   fi: string;

@@ -1,4 +1,4 @@
-import dynamic from 'next/dynamic';
+// import dynamic from 'next/dynamic';
 import Head from 'next/head';
 
 // import { createSchema } from '@Helpers/transformToSchema';
@@ -9,15 +9,6 @@ import { Store } from '@Hooks/useStore';
 // Types
 import type { IData } from '@Types';
 import type { NextPage, GetStaticProps, InferGetStaticPropsType } from 'next';
-
-const NavBar = dynamic(() => import('@Components/nav-bar'), { ssr: false });
-const HeroSection = dynamic(() => import('@Components/section-hero'), { ssr: false });
-const AppSection = dynamic(() => import('@Components/section-app'), { ssr: false });
-const StepsSection = dynamic(() => import('@Components/section-steps'), { ssr: false });
-const SurveySection = dynamic(() => import('@Components/section-survey'), { ssr: false });
-// const Features = dynamic(() => import('@Components/section-features'), { ssr: false });
-const FAQ = dynamic(() => import('@Components/section-faq'), { ssr: false });
-const Testimonials = dynamic(() => import('@Components/section-testimonials'), { ssr: false });
 
 const Home: NextPage = ({ data, language, languages }: InferGetStaticPropsType<typeof getStaticProps>) => {
   // const googleTokken = process.env.NEXT_PUBLIC_NEXT_GOOGLE_ANALYTICS_TOKEN as string;
@@ -66,31 +57,8 @@ const Home: NextPage = ({ data, language, languages }: InferGetStaticPropsType<t
         {/* <meta name="twitter:image" content={assignType._site.globalSeo.fallbackSeo.image.url} /> */}
         {/* <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} /> */}
       </Head>
-      {/* <Script strategy="afterInteractive" async src={`https://www.googletagmanager.com/gtag/js?id=G-${googleTokken}`} /> */}
-      {/* <Script
-        id="google-analytics"
-        strategy="afterInteractive"
-        async
-        dangerouslySetInnerHTML={{
-          __html: `
-           window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-${googleTokken}');
-          `,
-        }}
-      /> */}
-      <NavBar />
-      <main>
-        <HeroSection />
-        <AppSection />
-        <StepsSection />
-        <SurveySection />
-        {/* <Features /> */}
-        <FAQ />
-        <Testimonials />
-      </main>
-      {/* <Footer /> */}
+
+      <main>Our story</main>
     </Store.Provider>
   );
 };

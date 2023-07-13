@@ -1,0 +1,239 @@
+[data-theme='dark'] .illustration {
+  --ill-sun-moon-stars: var(--dark-yellow);
+  --ill-nature-reflect: #7d6b43;
+  --ill-front-nature: var(--dark-green-alt);
+  --ill-front-field: #004973;
+  --ill-back-nature-and-field: #083d62;
+  --ill-tent-front: #5e340e;
+  --ill-tent-front-open: #824e1f;
+  --ill-tent-roof: #271504;
+  --ill-tent-rope: #5f5555;
+  --ill-soil-bottom: #4e4e4e;
+  --ill-soil-top: var(--black);
+  --ill-soil-middle1: #282828;
+  --ill-soil-middle2: #323232;
+  --ill-soil-middle3: #3d3d3d;
+}
+
+[data-theme='light'] .illustration {
+  --ill-sun-moon-stars: var(--light-yellow);
+  --ill-nature-reflect: #f1cb96;
+  --ill-front-nature: var(--light-green-alt);
+  --ill-back-nature-and-field: #57877c;
+  --ill-tent-front: #9a5d26;
+  --ill-tent-front-open: #c4854d;
+  --ill-tent-roof: #4f3014;
+  --ill-tent-rope: #969696;
+  --ill-soil-bottom: #a5a5a5;
+  --ill-soil-top: var(--grey-dark);
+  --ill-soil-middle1: #5e5e5e;
+  --ill-soil-middle2: #6d6d6d;
+  --ill-soil-middle3: #7e7e7e;
+}
+
+.ill-sun-moon-stars {
+  fill: var(--ill-sun-moon-stars);
+}
+.ill-front-nature {
+  fill: var(--ill-front-nature);
+}
+.ill-field {
+  fill: var(--ill-front-field);
+}
+.ill-tent-front {
+  fill: var(--ill-tent-front);
+}
+.ill-tent-front-open {
+  fill: var(--ill-tent-front-open);
+}
+.ill-tent-rope {
+  fill: var(--ill-tent-rope);
+}
+.ill-soil-bottom {
+  fill: var(--ill-soil-bottom);
+}
+.ill-soil-top {
+  fill: var(--ill-soil-top);
+}
+.ill-soil-middle1 {
+  fill: var(--ill-soil-middle1);
+}
+.ill-soil-middle2 {
+  fill: var(--ill-soil-middle2);
+}
+.ill-soil-middle3 {
+  fill: var(--ill-soil-middle3);
+}
+
+.front-gradient stop:first-of-type,
+.back-gradient stop:first-of-type {
+  stop-color: var(--ill-nature-reflect);
+}
+.front-gradient stop:last-of-type {
+  stop-color: var(--ill-front-nature);
+}
+.back-gradient stop:last-of-type {
+  stop-color: var(--ill-back-nature-and-field);
+}
+
+.tent-roof-gradient {
+  fill: var(--ill-tent-roof);
+}
+
+[data-theme='dark'] .app__sun {
+  display: none;
+}
+
+[data-theme='light'] :is(#moon, #stars) {
+  display: none;
+}
+
+.app__sun {
+  inline-size: clamp(150px, 12vw, 215px);
+  aspect-ratio: 1;
+  position: absolute;
+  inset-inline-end: calc(-1 * clamp(35%, 5vw, 50%));
+  inset-block-end: clamp(55%, 27vw, 80%);
+  border-radius: 50%;
+  background-color: var(--ill-sun-moon-stars);
+  z-index: -100;
+}
+.app__sun::before,
+.app__sun::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background-color: inherit;
+}
+.app__sun::before {
+  animation: sun-before 2s ease-out infinite;
+}
+
+.app__sun::after {
+  animation: sun-after 2.5s ease-out infinite;
+  animation-delay: 0.2s;
+}
+
+.app_star1,
+.app_star2,
+.app_star3,
+.app_star4,
+.app_star5,
+.app_star6 {
+  --width-star: 23px;
+  position: absolute;
+  inline-size: var(--width-star);
+}
+.app_star1 {
+  inset-inline-start: 1%;
+  inset-block-start: 20%;
+  transform: rotate(-15deg);
+  animation: star 4s ease-in-out infinite;
+}
+.app_star2 {
+  --width-star: 27px;
+  inset-inline-start: 30%;
+  inset-block-start: 1%;
+  transform: rotate(-45deg);
+  animation: star 5s ease-in-out infinite;
+  animation-delay: 1s;
+}
+.app_star3 {
+  --width-star: 20px;
+  inset-inline-start: 23%;
+  inset-block-start: 25%;
+  animation: star 3s ease-in-out infinite;
+  animation-delay: 1s;
+}
+.app_star4 {
+  inset-inline-start: 55%;
+  inset-block-start: 6%;
+  animation: star 4s ease-in-out infinite;
+  animation-delay: 1.2s;
+}
+.app_star5 {
+  --width-star: 16px;
+  inset-inline-end: 10%;
+  inset-block-start: 30%;
+  animation: star 3s ease-in-out infinite;
+}
+.app_star6 {
+  inset-inline-end: 5%;
+  inset-block-start: 5%;
+  transform: rotate(-60deg);
+  animation: star 4s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+
+@keyframes sun-before {
+  0% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+@keyframes sun-after {
+  0% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes star {
+  50% {
+    transform: scale(0.5) rotate(-30deg);
+    opacity: 0.8;
+  }
+}
+
+@media (max-width: 960px) {
+  .app__sun {
+    inset-block-end: clamp(55%, 45vw, 80%);
+  }
+}
+
+@media screen and (max-width: 559px) {
+  .app_star1,
+  .app_star2,
+  .app_star3,
+  .app_star4,
+  .app_star5,
+  .app_star6 {
+    --width-star: 16px;
+  }
+  .app_star1 {
+    inset-inline-start: 16%;
+    inset-block-start: -6%;
+  }
+  .app_star2 {
+    inset-inline-start: 30%;
+    inset-block-start: -30%;
+  }
+  .app_star3 {
+    inset-inline-start: 23%;
+    inset-block-start: 25%;
+  }
+  .app_star4 {
+    --width-star: 13px;
+    inset-inline-start: 65%;
+    inset-block-start: -25%;
+  }
+  .app_star5 {
+    --width-star: 14px;
+    inset-inline-end: 22%;
+    inset-block-start: 30%;
+  }
+  .app_star6 {
+    --width-star: 10px;
+    inset-inline-end: 18%;
+    inset-block-start: 0%;
+  }
+}

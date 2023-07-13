@@ -9,14 +9,14 @@ export default function SurveyRadioButtons({ id, pointerHandler }: Props) {
   const { language } = useStore();
 
   return (
-    <div className="survey-form__radio-buttons" aria-labelledby="question">
+    <div className="survey-form__radio-buttons">
       <div className="q-button">
         <input
           type="radio"
           id={`no-${id}`}
           name={`answer-selected ${id}`}
           value={locale.buttonNo[language]}
-          aria-labelledby={locale.buttonNo[language]}
+          aria-label={locale.buttonNo[language]}
           onChange={event => pointerHandler(event.target.value, true)}
         />
         <label htmlFor={`no-${id}`} className="button button-red survey-form__btn-no">
@@ -29,7 +29,7 @@ export default function SurveyRadioButtons({ id, pointerHandler }: Props) {
           id={`yes-${id}`}
           name={`answer-selected ${id}`}
           value={locale.buttonYes[language]}
-          aria-labelledby={locale.buttonYes[language]}
+          aria-label={locale.buttonYes[language]}
           onChange={event => pointerHandler(event.target.value, false)}
         />
         <label htmlFor={`yes-${id}`} className="button button-green survey-form__btn-yes">

@@ -2,11 +2,13 @@ import HeroTitle from './HeroTitle';
 import HeroDesc from './HeroDesc';
 import HeroActionButton from './HeroActionButton';
 import Smartphone from '@Components/smartphone';
+import BigCloudLeft from '@Components/SVG/BigCloudLeft';
+import BigCloudRight from '@Components/SVG/BigCloudRight';
 // Hooks
 import { useStore } from '@Hooks/useStore';
 
 export default function HeroSection() {
-  const { data, isDarkTheme } = useStore();
+  const { data } = useStore();
   return (
     <section className="section main-grid hero">
       <HeroTitle />
@@ -16,13 +18,8 @@ export default function HeroSection() {
       <Smartphone customClass="phone-hero" isHero>
         <img src="./images/screenshot.png" alt="template" />
       </Smartphone>
-      <img className="hero__cloud-left" src={`/images/svg/${isDarkTheme}/big-cloud-left.svg`} alt="cloud" aria-hidden />
-      <img
-        className="hero__cloud-right"
-        src={`/images/svg/${isDarkTheme}/big-cloud-right.svg`}
-        alt="cloud"
-        aria-hidden
-      />
+      <BigCloudLeft extraClass="hero__cloud-left" />
+      <BigCloudRight extraClass="hero__cloud-right" />
     </section>
   );
 }

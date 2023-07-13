@@ -1,12 +1,11 @@
 import { useRef, useState } from 'react';
+import { useRouter } from 'next/router';
 // Components
 import SettingsMenu from './SettingsMenu';
 import OutsideClickHandler from './OutsideClickHandler';
-// Hook
-import { useStore } from '@Hooks/useStore';
 
 export default function Langs() {
-  const { language } = useStore();
+  const { locale } = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const refButton = useRef<HTMLButtonElement>(null);
 
@@ -19,10 +18,10 @@ export default function Langs() {
         className={isOpen ? 'nav-button button-langs active' : 'nav-button button-langs'}
         onPointerUp={toggleMenu}
         ref={refButton}
-        aria-label={locale[language]}
-        title={locale[language]}
+        aria-label="Select language"
+        title="Select language"
       >
-        {language}
+        {locale}
         <svg
           className="button-langs-arrow"
           width="18"
@@ -39,17 +38,3 @@ export default function Langs() {
     </OutsideClickHandler>
   );
 }
-
-const locale = {
-  en: 'Select language',
-  ru: 'Выберите язык',
-  fi: 'Valitse kieli',
-  sv: 'Välj språk',
-};
-
-export const languageValues = {
-  en: 'English',
-  ru: 'Русский',
-  fi: 'Suomi',
-  sv: 'Svenska',
-};

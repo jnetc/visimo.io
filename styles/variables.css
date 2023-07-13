@@ -19,7 +19,7 @@
   /*DARK THEME*/
   --dark-yellow: #fdd887;
   --dark-yellow-alt: #bd7331;
-  --dark-green: #005267;
+  --dark-green: #0f496a;
   --dark-green-alt: #013451;
   --dark-red: #f76148;
   --dark-red-alt: #ab706a;
@@ -29,12 +29,12 @@
   --dark-bg: #002039;
   --dark-bg-alt: #0f3d61;
 
-  --white: hsl(0, 0%, 100%);
-  --white-grey: hsl(0, 0%, 96%);
-  --grey-light: hsl(0, 0%, 87%);
-  --grey: hsl(0, 0%, 71%);
+  --white: #ffffff;
+  --white-grey: #f5f5f5;
+  --grey-light: #dedede;
+  --grey: #b5b5b5;
   --grey-dark: #474747;
-  --black: hsl(0, 0%, 0%);
+  --black: #000000;
 
   /* For Alfa colors */
   --alfa-primary: 230 98% 60%;

@@ -33,6 +33,9 @@
       "@Helpers/*": [
         "./helpers/*"
       ],
+      "@Langs/*": [
+        "./langs/*"
+      ],
       "@Models/*": [
         "lib/*"
       ],

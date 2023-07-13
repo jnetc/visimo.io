@@ -1,21 +1,21 @@
 import { ReactNode } from 'react';
-//Hook
-import { useStore } from '@Hooks/useStore';
+// Component
+import VisikOnCloud from './SVG/VisikOnCloud';
 
 interface Props {
   children: ReactNode;
   isHero?: boolean;
+  isApp?: boolean;
   customClass: 'phone-hero' | 'phone-app';
 }
 
-export default function Smartphone({ children, customClass, isHero = false }: Props) {
+export default function Smartphone({ children, customClass, isHero = false, isApp = false }: Props) {
   const date = new Date();
-  const { isDarkTheme } = useStore();
+
   return (
     <div className={`phone ${customClass} ${isHero ? 'phone-backdrop' : ''}`}>
-      {isHero ? (
-        <img className="phone__visik-on-cloud" src={`./images/svg/${isDarkTheme}/visik_na_oblake.svg`} alt="template" />
-      ) : null}
+      {isHero ? <VisikOnCloud extraClass="phone__visik-on-cloud" /> : null}
+      {isApp ? <span className="app__sun" /> : null}
       <span className="phone__control-btns" aria-hidden />
       <span className="phone__mono-eyebrow" aria-hidden />
       <div className="phone__top-screen" aria-hidden>

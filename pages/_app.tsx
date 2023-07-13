@@ -1,5 +1,8 @@
-import type { AppProps } from 'next/app';
+import { useState, useEffect } from 'react';
 import Head from 'next/head';
+import dynamic from 'next/dynamic';
+// Hook
+import { Theme } from '@Hooks/useTheme';
 // STYLES
 import '@Styles/fonts.css';
 import '@Styles/variables.css';
@@ -15,8 +18,19 @@ import '@Styles/section-features/features.css';
 import '@Styles/section-faqs/faqs.css';
 import '@Styles/section-testimonials/testimonials.css';
 import '@Styles/footer/footer.css';
+// Types
+import type { AppProps } from 'next/app';
+import { ThemeColorType } from '@Types';
+// Components
+const Footer = dynamic(() => import('@Components/footer'), { ssr: false });
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const [isDarkTheme, setIsDarkTheme] = useState<ThemeColorType>('light');
+
+  useEffect(() => {
+    setIsDarkTheme(localStorage.getItem('theme')! as ThemeColorType);
+  }, []);
+
   return (
     <>
       <Head>
@@ -54,7 +68,10 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="generator" content="next.js" />
         {/* <meta name="google-site-verification" content="L8dbpFSbccZFtsiSdtcp3oBO2RwMGy3Kpnr2TQjTXEA" /> */}
       </Head>
-      <Component {...pageProps} />
+      <Theme.Provider value={{ isDarkTheme, switchTheme: setIsDarkTheme }}>
+        <Component {...pageProps} />
+        <Footer />
+      </Theme.Provider>
     </>
   );
 }

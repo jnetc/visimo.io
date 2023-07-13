@@ -1,7 +1,9 @@
 import Link from 'next/link';
-
-// Hooks
-import { useStore } from '@Hooks/useStore';
+import { useRouter } from 'next/router';
+// Types
+import { LanguagesType } from '@Types';
+// From Links component
+import { selectLinks } from '../links';
 
 interface Props {
   handler: (isOpen: boolean) => void;
@@ -9,13 +11,15 @@ interface Props {
 }
 
 export default function MobMenu({ handler, isOpen }: Props) {
-  const { data } = useStore();
+  const { locale, asPath } = useRouter();
 
-  const links = data?.navigation.links.map(link => {
+  const links = selectLinks(asPath);
+
+  const linksArr = links.map(link => {
     return (
       <li key={link.id}>
         <Link href={link.anchor} onClick={() => handler(false)}>
-          {link.name}
+          {link.name[locale! as LanguagesType]}
         </Link>
       </li>
     );
@@ -28,7 +32,7 @@ export default function MobMenu({ handler, isOpen }: Props) {
           <use xlinkHref="/images/icons.svg#close"></use>
         </svg>
       </button>
-      <ul className="links-mob__list">{links}</ul>
+      <ul className="links-mob__list">{linksArr}</ul>
     </nav>
   );
 }
