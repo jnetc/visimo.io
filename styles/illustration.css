@@ -34,12 +34,26 @@
 .ill-sun-moon-stars {
   fill: var(--ill-sun-moon-stars);
 }
+
+/* NATURE STYLE */
 .ill-front-nature {
   fill: var(--ill-front-nature);
 }
 .ill-field {
-  fill: var(--ill-front-field);
+  fill: var(--ill-back-nature-and-field);
 }
+.front-gradient stop:first-of-type,
+.back-gradient stop:first-of-type {
+  stop-color: var(--ill-nature-reflect);
+}
+.front-gradient stop:last-of-type {
+  stop-color: var(--ill-front-nature);
+}
+.back-gradient stop:last-of-type {
+  stop-color: var(--ill-back-nature-and-field);
+}
+
+/* TENT STYLE */
 .ill-tent-front {
   fill: var(--ill-tent-front);
 }
@@ -49,6 +63,11 @@
 .ill-tent-rope {
   fill: var(--ill-tent-rope);
 }
+.tent-roof-gradient {
+  fill: var(--ill-tent-roof);
+}
+
+/* SOIL STLE */
 .ill-soil-bottom {
   fill: var(--ill-soil-bottom);
 }
@@ -65,73 +84,61 @@
   fill: var(--ill-soil-middle3);
 }
 
-.front-gradient stop:first-of-type,
-.back-gradient stop:first-of-type {
-  stop-color: var(--ill-nature-reflect);
-}
-.front-gradient stop:last-of-type {
-  stop-color: var(--ill-front-nature);
-}
-.back-gradient stop:last-of-type {
-  stop-color: var(--ill-back-nature-and-field);
-}
-
-.tent-roof-gradient {
-  fill: var(--ill-tent-roof);
-}
-
-[data-theme='dark'] .app__sun {
+/* SUN, MOON, STARS STYLES */
+[data-theme='dark'] .sun {
   display: none;
 }
 
-[data-theme='light'] :is(#moon, #stars) {
+[data-theme='light'] :is(#moon, .night-star) {
   display: none;
 }
 
-.app__sun {
-  inline-size: clamp(150px, 12vw, 215px);
+.sun {
   aspect-ratio: 1;
   position: absolute;
-  inset-inline-end: calc(-1 * clamp(35%, 5vw, 50%));
-  inset-block-end: clamp(55%, 27vw, 80%);
   border-radius: 50%;
   background-color: var(--ill-sun-moon-stars);
   z-index: -100;
 }
-.app__sun::before,
-.app__sun::after {
+.sun::before,
+.sun::after {
   content: '';
   position: absolute;
   inset: 0;
   border-radius: inherit;
   background-color: inherit;
 }
-.app__sun::before {
+.sun::before {
   animation: sun-before 2s ease-out infinite;
 }
 
-.app__sun::after {
+.sun::after {
   animation: sun-after 2.5s ease-out infinite;
   animation-delay: 0.2s;
 }
+.app__sun {
+  inline-size: clamp(150px, 12vw, 215px);
+  inset-inline-end: calc(-1 * clamp(35%, 5vw, 50%));
+  inset-block-end: clamp(55%, 27vw, 80%);
+}
+.step__sun {
+  inline-size: clamp(85px, 8vw, 120px);
+  inset-inline-start: 50%;
+  inset-block-end: 62%;
+}
 
-.app_star1,
-.app_star2,
-.app_star3,
-.app_star4,
-.app_star5,
-.app_star6 {
+.night-star {
   --width-star: 23px;
   position: absolute;
   inline-size: var(--width-star);
 }
-.app_star1 {
+.app-star1 {
   inset-inline-start: 1%;
   inset-block-start: 20%;
   transform: rotate(-15deg);
   animation: star 4s ease-in-out infinite;
 }
-.app_star2 {
+.app-star2 {
   --width-star: 27px;
   inset-inline-start: 30%;
   inset-block-start: 1%;
@@ -139,31 +146,66 @@
   animation: star 5s ease-in-out infinite;
   animation-delay: 1s;
 }
-.app_star3 {
+.app-star3 {
   --width-star: 20px;
   inset-inline-start: 23%;
   inset-block-start: 25%;
   animation: star 3s ease-in-out infinite;
   animation-delay: 1s;
 }
-.app_star4 {
+.app-star4 {
   inset-inline-start: 55%;
   inset-block-start: 6%;
   animation: star 4s ease-in-out infinite;
   animation-delay: 1.2s;
 }
-.app_star5 {
+.app-star5 {
   --width-star: 16px;
   inset-inline-end: 10%;
   inset-block-start: 30%;
   animation: star 3s ease-in-out infinite;
 }
-.app_star6 {
+.app-star6 {
   inset-inline-end: 5%;
   inset-block-start: 5%;
   transform: rotate(-60deg);
   animation: star 4s ease-in-out infinite;
   animation-delay: 1.5s;
+}
+
+.step-star1 {
+  inset-inline-start: 20%;
+  inset-block-start: 15%;
+  transform: rotate(-15deg);
+  animation: star 4s ease-in-out infinite;
+}
+.step-star2 {
+  --width-star: 27px;
+  inset-inline-start: 40%;
+  inset-block-start: 0%;
+  transform: rotate(-45deg);
+  animation: star 5s ease-in-out infinite;
+  animation-delay: 1s;
+}
+.step-star3 {
+  --width-star: 20px;
+  inset-inline-start: 45%;
+  inset-block-start: 25%;
+  animation: star 3s ease-in-out infinite;
+  animation-delay: 1s;
+}
+.step-star4 {
+  inset-inline-end: 15%;
+  inset-block-start: 10%;
+  animation: star 4s ease-in-out infinite;
+  animation-delay: 1.2s;
+}
+.step-star5 {
+  --width-star: 16px;
+  inset-inline-end: 35%;
+  inset-block-start: 5%;
+  animation: star 3s ease-in-out infinite;
+  animation-delay: 1.2s;
 }
 
 @keyframes sun-before {
@@ -198,40 +240,38 @@
   .app__sun {
     inset-block-end: clamp(55%, 45vw, 80%);
   }
+  .step__sun {
+    inline-size: clamp(85px, 20vw, 120px);
+  }
 }
 
 @media screen and (max-width: 559px) {
-  .app_star1,
-  .app_star2,
-  .app_star3,
-  .app_star4,
-  .app_star5,
-  .app_star6 {
+  .night-star {
     --width-star: 16px;
   }
-  .app_star1 {
+  .app-star1 {
     inset-inline-start: 16%;
     inset-block-start: -6%;
   }
-  .app_star2 {
+  .app-star2 {
     inset-inline-start: 30%;
     inset-block-start: -30%;
   }
-  .app_star3 {
+  .app-star3 {
     inset-inline-start: 23%;
     inset-block-start: 25%;
   }
-  .app_star4 {
+  .app-star4 {
     --width-star: 13px;
     inset-inline-start: 65%;
     inset-block-start: -25%;
   }
-  .app_star5 {
+  .app-star5 {
     --width-star: 14px;
     inset-inline-end: 22%;
     inset-block-start: 30%;
   }
-  .app_star6 {
+  .app-star6 {
     --width-star: 10px;
     inset-inline-end: 18%;
     inset-block-start: 0%;

@@ -61,7 +61,7 @@ const Home: NextPage = ({ data, language, languages }: InferGetStaticPropsType<t
       </Head>
 
       <Header />
-      <main>Warld</main>
+      <main>World</main>
     </Store.Provider>
   );
 };

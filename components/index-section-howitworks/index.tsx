@@ -1,6 +1,6 @@
 import { useStore } from '@Hooks/useStore';
 // Components
-
+import Steps from './Steps';
 // Helpers
 import splitTitle from '@Helpers/splitTitles';
 
@@ -15,7 +15,7 @@ export default function HowItWorksSection() {
         {splittingTitle}
       </h2>
       <p className="section-description">{description}</p>
-      <div className="illustration"></div>
+      <Steps />
     </section>
   );
 }

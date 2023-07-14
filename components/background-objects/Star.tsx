@@ -1,9 +1,7 @@
 export default function Star({ extraClass }: { extraClass: string }) {
   return (
     <svg
-      className={extraClass}
-      // width="23"
-      // height="29"
+      className={`${extraClass} night-star`}
       viewBox="0 0 23 29"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

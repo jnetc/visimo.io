@@ -15,7 +15,7 @@ export default function Smartphone({ children, customClass, isHero = false, isAp
   return (
     <div className={`phone ${customClass} ${isHero ? 'phone-backdrop' : ''}`}>
       {isHero ? <VisikOnCloud extraClass="phone__visik-on-cloud" /> : null}
-      {isApp ? <span className="app__sun" /> : null}
+      {isApp ? <span className="sun app__sun illustration" /> : null}
       <span className="phone__control-btns" aria-hidden />
       <span className="phone__mono-eyebrow" aria-hidden />
       <div className="phone__top-screen" aria-hidden>

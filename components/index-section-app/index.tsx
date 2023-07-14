@@ -2,15 +2,12 @@ import Smartphone from '@Components/smartphone';
 import SmallCloudLeft from '@Components/SVG/SmallCloudLeft';
 import SmallCloudRight from '@Components/SVG/SmallCloudRight';
 // Components
-import BackLayer from './SVG/BackLayer';
-import Star from './SVG/Star';
-// Hooks
-import { useTheme } from '@Hooks/useTheme';
+import AppBackLayer from './SVG/AppBackLayer';
+import Star from '../background-objects/Star';
 
 export default function AppSection() {
-  const { isDarkTheme } = useTheme();
   return (
-    <section className="section main-grid app illustration">
+    <section className="section main-grid app ">
       <div className="app__container">
         <SmallCloudLeft extraClass="app__cloud-left" />
         <SmallCloudRight extraClass="app__cloud-right" />
@@ -19,13 +16,13 @@ export default function AppSection() {
         <Smartphone isApp customClass="phone-app">
           <img src="/images/screenshot.png" alt="app image" />
         </Smartphone>
-        <BackLayer extraClass="app__back-layer" />
-        {isDarkTheme === 'dark' ? <Star extraClass="app_star1" /> : null}
-        {isDarkTheme === 'dark' ? <Star extraClass="app_star2" /> : null}
-        {isDarkTheme === 'dark' ? <Star extraClass="app_star3" /> : null}
-        {isDarkTheme === 'dark' ? <Star extraClass="app_star4" /> : null}
-        {isDarkTheme === 'dark' ? <Star extraClass="app_star5" /> : null}
-        {isDarkTheme === 'dark' ? <Star extraClass="app_star6" /> : null}
+        <AppBackLayer extraClass="app__back-layer" />
+        <Star extraClass="app-star1" />
+        <Star extraClass="app-star2" />
+        <Star extraClass="app-star3" />
+        <Star extraClass="app-star4" />
+        <Star extraClass="app-star5" />
+        <Star extraClass="app-star6" />
       </div>
     </section>
   );

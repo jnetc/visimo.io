@@ -1,6 +1,12 @@
-export default function BackLayer({ extraClass }: { extraClass: string }) {
+export default function AppBackLayer({ extraClass }: { extraClass: string }) {
   return (
-    <svg className={extraClass} viewBox="0 0 1201 1116" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+    <svg
+      className={`${extraClass} illustration`}
+      viewBox="0 0 1201 1116"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden
+    >
       <g id="app-back-layer-light">
         <path
           id="moon"

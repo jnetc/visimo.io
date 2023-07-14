@@ -76,6 +76,10 @@
   --gap-128: 8rem;
   --gap-152: 9.5rem;
   --gap-176: 11rem;
+  --gap-192: 12rem;
+  --gap-208: 13rem;
+  --gap-224: 14rem;
+  --gap-240: 15rem;
 
   /* FONT SIZES */
   --font-12: 0.75rem;
