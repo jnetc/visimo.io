@@ -10,13 +10,12 @@ import splitTitle from '@Helpers/splitTitles';
 
 export default function FAQSection() {
   const { data } = useStore();
-  const { title, primary, secondary, description, label, extraInfo } = data!.faqSection;
+  const { title, primary, secondary, description, extraInfo } = data!.faqSection;
   const splittingTitle = splitTitle(title, primary, secondary);
 
   return (
     <section id="faqs" className="section faqs main-grid">
       <SVGGrid7Col position="faqs__grid-faqs" />
-      <span className="section-label">{label}</span>
       <h2 className="section-title" data-title={title}>
         {splittingTitle}
       </h2>

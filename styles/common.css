@@ -14,7 +14,6 @@ svg.liquid-filter {
   display: none;
 }
 
-/* .section-label, */
 .section-title,
 .section-description {
   grid-column: 2 / -2;
@@ -22,20 +21,9 @@ svg.liquid-filter {
   text-align: center;
 }
 
-/* .section-label, */
 .section-description {
   font-size: clamp(var(--font-18), 2vw, var(--font-24));
 }
-
-/* .section-label {
-  color: var(--grey);
-  text-transform: capitalize;
-  position: relative;
-}
-.section-label > span {
-  width: 261px;
-  height: 192px;
-} */
 
 .section-title {
   max-width: 860px;

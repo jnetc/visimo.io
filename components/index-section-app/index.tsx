@@ -19,7 +19,6 @@ export default function AppSection() {
         <Smartphone isApp customClass="phone-app">
           <img src="/images/screenshot.png" alt="app image" />
         </Smartphone>
-        {/* <span className="app__sun" /> */}
         <BackLayer extraClass="app__back-layer" />
         {isDarkTheme === 'dark' ? <Star extraClass="app_star1" /> : null}
         {isDarkTheme === 'dark' ? <Star extraClass="app_star2" /> : null}
@@ -27,12 +26,6 @@ export default function AppSection() {
         {isDarkTheme === 'dark' ? <Star extraClass="app_star4" /> : null}
         {isDarkTheme === 'dark' ? <Star extraClass="app_star5" /> : null}
         {isDarkTheme === 'dark' ? <Star extraClass="app_star6" /> : null}
-        {/* <img
-          className="app__back-layer"
-          src={`/images/svg/${isDarkTheme}/app-back-layer.svg`}
-          alt="illustration wood"
-          aria-hidden
-        /> */}
       </div>
     </section>
   );

@@ -7,7 +7,7 @@ import splitTitle from '@Helpers/splitTitles';
 
 export default function FeaturesSection() {
   const { data } = useStore();
-  const { title, primary, secondary, description, label, features } = data!.featureSection;
+  const { title, primary, secondary, description, features } = data!.featureSection;
   const splittingTitle = splitTitle(title, primary, secondary);
 
   const featuresArr = features.map((feature, idx) => {
@@ -18,7 +18,6 @@ export default function FeaturesSection() {
   return (
     <section id="features" className="section features main-grid">
       <SVGGrid7Col position="features__grid-features" />
-      <span className="section-label">{label}</span>
       <h2 className="section-title" data-title={title}>
         {splittingTitle}
       </h2>

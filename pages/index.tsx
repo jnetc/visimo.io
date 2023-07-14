@@ -10,14 +10,14 @@ import { Store } from '@Hooks/useStore';
 import type { IData } from '@Types';
 import type { NextPage, GetStaticProps, InferGetStaticPropsType } from 'next';
 
-const NavBar = dynamic(() => import('@Components/nav-bar'), { ssr: false });
-const HeroSection = dynamic(() => import('@Components/section-hero'), { ssr: false });
-const AppSection = dynamic(() => import('@Components/section-app'), { ssr: false });
-const StepsSection = dynamic(() => import('@Components/section-steps'), { ssr: false });
-const SurveySection = dynamic(() => import('@Components/section-survey'), { ssr: false });
-// const Features = dynamic(() => import('@Components/section-features'), { ssr: false });
-const FAQ = dynamic(() => import('@Components/section-faq'), { ssr: false });
-const Testimonials = dynamic(() => import('@Components/section-testimonials'), { ssr: false });
+const Header = dynamic(() => import('@Components/header'), { ssr: false });
+const HeroSection = dynamic(() => import('@Components/index-section-hero'), { ssr: false });
+const AppSection = dynamic(() => import('@Components/index-section-app'), { ssr: false });
+const HowItWorksSection = dynamic(() => import('@Components/index-section-howitworks'), { ssr: false });
+const SurveySection = dynamic(() => import('@Components/index-section-survey'), { ssr: false });
+// const Features = dynamic(() => import('@Components/index-section-features'), { ssr: false });
+const FAQ = dynamic(() => import('@Components/index-section-faq'), { ssr: false });
+const Testimonials = dynamic(() => import('@Components/index-section-testimonials'), { ssr: false });
 
 const Home: NextPage = ({ data, language, languages }: InferGetStaticPropsType<typeof getStaticProps>) => {
   // const googleTokken = process.env.NEXT_PUBLIC_NEXT_GOOGLE_ANALYTICS_TOKEN as string;
@@ -80,11 +80,11 @@ const Home: NextPage = ({ data, language, languages }: InferGetStaticPropsType<t
           `,
         }}
       /> */}
-      <NavBar />
+      <Header />
       <main>
         <HeroSection />
         <AppSection />
-        <StepsSection />
+        <HowItWorksSection />
         <SurveySection />
         {/* <Features /> */}
         <FAQ />

@@ -35,6 +35,10 @@ export interface IHeroSection extends ISectionType {
   button: string;
 }
 
+export interface IHowItWorksSection extends ISectionType {
+  steps: Array<DescType>;
+}
+
 export interface IQuestion extends IDType, TitleType, DescType {
   illustrationId: string;
   order: number;
@@ -45,7 +49,7 @@ export interface ISurveyContext extends Omit<IQuestion, 'illustrationId'> {
   customerAnswer: string;
 }
 
-export interface ISurveySection extends ISectionType, LabelType {
+export interface ISurveySection extends ISectionType {
   questions: Array<IQuestion>;
   surveyCompleted: string;
 }
@@ -53,7 +57,7 @@ export interface ISurveySection extends ISectionType, LabelType {
 export interface IFeature extends Pick<ISectionType, 'title' | 'description'> {
   iconid: string;
 }
-export interface IFeatureSection extends ISectionType, LabelType {
+export interface IFeatureSection extends ISectionType {
   features: Array<IFeature>;
 }
 
@@ -61,7 +65,7 @@ export interface IFaq extends IDType {
   question: string;
   answer: string;
 }
-export interface IFaqSection extends ISectionType, LabelType {
+export interface IFaqSection extends ISectionType {
   faqs: Array<IFaq>;
   avatars: Array<Image>;
   extraInfo: string;
@@ -72,7 +76,7 @@ export interface ITestimonial extends IDType, NameType, DescType {
   avatar: Image;
 }
 
-export interface ITestimonialSection extends ISectionType, LabelType {
+export interface ITestimonialSection extends ISectionType {
   testimonials: Array<ITestimonial>;
 }
 
@@ -80,6 +84,7 @@ export interface IData {
   // _site: SEO;
   navigation: INavigationLink;
   heroSection: IHeroSection;
+  howitworksSection: IHowItWorksSection;
   surveySection: ISurveySection;
   featureSection: IFeatureSection;
   faqSection: IFaqSection;

@@ -7,13 +7,12 @@ import splitTitle from '@Helpers/splitTitles';
 
 export default function Survey() {
   const { data } = useStore();
-  const { title, primary, secondary, description, label } = data!.surveySection;
+  const { title, primary, secondary, description } = data!.surveySection;
   const splittingTitle = splitTitle(title, primary, secondary);
 
   return (
     <section id="survey" className="section survey main-grid">
       <SVGGrid7Col position="survey__grid-survey" />
-      <span className="section-label">{label}</span>
       <h2 className="section-title" data-title={title}>
         {splittingTitle}
       </h2>

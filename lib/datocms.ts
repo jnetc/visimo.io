@@ -26,6 +26,9 @@ export const query = gql`
     heroSection(locale: $locale) {
       ...HeroSectionRecordFragment
     }
+    howitworksSection(locale: $locale) {
+      ...HowitworksSectionRecordFragment
+    }
     surveySection(locale: $locale) {
       ...SurveySectionRecordFragment
     }
@@ -56,6 +59,16 @@ export const query = gql`
     description
     surveyNotice
     button
+  }
+
+  fragment HowitworksSectionRecordFragment on HowitworksSectionRecord {
+    title
+    description
+    primary
+    secondary
+    steps {
+      description
+    }
   }
 
   fragment SurveySectionRecordFragment on SurveySectionRecord {
