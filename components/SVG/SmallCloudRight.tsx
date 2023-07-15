@@ -1,6 +1,12 @@
 export default function SmallCloudRight({ extraClass }: { extraClass: string }) {
   return (
-    <svg className={extraClass} viewBox="0 0 367 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+    <svg
+      className={`${extraClass} small-cloud`}
+      viewBox="0 0 367 180"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden
+    >
       <path
         d="M107.041 50.5469C107.041 50.5469 104.724 42.1759 127.384 42.4227C127.384 42.4227 133.521 21.7584 161.718 24.9463C179.802 -9.15137 213.993 -6.01637 239.862 34.597C259.566 0.551495 296.292 26.3389 293.879 69.5808C293.879 69.5808 342.669 75.8806 344.814 117.7C379.529 134.321 365.992 173.058 327.389 160.592C299.055 175.706 250.789 185.027 222.169 165.016C222.169 165.016 200.204 186.704 167.086 167.473C167.086 167.473 126.523 187.177 94.2041 162.887C13.0695 160.592 0.202782 19.5848 107.041 50.5469Z"
         className="cloud-body"

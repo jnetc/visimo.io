@@ -194,7 +194,7 @@ textarea {
 @import url('./common.css');
 @import url('./markdown.css');
 @import url(./background-objects/svg.css);
-@import url(./illustration.css);
+@import url(./illustrations.css);
 
 /* apply back the draggable feature - exist only in Chromium and Safari */
 /* :where([draggable='true']) {

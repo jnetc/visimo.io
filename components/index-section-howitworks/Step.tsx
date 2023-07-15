@@ -1,5 +1,6 @@
 import StepBackLayer from './SVG/StepBackLayer';
-import Star from '../background-objects/Star';
+import Star from '../SVG/Star';
+import SmallCloudLeft from '@Components/SVG/SmallCloudLeft';
 interface Props {
   description: string;
   id: number;
@@ -9,8 +10,9 @@ export default function Step(data: Props) {
   return (
     <div className={`step-${data.id}`}>
       <div className="step__illustration">
-        <img className="step__front-layer" src={`/images/svg/step-${data.id}-visic.svg`} alt="illustration visiki" />
+        <img className="step__front-layer" src={`/images/svg/step-${data.id}-visic.svg`} alt="visics" />
         <StepBackLayer />
+        <SmallCloudLeft extraClass="step__cloud-left" />
         <span className="sun step__sun illustration" aria-hidden />
         <Star extraClass="step-star1" />
         <Star extraClass="step-star2" />

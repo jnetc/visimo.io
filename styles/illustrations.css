@@ -93,6 +93,7 @@
   display: none;
 }
 
+/* SUN STYLES*/
 .sun {
   aspect-ratio: 1;
   position: absolute;
@@ -127,10 +128,61 @@
   inset-block-end: 62%;
 }
 
+/* BIG CLOUDS STYLES */
+.hero__cloud-left,
+.hero__cloud-right {
+  inset-block-end: 0;
+  position: absolute;
+  pointer-events: none;
+}
+.hero__cloud-left {
+  --anim-name: cloud-left;
+  --anim-name2: cloud-left-fly;
+  grid-column: 2 / span 5;
+  animation: var(--anim-name) 5s cubic-bezier(0, 1, 0.65, 1) forwards, var(--anim-name2) 80s linear 3s infinite;
+}
+.hero__cloud-right {
+  --anim-name: cloud-right;
+  --anim-name2: cloud-right-fly;
+  grid-column: 9 / span 5;
+  animation: var(--anim-name) 5s cubic-bezier(0, 1, 0.65, 1) forwards, var(--anim-name2) 70s linear 6s infinite;
+}
+
+/* SMALL CLOUDS STYLES */
+
+.small-cloud {
+  position: absolute;
+  pointer-events: none;
+}
+.app__cloud-right {
+  inline-size: clamp(150px, 15vw, 350px);
+  inset-block-start: 10%;
+  inset-inline-end: 10%;
+  animation: cloud-left-fly 45s ease-in-out infinite;
+  z-index: 15;
+}
+.app__cloud-left {
+  inline-size: clamp(200px, 19vw, 450px);
+  inset-block-start: 2%;
+  inset-inline-start: 0;
+  animation: cloud-right-fly 50s linear infinite;
+  z-index: 15;
+}
+
+.step__cloud-left {
+  inline-size: clamp(120px, 19vw, 250px);
+  inset-block-end: clamp(70%, 39vw, 85%);
+  inset-inline-start: 0;
+  animation: cloud-right-fly 50s linear infinite;
+  z-index: -1;
+}
+
+/* STARS STYLES */
 .night-star {
   --width-star: 23px;
   position: absolute;
   inline-size: var(--width-star);
+  z-index: -10;
 }
 .app-star1 {
   inset-inline-start: 1%;
@@ -174,15 +226,15 @@
 }
 
 .step-star1 {
-  inset-inline-start: 20%;
-  inset-block-start: 15%;
+  inset-inline-start: clamp(10%, 5vw, 20%);
+  inset-block-end: clamp(65%, 5vw, 80%);
   transform: rotate(-15deg);
   animation: star 4s ease-in-out infinite;
 }
 .step-star2 {
   --width-star: 27px;
   inset-inline-start: 40%;
-  inset-block-start: 0%;
+  inset-block-end: clamp(80%, 5vw, 100%);
   transform: rotate(-45deg);
   animation: star 5s ease-in-out infinite;
   animation-delay: 1s;
@@ -190,24 +242,25 @@
 .step-star3 {
   --width-star: 20px;
   inset-inline-start: 45%;
-  inset-block-start: 25%;
+  inset-block-end: clamp(65%, 5vw, 75%);
   animation: star 3s ease-in-out infinite;
   animation-delay: 1s;
 }
 .step-star4 {
-  inset-inline-end: 15%;
-  inset-block-start: 10%;
+  inset-inline-end: clamp(5%, 3vw, 15%);
+  inset-block-end: clamp(75%, 5vw, 85%);
   animation: star 4s ease-in-out infinite;
   animation-delay: 1.2s;
 }
 .step-star5 {
   --width-star: 16px;
   inset-inline-end: 35%;
-  inset-block-start: 5%;
+  inset-block-end: clamp(75%, 48vw, 90%);
   animation: star 3s ease-in-out infinite;
   animation-delay: 1.2s;
 }
 
+/* ANIMATIONS */
 @keyframes sun-before {
   0% {
     transform: scale(1);
@@ -229,10 +282,60 @@
   }
 }
 
+@keyframes cloud-left {
+  from {
+    transform: translateX(25vw) scale(0.5);
+  }
+  to {
+    transform: translateX(-200px) scale(1);
+  }
+}
+@keyframes cloud-left-mob {
+  from {
+    transform: translateX(10vw) scale(0.5);
+  }
+  to {
+    transform: translateX(-300px) scale(1);
+  }
+}
+@keyframes cloud-right {
+  from {
+    transform: translateX(-25vw) scale(0.5);
+  }
+  to {
+    transform: translateX(200px) scale(1);
+  }
+}
+@keyframes cloud-right-mob {
+  from {
+    transform: translateX(-10vw) scale(0.5);
+  }
+  to {
+    transform: translateX(100px) scale(1);
+  }
+}
+@keyframes cloud-left-fly {
+  50% {
+    transform: translateX(-50px);
+  }
+}
+@keyframes cloud-right-fly {
+  50% {
+    transform: translateX(50px);
+  }
+}
+
 @keyframes star {
   50% {
     transform: scale(0.5) rotate(-30deg);
-    opacity: 0.8;
+    opacity: 0.6;
+  }
+}
+
+/* SCREEN SIZES */
+@media screen and (max-width: 1366px) {
+  .hero__cloud-right {
+    grid-column: 7 / span 7;
   }
 }
 
@@ -240,8 +343,42 @@
   .app__sun {
     inset-block-end: clamp(55%, 45vw, 80%);
   }
+
   .step__sun {
     inline-size: clamp(85px, 20vw, 120px);
+  }
+
+  .hero__cloud-left,
+  .hero__cloud-right {
+    grid-column: 1 / -1;
+    max-width: 500px;
+    position: relative;
+  }
+  .hero__cloud-left {
+    --anim-name: cloud-left-mob;
+    grid-row: 5;
+    margin-block-start: var(--gap-32);
+  }
+  .hero__cloud-right {
+    --anim-name: cloud-right-mob;
+    grid-row: 7;
+    margin-block-start: calc(-1 * var(--gap-64));
+  }
+
+  .app__cloud-right {
+    inline-size: clamp(150px, 25vw, 350px);
+    inset-block-start: calc(-1 * clamp(15%, 15vw, 0%));
+    inset-inline-end: 10%;
+  }
+  .app__cloud-left {
+    inline-size: clamp(200px, 29vw, 450px);
+    inset-block-start: calc(-1 * clamp(10%, 15vw, 5%));
+    inset-inline-start: 0;
+  }
+
+  .step__cloud-left {
+    inline-size: clamp(150px, 35vw, 250px);
+    inset-block-end: clamp(75%, 80vw, 85%);
   }
 }
 

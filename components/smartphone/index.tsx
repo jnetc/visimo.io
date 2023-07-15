@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 // Component
-import VisikOnCloud from './SVG/VisikOnCloud';
+import VisicOnCloud from './SVG/VisicOnCloud';
 
 interface Props {
   children: ReactNode;
@@ -14,7 +14,7 @@ export default function Smartphone({ children, customClass, isHero = false, isAp
 
   return (
     <div className={`phone ${customClass} ${isHero ? 'phone-backdrop' : ''}`}>
-      {isHero ? <VisikOnCloud extraClass="phone__visik-on-cloud" /> : null}
+      {isHero ? <VisicOnCloud extraClass="phone__visic-on-cloud" /> : null}
       {isApp ? <span className="sun app__sun illustration" /> : null}
       <span className="phone__control-btns" aria-hidden />
       <span className="phone__mono-eyebrow" aria-hidden />

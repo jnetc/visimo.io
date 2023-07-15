@@ -13,24 +13,6 @@
   inset: 0;
 }
 
-.app__cloud-right,
-.app__cloud-left {
-  position: absolute;
-  z-index: 15;
-}
-.app__cloud-right {
-  inline-size: clamp(150px, 15vw, 350px);
-  inset-block-start: 10%;
-  inset-inline-end: 10%;
-  animation: cloud-left-fly 45s ease-in-out infinite;
-}
-.app__cloud-left {
-  inline-size: clamp(200px, 19vw, 450px);
-  inset-block-start: 2%;
-  inset-inline-start: 0;
-  animation: cloud-right-fly 50s linear infinite;
-}
-
 .app__front-layer {
   z-index: 10;
 }
@@ -91,17 +73,6 @@
   .app__container {
     grid-column: 1 / -1;
     inline-size: clamp(600px, 90vw, 1200px);
-  }
-
-  .app__cloud-right {
-    inline-size: clamp(150px, 25vw, 350px);
-    inset-block-start: calc(-1 * clamp(15%, 15vw, 0%));
-    inset-inline-end: 10%;
-  }
-  .app__cloud-left {
-    inline-size: clamp(200px, 29vw, 450px);
-    inset-block-start: calc(-1 * clamp(10%, 15vw, 5%));
-    inset-inline-start: 0;
   }
 
   .bonfire {

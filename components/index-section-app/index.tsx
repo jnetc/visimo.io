@@ -3,7 +3,7 @@ import SmallCloudLeft from '@Components/SVG/SmallCloudLeft';
 import SmallCloudRight from '@Components/SVG/SmallCloudRight';
 // Components
 import AppBackLayer from './SVG/AppBackLayer';
-import Star from '../background-objects/Star';
+import Star from '../SVG/Star';
 
 export default function AppSection() {
   return (
@@ -11,7 +11,7 @@ export default function AppSection() {
       <div className="app__container">
         <SmallCloudLeft extraClass="app__cloud-left" />
         <SmallCloudRight extraClass="app__cloud-right" />
-        <img className="app__front-layer" src="/images/svg/app-front-layer.svg" alt="illustration visiki" />
+        <img className="app__front-layer" src="/images/svg/app-front-layer.svg" alt="visics" />
         <div className="bonfire" aria-hidden></div>
         <Smartphone isApp customClass="phone-app">
           <img src="/images/screenshot.png" alt="app image" />
