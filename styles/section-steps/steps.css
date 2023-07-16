@@ -16,8 +16,6 @@
 
 .step__illustration,
 .step__app-preview {
-  /* max-inline-size: 710px;
-  aspect-ratio: 1 / 0.94367; */
   flex: 0 1 50%;
   position: relative;
 }
@@ -37,12 +35,21 @@
   place-content: center;
   aspect-ratio: 1 / 0.6;
   position: absolute;
-  inset-block-end: 40%;
   border-radius: 50%;
   background-color: var(--bg-dialog);
   padding: 2.5rem;
   font-size: clamp(var(--font-16), 1.5vw, var(--font-20));
   font-weight: bold;
+}
+
+.step__description.monolog {
+  inset-block-end: 40%;
+}
+
+.step__description.dialog {
+  inset-block-end: 44%;
+  inset-inline-start: 50%;
+  transform: translateX(-50%);
 }
 
 .step__monolog {
@@ -52,11 +59,18 @@
   fill: var(--switch-black-and-light);
   z-index: 5;
 }
+.step__dialog {
+  position: absolute;
+  inset: -4% 0%;
+  transform: rotateX(20deg);
+  fill: var(--switch-black-and-light);
+  z-index: 5;
+}
 
-[class^='step-']:nth-of-type(odd) .step__description {
+[class^='step-']:nth-of-type(odd) .step__description.monolog {
   inset-inline-start: 42%;
 }
-[class^='step-']:nth-of-type(even) .step__description {
+[class^='step-']:nth-of-type(even) .step__description.monolog {
   inset-inline-end: 42%;
 }
 [class^='step-']:nth-of-type(even) .step__monolog {
@@ -64,8 +78,11 @@
 }
 
 @media (max-width: 1366px) {
-  .step__description {
+  .step__description.monolog {
     inset-block-end: 44%;
+  }
+  .step__description.dialog {
+    inset-block-end: 46%;
   }
 }
 
@@ -80,19 +97,22 @@
   [class^='step-']:nth-of-type(even) {
     flex-direction: column;
   }
-  .step__description {
+  .step__description.monolog {
     inset-block-end: 40%;
+  }
+  .step__description.dialog {
+    inset-block-end: 45%;
   }
 }
 
 @media screen and (max-width: 559px) {
-  .step__description {
+  .step__description.monolog {
     inset-block-end: 44%;
   }
-  [class^='step-']:nth-of-type(odd) .step__description {
+  [class^='step-']:nth-of-type(odd) .step__description.monolog {
     inset-inline-start: 39%;
   }
-  [class^='step-']:nth-of-type(even) .step__description {
+  [class^='step-']:nth-of-type(even) .step__description.monolog {
     inset-inline-end: 39%;
   }
 }
