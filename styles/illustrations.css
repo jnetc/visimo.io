@@ -172,7 +172,7 @@
 .step__cloud-left {
   inline-size: clamp(120px, 19vw, 250px);
   inset-block-end: clamp(70%, 39vw, 85%);
-  inset-inline-start: 0;
+  inset-inline-start: 10%;
   animation: cloud-right-fly 50s linear infinite;
   z-index: -1;
 }

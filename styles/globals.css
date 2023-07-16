@@ -23,6 +23,7 @@
 } */
 html[data-theme='dark'] {
   --bg-color: var(--dark-bg);
+  --bg-color-alt: var(--dark-bg-alt);
   --bg-after: var(--dark-red-alt);
   --bg-before: var(--dark-blue);
 
@@ -59,6 +60,7 @@ html[data-theme='dark'] {
 } */
 html[data-theme='light'] {
   --bg-color: var(--light-bg);
+  --bg-color-alt: var(--light-bg-alt);
   --bg-after: var(--light-red);
   --bg-before: var(--light-blue);
 

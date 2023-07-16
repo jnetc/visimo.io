@@ -1,16 +1,21 @@
 import StepBackLayer from './SVG/StepBackLayer';
-import Star from '../SVG/Star';
+import Star from '@Components/SVG/Star';
 import SmallCloudLeft from '@Components/SVG/SmallCloudLeft';
+import Monolog from './SVG/Monolog';
+
+// Types
+import type { IStep } from '@Types';
+
 interface Props {
-  description: string;
+  data: IStep;
   id: number;
 }
 
-export default function Step(data: Props) {
+export default function Step({ id, data }: Props) {
   return (
-    <div className={`step-${data.id}`}>
+    <div className={`step-${id}`}>
       <div className="step__illustration">
-        <img className="step__front-layer" src={`/images/svg/step-${data.id}-visic.svg`} alt="visics" />
+        <img className="step__front-layer" src={`/images/svg/step-${id}-visic.svg`} alt="visics" />
         <StepBackLayer />
         <SmallCloudLeft extraClass="step__cloud-left" />
         <span className="sun step__sun illustration" aria-hidden />
@@ -19,7 +24,10 @@ export default function Step(data: Props) {
         <Star extraClass="step-star3" />
         <Star extraClass="step-star4" />
         <Star extraClass="step-star5" />
-        <p className="step__dialog">{data.description}</p>
+        <p className={`step__description ${data.discuss}-number${id}`}>
+          {data.description}
+          <Monolog />
+        </p>
       </div>
       <div className="step__app-preview">preview</div>
     </div>

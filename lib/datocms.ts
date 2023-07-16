@@ -68,6 +68,7 @@ export const query = gql`
     secondary
     steps {
       description
+      discuss
     }
   }
 

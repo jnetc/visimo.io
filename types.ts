@@ -35,8 +35,12 @@ export interface IHeroSection extends ISectionType {
   button: string;
 }
 
+export interface IStep extends DescType {
+  discuss: string;
+}
+
 export interface IHowItWorksSection extends ISectionType {
-  steps: Array<DescType>;
+  steps: Array<IStep>;
 }
 
 export interface IQuestion extends IDType, TitleType, DescType {
