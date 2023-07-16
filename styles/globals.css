@@ -26,6 +26,7 @@ html[data-theme='dark'] {
   --bg-color-alt: var(--dark-bg-alt);
   --bg-after: var(--dark-red-alt);
   --bg-before: var(--dark-blue);
+  --bg-dialog: var(--bg-color);
 
   --switch-black-and-light: var(--light-bg);
   --switch-black-and-light-alt: var(--light-bg-alt);
@@ -63,6 +64,7 @@ html[data-theme='light'] {
   --bg-color-alt: var(--light-bg-alt);
   --bg-after: var(--light-red);
   --bg-before: var(--light-blue);
+  --bg-dialog: var(--bg-color-alt);
 
   --switch-black-and-light: var(--dark-bg);
   --switch-black-and-light-alt: var(--black);
