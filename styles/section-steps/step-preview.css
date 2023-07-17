@@ -1,0 +1,36 @@
+.step__app-preview {
+  display: flex;
+  justify-content: center;
+}
+.phone.phone-step {
+  inline-size: clamp(290px, 18vw, var(--phone-width));
+  z-index: 3;
+}
+.step__step-blob {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  z-index: -1;
+}
+.step__step-blob path:first-child {
+  fill: var(--bg-after);
+}
+.step__step-blob path:last-child {
+  stroke: var(--switch-black-and-light);
+  stroke-width: 2px;
+  stroke-dasharray: 15;
+  stroke-dashoffset: 15;
+  animation: stroke-animation 2s linear infinite;
+}
+
+@keyframes stroke-animation {
+  to {
+    stroke-dashoffset: 45;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .step__step-blob {
+    transform: scale(1.5);
+  }
+}
