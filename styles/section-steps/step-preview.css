@@ -3,7 +3,7 @@
   justify-content: center;
 }
 .phone.phone-step {
-  inline-size: clamp(290px, 18vw, var(--phone-width));
+  inline-size: clamp(290px, 21vw, var(--phone-width-320));
   z-index: 3;
 }
 .step__step-blob {
@@ -30,6 +30,11 @@
 }
 
 @media screen and (max-width: 960px) {
+  .step__step-blob {
+    transform: scale(2);
+  }
+}
+@media screen and (max-width: 559px) {
   .step__step-blob {
     transform: scale(1.5);
   }

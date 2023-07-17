@@ -36,7 +36,7 @@
 }
 
 .phone.phone-app {
-  inline-size: clamp(260px, 18vw, var(--phone-width));
+  inline-size: clamp(260px, 18vw, var(--phone-width-360));
   position: absolute;
   inset-inline-start: 48%;
   inset-block-end: 25%;

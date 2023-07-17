@@ -1,6 +1,6 @@
 .phone {
   justify-self: center;
-  inline-size: clamp(260px, 20vw, var(--phone-width));
+  inline-size: clamp(260px, 20vw, var(--phone-width-360));
   aspect-ratio: 1 / 2;
   position: relative;
   border: 10px solid transparent;
