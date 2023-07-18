@@ -333,9 +333,16 @@
 }
 
 /* SCREEN SIZES */
+@media screen and (max-width: 1600px) {
+  .hero__cloud-left {
+    max-width: clamp(400px, 30vw, 500px);
+  }
+}
 @media screen and (max-width: 1366px) {
   .hero__cloud-right {
     grid-column: 7 / span 7;
+    max-width: clamp(300px, 30vw, 500px);
+    max-width: 500px;
   }
 }
 

@@ -7,6 +7,8 @@
   z-index: 3;
 }
 .step__step-blob {
+  max-inline-size: 650px;
+  aspect-ratio: 1;
   position: absolute;
   inset: 0;
   margin: auto;

@@ -17,20 +17,25 @@
 
 .step__description {
   --width-desc: 200px;
-  block-size: clamp(150px, 13vw, var(--width-desc));
+  /* max-block-size: clamp(150px, 13vw, var(--width-desc)); */
   display: grid;
   place-content: center;
-  aspect-ratio: 1 / 0.5;
+  /* aspect-ratio: 1 / 0.5; */
+  /* aspect-ratio: 1 / 0.3; */
   position: absolute;
-  padding: 2rem;
+  padding: 0.5rem;
   border-radius: 50px;
+  border: 10px solid var(--bg-dialog);
   background-color: var(--bg-dialog);
   border-image-slice: 30;
+  border-image-slice: 40;
   border-image-width: 30px;
+  border-image-width: 17px;
   border-image-outset: 5px;
+  border-image-outset: 0px;
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
-  font-size: clamp(var(--font-16), 1.5vw, var(--font-20));
+  font-size: clamp(var(--font-16), 1.5vw, var(--font-18));
   font-weight: bold;
   line-height: 1.4;
   z-index: 100;
@@ -47,7 +52,7 @@
   background-size: contain;
 }
 
-[data-theme='dark'] .step__description.monolog::after {
+/* [data-theme='dark'] .step__description.monolog::after {
   background-image: url(/images/svg/dark/baloon-monolog.svg);
 }
 [data-theme='light'] .step__description.monolog::after {
@@ -58,14 +63,15 @@
 }
 [data-theme='light'] .step__description.dialog::after {
   background-image: url(/images/svg/light/baloon-dialog.svg);
-}
+} */
 
 .step__description.dialog::after {
   inset-inline-start: 40%;
 }
 
 .step__description.monolog {
-  inset-block-end: 40%;
+  inset-block-end: 44%;
+  inset-inline: 30%;
 }
 
 .step__description.dialog {
@@ -74,12 +80,12 @@
   transform: translateX(-50%);
 }
 
-[class^='step-']:nth-of-type(odd) .step__description.monolog {
-  inset-inline-start: 42%;
-}
-[class^='step-']:nth-of-type(even) .step__description.monolog {
-  inset-inline-end: 42%;
-}
+/* [class^='step-']:nth-of-type(odd) .step__description.monolog {
+  inset-inline: 30%;
+} */
+/* [class^='step-']:nth-of-type(even) .step__description.monolog {
+  inset-inline: 30%;
+} */
 
 [class^='step-']:nth-of-type(odd) .step__description.monolog::after {
   inset-inline-start: 10%;
@@ -93,35 +99,55 @@
   transform: rotateX(20deg) rotateY(0.5turn);
 }
 
-@media (max-width: 1366px) {
-  .step__description.monolog {
-    inset-block-end: 44%;
-  }
+/* @media (max-width: 1366px) {
+} */
+
+@media screen and (max-width: 559px), (min-width: 961px) and (max-width: 1366px) {
+  .step__description.monolog,
   .step__description.dialog {
     inset-block-end: 46%;
   }
-}
-
-@media (max-width: 960px) {
   .step__description.monolog {
-    inset-block-end: 40%;
+    inset-inline: 15%;
   }
+  /* [class^='step-']:nth-of-type(odd) .step__description.monolog {
+    inset-inline: 15%;
+  }
+  [class^='step-']:nth-of-type(even) .step__description.monolog {
+    inset-inline: 15%;
+  } */
+}
+@media (min-width: 590px) and (max-width: 960px) {
+  /* .step__description.monolog {
+    inset-block-end: 44%;
+  } */
+  .step__description.monolog {
+    inset-inline: 25%;
+  }
+  /* [class^='step-']:nth-of-type(odd) .step__description.monolog {
+    inset-inline: 25%;
+  }
+  [class^='step-']:nth-of-type(even) .step__description.monolog {
+    inset-inline: 25%;
+  } */
+}
+/* @media (max-width: 960px) {
   .step__description.dialog {
     inset-block-end: 45%;
   }
-}
+} */
 
 @media screen and (max-width: 559px) {
-  .step__description.monolog {
-    inset-block-end: 44%;
-  }
+  /* .step__description.monolog {
+    inset-block-end: 46%;
+  } */
 
-  [class^='step-']:nth-of-type(odd) .step__description.monolog {
-    inset-inline-start: 25%;
+  /* [class^='step-']:nth-of-type(odd) .step__description.monolog {
+    inset-inline: 15%;
   }
   [class^='step-']:nth-of-type(even) .step__description.monolog {
-    inset-inline-end: 25%;
-  }
+    inset-inline: 15%;
+  } */
 
   .step__description.monolog::after,
   .step__description.dialog::after {
