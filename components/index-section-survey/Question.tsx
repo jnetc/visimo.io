@@ -57,8 +57,8 @@ export default function Question({ question, order }: { question: IQuestion; ord
 
   return (
     <div className="question main-grid">
-      <h3 className="survey-form__title">{title}</h3>
-      <ReactMarkdown className="survey-form__txt markdown" children={description} />
+      <h3 className="servey__left-side survey-form__title">{title}</h3>
+      <ReactMarkdown className="servey__left-side survey-form__txt markdown" children={description} />
       <SurveyRadioButtons id={id} pointerHandler={selectAnswer} />
       {customAnswer ? <SurveyTextField id={id} handler={customerAnswer} /> : null}
     </div>

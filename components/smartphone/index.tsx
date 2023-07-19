@@ -6,7 +6,7 @@ interface Props {
   children: ReactNode;
   isHero?: boolean;
   isApp?: boolean;
-  customClass: 'phone-hero' | 'phone-app' | 'phone-step';
+  customClass: 'phone-hero' | 'phone-app' | 'phone-step' | 'phone-survey';
 }
 
 export default function Smartphone({ children, customClass, isHero = false, isApp = false }: Props) {

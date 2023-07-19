@@ -9,7 +9,7 @@ export default function SurveyRadioButtons({ id, pointerHandler }: Props) {
   const { language } = useStore();
 
   return (
-    <div className="survey-form__radio-buttons">
+    <div className="servey__left-side survey-form__radio-buttons">
       <div className="q-button">
         <input
           type="radio"

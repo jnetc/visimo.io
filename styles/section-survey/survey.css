@@ -12,13 +12,8 @@
 .question {
   grid-column: 1 / -1;
 }
-
-.survey-form__title,
-.survey-form__txt,
-.survey-form__radio-buttons,
-.survey-form__mark,
-.survey-form__answer-label,
-.survey-form__answer {
+.servey__left-side {
+  position: relative;
   grid-column: 3 / 8;
 }
 
@@ -36,15 +31,13 @@
   padding-block: var(--gap-32) var(--gap-48);
 }
 
-.survey-form__radio-buttons {
-  display: flex;
-  column-gap: var(--gap-36);
-  position: relative;
-}
-
+.survey-form__radio-buttons,
 .q-button {
   position: relative;
   display: flex;
+}
+.survey-form__radio-buttons {
+  column-gap: var(--gap-36);
 }
 
 .survey-form__btn-no,
@@ -61,16 +54,19 @@ input[name*='answer-selected'] {
 }
 input[name*='answer-selected']:checked + .button {
   transform: translate(0px, 3px);
-  filter: drop-shadow(4px 4px 0px var(--btn-shadow));
+  box-shadow: 4px 4px 0px var(--btn-shadow);
 }
 
 input[name*='answer-selected']:not(:checked) + .survey-form__btn-no,
 input[name*='answer-selected']:not(:checked) + .survey-form__btn-yes {
-  background-color: var(--bg-color);
+  background-color: var(--btn-default);
+  border-color: var(--switch-black-and-light-alt);
+  color: var(--switch-black-and-light-alt);
 }
 
 .survey-form__answer-label {
   padding-block: var(--gap-48) var(--gap-12);
+  color: var(--switch-black-and-light-alt);
 }
 .survey-form__answer {
   max-inline-size: 100%;
@@ -83,8 +79,60 @@ input[name*='answer-selected']:not(:checked) + .survey-form__btn-yes {
 .survey-form__answer::placeholder {
   color: var(--grey);
 }
-
 .survey__send-button {
+  position: relative;
+  inline-size: min-content;
+}
+
+.send-button__notice {
+  padding-block-end: var(--gap-16);
+  transition: all var(--transition-03) ease-in-out;
+  pointer-events: none;
+}
+
+.survey__send-button button {
   inline-size: max-content;
-  grid-column: 3 / -2;
+}
+
+.send-button__send-plane {
+  inline-size: 168px;
+  aspect-ratio: 1 / 0.85;
+  position: absolute;
+  inset-inline: 95%;
+  inset-block-end: -40%;
+  z-index: -1;
+}
+
+.send-plane-stroke {
+  stroke: var(--switch-black-and-light);
+  stroke-linecap: round;
+  stroke-width: 2;
+}
+.send-plane-fill {
+  fill: var(--switch-black-and-light);
+}
+
+.send-button__notice.hide {
+  opacity: 0;
+}
+
+@media (max-width: 960px) {
+  .servey__left-side {
+    grid-column: 2 / -2;
+  }
+}
+
+@media screen and (max-width: 559px) {
+  /* .survey__send-button,
+  .survey__send-button button {
+    inline-size: 100%;
+  } */
+  /* .survey__send-button button {
+    inline-size: 100%;
+  } */
+  .send-button__send-plane {
+    inline-size: 120px;
+    inset-inline: 40%;
+    inset-block-end: 110%;
+  }
 }

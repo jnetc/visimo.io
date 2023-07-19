@@ -16,12 +16,8 @@
 }
 
 .step__description {
-  --width-desc: 200px;
-  /* max-block-size: clamp(150px, 13vw, var(--width-desc)); */
   display: grid;
   place-content: center;
-  /* aspect-ratio: 1 / 0.5; */
-  /* aspect-ratio: 1 / 0.3; */
   position: absolute;
   padding: 0.5rem;
   border-radius: 50px;
@@ -80,13 +76,6 @@
   transform: translateX(-50%);
 }
 
-/* [class^='step-']:nth-of-type(odd) .step__description.monolog {
-  inset-inline: 30%;
-} */
-/* [class^='step-']:nth-of-type(even) .step__description.monolog {
-  inset-inline: 30%;
-} */
-
 [class^='step-']:nth-of-type(odd) .step__description.monolog::after {
   inset-inline-start: 10%;
 }
@@ -99,9 +88,6 @@
   transform: rotateX(20deg) rotateY(0.5turn);
 }
 
-/* @media (max-width: 1366px) {
-} */
-
 @media screen and (max-width: 559px), (min-width: 961px) and (max-width: 1366px) {
   .step__description.monolog,
   .step__description.dialog {
@@ -110,45 +96,14 @@
   .step__description.monolog {
     inset-inline: 15%;
   }
-  /* [class^='step-']:nth-of-type(odd) .step__description.monolog {
-    inset-inline: 15%;
-  }
-  [class^='step-']:nth-of-type(even) .step__description.monolog {
-    inset-inline: 15%;
-  } */
 }
 @media (min-width: 590px) and (max-width: 960px) {
-  /* .step__description.monolog {
-    inset-block-end: 44%;
-  } */
   .step__description.monolog {
     inset-inline: 25%;
   }
-  /* [class^='step-']:nth-of-type(odd) .step__description.monolog {
-    inset-inline: 25%;
-  }
-  [class^='step-']:nth-of-type(even) .step__description.monolog {
-    inset-inline: 25%;
-  } */
 }
-/* @media (max-width: 960px) {
-  .step__description.dialog {
-    inset-block-end: 45%;
-  }
-} */
 
 @media screen and (max-width: 559px) {
-  /* .step__description.monolog {
-    inset-block-end: 46%;
-  } */
-
-  /* [class^='step-']:nth-of-type(odd) .step__description.monolog {
-    inset-inline: 15%;
-  }
-  [class^='step-']:nth-of-type(even) .step__description.monolog {
-    inset-inline: 15%;
-  } */
-
   .step__description.monolog::after,
   .step__description.dialog::after {
     inset-block-end: -36%;

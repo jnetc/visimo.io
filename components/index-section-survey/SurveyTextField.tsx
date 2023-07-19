@@ -9,11 +9,11 @@ export default function SurveyTextField({ id, handler }: Props) {
   const { language } = useStore();
   return (
     <>
-      <label className="survey-form__answer-label" htmlFor={`answer-${id}`}>
+      <label className="servey__left-side survey-form__answer-label" htmlFor={`answer-${id}`}>
         {locale.textFieldAbove[language]}
       </label>
       <textarea
-        className="survey-form__answer"
+        className="servey__left-side survey-form__answer"
         id={`answer-${id}`}
         name="customer-answer"
         cols={30}
@@ -39,10 +39,10 @@ const locale = {
     sv: 'ja',
   },
   textFieldAbove: {
-    en: 'In a nutshell, why not?',
-    ru: 'В двух словах, почему нет?',
-    fi: 'Lyhyesti sanottuna, miksi ei?',
-    sv: 'Kort sagt, varför inte?',
+    en: 'In a nutshell, why not? *not necessarily',
+    ru: 'В двух словах, почему нет? *не обязательно',
+    fi: 'Lyhyesti sanottuna, miksi ei? *ei pakko',
+    sv: 'Kort sagt, varför inte? *inte nödvändigtvis',
   },
   placeholder: {
     en: 'Type your vision',

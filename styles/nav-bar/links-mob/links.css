@@ -29,7 +29,7 @@
   position: absolute;
   inset-block-start: var(--gap-16);
   inset-inline-end: var(--gap-16);
-  background-color: var(--btn-cancel);
+  background-color: var(--btn-red);
   border-radius: var(--border-corner-8);
 }
 

@@ -35,9 +35,9 @@ html[data-theme='dark'] {
   --txt-color-mix1: var(--dark-red);
   --txt-color-mix2: var(--dark-yellow);
 
-  --btn-primary: var(--dark-yellow);
-  --btn-accept: var(--light-green);
-  --btn-cancel: var(--light-red);
+  --btn-yellow: var(--dark-yellow);
+  --btn-green: var(--light-green);
+  --btn-red: var(--light-red);
   --btn-default: var(--dark-bg-alt);
   --btn-disable-border: var(--grey-light);
   --btn-accordion-plus: var(--light-green-alt);
@@ -46,7 +46,7 @@ html[data-theme='dark'] {
   --btn-nav-menu: var(--dark-blue);
   --btn-border: var(--light-bg-alt);
   --btn-txt: var(--black);
-  --btn-txt-disable: var(--grey);
+  --btn-txt-disable: var(--grey-dark);
   --btn-shadow: var(--black);
   --btn-theme: var(--dark-yellow);
 
@@ -69,13 +69,13 @@ html[data-theme='light'] {
   --switch-black-and-light: var(--dark-bg);
   --switch-black-and-light-alt: var(--black);
 
-  --txt-color-alt: var(--grey-dark);
+  --txt-color-alt: var(--grey-black);
   --txt-color-mix1: var(--light-red-alt);
   --txt-color-mix2: var(--light-yellow-alt);
 
-  --btn-primary: var(--light-yellow);
-  --btn-accept: var(--light-green);
-  --btn-cancel: var(--light-red);
+  --btn-yellow: var(--light-yellow);
+  --btn-green: var(--light-green);
+  --btn-red: var(--light-red);
   --btn-default: var(--light-bg-alt);
   --btn-disable-border: var(--grey-light);
   --btn-accordion-plus: var(--light-green-alt);
@@ -141,10 +141,11 @@ ul {
 }
 button {
   appearance: none;
-  cursor: pointer;
-  user-select: none;
+  position: relative;
   background-color: transparent;
   font-weight: bold;
+  cursor: pointer;
+  user-select: none;
 }
 
 h1,

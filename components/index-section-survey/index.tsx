@@ -1,7 +1,6 @@
 import { useStore } from '@Hooks/useStore';
 // Components
 import SurveyForm from './SurveyForm';
-import { SVGGrid7Col } from '@Components/background-objects/SVGGrid7Col';
 // Helpers
 import splitTitle from '@Helpers/splitTitles';
 
@@ -12,7 +11,6 @@ export default function Survey() {
 
   return (
     <section id="survey" className="section survey main-grid">
-      <SVGGrid7Col position="survey__grid-survey" />
       <h2 className="section-title" data-title={title}>
         {splittingTitle}
       </h2>

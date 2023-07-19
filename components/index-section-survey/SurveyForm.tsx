@@ -4,9 +4,9 @@ import { useStore } from '@Hooks/useStore';
 import { ServeyContext } from '@Hooks/useServeyForm';
 // Components
 import Question from './Question';
+import SendPlane from './SVG/SendPlane';
 // Helpers
 import findMatchingElements from '@Helpers/compare-arrays';
-
 // Types
 import type { ISurveyContext, ResponseSurveyType } from '@Types';
 
@@ -83,19 +83,31 @@ export default function SurveyForm() {
     <ServeyContext.Provider value={{ allQuestions, formComplete, setAllQuestions, setFormComplete }}>
       <form className="main-grid survey__form" onSubmit={sendSurvey}>
         {questionsArr}
-        <button
-          type="submit"
-          className={`button ${isAllQuestionsSelected ? 'button-primary' : 'disabled'} survey__send-button`}
-          aria-disabled={!isAllQuestionsSelected}
-        >
-          {locale.sendButton[language]}
-        </button>
+        <div className="servey__left-side ">
+          <p className={`send-button__notice ${isAllQuestionsSelected && 'hide'}`}>{locale.attension[language]}</p>
+          <div className="survey__send-button">
+            <button
+              type="submit"
+              className={`button ${isAllQuestionsSelected ? 'button-yellow' : 'disabled'}`}
+              aria-disabled={!isAllQuestionsSelected}
+            >
+              {locale.sendButton[language]}
+            </button>
+            {isAllQuestionsSelected ? <SendPlane /> : null}
+          </div>
+        </div>
       </form>
     </ServeyContext.Provider>
   );
 }
 
 const locale = {
+  attension: {
+    en: 'The button will be activated when all questions have been answered',
+    ru: 'Кнопка активируется, когда будут даны ответы на все вопросы',
+    fi: 'Painike aktivoituu, kun kaikkiin kysymyksiin on vastattu',
+    sv: 'Knappen aktiveras när alla frågor har besvarats',
+  },
   sendButton: {
     en: 'send to us',
     ru: 'отправить нам',
