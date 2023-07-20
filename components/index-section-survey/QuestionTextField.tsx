@@ -2,22 +2,26 @@ import { useStore } from '@Hooks/useStore';
 
 interface Props {
   id: string;
+  isOpen: boolean;
   handler: (value: string) => void;
 }
 
-export default function SurveyTextField({ id, handler }: Props) {
+export default function QuestionTextField({ id, handler, isOpen }: Props) {
   const { language } = useStore();
   return (
     <>
-      <label className="servey__left-side survey-form__answer-label" htmlFor={`answer-${id}`}>
+      <label
+        className={`question__left-side question__textfield-label ${isOpen ? 'open' : ''}`}
+        htmlFor={`answer-${id}`}
+      >
         {locale.textFieldAbove[language]}
       </label>
       <textarea
-        className="servey__left-side survey-form__answer"
+        className={`question__left-side question__textfield ${isOpen ? 'open' : ''}`}
         id={`answer-${id}`}
         name="customer-answer"
         cols={30}
-        rows={9}
+        rows={7}
         placeholder={locale.placeholder[language]}
         onChange={event => handler(event.target.value)}
       />

@@ -10,7 +10,7 @@ export default function HowItWorksSection() {
 
   const splittingTitle = splitTitle(title, primary, secondary);
   return (
-    <section className="section main-grid steps">
+    <section id="howitworks" className="section main-grid steps">
       <h2 className="section-title" data-title={title}>
         {splittingTitle}
       </h2>

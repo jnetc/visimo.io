@@ -7,7 +7,7 @@ import Bonfire from './Bonfire';
 
 export default function AppSection() {
   return (
-    <section className="section main-grid app ">
+    <section className="section main-grid app">
       <div className="app__container">
         <SmallCloudLeft extraClass="app__cloud-left" aria-hidden />
         <SmallCloudRight extraClass="app__cloud-right" aria-hidden />

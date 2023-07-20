@@ -81,9 +81,9 @@ export default function SurveyForm() {
 
   return (
     <ServeyContext.Provider value={{ allQuestions, formComplete, setAllQuestions, setFormComplete }}>
-      <form className="main-grid survey__form" onSubmit={sendSurvey}>
+      <form className="main-grid survey-form" onSubmit={sendSurvey}>
         {questionsArr}
-        <div className="servey__left-side ">
+        <div className="question__left-side">
           <p className={`send-button__notice ${isAllQuestionsSelected && 'hide'}`}>{locale.attension[language]}</p>
           <div className="survey__send-button">
             <button

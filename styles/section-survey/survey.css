@@ -1,84 +1,8 @@
-.survey__grid-survey {
-  inset-block-start: 5rem;
-  inset-inline-start: 45%;
-}
-.survey__form {
+.survey-form {
   grid-column: 1 / -1;
-  /* display: flex; */
-  /* flex-direction: column; */
   row-gap: var(--gap-176);
 }
 
-.question {
-  grid-column: 1 / -1;
-}
-.servey__left-side {
-  position: relative;
-  grid-column: 3 / 8;
-}
-
-.survey-form__mark,
-.survey-form__answer-label {
-  font-size: var(--font-16);
-}
-
-.survey-form__title {
-  font-size: var(--font-36);
-}
-
-.survey-form__txt {
-  font-size: var(--font-20);
-  padding-block: var(--gap-32) var(--gap-48);
-}
-
-.survey-form__radio-buttons,
-.q-button {
-  position: relative;
-  display: flex;
-}
-.survey-form__radio-buttons {
-  column-gap: var(--gap-36);
-}
-
-.survey-form__btn-no,
-.survey-form__btn-yes {
-  font-weight: bold;
-}
-
-input[name*='answer-selected'] {
-  appearance: none;
-  position: absolute;
-  cursor: pointer;
-  inset: 0;
-  z-index: 50;
-}
-input[name*='answer-selected']:checked + .button {
-  transform: translate(0px, 3px);
-  box-shadow: 4px 4px 0px var(--btn-shadow);
-}
-
-input[name*='answer-selected']:not(:checked) + .survey-form__btn-no,
-input[name*='answer-selected']:not(:checked) + .survey-form__btn-yes {
-  background-color: var(--btn-default);
-  border-color: var(--switch-black-and-light-alt);
-  color: var(--switch-black-and-light-alt);
-}
-
-.survey-form__answer-label {
-  padding-block: var(--gap-48) var(--gap-12);
-  color: var(--switch-black-and-light-alt);
-}
-.survey-form__answer {
-  max-inline-size: 100%;
-  min-inline-size: 100%;
-  padding: var(--gap-12);
-  border-radius: var(--border-corner-4);
-  background-color: var(--bg-color);
-  font-size: var(--font-20);
-}
-.survey-form__answer::placeholder {
-  color: var(--grey);
-}
 .survey__send-button {
   position: relative;
   inline-size: min-content;
@@ -116,23 +40,17 @@ input[name*='answer-selected']:not(:checked) + .survey-form__btn-yes {
   opacity: 0;
 }
 
-@media (max-width: 960px) {
-  .servey__left-side {
-    grid-column: 2 / -2;
-  }
-}
-
 @media screen and (max-width: 559px) {
-  /* .survey__send-button,
-  .survey__send-button button {
-    inline-size: 100%;
-  } */
-  /* .survey__send-button button {
-    inline-size: 100%;
-  } */
+  .survey__send-button {
+    margin-inline: auto;
+  }
   .send-button__send-plane {
     inline-size: 120px;
     inset-inline: 40%;
     inset-block-end: 110%;
   }
 }
+
+@import url(./question.css);
+@import url(./question-radio-button.css);
+@import url(./question-textfield.css);

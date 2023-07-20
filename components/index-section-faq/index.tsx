@@ -4,7 +4,6 @@ import { useStore } from '@Hooks/useStore';
 // Components
 import FaqList from './FaqList';
 import FaqFeedback from './FaqEmployee';
-import { SVGGrid7Col } from '@Components/background-objects/SVGGrid7Col';
 // Helpers
 import splitTitle from '@Helpers/splitTitles';
 
@@ -15,7 +14,6 @@ export default function FAQSection() {
 
   return (
     <section id="faqs" className="section faqs main-grid">
-      <SVGGrid7Col position="faqs__grid-faqs" />
       <h2 className="section-title" data-title={title}>
         {splittingTitle}
       </h2>

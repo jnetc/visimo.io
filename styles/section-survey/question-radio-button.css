@@ -1,0 +1,39 @@
+.question__radio-buttons {
+  grid-row: 4;
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  column-gap: var(--gap-36);
+  position: relative;
+}
+
+.question__btn-no,
+.question__btn-yes {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+input[name*='answer-selected'] {
+  appearance: none;
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  z-index: -50;
+}
+input[name*='answer-selected']:checked + .button {
+  transform: translate(0px, 3px);
+  box-shadow: 4px 4px 0px var(--btn-shadow);
+}
+
+input[name*='answer-selected']:not(:checked) + .question__btn-no,
+input[name*='answer-selected']:not(:checked) + .question__btn-yes {
+  background-color: var(--btn-default);
+  border-color: var(--switch-black-and-light-alt);
+  color: var(--switch-black-and-light-alt);
+}
+
+@media screen and (max-width: 559px) {
+  .question__radio-buttons {
+    justify-content: center;
+  }
+}

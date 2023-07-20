@@ -3,8 +3,9 @@ import ReactMarkdown from 'react-markdown';
 // Hook
 import { useSurveyForm } from '@Hooks/useServeyForm';
 // Components
-import SurveyRadioButtons from './SurveyRadioButtons';
-import SurveyTextField from './SurveyTextField';
+import QuestionRadioButtons from './QuestionRadioButtons';
+import QuestionTextField from './QuestionTextField';
+import Smartphone from '@Components/smartphone';
 // Helper
 import debounce from '@Helpers/debounce';
 // Types
@@ -57,10 +58,13 @@ export default function Question({ question, order }: { question: IQuestion; ord
 
   return (
     <div className="question main-grid">
-      <h3 className="servey__left-side survey-form__title">{title}</h3>
-      <ReactMarkdown className="servey__left-side survey-form__txt markdown" children={description} />
-      <SurveyRadioButtons id={id} pointerHandler={selectAnswer} />
-      {customAnswer ? <SurveyTextField id={id} handler={customerAnswer} /> : null}
+      <h3 className="question__left-side question__title">{title}</h3>
+      <ReactMarkdown className="question__left-side question__desc markdown" children={description} />
+      <QuestionRadioButtons id={id} pointerHandler={selectAnswer} />
+      <QuestionTextField id={id} handler={customerAnswer} isOpen={customAnswer} />
+      <Smartphone customClass="phone-survey">
+        <img src="/images/screenshot.png" alt="app image" />
+      </Smartphone>
     </div>
   );
 }
