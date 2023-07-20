@@ -3,7 +3,7 @@
   line-height: 1.6;
 }
 .markdown a {
-  color: var(--primary-dark);
+  color: var(--link);
   font-weight: bold;
   text-underline-offset: 2px;
   text-decoration-line: underline;

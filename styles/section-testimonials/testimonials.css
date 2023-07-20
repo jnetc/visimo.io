@@ -24,7 +24,6 @@
   position: relative;
   padding: var(--gap-48);
   margin-block-end: var(--gap-64);
-  border-radius: var(--border-corner-4);
 }
 
 .testimonial-icon {
@@ -34,14 +33,15 @@
   position: absolute;
   top: calc(-1 * (var(--size-56) / 2));
   left: var(--gap-48);
-  background-color: var(--bg-color);
-  border: 2px solid var(--black);
+  background-color: var(--bg-color-alt);
+  border: 2px solid var(--switch-black-and-light);
   box-shadow: 5px 5px 0 var(--black);
 }
 .testimonial-icon svg {
   position: absolute;
   inset: 0;
   margin: auto;
+  fill: var(--switch-black-and-light);
 }
 
 .testimonial-text {

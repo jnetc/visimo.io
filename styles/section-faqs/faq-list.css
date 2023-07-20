@@ -1,0 +1,101 @@
+.faq__list {
+  display: grid;
+  row-gap: var(--gap-32);
+  grid-column: 3 / -3;
+}
+
+.faq__item {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: min-content 0fr;
+  padding-inline: var(--gap-32);
+  transition: all var(--transition-03) ease-in-out;
+  overflow: hidden;
+}
+
+.faq__item-title {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr var(--size-48);
+  column-gap: var(--gap-48);
+  padding-block: var(--gap-24) var(--gap-24);
+  font-size: clamp(var(--font-18), 5vw, var(--font-32));
+  color: var(--switch-black-and-light);
+  transition: color var(--transition-03) ease-in-out;
+  cursor: pointer;
+  user-select: none;
+}
+
+.faq__item-desc {
+  overflow: hidden;
+  padding-block-end: 0;
+  font-size: clamp(var(--font-16), 3vw, var(--font-18));
+  transition: padding-block-end var(--transition-03) ease-in-out;
+}
+
+.faq__item.retro-box.selected {
+  grid-template-rows: min-content 1fr;
+  background-color: var(--bg-color-alt);
+  box-shadow: 0px 0px 0 var(--black);
+}
+.faq__item.selected .faq__item-desc {
+  padding-block-end: var(--gap-32);
+}
+
+.faq__item-icon {
+  width: var(--size-48);
+  aspect-ratio: 1;
+  position: relative;
+  background-color: var(--btn-accordion-plus);
+  border-radius: 50%;
+  transition: all var(--transition-03) ease-in-out;
+}
+.faq__item-icon::after,
+.faq__item-icon::before {
+  content: '';
+  width: 1.5rem;
+  height: 4px;
+  position: absolute;
+  inset: 0rem;
+  margin: auto;
+  border-radius: 5px;
+  background-color: var(--bg-color);
+  transition: inherit;
+}
+.faq__item-icon::before {
+  transform: rotateZ(0.25turn);
+}
+.faq__item.selected .faq__item-icon {
+  background-color: var(--btn-accordion-minus);
+}
+.faq__item.selected .faq__item-icon::after {
+  transform: rotateZ(-0.25turn) scale(0);
+  opacity: 0;
+}
+.faq__item.selected .faq__item-icon::before {
+  transform: rotateZ(0);
+}
+
+@media screen and (max-width: 960px) {
+  .faq__list {
+    grid-column: 2 / -2;
+  }
+}
+@media screen and (max-width: 559px) {
+  .faq__item {
+    padding-inline: var(--gap-16);
+  }
+  .faq__item-title {
+    grid-template-columns: 1fr var(--size-32);
+    column-gap: var(--gap-32);
+  }
+  .faq__item-icon {
+    width: var(--size-32);
+    margin-inline-start: auto;
+  }
+  .faq__item-icon::after,
+  .faq__item-icon::before {
+    width: 1rem;
+    height: 3px;
+  }
+}

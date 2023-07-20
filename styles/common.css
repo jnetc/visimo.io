@@ -58,9 +58,9 @@ section {
 }
 
 .retro-box {
-  background-color: var(--bg-color);
+  background-color: var(--bg-color-alt);
   border: 2px solid var(--switch-black-and-light-alt);
-  border-radius: var(--border-corner-4);
+  border-radius: var(--border-corner-16);
   box-shadow: 10px 10px 0 var(--black);
 }
 
@@ -75,8 +75,6 @@ section {
   fill: var(--cloud-border);
 }
 
-@media (max-width: 1920px) {
-}
 @media (max-width: 960px) {
   .main-grid {
     grid-template-columns: var(--gap-16) repeat(6, minmax(0, 1fr)) var(--gap-16);

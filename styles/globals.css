@@ -40,8 +40,8 @@ html[data-theme='dark'] {
   --btn-red: var(--light-red);
   --btn-default: var(--dark-bg-alt);
   --btn-disable-border: var(--grey-light);
-  --btn-accordion-plus: var(--light-green-alt);
-  --btn-accordion-minus: var(--light-red-alt);
+  --btn-accordion-plus: var(--light-green);
+  --btn-accordion-minus: var(--dark-red);
   --btn-nav-lang: var(--dark-green);
   --btn-nav-menu: var(--dark-blue);
   --btn-border: var(--light-bg-alt);
@@ -53,6 +53,8 @@ html[data-theme='dark'] {
   --cloud-body: var(--dark-blue-cloud);
   --cloud-shadow: var(--dark-bg-alt);
   --cloud-border: var(--dark-bg);
+
+  --link: var(--light-green);
 }
 /* @media (prefers-color-scheme: light) {
   :root {
@@ -91,6 +93,8 @@ html[data-theme='light'] {
   --cloud-body: var(--white);
   --cloud-shadow: var(--light-blue);
   --cloud-border: var(--light-blue-alt);
+
+  --link: var(--light-green-alt);
 }
 
 *,

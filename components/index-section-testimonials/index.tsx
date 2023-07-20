@@ -1,6 +1,5 @@
 import { useStore } from '@Hooks/useStore';
 // Components
-import { SVGGrid7Col } from '@Components/background-objects/SVGGrid7Col';
 import Testiomonial from './Testimonial';
 // Helpers
 import splitTitle from '@Helpers/splitTitles';
@@ -16,7 +15,6 @@ export default function TestimonialsSection() {
 
   return (
     <section id="testimonials" className="section testimonials main-grid">
-      <SVGGrid7Col position="testimonials__grid-testimonials" />
       <h2 className="section-title" data-title={title}>
         {splittingTitle}
       </h2>
