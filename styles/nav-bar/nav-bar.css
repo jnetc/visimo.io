@@ -1,15 +1,39 @@
+.header {
+  inline-size: 100%;
+  position: fixed;
+  inset-block-start: 0;
+  transition: all var(--transition-03) ease-in-out;
+  z-index: 99;
+}
+.header.is-sticky {
+  background-color: var(--bg-nav);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--nav-shadow);
+}
+
 .nav-bar {
   max-inline-size: 1920px;
-  margin-inline: auto;
-  height: min-content;
   display: grid;
-  grid-template-columns: minmax(min-content, 150px) 1fr auto auto;
+  grid-template-columns: minmax(min-content, 150px) 1fr repeat(2, min-content);
   align-items: center;
-  justify-content: center;
   gap: var(--gap-32);
+  position: relative;
+  margin-inline: auto;
   padding-block: var(--gap-36);
   padding-inline: var(--gap-36);
-  position: relative;
+  transition: all var(--transition-03) ease-in-out;
+}
+.header.is-sticky .nav-bar {
+  padding-block: var(--gap-16);
+}
+
+@keyframes stiky {
+  from {
+    transform: translateY(-100px);
+  }
+  to {
+    transform: translateY(0px);
+  }
 }
 
 .nav-button {
@@ -21,7 +45,7 @@
 
 .nav-button-48 {
   place-content: center;
-  width: var(--size-48);
+  width: var(--size-40);
   aspect-ratio: 1;
 }
 
@@ -35,15 +59,16 @@
 }
 
 .nav-bar__icon {
-  width: var(--size-32);
+  width: var(--size-24);
   aspect-ratio: 1;
   transition: transform var(--transition-03) ease-in-out;
 }
 
 @media screen and (max-width: 559px) {
   .nav-bar {
-    padding-block: var(--gap-16);
+    grid-template-columns: 1fr repeat(3, min-content);
     gap: var(--gap-16);
+    padding-block: var(--gap-16);
     padding-inline: var(--gap-16);
   }
   .nav-button-48 {

@@ -35,7 +35,7 @@
 
 .faq__item.retro-box.selected {
   grid-template-rows: min-content 1fr;
-  background-color: var(--bg-color-alt);
+  background-color: var(--bg-li-item-selected);
   box-shadow: 0px 0px 0 var(--black);
 }
 .faq__item.selected .faq__item-desc {

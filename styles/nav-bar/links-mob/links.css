@@ -1,9 +1,8 @@
 .nav-bar__links-mob {
-  min-width: 100vw;
-  min-height: 100vh;
-  place-content: center;
   display: none;
+  place-content: center;
   position: fixed;
+  inset: 0;
   background-color: var(--bg-color);
   z-index: 999;
 }

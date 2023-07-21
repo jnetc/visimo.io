@@ -24,10 +24,6 @@ export interface Image {
 
 export interface ISectionType extends TitleType, DescType, TitleColorType {}
 
-export interface INavigationLink {
-  links: Array<IDType & NameType & AnchorType>;
-}
-
 export interface IHeroSection extends ISectionType {
   notification: string;
   surveyNotice: string;
@@ -85,7 +81,6 @@ export interface ITestimonialSection extends ISectionType {
 
 export interface IData {
   // _site: SEO;
-  navigation: INavigationLink;
   heroSection: IHeroSection;
   howitworksSection: IHowItWorksSection;
   surveySection: ISurveySection;

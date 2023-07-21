@@ -124,7 +124,7 @@
   top: -10%;
   right: -45%;
   animation: visic-from 2s ease-in-out forwards, visic-fly 8s ease-in-out 3s infinite;
-  z-index: 100;
+  z-index: 39;
 }
 
 @keyframes visic-from {

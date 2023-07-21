@@ -1,5 +1,18 @@
 .nav-bar__logo {
+  --l-size: 8rem;
+  --s-size: 4rem;
   fill: var(--switch-black-and-light-alt);
-  width: clamp(4rem, 15vw, 7rem);
+  width: clamp(var(--s-size), 15vw, var(--l-size));
   margin-inline-end: auto;
+  transition: all var(--transition-03) ease-in-out;
+}
+.header.is-sticky .nav-bar__logo {
+  --l-size: 6rem;
+  --s-size: 4rem;
+}
+
+@media screen and (max-width: 559px) {
+  .nav-bar__logo {
+    width: 5rem;
+  }
 }

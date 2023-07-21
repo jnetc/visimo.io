@@ -20,9 +20,6 @@ export async function request({ query, variables }: { query: string; variables: 
 
 export const query = gql`
   query ($locale: SiteLocale) {
-    navigation(locale: $locale) {
-      ...NavigationRecordFragment
-    }
     heroSection(locale: $locale) {
       ...HeroSectionRecordFragment
     }
@@ -40,14 +37,6 @@ export const query = gql`
     }
     testimonialSection(locale: $locale) {
       ...TestimonialSectionRecordFragment
-    }
-  }
-
-  fragment NavigationRecordFragment on NavigationRecord {
-    links {
-      id
-      name
-      anchor
     }
   }
 

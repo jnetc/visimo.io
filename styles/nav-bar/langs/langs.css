@@ -3,7 +3,7 @@
   grid-template-columns: 1fr 18px;
   column-gap: var(--gap-16);
   align-items: center;
-  padding: 0.625rem;
+  padding: 0.5rem;
   margin-inline-start: auto;
   background-color: var(--btn-nav-lang);
   border-radius: var(--border-corner-8);
@@ -25,7 +25,6 @@
 @media screen and (max-width: 559px) {
   .button-langs {
     column-gap: var(--gap-8);
-    font-size: var(--font-12);
   }
 
   .button-langs-arrow {

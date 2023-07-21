@@ -1,6 +1,7 @@
 .nav-bar__links {
   justify-self: center;
   display: flex;
+  align-items: center;
   gap: var(--gap-32);
 }
 .nav-bar__links a {
