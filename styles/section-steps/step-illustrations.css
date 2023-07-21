@@ -65,15 +65,10 @@
   inset-inline-start: 40%;
 }
 
-.step__description.monolog {
-  inset-block-end: 44%;
-  inset-inline: 30%;
-}
-
+.step__description.monolog,
 .step__description.dialog {
   inset-block-end: 44%;
-  inset-inline-start: 50%;
-  transform: translateX(-50%);
+  inset-inline: 30%;
 }
 
 [class^='step-']:nth-of-type(odd) .step__description.monolog::after {
@@ -92,8 +87,6 @@
   .step__description.monolog,
   .step__description.dialog {
     inset-block-end: 46%;
-  }
-  .step__description.monolog {
     inset-inline: 15%;
   }
 }

@@ -1,14 +1,17 @@
 .header {
   inline-size: 100%;
-  position: fixed;
+  position: absolute;
   inset-block-start: 0;
+  background-color: var(--bg-nav);
   transition: all var(--transition-03) ease-in-out;
   z-index: 99;
 }
 .header.is-sticky {
-  background-color: var(--bg-nav);
+  position: fixed;
+  background-color: var(--bg-nav-stiky);
   backdrop-filter: blur(10px);
   box-shadow: var(--nav-shadow);
+  animation: stiky 0.3s ease-in-out;
 }
 
 .nav-bar {
