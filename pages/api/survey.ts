@@ -25,7 +25,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     res.send({
       status: 'success',
       message: {
-        ru: 'Ваше сообщение успешно отправленно!',
         en: 'Your message was successful sended!',
         fi: 'Viestisi lähetys onnistui!',
         sv: 'Ditt meddelande har skickats!',
@@ -36,7 +35,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
       status: 'error',
       message: {
         en: 'Something went wrong!',
-        ru: 'Что-то пошло не так!',
         fi: 'Jotain meni pieleen!',
         sv: 'Något gick fel!',
       },

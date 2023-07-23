@@ -32,11 +32,17 @@ export const query = gql`
     featureSection(locale: $locale) {
       ...FeatureSectionRecordFragment
     }
+    teamSection(locale: $locale) {
+      ...TeamSectionRecordFragment
+    }
     faqSection(locale: $locale) {
       ...FaqSectionRecordFragment
     }
     testimonialSection(locale: $locale) {
       ...TestimonialSectionRecordFragment
+    }
+    footer(locale: $locale) {
+      ...FooterRecordFragment
     }
   }
 
@@ -62,7 +68,6 @@ export const query = gql`
   }
 
   fragment SurveySectionRecordFragment on SurveySectionRecord {
-    label
     title
     primary
     secondary
@@ -77,7 +82,6 @@ export const query = gql`
   }
 
   fragment FeatureSectionRecordFragment on FeatureSectionRecord {
-    label
     title
     primary
     secondary
@@ -89,8 +93,28 @@ export const query = gql`
     }
   }
 
+  fragment TeamSectionRecordFragment on TeamSectionRecord {
+    title
+    primary
+    secondary
+    description
+    team {
+      id
+      avatar {
+        alt
+        url
+      }
+      name
+      teamPosition
+      about
+      instagramUrl
+      linkedinUrl
+      twitterUrl
+      websiteUrl
+    }
+  }
+
   fragment FaqSectionRecordFragment on FaqSectionRecord {
-    label
     title
     primary
     secondary
@@ -109,7 +133,6 @@ export const query = gql`
   }
 
   fragment TestimonialSectionRecordFragment on TestimonialSectionRecord {
-    label
     title
     primary
     secondary
@@ -124,5 +147,15 @@ export const query = gql`
         alt
       }
     }
+  }
+
+  fragment FooterRecordFragment on FooterRecord {
+    copyright
+    discordUrl
+    emailUrl
+    instagramUrl
+    linkedinUrl
+    tiktokUrl
+    twitterUrl
   }
 `;

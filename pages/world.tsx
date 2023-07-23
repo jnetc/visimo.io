@@ -11,6 +11,8 @@ import type { IData } from '@Types';
 import type { NextPage, GetStaticProps, InferGetStaticPropsType } from 'next';
 // Componets
 const Header = dynamic(() => import('@Components/header'), { ssr: false });
+const Story = dynamic(() => import('@Components/world-section'), { ssr: false });
+const Footer = dynamic(() => import('@Components/footer'), { ssr: false });
 
 const Home: NextPage = ({ data, language, languages }: InferGetStaticPropsType<typeof getStaticProps>) => {
   // const googleTokken = process.env.NEXT_PUBLIC_NEXT_GOOGLE_ANALYTICS_TOKEN as string;
@@ -61,7 +63,10 @@ const Home: NextPage = ({ data, language, languages }: InferGetStaticPropsType<t
       </Head>
 
       <Header />
-      <main>World</main>
+      <main>
+        <Story />
+      </main>
+      <Footer />
     </Store.Provider>
   );
 };

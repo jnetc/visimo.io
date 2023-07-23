@@ -1,6 +1,5 @@
 export type LanguagesType = 'fi' | 'en' | 'sv';
 export type LanguagesMessageType = {
-  ru: string;
   fi: string;
   en: string;
   sv: string;
@@ -16,6 +15,15 @@ export type LabelType = { label: string };
 export type AnchorType = { anchor: string };
 export type UrlType = { url: string };
 export type HandlerType = { handler: () => void };
+export type LinksType = {
+  emailUrl: string;
+  discordUrl: string;
+  instagramUrl: string;
+  linkedinUrl: string;
+  tiktokUrl: string;
+  twitterUrl: string;
+  websiteUrl: string;
+};
 
 export interface Image {
   url: string;
@@ -60,6 +68,18 @@ export interface IFeatureSection extends ISectionType {
   features: Array<IFeature>;
 }
 
+export interface IPersona
+  extends IDType,
+    NameType,
+    Pick<LinksType, 'instagramUrl' | 'linkedinUrl' | 'twitterUrl' | 'websiteUrl'> {
+  avatar: Image;
+  teamPosition: string;
+  about: string;
+}
+export interface ITeamSection extends ISectionType {
+  team: Array<IPersona>;
+}
+
 export interface IFaq extends IDType {
   question: string;
   answer: string;
@@ -79,14 +99,20 @@ export interface ITestimonialSection extends ISectionType {
   testimonials: Array<ITestimonial>;
 }
 
+export interface IFooter extends Omit<LinksType, 'websiteUrl'> {
+  copyright: string;
+}
+
 export interface IData {
   // _site: SEO;
   heroSection: IHeroSection;
   howitworksSection: IHowItWorksSection;
   surveySection: ISurveySection;
   featureSection: IFeatureSection;
+  teamSection: ITeamSection;
   faqSection: IFaqSection;
   testimonialSection: ITestimonialSection;
+  footer: IFooter;
 }
 
 // NODEMAILER

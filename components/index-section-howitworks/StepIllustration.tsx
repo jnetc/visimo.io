@@ -16,8 +16,8 @@ interface Props {
 export default function StepIllustration({ id, data }: Props) {
   const ref = useRef<HTMLDivElement>(null);
   const isIntersecting = useIntersectionObserver(ref, {
-    rootMargin: '-50px',
-    threshold: 0.5,
+    rootMargin: '-150px',
+    threshold: 0,
   });
 
   return (

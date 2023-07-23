@@ -16,8 +16,10 @@ const AppSection = dynamic(() => import('@Components/index-section-app'), { ssr:
 const HowItWorksSection = dynamic(() => import('@Components/index-section-howitworks'), { ssr: false });
 const SurveySection = dynamic(() => import('@Components/index-section-survey'), { ssr: false });
 // const Features = dynamic(() => import('@Components/index-section-features'), { ssr: false });
+const TeamSection = dynamic(() => import('@Components/index-section-team'), { ssr: false });
 const FAQ = dynamic(() => import('@Components/index-section-faq'), { ssr: false });
 const Testimonials = dynamic(() => import('@Components/index-section-testimonials'), { ssr: false });
+const Footer = dynamic(() => import('@Components/footer'), { ssr: false });
 
 const Home: NextPage = ({ data, language, languages }: InferGetStaticPropsType<typeof getStaticProps>) => {
   // const googleTokken = process.env.NEXT_PUBLIC_NEXT_GOOGLE_ANALYTICS_TOKEN as string;
@@ -87,10 +89,11 @@ const Home: NextPage = ({ data, language, languages }: InferGetStaticPropsType<t
         <HowItWorksSection />
         <SurveySection />
         {/* <Features /> */}
+        <TeamSection />
         <FAQ />
         <Testimonials />
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </Store.Provider>
   );
 };

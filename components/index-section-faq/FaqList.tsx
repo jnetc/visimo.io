@@ -4,7 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import { useStore } from '@Hooks/useStore';
 
 export default function FaqList() {
-  const { data } = useStore();
+  const { faqs } = useStore().data!.faqSection;
 
   function selectItem(event: PointerEvent<HTMLElement> | KeyboardEvent<HTMLElement>) {
     const list = event.target as HTMLElement;
@@ -22,7 +22,7 @@ export default function FaqList() {
     liElement.classList.toggle('selected');
   }
 
-  const list = data?.faqSection.faqs.map(list => {
+  const list = faqs.map(list => {
     return (
       <li key={list.id} className="faq__item retro-box" data-key={list.id}>
         <h3 className="faq__item-title" tabIndex={0} onPointerUp={selectItem} onKeyDown={selectItem}>

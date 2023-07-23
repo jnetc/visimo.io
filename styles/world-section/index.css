@@ -1,0 +1,9 @@
+.under-construction {
+  min-block-size: calc(100vh - (var(--gap-128) * 2));
+  place-content: center;
+}
+.under-construction h1 {
+  grid-column: 1 / -1;
+  justify-self: center;
+  font-size: var(--font-56);
+}

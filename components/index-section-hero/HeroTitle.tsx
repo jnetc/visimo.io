@@ -3,9 +3,7 @@ import { useStore } from '@Hooks/useStore';
 import splitTitle from '@Helpers/splitTitles';
 
 export default function HeroTitle() {
-  const { data } = useStore();
-
-  const { title, primary, secondary } = data!.heroSection;
+  const { title, primary, secondary } = useStore().data!.heroSection;
 
   const splittingTitle = splitTitle(title, primary, secondary);
 

@@ -5,8 +5,7 @@ import Steps from './Steps';
 import splitTitle from '@Helpers/splitTitles';
 
 export default function HowItWorksSection() {
-  const { data } = useStore();
-  const { title, primary, secondary, description } = data!.howitworksSection;
+  const { title, primary, secondary, description } = useStore().data!.howitworksSection;
 
   const splittingTitle = splitTitle(title, primary, secondary);
   return (

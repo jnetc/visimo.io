@@ -6,12 +6,6 @@
   position: relative;
 }
 
-.question__btn-no,
-.question__btn-yes {
-  font-weight: bold;
-  cursor: pointer;
-}
-
 input[name*='answer-selected'] {
   appearance: none;
   position: absolute;

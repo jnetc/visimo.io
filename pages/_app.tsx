@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
-import dynamic from 'next/dynamic';
 // Hook
 import { Theme } from '@Hooks/useTheme';
 // STYLES
@@ -9,20 +8,12 @@ import '@Styles/variables.css';
 import '@Styles/globals.css';
 import '@Styles/buttons.css';
 import '@Styles/nav-bar/nav-bar.css';
-import '@Styles/section-hero/hero.css';
+import '@Styles/index-section-hero/hero.css';
 import '@Styles/smartphone/smartphone.css';
-import '@Styles/section-app/app.css';
-import '@Styles/section-steps/steps.css';
-import '@Styles/section-survey/survey.css';
-import '@Styles/section-features/features.css';
-import '@Styles/section-faqs/faqs.css';
-import '@Styles/section-testimonials/testimonials.css';
-import '@Styles/footer/footer.css';
+import '@Styles/world-section/index.css';
 // Types
 import type { AppProps } from 'next/app';
 import { ThemeColorType } from '@Types';
-// Components
-const Footer = dynamic(() => import('@Components/footer'), { ssr: false });
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [isDarkTheme, setIsDarkTheme] = useState<ThemeColorType>('light');
@@ -70,7 +61,6 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <Theme.Provider value={{ isDarkTheme, switchTheme: setIsDarkTheme }}>
         <Component {...pageProps} />
-        <Footer />
       </Theme.Provider>
     </>
   );

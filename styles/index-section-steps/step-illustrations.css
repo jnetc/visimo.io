@@ -34,7 +34,7 @@
   font-size: clamp(var(--font-16), 1.5vw, var(--font-18));
   font-weight: bold;
   line-height: 1.4;
-  z-index: 100;
+  z-index: 10;
 }
 
 .step__description.monolog::after,

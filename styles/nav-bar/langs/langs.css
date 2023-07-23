@@ -1,5 +1,4 @@
 .button-langs {
-  display: grid;
   grid-template-columns: 1fr 18px;
   column-gap: var(--gap-16);
   align-items: center;

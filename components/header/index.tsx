@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 // Components
-import Logo from './logo';
+import Logo from '@Components/logo';
 import Links from './links';
 import MobNavButton from './mob-menu/MobNavButton';
 import MobMenu from './mob-menu';
@@ -47,7 +47,7 @@ export default function NavBar() {
       <MobMenu handler={openMenu} isOpen={isOpen} />
       <header aria-label="header-navigation" className="header" ref={ref}>
         <nav className="nav-bar">
-          <Logo />
+          <Logo extraClass="nav-bar__logo" />
           <Links />
           <Langs />
           <Themes />

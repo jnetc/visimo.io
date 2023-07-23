@@ -27,7 +27,7 @@ html[data-theme='dark'] {
   --bg-after: var(--dark-red-alt);
   --bg-before: var(--dark-blue);
   --bg-dialog: hsl(206 100% 11% / 0.9);
-  --bg-nav: hsl(206 100% 11% / 0.3);
+  /* --bg-nav: hsl(206 100% 11% / 0.3); */
   --bg-nav-stiky: hsl(206 100% 11% / 0.9);
   --bg-li-item-selected: var(--dark-blue-alt);
 
@@ -60,6 +60,8 @@ html[data-theme='dark'] {
   --link: var(--light-green);
 
   --nav-shadow: 0 3px 1rem hsl(0 0% 0% / 0.5);
+
+  --bg-opacity: 0.1;
 }
 /* @media (prefers-color-scheme: light) {
   :root {
@@ -72,7 +74,7 @@ html[data-theme='light'] {
   --bg-after: var(--light-red);
   --bg-before: var(--light-blue);
   --bg-dialog: hsl(21 70% 96% / 0.9);
-  --bg-nav: hsl(30 57% 89% / 0.5);
+  /* --bg-nav: hsl(30 57% 89% / 0.5); */
   --bg-nav-stiky: hsl(30 57% 89% / 0.9);
   --bg-li-item-selected: var(--white-grey);
 
@@ -105,6 +107,8 @@ html[data-theme='light'] {
   --link: var(--light-green-alt);
 
   --nav-shadow: 0 3px 1rem hsl(0 0% 0% / 0.05);
+
+  --bg-opacity: 0.03;
 }
 
 *,
@@ -137,10 +141,10 @@ body,
   content: '';
   position: absolute;
   inset: 0;
-  background-size: 750px;
-  background-image: url(/images/pattern.jpg);
-  mix-blend-mode: luminosity;
-  opacity: 0.03;
+  background-size: 1450px; /* 750px */
+  background-image: url(/images/pattern.png);
+  mix-blend-mode: multiply;
+  opacity: var(--bg-opacity);
   z-index: -99999;
 }
 body {
@@ -163,14 +167,6 @@ a {
 }
 ul {
   list-style-type: none;
-}
-button {
-  appearance: none;
-  position: relative;
-  background-color: transparent;
-  font-weight: bold;
-  cursor: pointer;
-  user-select: none;
 }
 
 h1,
@@ -233,20 +229,18 @@ main {
 
 @import url('./common.css');
 @import url('./markdown.css');
-@import url(./background-objects/svg.css);
 @import url(./illustrations.css);
+@import url(./footer/footer.css);
 
 /* apply back the draggable feature - exist only in Chromium and Safari */
 /* :where([draggable='true']) {
   -webkit-user-drag: element;
 } */
-/* @import url('./common.css');
-@import url('./buttons.css');
-@import url('./stars.css');
-@import url('./modals.css');
-@import url('./nav-bar/nav-bar.css');
-@import url('./hero-section/hero-section.css');
-@import url('./how-we-work/how-we-work.css');
-@import url('./what-we-offer/what-we-offer.css');
-@import url('./our-little-story/our-little-story.css');
-@import url('./get-in-touch/get-in-touch.css'); */
+
+@import url(./index-section-app/app.css);
+@import url(./index-section-steps/steps.css);
+@import url(./index-section-features/features.css);
+@import url(./index-section-survey/survey.css);
+@import url(./index-section-team/team.css);
+@import url(./index-section-faqs/faqs.css);
+@import url(./index-section-testimonials/testimonials.css);

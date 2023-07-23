@@ -5,8 +5,8 @@ import Feature from './Feature';
 import splitTitle from '@Helpers/splitTitles';
 
 export default function FeaturesSection() {
-  const { data } = useStore();
-  const { title, primary, secondary, description, features } = data!.featureSection;
+  const { title, primary, secondary, description, features } = useStore().data!.featureSection;
+
   const splittingTitle = splitTitle(title, primary, secondary);
 
   const featuresArr = features.map((feature, idx) => {

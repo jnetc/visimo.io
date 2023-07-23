@@ -5,8 +5,8 @@ import SurveyForm from './SurveyForm';
 import splitTitle from '@Helpers/splitTitles';
 
 export default function Survey() {
-  const { data } = useStore();
-  const { title, primary, secondary, description } = data!.surveySection;
+  const { title, primary, secondary, description } = useStore().data!.surveySection;
+
   const splittingTitle = splitTitle(title, primary, secondary);
 
   return (

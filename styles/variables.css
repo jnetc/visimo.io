@@ -17,10 +17,10 @@
   --snow: #fff3e5;
 
   /*DARK THEME*/
-  --dark-yellow: #fdd887;
-  --dark-yellow-alt: #bd7331;
-  --dark-green: #0f496a;
-  --dark-green-alt: #013451;
+  --dark-yellow: hsl(41, 97%, 76%);
+  --dark-yellow-alt: hsl(28, 59%, 47%);
+  --dark-green: hsl(202, 75%, 24%);
+  --dark-green-alt: hsl(202, 98%, 16%);
   --dark-red: #f76148;
   --dark-red-alt: #ab706a;
   --dark-blue: #3f87b8;

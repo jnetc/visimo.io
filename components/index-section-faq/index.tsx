@@ -8,8 +8,8 @@ import FaqFeedback from './FaqEmployee';
 import splitTitle from '@Helpers/splitTitles';
 
 export default function FAQSection() {
-  const { data } = useStore();
-  const { title, primary, secondary, description, extraInfo } = data!.faqSection;
+  const { title, primary, secondary, description, extraInfo } = useStore().data!.faqSection;
+
   const splittingTitle = splitTitle(title, primary, secondary);
 
   return (

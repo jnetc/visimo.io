@@ -4,8 +4,7 @@ import StepIllustration from './StepIllustration';
 import StepPreview from './StepPreview';
 
 export default function Steps() {
-  const { data } = useStore();
-  const { steps } = data!.howitworksSection;
+  const { steps } = useStore().data!.howitworksSection;
 
   const stepArr = steps.map((s, idx) => (
     <div key={idx} className={`step-${idx}`}>
