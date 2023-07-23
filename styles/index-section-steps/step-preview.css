@@ -25,6 +25,10 @@
   animation: stroke-animation 2s linear infinite;
 }
 
+[class^='step-']:nth-of-type(even) .step__step-blob {
+  transform: rotateY(0.5turn);
+}
+
 @keyframes stroke-animation {
   to {
     stroke-dashoffset: 45;
@@ -32,12 +36,18 @@
 }
 
 @media screen and (max-width: 960px) {
-  .step__step-blob {
+  [class^='step-']:nth-of-type(odd) .step__step-blob {
     transform: scale(2);
+  }
+  [class^='step-']:nth-of-type(even) .step__step-blob {
+    transform: rotateY(0.5turn) scale(2);
   }
 }
 @media screen and (max-width: 559px) {
-  .step__step-blob {
+  [class^='step-']:nth-of-type(odd) .step__step-blob {
     transform: scale(1.5);
+  }
+  [class^='step-']:nth-of-type(even) .step__step-blob {
+    transform: rotateY(0.5turn) scale(1.5);
   }
 }

@@ -7,11 +7,11 @@ import LinkedIn from './LinkedIn';
 import TikTok from './TikTok';
 import Email from './Email';
 
-export default function FooterLinks() {
+export default function FooterSocialLinks() {
   const { instagramUrl, discordUrl, twitterUrl, linkedinUrl, tiktokUrl, emailUrl } = useStore().data!.footer;
 
   return (
-    <div className="footer__links">
+    <div className="footer__social-links">
       {instagramUrl.length > 0 ? <Instagram url={instagramUrl} /> : null}
       {discordUrl.length > 0 ? <Discord url={discordUrl} /> : null}
       {twitterUrl.length > 0 ? <Twitter url={twitterUrl} /> : null}

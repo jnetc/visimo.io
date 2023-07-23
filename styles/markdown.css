@@ -2,18 +2,6 @@
 .markdown {
   line-height: 1.6;
 }
-.markdown a {
-  color: var(--link);
-  font-weight: bold;
-  text-underline-offset: 2px;
-  text-decoration-line: underline;
-  text-decoration-thickness: 2px;
-  transition: all var(--transition-03) ease-in-out;
-}
-.markdown a:hover {
-  text-underline-offset: 6px;
-  text-decoration-color: transparent;
-}
 
 .markdown p:nth-of-type(n + 2) {
   padding-block-start: var(--gap-16);

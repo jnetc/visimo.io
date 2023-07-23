@@ -64,6 +64,19 @@ section {
   box-shadow: 10px 10px 0 var(--black);
 }
 
+a:not(.button) {
+  color: var(--link);
+  font-weight: bold;
+  text-underline-offset: 2px;
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
+  transition: all var(--transition-03) ease-in-out;
+}
+a:hover:not(.button) {
+  text-underline-offset: 6px;
+  text-decoration-color: transparent;
+}
+
 /* GLOBAL CLOUD STYLE */
 .cloud-body {
   fill: var(--cloud-body);
