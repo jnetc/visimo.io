@@ -1,4 +1,5 @@
 import ReactMarkdown from 'react-markdown';
+import Image from 'next/image';
 // Type
 import type { ITestimonial } from '@Types';
 export default function Testiomonial({ data }: { data: ITestimonial }) {
@@ -12,7 +13,16 @@ export default function Testiomonial({ data }: { data: ITestimonial }) {
       <ReactMarkdown className="testimonial-text markdown" children={data.description} />
       <h3 className="testimonial-name">{data.name}</h3>
       <p className="testimonial-post">{data.post}</p>
-      <img className="testimonial-avatar" src={data.avatar.url} alt={data.avatar.alt} />
+      <div className="testimonial-avatar">
+        <Image src={data.avatar.url} alt={data.avatar.alt} fill sizes={data.avatar.responsiveImage.sizes} />
+      </div>
+      {/* <img
+        className="testimonial-avatar"
+        src={data.avatar.url}
+        alt={data.avatar.alt}
+        sizes={data.avatar.responsiveImage.sizes}
+        srcSet={data.avatar.responsiveImage.srcSet}
+      /> */}
     </article>
   );
 }

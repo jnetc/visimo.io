@@ -63,7 +63,13 @@ export default function Question({ question, order }: { question: IQuestion; ord
       <QuestionRadioButtons id={id} pointerHandler={selectAnswer} />
       <QuestionTextField id={id} handler={customerAnswer} isOpen={customAnswer} />
       <Smartphone customClass="phone-survey">
-        <img src="/images/screenshot.png" alt="app image" />
+        <img
+          src="/images/screenshot.webp"
+          alt="app image"
+          width={'100%'}
+          height={'100%'}
+          sizes="(max-width: 438px) 100vw, 438px"
+        />
       </Smartphone>
     </div>
   );

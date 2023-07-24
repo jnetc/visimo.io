@@ -29,6 +29,10 @@ export type LinksType = {
 export interface Image {
   url: string;
   alt: string;
+  responsiveImage: {
+    sizes: string;
+    srcSet: string;
+  };
 }
 
 export interface ISectionType extends TitleType, DescType, TitleColorType {}

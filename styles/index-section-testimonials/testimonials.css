@@ -67,7 +67,11 @@
   grid-row: 2 / 2 span;
   width: var(--size-64);
   aspect-ratio: 1;
+  position: relative;
   border-radius: 50%;
+}
+.testimonial-avatar img {
+  border-radius: inherit;
 }
 
 @media screen and (max-width: 1366px) {

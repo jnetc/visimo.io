@@ -4,25 +4,28 @@
   padding-block-start: var(--gap-152);
   position: relative;
 }
-.faqs__employee img {
+.faqs-avatar {
   aspect-ratio: 1;
   object-fit: contain;
+  position: relative;
   border-radius: 50%;
   border: 5px solid var(--bg-color);
-  position: relative;
 }
-.faqs__employee img:nth-of-type(2) {
+.faqs__employee img {
+  border-radius: inherit;
+}
+.faqs__employee .faqs-avatar:nth-of-type(2) {
   width: 100px;
   z-index: 5;
 }
-.faqs__employee img:nth-of-type(1),
-.faqs__employee img:nth-of-type(3) {
+.faqs__employee .faqs-avatar:nth-of-type(1),
+.faqs__employee .faqs-avatar:nth-of-type(3) {
   width: 80px;
 }
-.faqs__employee img:nth-of-type(1) {
+.faqs__employee .faqs-avatar:nth-of-type(1) {
   left: 2rem;
 }
-.faqs__employee img:nth-of-type(3) {
+.faqs__employee .faqs-avatar:nth-of-type(3) {
   right: 2rem;
 }
 

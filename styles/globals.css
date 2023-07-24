@@ -140,7 +140,7 @@ body,
   position: absolute;
   inset: 0;
   background-size: 1450px; /* 750px */
-  background-image: url(/images/pattern.png);
+  background-image: url(/images/pattern.webp);
   mix-blend-mode: multiply;
   opacity: var(--bg-opacity);
   z-index: -99999;

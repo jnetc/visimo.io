@@ -1,13 +1,8 @@
 import { useStore } from '@Hooks/useStore';
-// Hook
-// import { usePlayModalStore } from '@Hooks/usePlayModalStore';
-// import { useOutsideClick } from '@Hooks/useOutsideClick';
-// import { useHideScrollbar } from '@Hooks/useHideScrollbar';
-
 // Component
+import TeamMembers from './TeamMembers';
 // Helpers
 import splitTitle from '@Helpers/splitTitles';
-import TeamMembers from './TeamMembers';
 
 export default function SectionTeam() {
   const { title, primary, secondary, description } = useStore().data!.teamSection;

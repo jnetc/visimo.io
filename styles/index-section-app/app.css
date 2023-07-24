@@ -23,7 +23,8 @@
   aspect-ratio: 1 / 1.3044;
   position: absolute;
   inset-inline: 45%;
-  inset-block-end: clamp(14.5%, 2vw, 15.5%);
+  /* inset-block-end: clamp(14.5%, 7vw, 15.5%); */
+  inset-block-end: 15.5%;
   overflow: hidden;
   z-index: 5;
 }

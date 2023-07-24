@@ -103,6 +103,10 @@ export const query = gql`
       avatar {
         alt
         url
+        responsiveImage {
+          sizes
+          srcSet
+        }
       }
       name
       teamPosition
@@ -129,6 +133,10 @@ export const query = gql`
       id
       url
       alt
+      responsiveImage {
+        sizes
+        srcSet
+      }
     }
     extraInfo
   }
@@ -146,6 +154,10 @@ export const query = gql`
       avatar {
         url
         alt
+        responsiveImage {
+          sizes
+          srcSet
+        }
       }
     }
   }
