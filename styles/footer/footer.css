@@ -10,20 +10,6 @@
   border-top: 2px solid var(--bg-color-alt);
 }
 
-.footer__social-links {
-  display: flex;
-  gap: var(--gap-16);
-  align-items: center;
-}
-ы .footer__icon,
-.footer__icon svg {
-  inline-size: var(--size-24);
-  aspect-ratio: 1;
-}
-.footer__icon svg {
-  fill: var(--switch-black-and-light-alt);
-}
-
 .footer__center {
   text-align: center;
 }

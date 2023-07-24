@@ -16,14 +16,14 @@ export type AnchorType = { anchor: string };
 export type UrlType = { url: string };
 export type HandlerType = { handler: () => void };
 export type LinksType = {
-  emailUrl: string;
-  discordUrl: string;
-  instagramUrl: string;
-  linkedinUrl: string;
-  tiktokUrl: string;
-  twitterUrl: string;
-  facebookUrl: string;
-  websiteUrl: string;
+  emailUrl?: string;
+  discordUrl?: string;
+  instagramUrl?: string;
+  linkedinUrl?: string;
+  tiktokUrl?: string;
+  twitterUrl?: string;
+  facebookUrl?: string;
+  websiteUrl?: string;
 };
 
 export interface Image {

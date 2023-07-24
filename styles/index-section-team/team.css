@@ -22,20 +22,46 @@
   border-radius: inherit;
 }
 
-.team-member__dialog[open] {
-  inline-size: 100%;
-  block-size: 100%;
-  display: grid;
-  place-content: center;
-  position: fixed;
-  inset: 0;
-  background-color: var(--bg-dialog);
-  z-index: 9999;
+.team-member__dialog {
+  margin: auto;
+  padding-inline-end: 1rem;
+  padding-block-end: 1rem;
+  background: var(--bg-dialog);
+  border: transparent;
 }
+.team-member__dialog[open] {
+  animation: fade-in 0.3s forwards, slide-in 0.3s forwards;
+}
+.team-member__dialog[closing] {
+  display: block;
+  pointer-events: none;
+  animation: slide-out 0.3s forwards, fade-out 0.3s forwards;
+}
+
+/* STRANGE BUG, HSL() INSTEAD OF VARIBLES */
+[data-theme='light'] .team-member__dialog::backdrop {
+  background: hsl(21 70% 96% / 0.8);
+}
+[data-theme='dark'] .team-member__dialog::backdrop {
+  background: hsl(206 100% 11% / 0.8);
+}
+.team-member__dialog::backdrop {
+  cursor: pointer;
+  pointer-events: all;
+}
+.team-member__dialog[open]::backdrop {
+  animation: fade-in 0.3s forwards;
+}
+.team-member__dialog[closing]::backdrop {
+  animation: fade-out 0.3s forwards;
+}
+
 .team-member__dialog-card {
-  inline-size: 560px;
+  grid-column: 2;
+  justify-self: center;
+  max-inline-size: 560px;
   display: grid;
-  grid-template-rows: var(--size-40) repeat(4, min-content);
+  grid-template-rows: var(--size-56) repeat(4, min-content);
   justify-items: center;
   gap: var(--gap-12);
   padding-inline: var(--gap-32);
@@ -43,9 +69,52 @@
   background-color: var(--bg-color-alt);
 }
 
-/* @media screen and (min-width: 559px) {
-  .button-close {
-    inset-block-start: var(--gap-36);
-    inset-inline-end: var(--gap-36);
+.team-member__dialog-btns {
+  inline-size: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.team-member__dialog-name {
+  font-size: var(--font-32);
+}
+
+.team-member__dialog-position {
+  padding-block-end: var(--gap-16);
+  font-size: var(--font-20);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
   }
-} */
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(3rem);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes slide-out {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-3rem);
+  }
+}

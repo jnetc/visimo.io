@@ -1,14 +1,14 @@
 // Conmponent
-import FooterSocialLinks from './FooterSocialLinks';
+import WebLinks from '@Components/web-links';
 import FooterTermsLinks from './FooterTermsLinks';
 // Hook
 import { useStore } from '@Hooks/useStore';
 
 export default function Footer() {
-  const { copyright } = useStore().data!.footer;
+  const { copyright, ...urls } = useStore().data!.footer;
   return (
     <footer className="footer">
-      <FooterSocialLinks />
+      <WebLinks extraClass="footer__social-links" urls={urls} />
       <p className="footer__center">{copyright}</p>
       <FooterTermsLinks />
     </footer>

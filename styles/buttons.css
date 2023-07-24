@@ -63,6 +63,7 @@ button {
   background-color: var(--btn-nav-menu);
 }
 
+/* SMALL UI BUTTONS  */
 .small-button {
   display: grid;
   border: 2px solid var(--btn-border);
@@ -74,7 +75,7 @@ button {
 .btn-only-icon {
   place-content: center;
   inline-size: var(--size-40);
-  aspect-ratio: 1;
+  block-size: var(--size-40);
 }
 
 .small-button:active {
@@ -87,16 +88,22 @@ button {
 }
 
 .btn-only-icon__icon {
-  width: var(--size-24);
+  inline-size: var(--size-24);
   aspect-ratio: 1;
   transition: transform var(--transition-03) ease-in-out;
 }
 
-@media screen and (max-width: 559px) {
-  .btn-only-icon {
-    width: var(--size-40);
-  }
-  .btn-only-icon__icon {
-    width: var(--size-24);
-  }
+/* SMALL LINK / SOCIAL BUTTON  */
+.social-buttons {
+  display: flex;
+  gap: var(--gap-16);
+  align-items: center;
+}
+.social-button__icon,
+.social-button__icon svg {
+  inline-size: var(--size-24);
+  aspect-ratio: 1;
+}
+.social-button__icon svg {
+  fill: var(--switch-black-and-light-alt);
 }
