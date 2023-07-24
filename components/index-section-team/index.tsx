@@ -7,6 +7,7 @@ import { useStore } from '@Hooks/useStore';
 // Component
 // Helpers
 import splitTitle from '@Helpers/splitTitles';
+import TeamMembers from './TeamMembers';
 
 export default function SectionTeam() {
   const { title, primary, secondary, description } = useStore().data!.teamSection;
@@ -17,6 +18,7 @@ export default function SectionTeam() {
         {splittingTitle}
       </h2>
       <p className="section-description">{description}</p>
+      <TeamMembers />
     </section>
   );
 }

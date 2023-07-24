@@ -22,6 +22,7 @@ export type LinksType = {
   linkedinUrl: string;
   tiktokUrl: string;
   twitterUrl: string;
+  facebookUrl: string;
   websiteUrl: string;
 };
 
@@ -68,16 +69,16 @@ export interface IFeatureSection extends ISectionType {
   features: Array<IFeature>;
 }
 
-export interface IPersona
+export interface IMember
   extends IDType,
     NameType,
-    Pick<LinksType, 'instagramUrl' | 'linkedinUrl' | 'twitterUrl' | 'websiteUrl'> {
+    Pick<LinksType, 'instagramUrl' | 'linkedinUrl' | 'twitterUrl' | 'facebookUrl' | 'websiteUrl'> {
   avatar: Image;
   teamPosition: string;
   about: string;
 }
 export interface ITeamSection extends ISectionType {
-  team: Array<IPersona>;
+  team: Array<IMember>;
 }
 
 export interface IFaq extends IDType {

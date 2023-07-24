@@ -64,7 +64,7 @@ section {
   box-shadow: 10px 10px 0 var(--black);
 }
 
-a:not(.button) {
+a:not(.button, .nav-bar__links a) {
   color: var(--link);
   font-weight: bold;
   text-underline-offset: 2px;
@@ -72,7 +72,7 @@ a:not(.button) {
   text-decoration-thickness: 2px;
   transition: all var(--transition-03) ease-in-out;
 }
-a:hover:not(.button) {
+a:hover:not(.button, .nav-bar__links a) {
   text-underline-offset: 6px;
   text-decoration-color: transparent;
 }

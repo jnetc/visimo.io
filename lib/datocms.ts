@@ -110,6 +110,7 @@ export const query = gql`
       instagramUrl
       linkedinUrl
       twitterUrl
+      facebookUrl
       websiteUrl
     }
   }

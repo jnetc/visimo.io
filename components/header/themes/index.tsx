@@ -16,19 +16,19 @@ export default function Themes() {
     <button
       className={
         isDarkTheme === DARK_THEME
-          ? 'nav-button nav-button-48 nav-bar__theme-button active'
-          : 'nav-button nav-button-48 nav-bar__theme-button'
+          ? 'small-button btn-only-icon nav-bar__theme-button active'
+          : 'small-button btn-only-icon nav-bar__theme-button'
       }
       onPointerUp={toggleMenu}
       aria-label="Switch theme"
       title="Switch theme"
     >
       {isDarkTheme === DARK_THEME ? (
-        <svg className="nav-bar__icon theme-icon">
+        <svg className="btn-only-icon__icon theme-icon">
           <use xlinkHref="/images/icons.svg#dark"></use>
         </svg>
       ) : (
-        <svg className="nav-bar__icon theme-icon">
+        <svg className="btn-only-icon__icon theme-icon">
           <use xlinkHref="/images/icons.svg#light"></use>
         </svg>
       )}

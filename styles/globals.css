@@ -26,8 +26,8 @@ html[data-theme='dark'] {
   --bg-color-alt: var(--dark-bg-alt);
   --bg-after: var(--dark-red-alt);
   --bg-before: var(--dark-blue);
-  --bg-dialog: hsl(206 100% 11% / 0.9);
-  /* --bg-nav: hsl(206 100% 11% / 0.3); */
+  --bg-dialog: hsl(206 100% 11% / 0.5);
+  /* --bg-dialog: hsl(206 100% 11% / 0.3); */
   --bg-nav-stiky: hsl(206 100% 11% / 0.9);
   --bg-li-item-selected: var(--dark-blue-alt);
 
@@ -73,7 +73,7 @@ html[data-theme='light'] {
   --bg-color-alt: var(--light-bg-alt);
   --bg-after: var(--light-red);
   --bg-before: var(--light-blue);
-  --bg-dialog: hsl(21 70% 96% / 0.9);
+  --bg-dialog: hsl(21 70% 96% / 0.5);
   /* --bg-nav: hsl(30 57% 89% / 0.5); */
   --bg-nav-stiky: hsl(30 57% 89% / 0.9);
   --bg-li-item-selected: var(--white-grey);

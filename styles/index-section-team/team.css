@@ -1,0 +1,51 @@
+.team-members {
+  grid-column: 2 / -2;
+}
+
+.team-member {
+  max-inline-size: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 3px solid red;
+  cursor: pointer;
+}
+
+.team-member__photo {
+  position: relative;
+  inline-size: var(--size-208);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.team-member__photo img {
+  border-radius: inherit;
+}
+
+.team-member__dialog[open] {
+  inline-size: 100%;
+  block-size: 100%;
+  display: grid;
+  place-content: center;
+  position: fixed;
+  inset: 0;
+  background-color: var(--bg-dialog);
+  z-index: 9999;
+}
+.team-member__dialog-card {
+  inline-size: 560px;
+  display: grid;
+  grid-template-rows: var(--size-40) repeat(4, min-content);
+  justify-items: center;
+  gap: var(--gap-12);
+  padding-inline: var(--gap-32);
+  padding-block: var(--gap-16) var(--gap-48);
+  background-color: var(--bg-color-alt);
+}
+
+/* @media screen and (min-width: 559px) {
+  .button-close {
+    inset-block-start: var(--gap-36);
+    inset-inline-end: var(--gap-36);
+  }
+} */

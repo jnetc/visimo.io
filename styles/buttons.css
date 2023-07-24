@@ -50,12 +50,53 @@ button {
   border-color: var(--switch-black-and-light);
   color: var(--btn-txt);
 }
-.button.button-green {
+.button-green {
   background-color: var(--btn-green);
 }
-.button.button-red {
+.button-red {
   background-color: var(--btn-red);
 }
-.button.button-yellow {
+.button-yellow {
   background-color: var(--btn-yellow);
+}
+.button-blue {
+  background-color: var(--btn-nav-menu);
+}
+
+.small-button {
+  display: grid;
+  border: 2px solid var(--btn-border);
+  border-radius: var(--border-corner-8);
+  box-shadow: 6px 6px 0 var(--btn-shadow);
+  transition: all var(--transition-01) ease-in-out;
+}
+
+.btn-only-icon {
+  place-content: center;
+  inline-size: var(--size-40);
+  aspect-ratio: 1;
+}
+
+.small-button:active {
+  transform: translate(0px, 3px);
+  box-shadow: 3px 3px 0 var(--btn-shadow);
+}
+.small-button.active {
+  transform: translate(0px, 3px);
+  box-shadow: 3px 3px 0 var(--btn-shadow);
+}
+
+.btn-only-icon__icon {
+  width: var(--size-24);
+  aspect-ratio: 1;
+  transition: transform var(--transition-03) ease-in-out;
+}
+
+@media screen and (max-width: 559px) {
+  .btn-only-icon {
+    width: var(--size-40);
+  }
+  .btn-only-icon__icon {
+    width: var(--size-24);
+  }
 }

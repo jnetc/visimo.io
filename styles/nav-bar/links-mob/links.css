@@ -20,26 +20,19 @@
   color: var(--switch-black-and-light);
 }
 
-.nav-bar__menu-button {
-  background-color: var(--btn-nav-menu);
-  border-radius: var(--border-corner-8);
-}
-.nav-bar__menu-button-close {
+.nav-bar__menu-close {
   position: absolute;
   inset-block-start: var(--gap-16);
   inset-inline-end: var(--gap-16);
-  background-color: var(--btn-red);
-  border-radius: var(--border-corner-8);
 }
 
 @media screen and (min-width: 961px) {
-  .nav-button.nav-bar__menu-button {
+  .nav-bar__menu-button {
     display: none;
   }
 }
 @media screen and (min-width: 559px) {
-  .nav-bar__menu-button-close {
-    inset-block-start: var(--gap-36);
+  .nav-bar__menu-close {
     inset-inline-end: var(--gap-36);
   }
 }

@@ -5,7 +5,6 @@
   padding: 0.5rem;
   margin-inline-start: auto;
   background-color: var(--btn-nav-lang);
-  border-radius: var(--border-corner-8);
   color: var(--switch-black-and-light);
   font-size: var(--font-16);
   text-transform: capitalize;

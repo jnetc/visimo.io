@@ -75,6 +75,7 @@
   --gap-48: 3rem;
   --gap-64: 4rem;
   --gap-80: 5rem;
+  --gap-96: 6rem;
   --gap-128: 8rem;
   --gap-152: 9.5rem;
   --gap-176: 11rem;
@@ -108,4 +109,7 @@
   --size-56: 3.5rem;
   --size-64: 4rem;
   --size-96: 6rem;
+  --size-96: 6rem;
+  --size-192: 12rem;
+  --size-208: 13rem;
 }
