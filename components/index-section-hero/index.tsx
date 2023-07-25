@@ -10,16 +10,24 @@ import BigCloudRight from '@Components/SVG/BigCloudRight';
 import { useStore } from '@Hooks/useStore';
 
 export default function HeroSection() {
-  const { data } = useStore();
+  const { surveyNotice, image } = useStore().data!.heroSection;
   return (
     <section className="section main-grid hero">
       <HeroTitle />
       <HeroDesc />
-      {data?.heroSection.surveyNotice !== '' ? <p className="hero__survey">{data!.heroSection.surveyNotice}</p> : null}
+      {surveyNotice !== '' ? <p className="hero__survey">{surveyNotice}</p> : null}
       <HeroActionButton />
       <Smartphone customClass="phone-hero" isHero>
-        <Image src="/images/screenshot.webp" alt="template" fill sizes="(max-width: 438px) 100vw, 438px" priority />
-        {/* <img src="./images/screenshot.webp" alt="template" width={'100%'} height={'100%'} /> */}
+        <Image
+          src="/images/screen_cropped.webp"
+          sizes="(max-width: 360px) 100vw, 360px"
+          // src={image.url}
+          // sizes={image.responsiveImage.sizes}
+          alt={image.alt}
+          title={image.title}
+          fill
+          priority
+        />
       </Smartphone>
       <BigCloudLeft extraClass="hero__cloud-left" />
       <BigCloudRight extraClass="hero__cloud-right" />

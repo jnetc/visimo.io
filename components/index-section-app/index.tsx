@@ -6,8 +6,11 @@ import SmallCloudRight from '@Components/SVG/SmallCloudRight';
 import Star from '@Components/SVG/Star';
 import AppBackLayer from './SVG/AppBackLayer';
 import Bonfire from './Bonfire';
+// Hook
+import { useStore } from '@Hooks/useStore';
 
 export default function AppSection() {
+  const { image } = useStore().data!.appSection;
   return (
     <section className="section main-grid app">
       <div className="app__container">
@@ -16,7 +19,16 @@ export default function AppSection() {
         <img className="app__front-layer" src="/images/svg/app-front-layer.svg" alt="visics" />
         <Bonfire />
         <Smartphone isApp customClass="phone-app">
-          <Image src="/images/screenshot.webp" alt="template" fill sizes="(max-width: 438px) 100vw, 438px" priority />
+          <Image
+            src="/images/screen_cropped.webp"
+            sizes="(max-width: 360px) 100vw, 360px"
+            // src={image.url}
+            // sizes={image.responsiveImage.sizes}
+            alt={image.alt}
+            title={image.title}
+            fill
+            priority
+          />
         </Smartphone>
         <AppBackLayer extraClass="app__back-layer" aria-hidden />
         <Star extraClass="app-star1" aria-hidden />

@@ -7,19 +7,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 3px solid red;
   cursor: pointer;
-}
-
-.team-member__photo {
-  position: relative;
-  inline-size: var(--size-208);
-  aspect-ratio: 1;
-  border-radius: 50%;
-  cursor: pointer;
-}
-.team-member__photo img {
-  border-radius: inherit;
 }
 
 .team-member__dialog {
@@ -64,9 +52,21 @@
   grid-template-rows: var(--size-56) repeat(4, min-content);
   justify-items: center;
   gap: var(--gap-12);
+  position: relative;
   padding-inline: var(--gap-32);
   padding-block: var(--gap-16) var(--gap-48);
   background-color: var(--bg-color-alt);
+  z-index: 1;
+}
+.team-member__dialog-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-size: 750px;
+  background-image: url(/images/pattern.webp);
+  mix-blend-mode: multiply;
+  opacity: var(--bg-opacity);
+  z-index: -1;
 }
 
 .team-member__dialog-btns {
@@ -75,13 +75,27 @@
   justify-content: space-between;
 }
 
+.team-member__photo,
+.team-member__dialog-photo {
+  position: relative;
+  inline-size: var(--size-208);
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+.team-member__dialog-photo img,
+.team-member__photo img {
+  border-radius: inherit;
+}
+
 .team-member__dialog-name {
   font-size: var(--font-32);
 }
 
 .team-member__dialog-position {
-  padding-block-end: var(--gap-16);
-  font-size: var(--font-20);
+  padding-block-end: var(--gap-24);
+  color: var(--txt-color-alt);
+  font-size: var(--font-16);
+  font-weight: bold;
 }
 
 @keyframes fade-in {

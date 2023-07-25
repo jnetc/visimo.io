@@ -8,8 +8,8 @@ export default function Steps() {
 
   const stepArr = steps.map((s, idx) => (
     <div key={idx} className={`step-${idx}`}>
-      <StepIllustration data={s} id={idx + 1} />
-      <StepPreview />
+      <StepIllustration discuss={s.discuss} description={s.description} id={idx + 1} />
+      <StepPreview image={s.image} />
     </div>
   ));
 

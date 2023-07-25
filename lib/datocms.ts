@@ -20,8 +20,14 @@ export async function request({ query, variables }: { query: string; variables: 
 
 export const query = gql`
   query ($locale: SiteLocale) {
+    _site(locale: $locale) {
+      ...SiteFragment
+    }
     heroSection(locale: $locale) {
       ...HeroSectionRecordFragment
+    }
+    appSection(locale: $locale) {
+      ...AppSectionRecordFragment
     }
     howitworksSection(locale: $locale) {
       ...HowitworksSectionRecordFragment
@@ -46,6 +52,23 @@ export const query = gql`
     }
   }
 
+  fragment SiteFragment on Site {
+    globalSeo {
+      fallbackSeo {
+        description
+        title
+        twitterCard
+        image {
+          url
+        }
+      }
+      siteName
+      titleSuffix
+      twitterAccount
+      facebookPageUrl
+    }
+  }
+
   fragment HeroSectionRecordFragment on HeroSectionRecord {
     notification
     title
@@ -54,6 +77,27 @@ export const query = gql`
     description
     surveyNotice
     button
+    image {
+      alt
+      url
+      title
+      responsiveImage {
+        srcSet
+        sizes
+      }
+    }
+  }
+
+  fragment AppSectionRecordFragment on AppSectionRecord {
+    image {
+      url
+      title
+      alt
+      responsiveImage {
+        srcSet
+        sizes
+      }
+    }
   }
 
   fragment HowitworksSectionRecordFragment on HowitworksSectionRecord {
@@ -64,6 +108,15 @@ export const query = gql`
     steps {
       description
       discuss
+      image {
+        alt
+        url
+        title
+        responsiveImage {
+          srcSet
+          sizes
+        }
+      }
     }
   }
 
@@ -77,6 +130,15 @@ export const query = gql`
       title
       description
       illustrationId
+      image {
+        alt
+        url
+        title
+        responsiveImage {
+          srcSet
+          sizes
+        }
+      }
     }
     surveyCompleted
   }
@@ -103,6 +165,7 @@ export const query = gql`
       avatar {
         alt
         url
+        title
         responsiveImage {
           sizes
           srcSet
@@ -131,8 +194,9 @@ export const query = gql`
     }
     avatars {
       id
-      url
       alt
+      url
+      title
       responsiveImage {
         sizes
         srcSet
@@ -152,8 +216,9 @@ export const query = gql`
       post
       description
       avatar {
-        url
         alt
+        url
+        title
         responsiveImage {
           sizes
           srcSet

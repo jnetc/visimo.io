@@ -36,8 +36,8 @@ const Home: NextPage = ({ data, language, languages }: InferGetStaticPropsType<t
   return (
     <Store.Provider value={{ language, languages, data: assignType }}>
       <Head>
-        {/* <title>{assignType._site.globalSeo.fallbackSeo.title}</title> */}
-        {/* <meta name="description" content={assignType._site.globalSeo.fallbackSeo.description} /> */}
+        <title>{assignType._site.globalSeo.fallbackSeo.title}</title>
+        <meta name="description" content={assignType._site.globalSeo.fallbackSeo.description} />
 
         {/* Canonical page */}
         <link
@@ -47,14 +47,14 @@ const Home: NextPage = ({ data, language, languages }: InferGetStaticPropsType<t
 
         {/* Facebook / Open Graph */}
         <meta property="og:type" content="website" />
-        {/* <meta property="og:site_name" content={assignType._site.siteName} /> */}
+        <meta property="og:site_name" content={assignType._site.globalSeo.siteName} />
         <meta
           property="og:url"
           content={`${language === 'fi' ? 'https://www.visimo.io/' : `https://www.visimo.io/${language}/`}`}
         />
         {/* <meta property="og:image" content={assignType._site.globalSeo.fallbackSeo.image.url} /> */}
-        {/* <meta property="og:title" content={assignType._site.globalSeo.fallbackSeo.title} /> */}
-        {/* <meta property="og:description" content={assignType._site.globalSeo.fallbackSeo.description} /> */}
+        <meta property="og:title" content={assignType._site.globalSeo.fallbackSeo.title} />
+        <meta property="og:description" content={assignType._site.globalSeo.fallbackSeo.description} />
         <meta property="og:locale" content={language} />
 
         {/* Twitter */}
@@ -63,8 +63,8 @@ const Home: NextPage = ({ data, language, languages }: InferGetStaticPropsType<t
           name="twitter:url"
           content={`${language === 'fi' ? 'https://www.visimo.io/' : `https://www.visimo.io/${language}/`}`}
         />
-        {/* <meta name="twitter:title" content={assignType._site.globalSeo.fallbackSeo.title} /> */}
-        {/* <meta name="twitter:description" content={assignType._site.globalSeo.fallbackSeo.description} /> */}
+        <meta name="twitter:title" content={assignType._site.globalSeo.fallbackSeo.title} />
+        <meta name="twitter:description" content={assignType._site.globalSeo.fallbackSeo.description} />
         {/* <meta name="twitter:image" content={assignType._site.globalSeo.fallbackSeo.image.url} /> */}
         {/* <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} /> */}
       </Head>

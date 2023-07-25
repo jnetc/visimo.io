@@ -11,7 +11,6 @@
 .phone.phone-survey {
   grid-column: 9 / 14;
   grid-row: 2 / -1;
-  inline-size: clamp(300px, 20vw, var(--phone-width-360));
 }
 .question__title {
   font-size: var(--font-36);

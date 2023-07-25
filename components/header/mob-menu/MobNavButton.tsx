@@ -2,7 +2,7 @@ export default function MobNavButton({ handler }: { handler: (isOpen: boolean) =
   return (
     <button
       className="small-button btn-only-icon button-blue nav-bar__menu-button"
-      onClick={() => handler(true)}
+      onPointerUp={() => handler(true)}
       aria-label="Navigation button"
       title="Navigation button"
     >

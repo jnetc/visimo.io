@@ -3,7 +3,6 @@
   justify-content: center;
 }
 .phone.phone-step {
-  inline-size: clamp(290px, 21vw, var(--phone-width-320));
   z-index: 3;
 }
 .step__step-blob {

@@ -27,7 +27,7 @@ export default function MobMenu({ handler, isOpen }: Props) {
 
   return (
     <nav aria-label="mobile-navigation" className={`nav-bar__links-mob ${isOpen && 'show'}`}>
-      <button className="small-button btn-only-icon button-red nav-bar__menu-close" onClick={() => handler(false)}>
+      <button className="small-button btn-only-icon button-red nav-bar__menu-close" onPointerUp={() => handler(false)}>
         <svg className="btn-only-icon__icon">
           <use xlinkHref="/images/icons.svg#close"></use>
         </svg>

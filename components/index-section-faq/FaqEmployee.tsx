@@ -7,7 +7,7 @@ export default function FaqEmployee() {
   const avatarsArr = avatars.map((ava, idx) => {
     return (
       <div className="faqs-avatar" key={idx}>
-        <Image src={ava.url} alt={ava.alt} fill sizes={ava.responsiveImage.sizes} />
+        <Image src={ava.url} alt={ava.alt} sizes={ava.responsiveImage.sizes} fill />
       </div>
       // <img
       //   key={idx}

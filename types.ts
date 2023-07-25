@@ -26,9 +26,10 @@ export type LinksType = {
   websiteUrl?: string;
 };
 
-export interface Image {
+export interface IImage {
   url: string;
   alt: string;
+  title: string;
   responsiveImage: {
     sizes: string;
     srcSet: string;
@@ -37,14 +38,33 @@ export interface Image {
 
 export interface ISectionType extends TitleType, DescType, TitleColorType {}
 
+export interface ISeo {
+  globalSeo: {
+    fallbackSeo: {
+      description: string;
+      title: string;
+      twitterCard: string;
+      image: {
+        url: string;
+      };
+    };
+    siteName: string;
+    titleSuffix: string;
+    twitterAccount: string;
+    facebookPageUrl: string;
+  };
+}
+
 export interface IHeroSection extends ISectionType {
   notification: string;
   surveyNotice: string;
   button: string;
+  image: IImage;
 }
 
 export interface IStep extends DescType {
   discuss: string;
+  image: IImage;
 }
 
 export interface IHowItWorksSection extends ISectionType {
@@ -54,8 +74,9 @@ export interface IHowItWorksSection extends ISectionType {
 export interface IQuestion extends IDType, TitleType, DescType {
   illustrationId: string;
   order: number;
+  image: IImage;
 }
-export interface ISurveyContext extends Omit<IQuestion, 'illustrationId'> {
+export interface ISurveyContext extends Omit<IQuestion, 'illustrationId' | 'image'> {
   answer: string;
   hasCustomerAnswer: boolean;
   customerAnswer: string;
@@ -77,7 +98,7 @@ export interface IMember
   extends IDType,
     NameType,
     Pick<LinksType, 'instagramUrl' | 'linkedinUrl' | 'twitterUrl' | 'facebookUrl' | 'websiteUrl'> {
-  avatar: Image;
+  avatar: IImage;
   teamPosition: string;
   about: string;
 }
@@ -91,13 +112,13 @@ export interface IFaq extends IDType {
 }
 export interface IFaqSection extends ISectionType {
   faqs: Array<IFaq>;
-  avatars: Array<Image>;
+  avatars: Array<IImage>;
   extraInfo: string;
 }
 
 export interface ITestimonial extends IDType, NameType, DescType {
   post: string;
-  avatar: Image;
+  avatar: IImage;
 }
 
 export interface ITestimonialSection extends ISectionType {
@@ -109,8 +130,9 @@ export interface IFooter extends Omit<LinksType, 'websiteUrl'> {
 }
 
 export interface IData {
-  // _site: SEO;
+  _site: ISeo;
   heroSection: IHeroSection;
+  appSection: { image: IImage };
   howitworksSection: IHowItWorksSection;
   surveySection: ISurveySection;
   featureSection: IFeatureSection;

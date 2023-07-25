@@ -38,7 +38,7 @@ export default function TeamMember({ data }: { data: IMember }) {
     <>
       <article className="team-member" onPointerDown={openModal}>
         <div className="team-member__photo">
-          <Image src={avatar.url} alt={avatar.alt} fill sizes={avatar.responsiveImage.sizes} priority />
+          <Image src={avatar.url} alt={avatar.alt} fill sizes={avatar.responsiveImage.sizes} />
         </div>
         <h3 className="team-member__name">{name}</h3>
         <p className="team-member__position">{teamPosition}</p>
@@ -48,18 +48,17 @@ export default function TeamMember({ data }: { data: IMember }) {
         <div className="team-member__dialog-card retro-box" ref={divRef}>
           <div className="team-member__dialog-btns">
             <WebLinks extraClass="team-member__social-links" urls={urls} />
-            <button className="small-button btn-only-icon button-red" onPointerDown={closeModal}>
+            <button className="small-button btn-only-icon button-red" onPointerUp={closeModal}>
               <svg className="btn-only-icon__icon">
                 <use xlinkHref="/images/icons.svg#close"></use>
               </svg>
             </button>
           </div>
-          <div className="team-member__photo">
+          <div className="team-member__dialog-photo">
             <Image src={avatar.url} alt={avatar.alt} fill sizes={avatar.responsiveImage.sizes} />
           </div>
-
           <h3 className="team-member__dialog-name">{name}</h3>
-          <p className="c">{teamPosition}</p>
+          <p className="team-member__dialog-position">{teamPosition}</p>
           <ReactMarkdown className="team-member__dialog-about markdown" children={about} />
         </div>
       </dialog>

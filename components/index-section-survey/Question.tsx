@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Image from 'next/image';
 import ReactMarkdown from 'react-markdown';
 // Hook
 import { useSurveyForm } from '@Hooks/useServeyForm';
@@ -12,7 +13,7 @@ import debounce from '@Helpers/debounce';
 import type { IQuestion } from '@Types';
 
 export default function Question({ question, order }: { question: IQuestion; order: number }) {
-  const { id, title, description } = question;
+  const { id, title, description, image } = question;
   const { allQuestions, setAllQuestions } = useSurveyForm();
   const [customAnswer, setCustomAnswer] = useState(false);
 
@@ -63,12 +64,15 @@ export default function Question({ question, order }: { question: IQuestion; ord
       <QuestionRadioButtons id={id} pointerHandler={selectAnswer} />
       <QuestionTextField id={id} handler={customerAnswer} isOpen={customAnswer} />
       <Smartphone customClass="phone-survey">
-        <img
-          src="/images/screenshot.webp"
-          alt="app image"
-          width={'100%'}
-          height={'100%'}
-          sizes="(max-width: 438px) 100vw, 438px"
+        <Image
+          // src={image.url}
+          // sizes={image.responsiveImage.sizes}
+          alt={image.alt}
+          title={image.title}
+          src="/images/screen_cropped.webp"
+          sizes="(max-width: 360px) 100vw, 360px"
+          fill
+          priority
         />
       </Smartphone>
     </div>

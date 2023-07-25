@@ -8,12 +8,11 @@ import { useIntersectionObserver } from '@Hooks/useIntersectionObserver';
 // Types
 import type { IStep } from '@Types';
 
-interface Props {
-  data: IStep;
+interface Props extends Omit<IStep, 'image'> {
   id: number;
 }
 
-export default function StepIllustration({ id, data }: Props) {
+export default function StepIllustration({ id, discuss, description }: Props) {
   const ref = useRef<HTMLDivElement>(null);
   const isIntersecting = useIntersectionObserver(ref, {
     rootMargin: '-150px',
@@ -23,10 +22,10 @@ export default function StepIllustration({ id, data }: Props) {
   return (
     <div className="step__illustration">
       <p
-        className={`step__description ${isIntersecting ? data.discuss + ' animated show' : data.discuss + ' animated'}`}
+        className={`step__description ${isIntersecting ? discuss + ' animated show' : discuss + ' animated'}`}
         ref={ref}
       >
-        {data.description}
+        {description}
       </p>
       <img className="step__front-layer" src={`/images/svg/step-${id}-visic.svg`} alt="visics" />
       <StepBackLayer />

@@ -34,8 +34,8 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1" /> */}
 
         {/* App PWA */}
-        <meta name="application-name" content="visimo.io" />
-        <meta name="mobile-web-app-capable" content="yes" />
+        {/* <meta name="application-name" content="visimo.io" /> */}
+        {/* <meta name="mobile-web-app-capable" content="yes" /> */}
         {/* <link rel="manifest" href="/manifest.webmanifest" /> */}
 
         {/* Theme */}
@@ -49,9 +49,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         {/* <link rel="icon" href="/icons/favicon.svg" type="image/svg+xml" /> */}
 
         {/* Apple */}
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-title" content="visimo.io" />
-        <link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png" />
+        {/* <meta name="apple-mobile-web-app-capable" content="yes" /> */}
+        {/* <meta name="apple-mobile-web-app-title" content="visimo.io" /> */}
+        {/* <link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png" /> */}
 
         <meta name="geo.region" content="FI" />
         <meta name="geo.placename" content="Helsinki" />
