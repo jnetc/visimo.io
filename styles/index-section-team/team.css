@@ -10,24 +10,29 @@
   cursor: pointer;
 }
 
-.team-member__dialog {
-  margin: auto;
-  padding-inline-end: 1rem;
-  padding-block-end: 1rem;
+[role='dialog'] {
+  inline-size: 100vw;
+  block-size: 100vh;
+  display: none;
+  position: fixed;
+  inset: 0;
+  padding: var(--gap-16);
+  overflow-y: auto;
   background: var(--bg-dialog);
-  border: transparent;
+  z-index: 100;
 }
-.team-member__dialog[open] {
-  animation: fade-in 0.3s forwards, slide-in 0.3s forwards;
+[role='dialog'][open] {
+  display: grid;
+  animation: fade-in 0.3s forwards;
 }
-.team-member__dialog[closing] {
-  display: block;
+[role='dialog'][closing] {
+  display: grid;
   pointer-events: none;
-  animation: slide-out 0.3s forwards, fade-out 0.3s forwards;
+  animation: fade-out 0.3s forwards;
 }
 
 /* STRANGE BUG, HSL() INSTEAD OF VARIBLES */
-[data-theme='light'] .team-member__dialog::backdrop {
+/* [data-theme='light'] .team-member__dialog::backdrop {
   background: hsl(21 70% 96% / 0.8);
 }
 [data-theme='dark'] .team-member__dialog::backdrop {
@@ -42,12 +47,20 @@
 }
 .team-member__dialog[closing]::backdrop {
   animation: fade-out 0.3s forwards;
+} */
+
+[role='dialog'][open] .team-member__dialog-card {
+  animation: slide-in 0.3s forwards;
+}
+[role='dialog'][closing] .team-member__dialog-card {
+  animation: slide-out 0.3s forwards;
 }
 
 .team-member__dialog-card {
-  grid-column: 2;
   justify-self: center;
+  align-self: center;
   max-inline-size: 560px;
+  block-size: max-content;
   display: grid;
   grid-template-rows: var(--size-56) repeat(4, min-content);
   justify-items: center;
@@ -56,7 +69,7 @@
   padding-inline: var(--gap-32);
   padding-block: var(--gap-16) var(--gap-48);
   background-color: var(--bg-color-alt);
-  z-index: 1;
+  z-index: 101;
 }
 .team-member__dialog-card::after {
   content: '';

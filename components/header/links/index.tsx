@@ -2,7 +2,6 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 // Component
 import WorldLink from './SVG/WorldLink';
-import HomeLink from './SVG/HomeLink';
 // Types
 import { LanguagesType } from '@Types';
 // Langs
@@ -13,12 +12,11 @@ export default function Links() {
   const router = useRouter();
 
   const links = selectLinks(router.asPath);
-  const boldLink = boldLinks(router.asPath);
 
   const linksArr = links.map(link => {
     return (
-      <Link key={link.id} href={link.anchor}>
-        {link.anchor.match('/') ? boldLink : link.name[router.locale as LanguagesType]}
+      <Link key={link.id} href={link.anchor} aria-label={link.label[router.locale as LanguagesType]}>
+        {link.anchor.match('/') ? <WorldLink /> : link.name[router.locale as LanguagesType]}
       </Link>
     );
   });
@@ -36,14 +34,5 @@ export function selectLinks(route: string) {
       return linksWorld;
     default:
       return linksHome;
-  }
-}
-
-export function boldLinks(route: string) {
-  switch (route) {
-    case '/world':
-      return <HomeLink />;
-    default:
-      return <WorldLink />;
   }
 }

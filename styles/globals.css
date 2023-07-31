@@ -124,16 +124,17 @@ html[data-theme='light'] {
 html {
   background-color: var(--bg-color);
   scrollbar-gutter: stable;
+  /* overflow: auto; */
   /* color-scheme: dark light; */
 }
 html,
 body,
 #__next {
-  min-height: 100vh;
+  position: relative;
+  /* min-height: 100vh; */
 }
 #__next {
   position: relative;
-  /* isolation: isolate; */
 }
 #__next::after {
   content: '';

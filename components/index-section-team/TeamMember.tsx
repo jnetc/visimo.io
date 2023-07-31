@@ -8,30 +8,31 @@ import type { IMember } from '@Types';
 
 export default function TeamMember({ data }: { data: IMember }) {
   const { avatar, name, teamPosition, about, ...urls } = data;
-  const dialogRef = useRef<HTMLDialogElement>(null);
-  const divRef = useRef<HTMLDivElement>(null);
+  const dialogRef = useRef<HTMLDivElement>(null);
 
   function openModal() {
-    dialogRef.current?.showModal();
+    dialogRef.current?.setAttribute('open', '');
+    document.body.style.overflow = 'hidden';
   }
 
   function closeModal() {
     dialogRef.current?.setAttribute('closing', '');
     dialogRef.current?.addEventListener('animationend', fadeOut, { once: true });
     dialogRef.current?.removeEventListener('animationend', () => {});
+    document.body.removeAttribute('style');
   }
 
-  function outsideClick(event: PointerEvent<HTMLDialogElement>) {
-    const el = (event.target as HTMLDivElement).nodeName;
+  function outsideClick(event: PointerEvent<HTMLDivElement>) {
+    const el = (event.target as HTMLDivElement).hasAttribute('open');
 
-    if (el === 'DIALOG') {
-      closeModal();
-    }
+    if (!el) return;
+
+    closeModal();
   }
 
   function fadeOut() {
     dialogRef.current?.removeAttribute('closing');
-    dialogRef.current?.close();
+    dialogRef.current?.removeAttribute('open');
   }
 
   return (
@@ -44,8 +45,8 @@ export default function TeamMember({ data }: { data: IMember }) {
         <p className="team-member__position">{teamPosition}</p>
       </article>
 
-      <dialog className="team-member__dialog" ref={dialogRef} onPointerDown={outsideClick}>
-        <div className="team-member__dialog-card retro-box" ref={divRef}>
+      <div role="dialog" className="team-member__dialog" ref={dialogRef} onPointerDown={outsideClick}>
+        <div className="team-member__dialog-card retro-box">
           <div className="team-member__dialog-btns">
             <WebLinks extraClass="team-member__social-links" urls={urls} />
             <button className="small-button btn-only-icon button-red" onPointerUp={closeModal}>
@@ -61,7 +62,7 @@ export default function TeamMember({ data }: { data: IMember }) {
           <p className="team-member__dialog-position">{teamPosition}</p>
           <ReactMarkdown className="team-member__dialog-about markdown" children={about} />
         </div>
-      </dialog>
+      </div>
     </>
   );
 }
