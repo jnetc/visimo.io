@@ -63,7 +63,6 @@ export interface IHeroSection extends ISectionType {
 }
 
 export interface IStep extends DescType {
-  discuss: string;
   image: IImage;
 }
 

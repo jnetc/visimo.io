@@ -107,7 +107,6 @@ export const query = gql`
     secondary
     steps {
       description
-      discuss
       image {
         alt
         url

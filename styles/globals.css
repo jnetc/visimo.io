@@ -123,6 +123,7 @@ html {
   /* overflow: hidden; */
   /* overscroll-behavior: contain; */
   scrollbar-gutter: stable;
+  overflow-x: hidden;
   /* color-scheme: dark light; */
 }
 
