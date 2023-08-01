@@ -10,27 +10,6 @@
   cursor: pointer;
 }
 
-[role='dialog'] {
-  inline-size: 100vw;
-  block-size: 100vh;
-  display: none;
-  position: fixed;
-  inset: 0;
-  padding: var(--gap-16);
-  overflow-y: auto;
-  background: var(--bg-dialog);
-  z-index: 100;
-}
-[role='dialog'][open] {
-  display: grid;
-  animation: fade-in 0.3s forwards;
-}
-[role='dialog'][closing] {
-  display: grid;
-  pointer-events: none;
-  animation: fade-out 0.3s forwards;
-}
-
 /* STRANGE BUG, HSL() INSTEAD OF VARIBLES */
 /* [data-theme='light'] .team-member__dialog::backdrop {
   background: hsl(21 70% 96% / 0.8);
@@ -49,20 +28,20 @@
   animation: fade-out 0.3s forwards;
 } */
 
-[role='dialog'][open] .team-member__dialog-card {
+[role='dialog'][open] .teambox {
   animation: slide-in 0.3s forwards;
 }
-[role='dialog'][closing] .team-member__dialog-card {
+[role='dialog'][closing] .teambox {
   animation: slide-out 0.3s forwards;
 }
 
-.team-member__dialog-card {
+.teambox {
   justify-self: center;
   align-self: center;
   max-inline-size: 560px;
   block-size: max-content;
   display: grid;
-  grid-template-rows: var(--size-56) repeat(4, min-content);
+  grid-template-rows: min-content repeat(4, min-content);
   justify-items: center;
   gap: var(--gap-12);
   position: relative;
@@ -71,7 +50,8 @@
   background-color: var(--bg-color-alt);
   z-index: 101;
 }
-.team-member__dialog-card::after {
+
+.teambox::after {
   content: '';
   position: absolute;
   inset: 0;
@@ -82,10 +62,15 @@
   z-index: -1;
 }
 
-.team-member__dialog-btns {
-  inline-size: 100%;
-  display: flex;
-  justify-content: space-between;
+.team-member__social-links {
+  justify-self: start;
+  padding-block: var(--gap-12) var(--gap-32);
+}
+
+.dialog-close-btn {
+  position: absolute;
+  inset-inline-end: var(--gap-24);
+  inset-block-start: var(--gap-16);
 }
 
 .team-member__photo,
@@ -111,15 +96,6 @@
   font-weight: bold;
 }
 
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
 @keyframes slide-in {
   from {
     transform: translateY(3rem);
@@ -129,14 +105,6 @@
   }
 }
 
-@keyframes fade-out {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
 @keyframes slide-out {
   from {
     transform: translateY(0);

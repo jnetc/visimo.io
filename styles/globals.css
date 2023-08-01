@@ -113,29 +113,30 @@ html[data-theme='light'] {
 *::after,
 *::before {
   box-sizing: border-box;
-}
-* {
   margin: 0;
   padding: 0;
-  text-size-adjust: none;
-
   /* border: 1px solid red; */
 }
+
 html {
   background-color: var(--bg-color);
+  /* overflow: hidden; */
+  /* overscroll-behavior: contain; */
   scrollbar-gutter: stable;
-  /* overflow: auto; */
   /* color-scheme: dark light; */
 }
+
 html,
 body,
 #__next {
   position: relative;
   /* min-height: 100vh; */
 }
+
 #__next {
   position: relative;
 }
+
 #__next::after {
   content: '';
   position: absolute;
@@ -146,6 +147,7 @@ body,
   opacity: var(--bg-opacity);
   z-index: -99999;
 }
+
 body {
   margin-inline: auto;
 }
@@ -230,6 +232,7 @@ main {
 @import url('./markdown.css');
 @import url(./illustrations.css);
 @import url(./footer/footer.css);
+@import url(./modal/modal.css);
 
 /* apply back the draggable feature - exist only in Chromium and Safari */
 /* :where([draggable='true']) {
