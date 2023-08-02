@@ -34,14 +34,3 @@ export const extraCSS = `
     color: hsl(0, 0%, 32%);
   }
 `;
-
-export const setScrollPosition = `
-  document.addEventListener("DOMContentLoaded", function() {
-      const scrollpos = localStorage.getItem('scrollpos');
-      if (scrollpos) window.scrollTo(0, +scrollpos);
-  });
-
-  window.onbeforeunload = function() {
-      localStorage.setItem('scrollpos', window.scrollY);
-  };
-`;

@@ -15,7 +15,7 @@ export default function SettingsMenu({ show, closeMenuHandler }: { show: boolean
   function changeLanguage(event: PointerEvent<HTMLButtonElement>) {
     const lang = (event.target as HTMLButtonElement).getAttribute('data-lang') as LanguagesType;
     // Changing route
-    push(`${asPath}`, `${asPath}`, { locale: lang });
+    push(`${asPath}`, `${asPath}`, { locale: lang, scroll: false });
     // Using state variable as a boolean in LangButton component
     setSelectedLang(lang);
     // Close window after selecting language
