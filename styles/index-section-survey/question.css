@@ -33,9 +33,13 @@
     grid-column: 2 / -2;
   }
   .phone.phone-survey {
-    grid-row: 1;
+    grid-row: 3;
   }
   .question__title {
-    padding-block-start: var(--font-36);
+    grid-row: 1;
+    /* padding-block-start: var(--font-36); */
+  }
+  .question__desc {
+    grid-row: 2;
   }
 }

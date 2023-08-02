@@ -26,6 +26,13 @@ input[name*='answer-selected']:not(:checked) + .question__btn-yes {
   color: var(--switch-black-and-light-alt);
 }
 
+@media (max-width: 960px) {
+  .question__radio-buttons {
+    padding-block-start: var(--gap-48);
+    /* grid-row: 4; */
+  }
+}
+
 @media screen and (max-width: 559px) {
   .question__radio-buttons {
     justify-content: center;

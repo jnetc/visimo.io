@@ -33,8 +33,9 @@
 
 .team-member__backdrop {
   block-size: 80%;
+  aspect-ratio: 1;
   inset-block-end: 0;
-  inset-inline: 0;
+  /* inset-inline: 0; */
   position: absolute;
   background: linear-gradient(to bottom, var(--bg-after), var(--bg-after) 71%, var(--bg-color-alt) 71%);
   border: none;
@@ -50,10 +51,12 @@
 
 .team-member__backdrop:after {
   content: '';
-  inline-size: 208px;
+  /* inline-size: 208px; */
+  inline-size: 201px;
   aspect-ratio: 1;
   position: absolute;
-  inset-block-end: -100px;
+  /* inset-block-end: -100px; */
+  inset-block-end: -96px;
   inset-inline-start: 46px;
   background-color: var(--bg-color-alt);
   border-radius: 15px;

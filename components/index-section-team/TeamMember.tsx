@@ -12,7 +12,7 @@ export default function TeamMember({ data }: { data: IMember }) {
   const [isOpen, setOpen] = useState(false);
 
   function openModal() {
-    // setOpen(true);
+    setOpen(true);
   }
 
   return (
@@ -24,9 +24,6 @@ export default function TeamMember({ data }: { data: IMember }) {
         </div>
         <h3 className="team-member__name">{name}</h3>
         <p className="team-member__position">{teamPosition}</p>
-        {/* <svg xmlns="http://www.w3.org/2000/svg" version="1.1" className="svg-triangle">
-          <path d="M 10,10 140,60 Q145,62 150,60 Q150,60 290,10 Z" />
-        </svg> */}
       </article>
 
       <Modal isOpen={isOpen} setOpen={setOpen} extraClass="teambox">
