@@ -9,10 +9,7 @@ export default function HeroTitle() {
 
   return (
     <h1 className="hero__title" data-title={title}>
-      <strong className="title__strong" data-name="visimo">
-        visimo
-      </strong>
-      <span className="title__span">{splittingTitle}</span>
+      {splittingTitle}
     </h1>
   );
 }

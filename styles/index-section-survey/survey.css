@@ -40,7 +40,15 @@
   opacity: 0;
 }
 
+@media screen and (max-width: 960px) {
+  .survey-form {
+    row-gap: var(--gap-128);
+  }
+}
 @media screen and (max-width: 559px) {
+  .survey-form {
+    row-gap: var(--gap-96);
+  }
   .survey__send-button {
     margin-inline: auto;
   }

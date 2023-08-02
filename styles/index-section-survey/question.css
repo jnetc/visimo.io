@@ -13,20 +13,20 @@
   grid-row: 2 / -1;
 }
 .question__title {
-  font-size: var(--font-36);
+  font-size: clamp(var(--font-24), 4.5vw, var(--font-36));
   grid-row: 2;
   align-self: flex-end;
 }
 
 .question__desc {
   grid-row: 3;
-  font-size: var(--font-20);
+  font-size: clamp(var(--font-18), 2vw, var(--font-20));
   padding-block: var(--gap-32) var(--gap-48);
 }
 
 @media (max-width: 960px) {
   .question {
-    grid-template-rows: fit-content var(--gap-128) repeat(5, min-content);
+    grid-template-rows: min-content;
   }
   .question__left-side,
   .phone.phone-survey {

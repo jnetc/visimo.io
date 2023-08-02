@@ -1,7 +1,7 @@
 .question__textfield-label {
   grid-row: 5;
   opacity: 0;
-  padding-block: var(--gap-48) var(--gap-12);
+  padding-block: var(--gap-32) var(--gap-12);
   font-size: var(--font-16);
   color: var(--switch-black-and-light-alt);
   transform: translateY(-1rem);

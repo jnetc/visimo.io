@@ -9,10 +9,13 @@
 }
 
 .hero__title {
-  display: flex;
-  flex-direction: column;
+  /* display: flex; */
+  /* flex-direction: column; */
+  font-size: clamp(var(--font-36), 3.5vw, var(--font-48));
+  line-height: 1.2;
+  text-transform: uppercase;
 }
-.title__strong {
+/* .title__strong {
   display: block;
   position: relative;
   padding-block-end: var(--gap-12);
@@ -34,10 +37,11 @@
 .title__strong::before {
   color: var(--bg-before);
   transform: translate(-4px, 4px);
-}
-.title__span {
-  font-size: clamp(var(--font-24), 3.5vw, var(--font-48));
-}
+} */
+/* .title__span {
+  text-transform: uppercase;
+  font-size: clamp(var(--font-24), 3.5vw, var(--font-56));
+} */
 
 .hero__desc {
   height: fit-content;
