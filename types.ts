@@ -145,6 +145,6 @@ export interface IData {
 }
 
 // NODEMAILER
-export interface ResponseSurveyType {
+export interface ResponseMessageType {
   status: 'success' | 'error';
 }

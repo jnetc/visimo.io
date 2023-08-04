@@ -1,9 +1,9 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import type { ResponseSurveyType } from '@Types';
+import type { ResponseMessageType } from '@Types';
 import type { NextApiResponse, NextApiRequest } from 'next';
 import nodemailer from 'nodemailer';
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse<ResponseSurveyType>) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse<ResponseMessageType>) {
   let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -20,7 +20,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
   };
 
   try {
-    // await transporter.sendMail(mailOptions);
+    await transporter.sendMail(mailOptions);
 
     res.send({ status: 'success' });
   } catch (error) {

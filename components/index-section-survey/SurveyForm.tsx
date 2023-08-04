@@ -5,11 +5,12 @@ import { useStore } from '@Hooks/useStore';
 import { ServeyContext } from '@Hooks/useServeyForm';
 // Components
 import Question from './Question';
-import SendPlane from './SVG/SendPlane';
 // Helpers
 import findMatchingElements from '@Helpers/compare-arrays';
 // Types
-import type { ISurveyContext, ResponseSurveyType } from '@Types';
+import type { ISurveyContext, ResponseMessageType } from '@Types';
+import ResponseMessage from './ResponseMessage';
+import SendButton from './SendButton';
 
 export default function SurveyForm() {
   const { data } = useStore();
@@ -17,13 +18,13 @@ export default function SurveyForm() {
 
   const [allQuestions, setAllQuestions] = useState<ISurveyContext[]>([]);
   const [formComplete, setFormComplete] = useState(false);
-  const [responceStatus, setResponceMessage] = useState<ResponseSurveyType | undefined>();
-  const { questions, buttonName, attension, successMessage, errorMessage } = data!.surveySection;
+  const [responceStatus, setResponceMessage] = useState<ResponseMessageType | undefined>();
+  const { questions } = data!.surveySection;
 
   let matchingArrays: ISurveyContext[];
   let isAllQuestionsSelected = false;
 
-  const questionsArr = questions.map((q, idx) => {
+  const questionsArr = data!.surveySection.questions.map((q, idx) => {
     return <Question key={q.id} question={q} order={idx + 1} />;
   });
 
@@ -71,7 +72,7 @@ export default function SurveyForm() {
         body: JSON.stringify({ survey: `<ol style="padding: 0">${sorted}</ol>` }),
       });
 
-      const data: ResponseSurveyType = await response.json();
+      const data: ResponseMessageType = await response.json();
 
       if (data.status === 'success') {
         push('#survey');
@@ -89,28 +90,9 @@ export default function SurveyForm() {
         onSubmit={sendSurvey}
       >
         {questionsArr}
-        <div className="survey-form__center">
-          <p className={`send-button__notice ${isAllQuestionsSelected && 'hide'}`}>{attension}</p>
-          <div className="survey__send-button">
-            <button
-              type="submit"
-              className={`button ${isAllQuestionsSelected ? 'button-yellow' : 'disabled'}`}
-              aria-disabled={!isAllQuestionsSelected}
-            >
-              {buttonName}
-            </button>
-            {isAllQuestionsSelected ? <SendPlane /> : null}
-          </div>
-        </div>
+        <SendButton isSelectedAll={isAllQuestionsSelected} />
       </form>
-
-      <p
-        className={`survey-form__center survey__responce-message ${
-          responceStatus?.status === 'success' ? 'survey__show-message txt-success' : 'survey__show-message txt-error'
-        }`}
-      >
-        {responceStatus?.status === 'success' ? successMessage : errorMessage}
-      </p>
+      {!responceStatus?.status ? null : <ResponseMessage status={responceStatus.status} />}
     </ServeyContext.Provider>
   );
 }

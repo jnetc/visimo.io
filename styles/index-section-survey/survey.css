@@ -4,7 +4,6 @@
 }
 
 .main-grid-hide {
-  /* transition: all  ease-in-out; */
   animation: hide-survey var(--transition-05) ease-in-out forwards;
 }
 
@@ -60,20 +59,28 @@
   opacity: 0;
 }
 
-.survey__responce-message {
+.survey__response-message {
   max-inline-size: 960px;
   padding-block-start: var(--gap-36);
-  opacity: 0;
   font-size: var(--font-32);
   font-weight: bold;
   text-align: center;
-  transform: translateY(2rem);
-  transition: all var(--transition-05) ease-in-out;
+  opacity: 0;
+}
+.survey__show-message {
+  animation: message 0.5s ease-in-out forwards;
+  animation-delay: 0.5s;
 }
 
-.survey__show-message {
-  opacity: 1;
-  transform: translateY(0);
+@keyframes message {
+  50% {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media screen and (max-width: 960px) {
