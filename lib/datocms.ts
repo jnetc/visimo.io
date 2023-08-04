@@ -76,7 +76,7 @@ export const query = gql`
     secondary
     description
     surveyNotice
-    button
+    buttonName
     image {
       alt
       url
@@ -139,7 +139,10 @@ export const query = gql`
         }
       }
     }
-    surveyCompleted
+    attension
+    buttonName
+    successMessage
+    errorMessage
   }
 
   fragment FeatureSectionRecordFragment on FeatureSectionRecord {

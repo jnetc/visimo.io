@@ -40,8 +40,15 @@ svg.liquid-filter {
   color: var(--txt-color-mix2);
 }
 
+.txt-success {
+  color: var(--txt-success);
+}
+.txt-error {
+  color: var(--txt-error);
+}
+
 .section-description {
-  max-width: 960px;
+  max-inline-size: 960px;
   padding-block-start: var(--gap-36);
   line-height: 1.6;
   padding-block-end: var(--gap-176);

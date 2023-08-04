@@ -58,7 +58,7 @@ export interface ISeo {
 export interface IHeroSection extends ISectionType {
   notification: string;
   surveyNotice: string;
-  button: string;
+  buttonName: string;
   image: IImage;
 }
 
@@ -83,7 +83,10 @@ export interface ISurveyContext extends Omit<IQuestion, 'illustrationId' | 'imag
 
 export interface ISurveySection extends ISectionType {
   questions: Array<IQuestion>;
-  surveyCompleted: string;
+  attension: string;
+  buttonName: string;
+  successMessage: string;
+  errorMessage: string;
 }
 
 export interface IFeature extends Pick<ISectionType, 'title' | 'description'> {
@@ -143,6 +146,5 @@ export interface IData {
 
 // NODEMAILER
 export interface ResponseSurveyType {
-  status: string;
-  message: LanguagesMessageType;
+  status: 'success' | 'error';
 }

@@ -15,29 +15,15 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
   const mailOptions = {
     from: `"visimo.io" ${process.env.NEXT_PUBLIC_GMAIL}`,
     to: process.env.NEXT_PUBLIC_GMAIL,
-    subject: `Результат опроса с visimo.io`,
+    subject: `Результат опроса visimo.io`,
     html: req.body.survey,
   };
 
   try {
-    await transporter.sendMail(mailOptions);
+    // await transporter.sendMail(mailOptions);
 
-    res.send({
-      status: 'success',
-      message: {
-        en: 'Your message was successful sended!',
-        fi: 'Viestisi lähetys onnistui!',
-        sv: 'Ditt meddelande har skickats!',
-      },
-    });
+    res.send({ status: 'success' });
   } catch (error) {
-    res.send({
-      status: 'error',
-      message: {
-        en: 'Something went wrong!',
-        fi: 'Jotain meni pieleen!',
-        sv: 'Något gick fel!',
-      },
-    });
+    res.send({ status: 'error' });
   }
 }

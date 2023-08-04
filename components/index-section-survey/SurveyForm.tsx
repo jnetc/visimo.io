@@ -1,4 +1,5 @@
 import { useState, FormEvent } from 'react';
+import { useRouter } from 'next/router';
 // Hooks
 import { useStore } from '@Hooks/useStore';
 import { ServeyContext } from '@Hooks/useServeyForm';
@@ -11,11 +12,13 @@ import findMatchingElements from '@Helpers/compare-arrays';
 import type { ISurveyContext, ResponseSurveyType } from '@Types';
 
 export default function SurveyForm() {
-  const { data, language } = useStore();
+  const { data } = useStore();
+  const { push } = useRouter();
 
   const [allQuestions, setAllQuestions] = useState<ISurveyContext[]>([]);
   const [formComplete, setFormComplete] = useState(false);
-  const { questions } = data!.surveySection;
+  const [responceStatus, setResponceMessage] = useState<ResponseSurveyType | undefined>();
+  const { questions, buttonName, attension, successMessage, errorMessage } = data!.surveySection;
 
   let matchingArrays: ISurveyContext[];
   let isAllQuestionsSelected = false;
@@ -64,54 +67,50 @@ export default function SurveyForm() {
     try {
       const response = await fetch(`/api/survey`, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: JSON.stringify({
-          survey: `<ol style="padding: 0">${sorted}</ol>`,
-        }),
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ survey: `<ol style="padding: 0">${sorted}</ol>` }),
       });
 
       const data: ResponseSurveyType = await response.json();
 
-      console.log(data.status, data.message);
-    } catch (error) {}
+      if (data.status === 'success') {
+        push('#survey');
+      }
+      setResponceMessage({ ...data });
+    } catch (error) {
+      setResponceMessage({ status: 'error' });
+    }
   }
 
   return (
     <ServeyContext.Provider value={{ allQuestions, formComplete, setAllQuestions, setFormComplete }}>
-      <form className="main-grid survey-form" onSubmit={sendSurvey}>
+      <form
+        className={`main-grid survey-form ${responceStatus?.status === 'success' ? 'main-grid-hide' : ''}`}
+        onSubmit={sendSurvey}
+      >
         {questionsArr}
-        <div className="question__left-side">
-          <p className={`send-button__notice ${isAllQuestionsSelected && 'hide'}`}>{locale.attension[language]}</p>
+        <div className="survey-form__center">
+          <p className={`send-button__notice ${isAllQuestionsSelected && 'hide'}`}>{attension}</p>
           <div className="survey__send-button">
             <button
               type="submit"
               className={`button ${isAllQuestionsSelected ? 'button-yellow' : 'disabled'}`}
               aria-disabled={!isAllQuestionsSelected}
             >
-              {locale.sendButton[language]}
+              {buttonName}
             </button>
             {isAllQuestionsSelected ? <SendPlane /> : null}
           </div>
         </div>
       </form>
+
+      <p
+        className={`survey-form__center survey__responce-message ${
+          responceStatus?.status === 'success' ? 'survey__show-message txt-success' : 'survey__show-message txt-error'
+        }`}
+      >
+        {responceStatus?.status === 'success' ? successMessage : errorMessage}
+      </p>
     </ServeyContext.Provider>
   );
 }
-
-const locale = {
-  attension: {
-    en: 'The button will be activated when all questions have been answered',
-    ru: 'Кнопка активируется, когда будут даны ответы на все вопросы',
-    fi: 'Painike aktivoituu, kun kaikkiin kysymyksiin on vastattu',
-    sv: 'Knappen aktiveras när alla frågor har besvarats',
-  },
-  sendButton: {
-    en: 'send to us',
-    ru: 'отправить нам',
-    fi: 'lähetä meille',
-    sv: 'skicka till oss',
-  },
-};

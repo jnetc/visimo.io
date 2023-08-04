@@ -9,7 +9,8 @@
 input[name*='answer-selected'] {
   appearance: none;
   position: absolute;
-  inset: 0;
+  inset-block-start: 0;
+  inset-inline-start: 0;
   opacity: 0;
   pointer-events: none;
   z-index: -50;

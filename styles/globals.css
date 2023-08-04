@@ -36,6 +36,8 @@ html[data-theme='dark'] {
   --txt-color-alt: var(--grey-light);
   --txt-color-mix1: var(--dark-red);
   --txt-color-mix2: var(--dark-yellow);
+  --txt-success: var(--light-green);
+  --txt-error: var(--dark-red);
 
   --btn-yellow: var(--dark-yellow);
   --btn-green: var(--light-green);
@@ -82,6 +84,8 @@ html[data-theme='light'] {
   --txt-color-alt: var(--grey-black);
   --txt-color-mix1: var(--light-red-alt);
   --txt-color-mix2: var(--light-yellow-alt);
+  --txt-success: var(--light-green-alt);
+  --txt-error: var(--light-red-alt);
 
   --btn-yellow: var(--light-yellow);
   --btn-green: var(--light-green);

@@ -5,7 +5,7 @@ export default function HeroActionButton() {
 
   return (
     <a href="#survey" className="button button-yellow hero__action">
-      {data!.heroSection.button}
+      {data!.heroSection.buttonName}
     </a>
   );
 }

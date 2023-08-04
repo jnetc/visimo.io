@@ -7,6 +7,7 @@
   transform: translateY(-1rem);
   transition: all var(--transition-03) ease-in-out;
   transition-delay: 0.1s;
+  pointer-events: none;
 }
 .question__textfield-label.open {
   opacity: 1;
@@ -26,12 +27,14 @@
   transition: all var(--transition-03) ease-in-out;
   transition-delay: unset;
   resize: vertical;
+  pointer-events: none;
 }
 .question__textfield.open {
   block-size: 100%;
   opacity: 1;
   border-color: var(--switch-black-and-light);
   transition-delay: 0.1s;
+  pointer-events: all;
 }
 
 @media (min-width: 961px) {
