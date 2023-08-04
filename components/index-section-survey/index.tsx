@@ -5,11 +5,15 @@ import SurveyForm from './SurveyForm';
 import splitTitle from '@Helpers/splitTitles';
 
 export default function Survey() {
-  const { title, primary, secondary, description } = useStore().data!.surveySection;
+  const { title, primary, secondary, description, enableSection } = useStore().data!.surveySection;
 
   const splittingTitle = splitTitle(title, primary, secondary);
 
-  return (
+  if (!enableSection) {
+    localStorage.removeItem('survey');
+  }
+
+  return enableSection ? (
     <section id="survey" className="section survey main-grid">
       <h2 className="section-title" data-title={title}>
         {splittingTitle}
@@ -17,5 +21,5 @@ export default function Survey() {
       <p className="section-description">{description}</p>
       <SurveyForm />
     </section>
-  );
+  ) : null;
 }

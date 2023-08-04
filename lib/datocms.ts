@@ -120,6 +120,7 @@ export const query = gql`
   }
 
   fragment SurveySectionRecordFragment on SurveySectionRecord {
+    enableSection
     title
     primary
     secondary

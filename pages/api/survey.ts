@@ -15,7 +15,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
   const mailOptions = {
     from: `"visimo.io" ${process.env.NEXT_PUBLIC_GMAIL}`,
     to: process.env.NEXT_PUBLIC_GMAIL,
-    subject: `Результат опроса visimo.io`,
+    subject: `Результат опроса ${req.body.data} visimo.io`,
     html: req.body.survey,
   };
 

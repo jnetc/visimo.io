@@ -82,6 +82,7 @@ export interface ISurveyContext extends Omit<IQuestion, 'illustrationId' | 'imag
 }
 
 export interface ISurveySection extends ISectionType {
+  enableSection: boolean;
   questions: Array<IQuestion>;
   attension: string;
   buttonName: string;
