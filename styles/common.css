@@ -105,4 +105,7 @@ a:hover:not(.button, .nav-bar__links a) {
   .main-grid {
     column-gap: 0;
   }
+  .section-description {
+    padding-block-end: var(--gap-80);
+  }
 }

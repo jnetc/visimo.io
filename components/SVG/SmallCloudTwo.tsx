@@ -1,4 +1,4 @@
-export default function SmallCloudRight({ extraClass }: { extraClass: string }) {
+export default function SmallCloudTwo({ extraClass }: { extraClass: string }) {
   return (
     <svg
       className={`${extraClass} small-cloud`}

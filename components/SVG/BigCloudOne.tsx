@@ -1,4 +1,4 @@
-export default function BigCloudRight({ extraClass }: { extraClass: string }) {
+export default function BigCloudOne({ extraClass }: { extraClass: string }) {
   return (
     <svg className={extraClass} viewBox="0 0 1126 395" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
       <path

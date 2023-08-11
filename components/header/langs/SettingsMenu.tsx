@@ -8,7 +8,6 @@ import type { LanguagesType } from '@Types';
 
 export default function SettingsMenu({ show, closeMenuHandler }: { show: boolean; closeMenuHandler: () => void }) {
   const { asPath, push, locale, locales } = useRouter();
-  // const { languages, language } = useStore();
   const [selectedLang, setSelectedLang] = useState(locale! as LanguagesType);
   const languages = useRef(locales as Array<LanguagesType>);
 

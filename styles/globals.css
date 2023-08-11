@@ -29,6 +29,12 @@ html[data-theme='dark'] {
   --bg-dialog: hsl(206 100% 11% / 0.8);
   --bg-nav-stiky: hsl(206 100% 11% / 0.9);
   --bg-li-item-selected: var(--dark-blue-alt);
+  --bg-red: var(--dark-red);
+  --bg-red-alt: var(--dark-red-alt);
+  --bg-blue: var(--dark-blue);
+  --bg-blue-alt: var(--dark-blue-alt);
+  --bg-yellow: var(--dark-yellow);
+  --bg-green: #35524c;
 
   --switch-black-and-light: var(--light-bg);
   --switch-black-and-light-alt: var(--light-bg-alt);
@@ -77,6 +83,12 @@ html[data-theme='light'] {
   --bg-dialog: hsl(21 70% 96% / 0.8);
   --bg-nav-stiky: hsl(30 57% 89% / 0.9);
   --bg-li-item-selected: var(--white-grey);
+  --bg-red: var(--light-red);
+  --bg-red-alt: var(--light-red-alt);
+  --bg-blue: var(--light-blue);
+  --bg-blue-alt: var(--light-blue-alt);
+  --bg-yellow: var(--light-yellow);
+  --bg-green: var(--light-green);
 
   --switch-black-and-light: var(--dark-bg);
   --switch-black-and-light-alt: var(--black);

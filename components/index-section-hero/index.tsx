@@ -4,8 +4,8 @@ import HeroTitle from './HeroTitle';
 import HeroDesc from './HeroDesc';
 import HeroActionButton from './HeroActionButton';
 import Smartphone from '@Components/smartphone';
-import BigCloudLeft from '@Components/SVG/BigCloudLeft';
-import BigCloudRight from '@Components/SVG/BigCloudRight';
+import BigCloudTwo from '@Components/SVG/BigCloudTwo';
+import BigCloudOne from '@Components/SVG/BigCloudOne';
 // Hooks
 import { useStore } from '@Hooks/useStore';
 
@@ -29,8 +29,8 @@ export default function HeroSection() {
           priority
         />
       </Smartphone>
-      <BigCloudLeft extraClass="hero__cloud-left" />
-      <BigCloudRight extraClass="hero__cloud-right" />
+      <BigCloudTwo extraClass="hero__cloud-left" />
+      <BigCloudOne extraClass="hero__cloud-right" />
     </section>
   );
 }

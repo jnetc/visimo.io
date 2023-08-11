@@ -18,7 +18,7 @@
 }
 
 .survey-form__center {
-  grid-column: 1 / -1;
+  grid-column: 2 / -2;
   justify-self: center;
 }
 .survey__send-button {

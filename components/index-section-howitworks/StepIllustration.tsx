@@ -2,7 +2,7 @@ import { useRef } from 'react';
 //Components
 import StepBackLayer from './SVG/StepBackLayer';
 import Star from '@Components/SVG/Star';
-import SmallCloudLeft from '@Components/SVG/SmallCloudLeft';
+import SmallCloudOne from '@Components/SVG/SmallCloudOne';
 // Hook
 import { useIntersectionObserver } from '@Hooks/useIntersectionObserver';
 // Types
@@ -26,7 +26,7 @@ export default function StepIllustration({ id, description }: Props) {
       </p>
       <img className="step__front-layer" src={`/images/svg/step-${id}-visic.svg`} alt="visics" />
       <StepBackLayer />
-      <SmallCloudLeft extraClass="step__cloud-left" />
+      <SmallCloudOne extraClass="step__cloud-left" />
       <span className="sun step__sun illustration" aria-hidden />
       <Star extraClass="step-star1" />
       <Star extraClass="step-star2" />

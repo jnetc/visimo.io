@@ -1,8 +1,8 @@
 import Image from 'next/image';
 // Components
 import Smartphone from '@Components/smartphone';
-import SmallCloudLeft from '@Components/SVG/SmallCloudLeft';
-import SmallCloudRight from '@Components/SVG/SmallCloudRight';
+import SmallCloudOne from '@Components/SVG/SmallCloudOne';
+import SmallCloudTwo from '@Components/SVG/SmallCloudTwo';
 import Star from '@Components/SVG/Star';
 import AppBackLayer from './SVG/AppBackLayer';
 import Bonfire from './Bonfire';
@@ -14,8 +14,8 @@ export default function AppSection() {
   return (
     <section className="section main-grid app">
       <div className="app__container">
-        <SmallCloudLeft extraClass="app__cloud-left" aria-hidden />
-        <SmallCloudRight extraClass="app__cloud-right" aria-hidden />
+        <SmallCloudOne extraClass="app__cloud-left" aria-hidden />
+        <SmallCloudTwo extraClass="app__cloud-right" aria-hidden />
         <img className="app__front-layer" src="/images/svg/app-front-layer.svg" alt="visics" />
         <Bonfire />
         <Smartphone isApp customClass="phone-app">
