@@ -9,18 +9,23 @@ import SendButton from './SendButton';
 import ResponseMessage from './ResponseMessage';
 // Helpers
 import findMatchingElements from '@Helpers/compare-arrays';
-import setData from '@Helpers/setData';
 // Types
-import type { FormEvent } from 'react';
+import type { FormEvent, Dispatch, SetStateAction } from 'react';
 import type { ISurveyContext, ResponseMessageType } from '@Types';
 
-export default function SurveyForm() {
+import sendSurvey from './SendingSurvey';
+
+interface Props {
+  setSurveyDone: Dispatch<SetStateAction<boolean>>;
+  surveyDone: boolean;
+}
+
+export default function SurveyForm({ setSurveyDone, surveyDone }: Props) {
   const { data } = useStore();
   const { push } = useRouter();
 
   const [allQuestions, setAllQuestions] = useState<ISurveyContext[]>([]);
   const [formComplete, setFormComplete] = useState(false);
-  const [isComplete, setComplete] = useState(false);
   const [responceStatus, setResponceMessage] = useState<ResponseMessageType | undefined>();
   const { questions } = data!.surveySection;
 
@@ -31,7 +36,7 @@ export default function SurveyForm() {
     const isSurveyDone = localStorage.getItem('survey');
     if (isSurveyDone) {
       setResponceMessage({ status: 'success' });
-      setComplete(true);
+      setSurveyDone(true);
     }
   }, []);
 
@@ -48,50 +53,23 @@ export default function SurveyForm() {
 
   isAllQuestionsSelected = allQuestions.length === questions.length;
 
-  async function sendSurvey(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
+  const response = async (event: FormEvent<HTMLFormElement>) => {
+    const response = await sendSurvey(event, matchingArrays);
+    if (!response.status) return;
+    setResponceMessage(response);
 
-    const sorted = matchingArrays
-      .sort((a, b) => {
-        if (a.order > b.order) return 1;
-        return -1;
-      })
-      .map(q => {
-        return `
-        <li style="border-bottom: 1px solid black;">
-          <h2 style="font-size: 1.5em;">${q.title}</h2>
-          <p style="font-size: 1.1em;">Ответ: ${q.answer}</p>
-          <p style="font-size: 1.1em;">${q.customerAnswer && `Дополнение: ${q.customerAnswer}`}</p>
-        </li>`;
-      })
-      .toString()
-      .replaceAll(',', '');
-
-    try {
-      const response = await fetch(`/api/survey`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({ data: setData(), survey: `<ol style="padding: 0">${sorted}</ol>` }),
-      });
-
-      const data: ResponseMessageType = await response.json();
-
-      if (data.status === 'success') {
-        push('#survey');
-        localStorage.setItem('survey', 'true');
-      }
-      setResponceMessage({ ...data });
-    } catch (error) {
-      setResponceMessage({ status: 'error' });
+    // Move to top os survey section? after "success"
+    if (response.status === 'success') {
+      push('#survey');
     }
-  }
+  };
 
   return (
     <ServeyContext.Provider value={{ allQuestions, formComplete, setAllQuestions, setFormComplete }}>
-      {isComplete ? null : (
+      {surveyDone ? null : (
         <form
           className={`main-grid survey-form ${responceStatus?.status === 'success' ? 'main-grid-hide' : ''}`}
-          onSubmit={sendSurvey}
+          onSubmit={response}
         >
           {questionsArr}
           <SendButton isSelectedAll={isAllQuestionsSelected} />

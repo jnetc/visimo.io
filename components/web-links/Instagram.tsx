@@ -1,6 +1,11 @@
-export default function Instagram({ url }: { url: string }) {
+export default function Instagram({ url, hrefClass }: { url: string; hrefClass?: string }) {
   return (
-    <a href={url} className="social-button__icon" aria-label="Instagram" title="Instagram">
+    <a
+      href={url}
+      className={`${hrefClass ? `social-button__icon ${hrefClass}` : 'social-button__icon'}`}
+      aria-label="Instagram"
+      title="Instagram"
+    >
       <svg aria-hidden>
         <use xlinkHref="/images/icons.svg#instagram"></use>
       </svg>

@@ -105,3 +105,23 @@
 @import url(./question.css);
 @import url(./question-radio-button.css);
 @import url(./question-textfield.css);
+
+.survey__social-btns {
+  grid-column: 1 / -1;
+  max-inline-size: 960px;
+  justify-self: center;
+  padding-block: var(--gap-192);
+}
+.social-buttons.social-buttons-gap {
+  gap: var(--gap-48);
+}
+
+.survey__social-btns .social-button__icon svg {
+  inline-size: var(--size-48);
+  aspect-ratio: 1;
+}
+.survey__social-btns .social-button__icon {
+  inline-size: 80px;
+  aspect-ratio: 1;
+  padding: var(--gap-16);
+}
