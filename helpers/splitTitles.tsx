@@ -2,7 +2,7 @@ export default function splitTitle(title: string, primary: string, secondary?: s
   if (secondary === '' && primary === '') return null;
 
   // Making array without primary value
-  const checkPrimary = title.split(primary);
+  const checkPrimary = title.toLowerCase().split(primary.toLowerCase());
 
   // Making array without secondary value or return last index of the checkPrimary array
   const checkSecondary = secondary ? checkPrimary[1].toString().replace(', ', '').split(secondary) : checkPrimary[1];
@@ -13,7 +13,7 @@ export default function splitTitle(title: string, primary: string, secondary?: s
   // 4) If we have secondary value, styling words inside the <span> tag
   // 5) If we have words after econdary value, without styles
 
-  const constructTitle = [
+  return [
     checkPrimary[0],
     <span key={primary} className={`title-primary-color`}>
       {primary}
@@ -26,5 +26,4 @@ export default function splitTitle(title: string, primary: string, secondary?: s
     ),
     secondary && checkSecondary[1],
   ];
-  return constructTitle;
 }

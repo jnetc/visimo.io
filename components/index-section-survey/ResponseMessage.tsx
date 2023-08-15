@@ -1,10 +1,9 @@
 import { useStore } from '@Hooks/useStore';
 // Components
 import WebLinks from '@Components/web-links';
-// Hook
-
 // Types
 import type { ResponseMessageType } from '@Types';
+import ParcelAndVisic from './PacelAndVisic';
 
 export default function ResponseMessage({ status }: ResponseMessageType) {
   const { successMessage, errorMessage } = useStore().data!.surveySection;
@@ -22,6 +21,7 @@ export default function ResponseMessage({ status }: ResponseMessageType) {
             {status === 'success' ? successMessage : null}
           </p>
           <WebLinks urls={urls} containerClass="survey__social-btns" hrefClass="button default" />
+          <ParcelAndVisic />
         </>
       );
 

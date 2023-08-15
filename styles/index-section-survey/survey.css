@@ -125,3 +125,22 @@
   aspect-ratio: 1;
   padding: var(--gap-16);
 }
+
+.survey__visic,
+.survey__parcel-back,
+.survey__parcel-front {
+  position: relative;
+  justify-self: center;
+  grid-column: 1 / -1;
+  grid-row: 3;
+}
+
+.survey__parcel-back {
+  inset-block-end: -51px;
+  inset-inline-end: 2px;
+  z-index: -1;
+}
+.survey__parcel-front {
+  inset-block-end: -60px;
+  z-index: 15;
+}

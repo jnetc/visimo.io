@@ -61,6 +61,7 @@ export default function SurveyForm({ setSurveyDone, surveyDone }: Props) {
     // Move to top os survey section? after "success"
     if (response.status === 'success') {
       push('#survey');
+      setSurveyDone(true);
     }
   };
 

@@ -37,7 +37,6 @@
   }
   .question__title {
     grid-row: 1;
-    /* padding-block-start: var(--font-36); */
   }
   .question__desc {
     grid-row: 2;
