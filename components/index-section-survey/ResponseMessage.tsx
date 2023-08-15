@@ -7,34 +7,25 @@ import ParcelAndVisic from './PacelAndVisic';
 
 export default function ResponseMessage({ status }: ResponseMessageType) {
   const { successMessage, errorMessage } = useStore().data!.surveySection;
-  const { copyright, ...urls } = useStore().data!.footer;
+  const { instagramUrl, facebookUrl, linkedinUrl, twitterUrl, tiktokUrl, discordUrl, emailUrl } =
+    useStore().data!.footer;
 
   switch (status) {
     case 'success':
       return (
         <>
-          <p
-            className={`survey-form__center survey__response-message ${
-              status === 'success' ? 'survey__show-message' : ''
-            }`}
-          >
-            {status === 'success' ? successMessage : null}
-          </p>
-          <WebLinks urls={urls} containerClass="survey__social-btns" hrefClass="button default" />
+          <p className="survey-form__center survey__response-message">{successMessage}</p>
+          <WebLinks
+            urls={{ instagramUrl, facebookUrl, linkedinUrl, twitterUrl, tiktokUrl, discordUrl, emailUrl }}
+            containerClass="survey__social-btns"
+            hrefClass="button default"
+          />
           <ParcelAndVisic />
         </>
       );
 
     case 'error':
-      return (
-        <p
-          className={`survey-form__center survey__response-message ${
-            status === 'error' ? 'survey__show-message txt-error' : ''
-          }`}
-        >
-          {status === 'error' ? errorMessage : null}
-        </p>
-      );
+      return <p className="survey-form__center survey__response-message txt-error">{errorMessage}</p>;
 
     default:
       return null;

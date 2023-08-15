@@ -6,7 +6,6 @@
 .main-grid-hide {
   animation: hide-survey var(--transition-05) ease-in-out forwards;
 }
-
 @keyframes hide-survey {
   99% {
     opacity: 0;
@@ -59,19 +58,17 @@
   opacity: 0;
 }
 
+/* SURVEY IS DONE STYLES */
 .survey__response-message {
   max-inline-size: 960px;
   padding-block-start: var(--gap-36);
+  opacity: 0;
   font-size: var(--font-32);
   font-weight: bold;
   text-align: center;
-  opacity: 0;
-}
-.survey__show-message {
   animation: message 0.5s ease-in-out forwards;
   animation-delay: 0.5s;
 }
-
 @keyframes message {
   50% {
     opacity: 0;
@@ -83,11 +80,130 @@
   }
 }
 
+.survey__social-btns {
+  grid-column: 2 / -2;
+  max-inline-size: 960px;
+  justify-self: center;
+  padding-block: var(--gap-176);
+  position: relative;
+}
+.survey__social-btns.social-buttons {
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--gap-48);
+  position: relative;
+}
+
+.survey__social-btns .social-button__icon svg {
+  inline-size: var(--size-48);
+  aspect-ratio: 1;
+}
+.survey__social-btns .social-button__icon {
+  --one-row: 370px;
+  inline-size: 80px;
+  aspect-ratio: 1;
+  padding: var(--gap-16);
+  opacity: 0;
+  animation: survey-soc-button 0.5s ease-in-out forwards;
+}
+@keyframes survey-soc-button {
+  50% {
+    opacity: 0;
+    transform: translateY(2rem) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.survey__social-btns .social-button__icon:nth-of-type(1) {
+  animation-delay: 1s;
+}
+.survey__social-btns .social-button__icon:nth-of-type(2) {
+  animation-delay: 1.2s;
+}
+.survey__social-btns .social-button__icon:nth-of-type(3) {
+  animation-delay: 1.4s;
+}
+.survey__social-btns .social-button__icon:nth-of-type(4) {
+  animation-delay: 1.6s;
+}
+.survey__social-btns .social-button__icon:nth-of-type(5) {
+  animation-delay: 1.8s;
+}
+.survey__social-btns .social-button__icon:nth-of-type(6) {
+  animation-delay: 2s;
+}
+
+.survey__visic-in-box {
+  justify-self: center;
+  grid-column: 2 / -2;
+  grid-row: 3;
+  display: grid;
+  animation: survey-visic-box 0.5s cubic-bezier(0, 0.7, 0.5, 1) forwards;
+  animation-delay: 2s;
+  opacity: 0;
+}
+@keyframes survey-visic-box {
+  50% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50.01% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.survey__visic,
+.survey__parcel-back,
+.survey__parcel-front {
+  position: relative;
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.survey__parcel-back {
+  align-self: center;
+  justify-self: center;
+  inset-block-end: 30px;
+  inset-inline-end: 5px;
+  z-index: -1;
+}
+.survey__parcel-front {
+  align-self: flex-end;
+  z-index: 15;
+}
+
+.survey__visic {
+  justify-self: center;
+  inset-block-end: 45px;
+  transform: translateY(7rem) scale(0.7);
+  clip-path: polygon(0 0, 100% 0, 90% 70%, 0% 40%, 0 40%);
+  animation: survey-visic 0.5s ease-in-out forwards;
+  animation-delay: 2.5s;
+}
+@keyframes survey-visic {
+  50% {
+    transform: translateY(7rem) scale(0.7);
+    clip-path: polygon(0 0, 100% 0, 90% 70%, 0% 40%, 0 40%);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    clip-path: polygon(0 0, 100% 0, 90% 70%, 0% 75%, 0 65%);
+  }
+}
+
 @media screen and (max-width: 960px) {
   .survey-form {
     row-gap: var(--gap-128);
   }
 }
+
 @media screen and (max-width: 559px) {
   .survey-form {
     row-gap: var(--gap-96);
@@ -100,47 +216,24 @@
     inset-inline: 40%;
     inset-block-end: 110%;
   }
+  .survey__social-btns.social-buttons {
+    transform: scale(0.8);
+  }
+  @keyframes survey-visic-box {
+    50% {
+      opacity: 0;
+      transform: scale(0);
+    }
+    50.01% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+      transform: scale(0.7);
+    }
+  }
 }
 
 @import url(./question.css);
 @import url(./question-radio-button.css);
 @import url(./question-textfield.css);
-
-.survey__social-btns {
-  grid-column: 1 / -1;
-  max-inline-size: 960px;
-  justify-self: center;
-  padding-block: var(--gap-192);
-}
-.social-buttons.social-buttons-gap {
-  gap: var(--gap-48);
-}
-
-.survey__social-btns .social-button__icon svg {
-  inline-size: var(--size-48);
-  aspect-ratio: 1;
-}
-.survey__social-btns .social-button__icon {
-  inline-size: 80px;
-  aspect-ratio: 1;
-  padding: var(--gap-16);
-}
-
-.survey__visic,
-.survey__parcel-back,
-.survey__parcel-front {
-  position: relative;
-  justify-self: center;
-  grid-column: 1 / -1;
-  grid-row: 3;
-}
-
-.survey__parcel-back {
-  inset-block-end: -51px;
-  inset-inline-end: 2px;
-  z-index: -1;
-}
-.survey__parcel-front {
-  inset-block-end: -60px;
-  z-index: 15;
-}

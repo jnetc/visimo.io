@@ -25,7 +25,7 @@ export default function Survey() {
           <p className="section-description">{description}</p>
         </>
       ) : null}
-      <SurveyForm setSurveyDone={setSurveyDone} surveyDone={isSurveyDone} />
+      <SurveyForm setSurveyDone={setSurveyDone} />
     </section>
   ) : null;
 }

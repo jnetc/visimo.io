@@ -19,7 +19,7 @@ export default function WebLinks({ urls, containerClass, hrefClass }: Props) {
   const { instagramUrl, discordUrl, twitterUrl, linkedinUrl, tiktokUrl, emailUrl, facebookUrl, websiteUrl } = urls;
 
   return (
-    <div className={`social-buttons social-buttons-gap ${containerClass}`}>
+    <div className={`social-buttons ${containerClass}`}>
       {instagramUrl && instagramUrl.length > 3 ? <Instagram url={instagramUrl!} hrefClass={hrefClass} /> : null}
       {discordUrl && discordUrl.length > 3 ? <Discord url={discordUrl!} hrefClass={hrefClass} /> : null}
       {twitterUrl && twitterUrl.length > 3 ? <Twitter url={twitterUrl!} hrefClass={hrefClass} /> : null}

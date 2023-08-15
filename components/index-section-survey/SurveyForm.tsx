@@ -17,10 +17,9 @@ import sendSurvey from './SendingSurvey';
 
 interface Props {
   setSurveyDone: Dispatch<SetStateAction<boolean>>;
-  surveyDone: boolean;
 }
 
-export default function SurveyForm({ setSurveyDone, surveyDone }: Props) {
+export default function SurveyForm({ setSurveyDone }: Props) {
   const { data } = useStore();
   const { push } = useRouter();
 
@@ -65,17 +64,21 @@ export default function SurveyForm({ setSurveyDone, surveyDone }: Props) {
     }
   };
 
+  // Remove survey form from DOM after animation end
+  function removeForm(event: FormEvent<HTMLFormElement>) {
+    event.currentTarget.remove();
+  }
+
   return (
     <ServeyContext.Provider value={{ allQuestions, formComplete, setAllQuestions, setFormComplete }}>
-      {surveyDone ? null : (
-        <form
-          className={`main-grid survey-form ${responceStatus?.status === 'success' ? 'main-grid-hide' : ''}`}
-          onSubmit={response}
-        >
-          {questionsArr}
-          <SendButton isSelectedAll={isAllQuestionsSelected} />
-        </form>
-      )}
+      <form
+        className={`main-grid survey-form ${responceStatus?.status === 'success' ? 'main-grid-hide' : ''}`}
+        onSubmit={response}
+        onAnimationEnd={removeForm}
+      >
+        {questionsArr}
+        <SendButton isSelectedAll={isAllQuestionsSelected} />
+      </form>
 
       {!responceStatus?.status ? null : <ResponseMessage status={responceStatus.status} />}
     </ServeyContext.Provider>
