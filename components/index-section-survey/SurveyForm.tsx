@@ -60,13 +60,13 @@ export default function SurveyForm({ setSurveyDone }: Props) {
     // Move to top os survey section? after "success"
     if (response.status === 'success') {
       push('#survey');
-      setSurveyDone(true);
     }
   };
 
   // Remove survey form from DOM after animation end
   function removeForm(event: FormEvent<HTMLFormElement>) {
     event.currentTarget.remove();
+    setSurveyDone(true);
   }
 
   return (

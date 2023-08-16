@@ -1,6 +1,10 @@
 import { useStore } from '@Hooks/useStore';
 // Components
 import WebLinks from '@Components/web-links';
+import BigCloudOne from '@Components/SVG/BigCloudOne';
+import BigCloudTwo from '@Components/SVG/BigCloudTwo';
+import SmallCloudOne from '@Components/SVG/SmallCloudOne';
+import SmallCloudTwo from '@Components/SVG/SmallCloudTwo';
 // Types
 import type { ResponseMessageType } from '@Types';
 import ParcelAndVisic from './PacelAndVisic';
@@ -21,6 +25,10 @@ export default function ResponseMessage({ status }: ResponseMessageType) {
             hrefClass="button default"
           />
           <ParcelAndVisic />
+          <BigCloudOne extraClass="survey__big-cloud-one" />
+          <BigCloudTwo extraClass="survey__big-cloud-two" />
+          <SmallCloudOne extraClass="survey__small-cloud-one" />
+          <SmallCloudTwo extraClass="survey__small-cloud-two" />
         </>
       );
 

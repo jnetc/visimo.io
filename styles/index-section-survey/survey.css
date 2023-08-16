@@ -184,7 +184,7 @@
   inset-block-end: 45px;
   transform: translateY(7rem) scale(0.7);
   clip-path: polygon(0 0, 100% 0, 90% 70%, 0% 40%, 0 40%);
-  animation: survey-visic 0.5s ease-in-out forwards;
+  animation: survey-visic 1s ease-in-out forwards;
   animation-delay: 2.5s;
 }
 @keyframes survey-visic {
@@ -198,9 +198,85 @@
   }
 }
 
+/* CLOUDS STYLES */
+.survey__big-cloud-one,
+.survey__big-cloud-two,
+.survey__small-cloud-one,
+.survey__small-cloud-two {
+  opacity: 0;
+  z-index: -1;
+}
+.survey__big-cloud-one,
+.survey__big-cloud-two {
+  position: absolute;
+}
+.survey__big-cloud-one {
+  grid-column: 2 / 4 span;
+  inset-block-start: 30%;
+  animation: survey-cloud-left 1s ease-in-out forwards, survey-cloud-fly 60s linear infinite;
+  animation-delay: 1.1s;
+}
+.survey__big-cloud-two {
+  grid-column: 10 / 4 span;
+  inset-block-end: 0;
+  animation: survey-cloud-right 1s ease-in-out forwards, survey-cloud-fly 65s linear infinite;
+  animation-delay: 1.3s;
+}
+.survey__small-cloud-one {
+  grid-column: 10 / 2 span;
+  inset-block-start: 30%;
+  animation: survey-cloud-left 1s ease-in-out forwards, survey-cloud-fly 56s linear infinite;
+  animation-delay: 1.5s;
+}
+.survey__small-cloud-two {
+  grid-column: 4 / 2 span;
+  inset-block-end: 20%;
+  animation: survey-cloud-right 1s ease-in-out forwards, survey-cloud-fly 52s linear infinite;
+  animation-delay: 1.7s;
+}
+@keyframes survey-cloud-right {
+  50% {
+    opacity: 0;
+    transform: translateX(3rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes survey-cloud-left {
+  50% {
+    opacity: 0;
+    transform: translateX(-3rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes survey-cloud-fly {
+  50% {
+    transform: translateX(150px);
+  }
+}
+
 @media screen and (max-width: 960px) {
   .survey-form {
     row-gap: var(--gap-128);
+  }
+  .survey__big-cloud-one {
+    grid-column: 1 / 4 span;
+  }
+  .survey__big-cloud-two {
+    grid-column: 3 / 4 span;
+  }
+  .survey__small-cloud-one {
+    grid-column: 5 / 2 span;
+    inset-block-start: 50%;
+  }
+  .survey__small-cloud-two {
+    grid-column: 2 / 2 span;
   }
 }
 
@@ -216,9 +292,6 @@
     inset-inline: 40%;
     inset-block-end: 110%;
   }
-  .survey__social-btns.social-buttons {
-    transform: scale(0.8);
-  }
   @keyframes survey-visic-box {
     50% {
       opacity: 0;
@@ -231,6 +304,21 @@
       opacity: 1;
       transform: scale(0.7);
     }
+  }
+  .survey__big-cloud-one {
+    grid-column: 1 / 6 span;
+    inset-block-start: 35%;
+  }
+  .survey__big-cloud-two {
+    grid-column: 2 / 6 span;
+  }
+  .survey__small-cloud-one {
+    grid-column: 5 / 3 span;
+    inset-block-start: 60%;
+  }
+  .survey__small-cloud-two {
+    grid-column: 2 / 3 span;
+    inset-block-end: 20%;
   }
 }
 
