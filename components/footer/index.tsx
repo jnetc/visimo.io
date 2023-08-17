@@ -8,7 +8,7 @@ export default function Footer() {
   const { copyright, ...urls } = useStore().data!.footer;
   return (
     <footer className="footer">
-      <WebLinks extraClass="footer__social-links" urls={urls} />
+      <WebLinks containerClass="footer__social-links" urls={urls} />
       <p className="footer__center">{copyright}</p>
       <FooterTermsLinks />
     </footer>

@@ -20,7 +20,7 @@ export default function TeamMember({ data }: { data: IMember }) {
     <>
       <TeamArticle data={{ avatar, name, teamPosition }} callback={openModal} />
       <Modal isOpen={isOpen} setOpen={setOpen} extraClass="teambox">
-        <WebLinks extraClass="team-member__social-links" urls={urls} />
+        <WebLinks containerClass="team-member__social-links" urls={urls} />
         <div className="team-member__dialog-photo">
           <Image src={avatar.url} alt={avatar.alt} fill sizes={avatar.responsiveImage.sizes} />
         </div>
